@@ -1,3 +1,5 @@
+// comentario de prueba para git 1
+
 // Avatars
 
 let a_1 = document.getElementById('a-1')
