@@ -1,0 +1,4 @@
+.form-control:invalid{
+
+    border: 1px solid red !important;
+}
