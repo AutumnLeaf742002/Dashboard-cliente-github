@@ -1,2 +1,2 @@
 alert("se redireccionara al presionar ok")
-window.location.href = "http://localhost/dashboard-cliente/template/dashboard-project.html"
+window.location.href = "http://localhost/dashboard-cliente-github/template/dashboard-project.html"
