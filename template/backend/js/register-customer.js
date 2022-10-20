@@ -1,4 +1,4 @@
-// comentario de prueba para git 1
+let avatar_invalid = document.querySelector('.avatar_invalid')
 
 // Avatars
 
@@ -492,6 +492,17 @@ btn_enviar_customer.addEventListener('click', () => {
                 {
                     // Funcion para hacer aparecer la ventana de notificacion
                     aparecer_n_1('Debe rellenar todos los campos obligatorios para Co-aplicante')
+                    
+                    let form_control_all = document.querySelectorAll('.co_invalid')
+
+                    form_control_all.forEach(function(item){
+
+                        if(item.value == "")
+                        {
+                            item.style.border = '1px solid red'
+                        }
+                    })
+
                 }
             }
             else if(cl_51.value == 'no')
@@ -531,11 +542,17 @@ btn_enviar_customer.addEventListener('click', () => {
     else
     {
         aparecer_n_1('Debe rellenar todos los campos obligatorios')
-        let form_control_all = document.querySelectorAll('.form-control')
+        let form_control_all = document.querySelectorAll('.cl_invalid')
 
         form_control_all.forEach(function(item){
 
-            if(item.value.length < 1)
+            if(avatar_selected < 1)
+            {
+                
+                avatar_invalid.style.border = '1px solid red'
+            }
+
+            if(item.value == "")
             {
                 item.style.border = '1px solid red'
             }
@@ -554,5 +571,11 @@ form_control_all_change.forEach(function(item){
         item.style.border = '1px solid #e7e7e7'
     })
 })
+
+// funcion para quitar borde rojo del contenedor de los avatars al seleccionar un avatar
+function quitar_borde()
+{
+    avatar_invalid.style.border = 'none'
+}
 
 
