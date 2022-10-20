@@ -42,5 +42,17 @@
         return $date;
     }
 
-    function 
+    function create_serie()
+    {
+        $charset = "abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+        $cad = "";
+
+        for ($i=0; $i<20; $i++)
+        {
+            $cad .= substr ($charset, rand (0, 61), 1);
+        }
+
+        return $cad;
+    }
+
 ?>

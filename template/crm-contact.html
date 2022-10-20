@@ -555,8 +555,9 @@
                                         </div>
                                         <div class="card-block">
                                             <div class="table-content crm-table">
-                                                <div class="project-table">
+                                                <div class="project-table" id="contenedor-tabla-clientes">
                                                     <table id="crm-contact" class="table table-striped table-responsive nowrap">
+                                                        <a href="#final">ir al final</a>
                                                         <thead>
                                                             <tr>
                                                                 <th>
@@ -570,7 +571,7 @@
                                                                 <th>Direccion</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody id="contenedor-clientes">
                                                             <tr>
                                                                 <td>
                                                                     <img src="assets/images/avatar-1.png" class="d-inline-block img-circle " alt="tbl">
@@ -1082,6 +1083,9 @@
 <script src="assets/js/demo-12.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/jquery.mousewheel.min.js"></script>
+
+<!-- Llamada a js para el backend -->
+<script src="backend/js/get-customers.js"></script>
 </body>
 
 </html>
