@@ -173,7 +173,7 @@ a_8.addEventListener('click', () => {
     let cl_10 = document.getElementById('cl_10')
 
     let cl_11 = document.getElementById('cl_11')
-    let cl_12= document.getElementById('cl_12')
+    let cl_12 = document.getElementById('cl_12')
     let cl_13 = document.getElementById('cl_13')
     let cl_14 = document.getElementById('cl_14') //opcional
     let cl_15 = document.getElementById('cl_15')
@@ -577,5 +577,3 @@ function quitar_borde()
 {
     avatar_invalid.style.border = 'none'
 }
-
-
