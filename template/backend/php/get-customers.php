@@ -6,7 +6,7 @@
         include_once "commands.php";
 
         $oCon = connect();
-        $sql = "SELECT Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Expedicion, Vencimiento, Direccion FROM clientes";
+        $sql = "SELECT Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion FROM clientes";
         
         $res = select($oCon, $sql);
 
@@ -30,9 +30,6 @@
                         </td>
                         <td>
                             '.$item["Estado"].'
-                        </td>
-                        <td>
-                        '.$item["Expedicion"].'
                         </td>
                         <td>
                             '.$item["Vencimiento"].'
