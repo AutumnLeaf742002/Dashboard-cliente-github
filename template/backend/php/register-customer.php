@@ -62,6 +62,57 @@
         $cl_nombre_representante = $_POST["cl_nombre_representante"];
         $avatar_selected = $_POST["avatar_selected"];
 
+        // Eliminar los espacios antes y despues con trim
+
+        $cl_1 = trim($cl_1);
+        $cl_2 = trim($cl_2);
+        $cl_3 = trim($cl_3);
+        $cl_4 = trim($cl_4);
+        $cl_5 = trim($cl_5);
+        $cl_6 = trim($cl_6);
+        $cl_8 = trim($cl_8);
+        $cl_9 = trim($cl_9);
+        $cl_10 = trim($cl_10);
+        $cl_11 = trim($cl_11);
+        $cl_12 = trim($cl_12);
+        $cl_13 = trim($cl_13);
+        $cl_14 = trim($cl_14);
+        $cl_15 = trim($cl_15);
+        $cl_16 = trim($cl_16);
+        $cl_17 = trim($cl_17);
+        $cl_18 = trim($cl_18);
+        $cl_19 = trim($cl_19);
+        $cl_20 = trim($cl_20);
+        $cl_21 = trim($cl_21);
+        $cl_22 = trim($cl_22);
+        $cl_23 = trim($cl_23);
+        $cl_24 = trim($cl_24);
+        $cl_25 = trim($cl_25);
+        $cl_26 = trim($cl_26);
+        $cl_27 = trim($cl_27);
+        $cl_28 = trim($cl_28);
+        $cl_29 = trim($cl_29);
+        $cl_30 = trim($cl_30);
+        $cl_31 = trim($cl_31);
+        $cl_32 = trim($cl_32);
+        $cl_33 = trim($cl_33);
+        $cl_34 = trim($cl_34);
+        $cl_35 = trim($cl_35);
+        $cl_36 = trim($cl_36);
+        $cl_37 = trim($cl_37);
+        $cl_38 = trim($cl_38);
+        $cl_39 = trim($cl_39);
+        $cl_40 = trim($cl_40);
+        $cl_41 = trim($cl_41);
+        $cl_42 = trim($cl_42);
+        $cl_43 = trim($cl_43);
+        $cl_44 = trim($cl_44);
+        $cl_45 = trim($cl_45);
+        $cl_46 = trim($cl_46);
+        $cl_47 = trim($cl_47);
+        $cl_48 = trim($cl_48);
+        $cl_49 = trim($cl_49);
+        $cl_50 = trim($cl_50);
 
         // Creacion del numero de serie para el cliente
         $n_serie = create_serie();
@@ -83,12 +134,92 @@
 
 
         // Query de insercion de clientes
-        $sql_cl = "INSERT INTO clientes (Id, Primer_nombre, Apellido, Fecha_nacimiento, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion, Cuanto_tiempo, Ciudad, Estado_ciudad, Zip, Telefono_casa, Telefono_celular, Direccion_anterior, Ciudad_anterior, Estado_anterior, Zip_anterior, Correo, Nombre_empleo, Direccion_empleo, Tiempo_empleo, Telefono_empleo, Posicion_empleo, Ingreso_bruto, Tipo_ingreso, Empleador_anterior, Fecha_empleo_anterior, Ciudad_empleo_anterior, Estado_empleo_anterior, Zip_empleo_anterior, N_telefono_empleo_anterior, Fuente_ingreso_extra, Cantidad_fuente_ingreso_extra, Id_hipoteca_estado, Id_tipo_residencia_hipoteca, Propietario_hipoteca_titular, Direccion_hipoteca, Pago_hipoteca, N_telefono_hipoteca, Referencia_pariente_nombre_1, Referencia_pariente_direccion_1, Referencia_pariente_telefono_1, Referencia_pariente_relacion_1, Referencia_pariente_nombre_2, Referencia_pariente_direccion_2, Referencia_pariente_telefono_2, Referencia_pariente_relacion_2, Fecha_creacion_registro, Cantidad_financiada, Nombre_representante, Avatar, N_serie_cliente) VALUES (NULL, '$cl_1', '$cl_2', '$cl_3', '$cl_4', '$cl_5', '$cl_6', '$cl_8', '$cl_9', '$cl_10', '$cl_11', '$cl_12', '$cl_13', '$cl_14', '$cl_15', '$cl_16', '$cl_17', '$cl_18', '$cl_19', '$cl_20', '$cl_21', '$cl_22', '$cl_23', '$cl_24', '$cl_25', '$cl_26', '$cl_27', '$cl_28', '$cl_29', '$cl_30', '$cl_31', '$cl_32', '$cl_33', '$cl_34', '$cl_35', $cl_36, $cl_37, '$cl_38', '$cl_39', '$cl_40', '$cl_41', '$cl_42', '$cl_43', '$cl_44', '$cl_45', '$cl_46', '$cl_47', '$cl_48', '$cl_49', '$cl_50', '$cl_cantidad_financiada', '$cl_nombre_representante', '$avatar_selected', '$n_serie') ";
-        
-        $res_co = "none";
 
-        // Ejecutando el Query para agregar el cliente
-        $res = command($oCon, $sql_cl);
+        if($cl_5 == "")
+        {
+            $sql_cl = "INSERT INTO clientes (Id, Primer_nombre, Apellido, Fecha_nacimiento, N_seguro_social, Estado, Vencimiento, Direccion, Cuanto_tiempo, Ciudad, Estado_ciudad, Zip, Telefono_casa, Telefono_celular, Direccion_anterior, Ciudad_anterior, Estado_anterior, Zip_anterior, Correo, Nombre_empleo, Direccion_empleo, Tiempo_empleo, Telefono_empleo, Posicion_empleo, Ingreso_bruto, Tipo_ingreso, Empleador_anterior, Fecha_empleo_anterior, Ciudad_empleo_anterior, Estado_empleo_anterior, Zip_empleo_anterior, N_telefono_empleo_anterior, Fuente_ingreso_extra, Cantidad_fuente_ingreso_extra, Id_hipoteca_estado, Id_tipo_residencia_hipoteca, Propietario_hipoteca_titular, Direccion_hipoteca, Pago_hipoteca, N_telefono_hipoteca, Referencia_pariente_nombre_1, Referencia_pariente_direccion_1, Referencia_pariente_telefono_1, Referencia_pariente_relacion_1, Referencia_pariente_nombre_2, Referencia_pariente_direccion_2, Referencia_pariente_telefono_2, Referencia_pariente_relacion_2, Fecha_creacion_registro, Cantidad_financiada, Nombre_representante, Avatar, N_serie_cliente) VALUES (NULL, '$cl_1', '$cl_2', '$cl_3', '$cl_4', '$cl_6', '$cl_8', '$cl_9', '$cl_10', '$cl_11', '$cl_12', '$cl_13', '$cl_14', '$cl_15', '$cl_16', '$cl_17', '$cl_18', '$cl_19', '$cl_20', '$cl_21', '$cl_22', '$cl_23', '$cl_24', '$cl_25', '$cl_26', '$cl_27', '$cl_28', '$cl_29', '$cl_30', '$cl_31', '$cl_32', '$cl_33', '$cl_34', '$cl_35', $cl_36, $cl_37, '$cl_38', '$cl_39', '$cl_40', '$cl_41', '$cl_42', '$cl_43', '$cl_44', '$cl_45', '$cl_46', '$cl_47', '$cl_48', '$cl_49', '$cl_50', '$cl_cantidad_financiada', '$cl_nombre_representante', '$avatar_selected', '$n_serie') ";
+        }
+        else
+        {
+            $sql_cl = "INSERT INTO clientes (Id, Primer_nombre, Apellido, Fecha_nacimiento, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion, Cuanto_tiempo, Ciudad, Estado_ciudad, Zip, Telefono_casa, Telefono_celular, Direccion_anterior, Ciudad_anterior, Estado_anterior, Zip_anterior, Correo, Nombre_empleo, Direccion_empleo, Tiempo_empleo, Telefono_empleo, Posicion_empleo, Ingreso_bruto, Tipo_ingreso, Empleador_anterior, Fecha_empleo_anterior, Ciudad_empleo_anterior, Estado_empleo_anterior, Zip_empleo_anterior, N_telefono_empleo_anterior, Fuente_ingreso_extra, Cantidad_fuente_ingreso_extra, Id_hipoteca_estado, Id_tipo_residencia_hipoteca, Propietario_hipoteca_titular, Direccion_hipoteca, Pago_hipoteca, N_telefono_hipoteca, Referencia_pariente_nombre_1, Referencia_pariente_direccion_1, Referencia_pariente_telefono_1, Referencia_pariente_relacion_1, Referencia_pariente_nombre_2, Referencia_pariente_direccion_2, Referencia_pariente_telefono_2, Referencia_pariente_relacion_2, Fecha_creacion_registro, Cantidad_financiada, Nombre_representante, Avatar, N_serie_cliente) VALUES (NULL, '$cl_1', '$cl_2', '$cl_3', '$cl_4', '$cl_5', '$cl_6', '$cl_8', '$cl_9', '$cl_10', '$cl_11', '$cl_12', '$cl_13', '$cl_14', '$cl_15', '$cl_16', '$cl_17', '$cl_18', '$cl_19', '$cl_20', '$cl_21', '$cl_22', '$cl_23', '$cl_24', '$cl_25', '$cl_26', '$cl_27', '$cl_28', '$cl_29', '$cl_30', '$cl_31', '$cl_32', '$cl_33', '$cl_34', '$cl_35', $cl_36, $cl_37, '$cl_38', '$cl_39', '$cl_40', '$cl_41', '$cl_42', '$cl_43', '$cl_44', '$cl_45', '$cl_46', '$cl_47', '$cl_48', '$cl_49', '$cl_50', '$cl_cantidad_financiada', '$cl_nombre_representante', '$avatar_selected', '$n_serie') ";
+        }
+        $res_co = "none";
+        $res = "none";
+
+        // Verificar si seguro social, licencia de conducir, telefono celular y correo no existen ya en la info de algun cliente
+        $confirmacion_seguro_social = select($oCon, "SELECT N_seguro_social FROM clientes WHERE N_seguro_social = '$cl_4' ");
+
+        if(count($confirmacion_seguro_social) < 1)
+        {
+            if($cl_5 != " ")
+            {
+                // Verificacion para la licencia de conducir
+                $confirmacion_licencia_conducir = select($oCon, "SELECT N_licencia_conducir  FROM clientes WHERE N_licencia_conducir = '$cl_5' ");
+                
+                if(count($confirmacion_licencia_conducir) < 1)
+                {
+                    // Verificacion para telefono celular
+                    $confirmacion_telefono_celular = select($oCon, "SELECT Telefono_celular FROM clientes WHERE Telefono_celular = '$cl_15' ");
+                
+                    if(count($confirmacion_telefono_celular) < 1)
+                    {
+                        // Verificacion para correo
+                        $confirmacion_correo = select($oCon, "SELECT Correo FROM clientes WHERE Correo = '$cl_20' ");
+                        
+                        if(count($confirmacion_correo) < 1)
+                        {
+                            // Ejecutando el Query para agregar el cliente
+                            $res = command($oCon, $sql_cl);
+                        }
+                        else if(count($confirmacion_correo) > 0)
+                        {
+                            $res = "Ya existe este correo registrado en un cliente";
+                        }
+
+                    }
+                    else if(count($confirmacion_telefono_celular) > 0)
+                    {
+                        $res = "Ya existe este numero de celular registrado en un cliente";
+                    }
+                }
+                else if(count($confirmacion_licencia_conducir) > 0)
+                {
+                    $res = "Ya existe este numero de licencia de conducir registrado en un cliente";
+                }
+            }
+            else
+            {
+                // Verificacion para telefono celular
+                $confirmacion_telefono_celular = select($oCon, "SELECT Telefono_celular FROM clientes WHERE Telefono_celular = '$cl_15' ");
+                
+                if(count($confirmacion_telefono_celular) < 1)
+                {
+                    // Verificacion para correo
+                    $confirmacion_correo = select($oCon, "SELECT Correo FROM clientes WHERE Correo = '$cl_20' ");
+                    
+                    if(count($confirmacion_correo) < 1)
+                    {
+                        // Ejecutando el Query para agregar el cliente
+                        $res = command($oCon, $sql_cl);
+                    }
+                    else if(count($confirmacion_correo) > 0)
+                    {
+                        $res = "Ya existe este correo registrado en un cliente";
+                    }
+
+                }
+                else if(count($confirmacion_telefono_celular) > 0)
+                {
+                    $res = "Ya existe este numero de celular registrado en un cliente";
+                }
+            }
+        }
+        else if(count($confirmacion_seguro_social) > 0)
+        {
+            $res = "Ya existe este seguro social registrado en un cliente";
+        }
+
+        // Cofirmacion si el registro sera con co-aplicante
 
         if($cl_51 == "si ")
         {
