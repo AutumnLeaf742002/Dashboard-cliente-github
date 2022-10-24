@@ -19306,3 +19306,15 @@ body.menu-bottom .navbar-wrapper {
 #avatar-1{
 
   border: 2px solid #0073AA;
+}
+
+#guardar-perfil{
+  display: flex;
+  justify-content: center;
+}
+#boton-guardar-perfil{
+  margin: 5px;
+}
+#boton-cancelar-perfil{
+  margin: 5px;
+}
