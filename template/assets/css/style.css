@@ -19318,3 +19318,13 @@ body.menu-bottom .navbar-wrapper {
 #boton-cancelar-perfil{
   margin: 5px;
 }
+#boton-editar-perfil{
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translateY(-50%);
+
+}
+.card-header{
+  position: relative;
+}

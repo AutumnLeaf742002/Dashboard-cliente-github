@@ -37,10 +37,7 @@
                         <td>
                             '.$item["Direccion"].'
                         </td>
-                        <td class="action-icon">
-                            <a href="javascript:;" class="m-r-15 crm-action-edit text-muted"><i class="icofont icofont-ui-edit"></i></a>
-                            <a href="javascript:;" class="crm-action-delete text-muted"><i class="icofont icofont-delete-alt"></i></a>
-                        </td>
+                        
                     </tr>';
             }
 
