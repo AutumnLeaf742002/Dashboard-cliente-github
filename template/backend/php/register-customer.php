@@ -260,11 +260,147 @@
             $co_35 = $_POST["co_35"];
             $co_36 = $_POST["co_36"];
 
-            // Query de insercion para co-aplicantes
-            $sql_co = "INSERT INTO co_aplicantes (Id, C_N_serie_cliente, Relacion_solicitante, C_Primer_nombre, C_Apellido, C_Fecha_nacimiento, C_N_seguro_social, C_N_licencia_conducir, C_Estado, C_Vencimiento, C_Direccion, C_Cuanto_tiempo, C_Ciudad, C_Estado_ciudad, C_Zip, C_Telefono_casa, C_Telefono_celular, C_Direccion_anterior, C_Ciudad_anterior, C_Estado_anterior, C_Zip_anterior, C_Correo, C_Nombre_empleo, C_Direccion_empleo, C_Tiempo_empleo, C_Telefono_empleo, C_Posicion_empleo, C_Ingreso_bruto, C_Tipo_ingreso, C_Empleador_anterior, C_Fecha_empleo_anterior, C_Ciudad_empleo_anterior, C_Estado_empleo_anterior, C_Zip_empleo_anterior, C_N_telefono_empleo_anterior, C_Fuente_ingreso_extra, C_Cantidad_fuente_ingreso_extra) VALUES (NULL, '$n_serie', '$co_1', '$co_2', '$co_3', '$co_4', '$co_5', '$co_6', '$co_7', '$co_9', '$co_10', '$co_11', '$co_12', '$co_13', '$co_14', '$co_15', '$co_16', '$co_17', '$co_18', '$co_19', '$co_20', '$co_21', '$co_22', '$co_23', '$co_24', '$co_25', '$co_26', '$co_27', '$co_28', '$co_29', '$co_30', '$co_31', '$co_32', '$co_33', '$co_34', '$co_35', '$co_36') ";
-            
-            // ejecutando la Query de insercion para co-aplicantes
-            $res_co = command($oCon, $sql_co);
+            // Quitar espacios antes y despues de la info del co-aplicante
+            $co_1 = trim($co_1);
+            $co_2 = trim($co_2);
+            $co_3 = trim($co_3);
+            $co_4 = trim($co_4);
+            $co_5 = trim($co_5);
+            $co_6 = trim($co_6);
+            $co_7 = trim($co_7);
+            $co_9 = trim($co_9);
+            $co_10 = trim($co_10);
+            $co_11 = trim($co_11);
+            $co_12 = trim($co_12);
+            $co_13 = trim($co_13);
+            $co_14 = trim($co_14);
+            $co_15 = trim($co_15);
+            $co_16 = trim($co_16);
+            $co_17 = trim($co_17);
+            $co_18 = trim($co_18);
+            $co_19 = trim($co_19);
+            $co_20 = trim($co_20);
+            $co_21 = trim($co_21);
+            $co_22 = trim($co_22);
+            $co_23 = trim($co_23);
+            $co_24 = trim($co_24);
+            $co_25 = trim($co_25);
+            $co_26 = trim($co_26);
+            $co_27 = trim($co_27);
+            $co_28 = trim($co_28);
+            $co_29 = trim($co_29);
+            $co_30 = trim($co_30);
+            $co_31 = trim($co_31);
+            $co_32 = trim($co_32);
+            $co_33 = trim($co_33);
+            $co_34 = trim($co_34);
+            $co_35 = trim($co_35);
+            $co_36 = trim($co_36);
+
+
+
+
+
+
+
+
+
+
+            if($co_6 == "")
+            {
+                $sql_co = "INSERT INTO co_aplicantes (Id, C_N_serie_cliente, Relacion_solicitante, C_Primer_nombre, C_Apellido, C_Fecha_nacimiento, C_N_seguro_social   , C_Estado, C_Vencimiento, C_Direccion, C_Cuanto_tiempo, C_Ciudad, C_Estado_ciudad, C_Zip, C_Telefono_casa, C_Telefono_celular, C_Direccion_anterior, C_Ciudad_anterior, C_Estado_anterior, C_Zip_anterior, C_Correo, C_Nombre_empleo, C_Direccion_empleo, C_Tiempo_empleo, C_Telefono_empleo, C_Posicion_empleo, C_Ingreso_bruto, C_Tipo_ingreso, C_Empleador_anterior, C_Fecha_empleo_anterior, C_Ciudad_empleo_anterior, C_Estado_empleo_anterior, C_Zip_empleo_anterior, C_N_telefono_empleo_anterior, C_Fuente_ingreso_extra, C_Cantidad_fuente_ingreso_extra) VALUES (NULL, '$n_serie', '$co_1', '$co_2', '$co_3', '$co_4', '$co_5', '$co_7', '$co_9', '$co_10', '$co_11', '$co_12', '$co_13', '$co_14', '$co_15', '$co_16', '$co_17', '$co_18', '$co_19', '$co_20', '$co_21', '$co_22', '$co_23', '$co_24', '$co_25', '$co_26', '$co_27', '$co_28', '$co_29', '$co_30', '$co_31', '$co_32', '$co_33', '$co_34', '$co_35', '$co_36') ";
+            }
+            else
+            {
+                $sql_co = "INSERT INTO co_aplicantes (Id, C_N_serie_cliente, Relacion_solicitante, C_Primer_nombre, C_Apellido, C_Fecha_nacimiento, C_N_seguro_social, C_N_licencia_conducir, C_Estado, C_Vencimiento, C_Direccion, C_Cuanto_tiempo, C_Ciudad, C_Estado_ciudad, C_Zip, C_Telefono_casa, C_Telefono_celular, C_Direccion_anterior, C_Ciudad_anterior, C_Estado_anterior, C_Zip_anterior, C_Correo, C_Nombre_empleo, C_Direccion_empleo, C_Tiempo_empleo, C_Telefono_empleo, C_Posicion_empleo, C_Ingreso_bruto, C_Tipo_ingreso, C_Empleador_anterior, C_Fecha_empleo_anterior, C_Ciudad_empleo_anterior, C_Estado_empleo_anterior, C_Zip_empleo_anterior, C_N_telefono_empleo_anterior, C_Fuente_ingreso_extra, C_Cantidad_fuente_ingreso_extra) VALUES (NULL, '$n_serie', '$co_1', '$co_2', '$co_3', '$co_4', '$co_5', '$co_6', '$co_7', '$co_9', '$co_10', '$co_11', '$co_12', '$co_13', '$co_14', '$co_15', '$co_16', '$co_17', '$co_18', '$co_19', '$co_20', '$co_21', '$co_22', '$co_23', '$co_24', '$co_25', '$co_26', '$co_27', '$co_28', '$co_29', '$co_30', '$co_31', '$co_32', '$co_33', '$co_34', '$co_35', '$co_36') ";
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Verificar en co-aplicante si seguro social, licencia de conducir, telefono celular y correo no existen ya en la info de algun cliente
+            $co_confirmacion_seguro_social = select($oCon, "SELECT C_N_seguro_social  FROM co_aplicantes WHERE C_N_seguro_social  = '$co_5' ");
+
+            if(count($co_confirmacion_seguro_social) < 1)
+            {
+                if($co_6 != " ")
+                {
+                    // Verificacion para la licencia de conducir
+                    $co_confirmacion_licencia_conducir = select($oCon, "SELECT C_N_licencia_conducir   FROM co_aplicantes WHERE C_N_licencia_conducir  = '$co_6' ");
+                    
+                    if(count($co_confirmacion_licencia_conducir) < 1)
+                    {
+                        // Verificacion para telefono celular
+                        $co_confirmacion_telefono_celular = select($oCon, "SELECT C_Telefono_celular  FROM co_aplicantes WHERE C_Telefono_celular = '$co_16' ");
+                    
+                        if(count($co_confirmacion_telefono_celular) < 1)
+                        {
+                            // Verificacion para correo
+                            $co_confirmacion_correo = select($oCon, "SELECT C_Correo  FROM co_aplicantes WHERE C_Correo = '$co_21' ");
+                            
+                            if(count($co_confirmacion_correo) < 1)
+                            {
+                                // ejecutando la Query de insercion para co-aplicantes
+                                $res_co = command($oCon, $sql_co);
+                            }
+                            else if(count($confirmacion_correo) > 0)
+                            {
+                                $res_co = "Ya existe este correo registrado en un cliente";
+                            }
+
+                        }
+                        else if(count($co_confirmacion_telefono_celular) > 0)
+                        {
+                            $res_co = "Ya existe este numero de celular registrado en un cliente";
+                        }
+                    }
+                    else if(count($co_confirmacion_licencia_conducir) > 0)
+                    {
+                        $res_co = "Ya existe este numero de licencia de conducir registrado en un cliente";
+                    }
+                }
+                else
+                {
+                    // Verificacion para telefono celular
+                    $co_confirmacion_telefono_celular = select($oCon, "SELECT C_Telefono_celular  FROM co_aplicantes WHERE C_Telefono_celular = '$co_16' ");
+                    
+                    if(count($co_confirmacion_telefono_celular) < 1)
+                    {
+                        // Verificacion para correo
+                        $co_confirmacion_correo = select($oCon, "SELECT C_Correo  FROM co_aplicantes WHERE C_Correo = '$co_21' ");
+                        
+                        if(count($co_confirmacion_correo) < 1)
+                        {
+                            // ejecutando la Query de insercion para co-aplicantes
+                            $res_co = command($oCon, $sql_co);
+                        }
+                        else if(count($confirmacion_correo) > 0)
+                        {
+                            $res_co = "Ya existe este correo registrado en un cliente";
+                        }
+
+                    }
+                    else if(count($co_confirmacion_telefono_celular) > 0)
+                    {
+                        $res_co = "Ya existe este numero de celular registrado en un cliente";
+                    }
+                }
+            }
+            else if(count($co_confirmacion_seguro_social) > 0)
+            {
+                $res_co = "Ya existe este seguro social registrado en un cliente";
+            }
+
         }
 
         echo "status:$res - status:$res_co";
