@@ -113,6 +113,8 @@
         $cl_48 = trim($cl_48);
         $cl_49 = trim($cl_49);
         $cl_50 = trim($cl_50);
+        $cl_51 = trim($cl_51);
+        $avatar_selected = trim($avatar_selected);
 
         // Creacion del numero de serie para el cliente
         $n_serie = create_serie();
@@ -124,12 +126,10 @@
         // Declara una variable que busca el codigo de serie creado para ver si existe, si existe, crea otro codigo hasta que no exista
         $n_serie_existente = select($oCon, "SELECT N_serie_cliente FROM clientes WHERE N_serie_cliente = '$n_serie' ");
 
-        if(count($n_serie_existente) > 0)
+        while(count($n_serie_existente) > 0)
         {
-            while($n_serie_existente[0]["N_serie_cliente"] == $n_serie)
-            {
-                $n_serie = create_serie();
-            }
+            $n_serie = create_serie();
+            $n_serie_existente = select($oCon, "SELECT N_serie_cliente FROM clientes WHERE N_serie_cliente = '$n_serie' ");
         }
 
 
@@ -146,21 +146,54 @@
         $res_co = "none";
         $res = "none";
 
-        // Verificar si seguro social, licencia de conducir, telefono celular y correo no existen ya en la info de algun cliente
-        $confirmacion_seguro_social = select($oCon, "SELECT N_seguro_social FROM clientes WHERE N_seguro_social = '$cl_4' ");
-
-        if(count($confirmacion_seguro_social) < 1)
+        if($cl_51 == 'no')
         {
-            if($cl_5 != " ")
+            // Verificar si seguro social, licencia de conducir, telefono celular y correo no existen ya en la info de algun cliente
+            $confirmacion_seguro_social = select($oCon, "SELECT N_seguro_social FROM clientes WHERE N_seguro_social = '$cl_4' ");
+
+            if(count($confirmacion_seguro_social) < 1)
             {
-                // Verificacion para la licencia de conducir
-                $confirmacion_licencia_conducir = select($oCon, "SELECT N_licencia_conducir  FROM clientes WHERE N_licencia_conducir = '$cl_5' ");
-                
-                if(count($confirmacion_licencia_conducir) < 1)
+                if($cl_5 != " ")
+                {
+                    // Verificacion para la licencia de conducir
+                    $confirmacion_licencia_conducir = select($oCon, "SELECT N_licencia_conducir  FROM clientes WHERE N_licencia_conducir = '$cl_5' ");
+                    
+                    if(count($confirmacion_licencia_conducir) < 1)
+                    {
+                        // Verificacion para telefono celular
+                        $confirmacion_telefono_celular = select($oCon, "SELECT Telefono_celular FROM clientes WHERE Telefono_celular = '$cl_15' ");
+                    
+                        if(count($confirmacion_telefono_celular) < 1)
+                        {
+                            // Verificacion para correo
+                            $confirmacion_correo = select($oCon, "SELECT Correo FROM clientes WHERE Correo = '$cl_20' ");
+                            
+                            if(count($confirmacion_correo) < 1)
+                            {
+                                // Ejecutando el Query para agregar el cliente
+                                $res = command($oCon, $sql_cl);
+                            }
+                            else if(count($confirmacion_correo) > 0)
+                            {
+                                $res = "Ya existe este correo registrado en un cliente";
+                            }
+
+                        }
+                        else if(count($confirmacion_telefono_celular) > 0)
+                        {
+                            $res = "Ya existe este numero de celular registrado en un cliente";
+                        }
+                    }
+                    else if(count($confirmacion_licencia_conducir) > 0)
+                    {
+                        $res = "Ya existe este numero de licencia de conducir registrado en un cliente";
+                    }
+                }
+                else
                 {
                     // Verificacion para telefono celular
                     $confirmacion_telefono_celular = select($oCon, "SELECT Telefono_celular FROM clientes WHERE Telefono_celular = '$cl_15' ");
-                
+                    
                     if(count($confirmacion_telefono_celular) < 1)
                     {
                         // Verificacion para correo
@@ -182,47 +215,91 @@
                         $res = "Ya existe este numero de celular registrado en un cliente";
                     }
                 }
-                else if(count($confirmacion_licencia_conducir) > 0)
-                {
-                    $res = "Ya existe este numero de licencia de conducir registrado en un cliente";
-                }
             }
-            else
+            else if(count($confirmacion_seguro_social) > 0)
             {
-                // Verificacion para telefono celular
-                $confirmacion_telefono_celular = select($oCon, "SELECT Telefono_celular FROM clientes WHERE Telefono_celular = '$cl_15' ");
-                
-                if(count($confirmacion_telefono_celular) < 1)
-                {
-                    // Verificacion para correo
-                    $confirmacion_correo = select($oCon, "SELECT Correo FROM clientes WHERE Correo = '$cl_20' ");
-                    
-                    if(count($confirmacion_correo) < 1)
-                    {
-                        // Ejecutando el Query para agregar el cliente
-                        $res = command($oCon, $sql_cl);
-                    }
-                    else if(count($confirmacion_correo) > 0)
-                    {
-                        $res = "Ya existe este correo registrado en un cliente";
-                    }
-
-                }
-                else if(count($confirmacion_telefono_celular) > 0)
-                {
-                    $res = "Ya existe este numero de celular registrado en un cliente";
-                }
+                $res = "Ya existe este seguro social registrado en un cliente";
             }
-        }
-        else if(count($confirmacion_seguro_social) > 0)
-        {
-            $res = "Ya existe este seguro social registrado en un cliente";
         }
 
         // Cofirmacion si el registro sera con co-aplicante
 
-        if($cl_51 == "si ")
+        if($cl_51 == "si")
         {
+            $confirmacion_cl = false;
+
+            // Verificar si seguro social, licencia de conducir, telefono celular y correo no existen ya en la info de algun cliente
+            $confirmacion_seguro_social = select($oCon, "SELECT N_seguro_social FROM clientes WHERE N_seguro_social = '$cl_4' ");
+
+            if(count($confirmacion_seguro_social) < 1)
+            {
+                if($cl_5 != " ")
+                {
+                    // Verificacion para la licencia de conducir
+                    $confirmacion_licencia_conducir = select($oCon, "SELECT N_licencia_conducir  FROM clientes WHERE N_licencia_conducir = '$cl_5' ");
+                    
+                    if(count($confirmacion_licencia_conducir) < 1)
+                    {
+                        // Verificacion para telefono celular
+                        $confirmacion_telefono_celular = select($oCon, "SELECT Telefono_celular FROM clientes WHERE Telefono_celular = '$cl_15' ");
+                    
+                        if(count($confirmacion_telefono_celular) < 1)
+                        {
+                            // Verificacion para correo
+                            $confirmacion_correo = select($oCon, "SELECT Correo FROM clientes WHERE Correo = '$cl_20' ");
+                            
+                            if(count($confirmacion_correo) < 1)
+                            {
+                                // Confirmacion para indicar que esta correcto la info del cliente
+                                $confirmacion_cl = true;
+                            }
+                            else if(count($confirmacion_correo) > 0)
+                            {
+                                $res = "Ya existe este correo registrado en un cliente";
+                            }
+
+                        }
+                        else if(count($confirmacion_telefono_celular) > 0)
+                        {
+                            $res = "Ya existe este numero de celular registrado en un cliente";
+                        }
+                    }
+                    else if(count($confirmacion_licencia_conducir) > 0)
+                    {
+                        $res = "Ya existe este numero de licencia de conducir registrado en un cliente";
+                    }
+                }
+                else
+                {
+                    // Verificacion para telefono celular
+                    $confirmacion_telefono_celular = select($oCon, "SELECT Telefono_celular FROM clientes WHERE Telefono_celular = '$cl_15' ");
+                    
+                    if(count($confirmacion_telefono_celular) < 1)
+                    {
+                        // Verificacion para correo
+                        $confirmacion_correo = select($oCon, "SELECT Correo FROM clientes WHERE Correo = '$cl_20' ");
+                        
+                        if(count($confirmacion_correo) < 1)
+                        {
+                            $confirmacion_cl = true;
+                        }
+                        else if(count($confirmacion_correo) > 0)
+                        {
+                            $res = "Ya existe este correo registrado en un cliente";
+                        }
+
+                    }
+                    else if(count($confirmacion_telefono_celular) > 0)
+                    {
+                        $res = "Ya existe este numero de celular registrado en un cliente";
+                    }
+                }
+            }
+            else if(count($confirmacion_seguro_social) > 0)
+            {
+                $res = "Ya existe este seguro social registrado en un cliente";
+            }
+
             // Si el usuario quiere agregar un co-aplicante, aqui se tomaran los datos de los campos del co-aplicante
             $co_1 = $_POST["co_1"];
             $co_2 = $_POST["co_2"];
@@ -297,15 +374,6 @@
             $co_35 = trim($co_35);
             $co_36 = trim($co_36);
 
-
-
-
-
-
-
-
-
-
             if($co_6 == "")
             {
                 $sql_co = "INSERT INTO co_aplicantes (Id, C_N_serie_cliente, Relacion_solicitante, C_Primer_nombre, C_Apellido, C_Fecha_nacimiento, C_N_seguro_social   , C_Estado, C_Vencimiento, C_Direccion, C_Cuanto_tiempo, C_Ciudad, C_Estado_ciudad, C_Zip, C_Telefono_casa, C_Telefono_celular, C_Direccion_anterior, C_Ciudad_anterior, C_Estado_anterior, C_Zip_anterior, C_Correo, C_Nombre_empleo, C_Direccion_empleo, C_Tiempo_empleo, C_Telefono_empleo, C_Posicion_empleo, C_Ingreso_bruto, C_Tipo_ingreso, C_Empleador_anterior, C_Fecha_empleo_anterior, C_Ciudad_empleo_anterior, C_Estado_empleo_anterior, C_Zip_empleo_anterior, C_N_telefono_empleo_anterior, C_Fuente_ingreso_extra, C_Cantidad_fuente_ingreso_extra) VALUES (NULL, '$n_serie', '$co_1', '$co_2', '$co_3', '$co_4', '$co_5', '$co_7', '$co_9', '$co_10', '$co_11', '$co_12', '$co_13', '$co_14', '$co_15', '$co_16', '$co_17', '$co_18', '$co_19', '$co_20', '$co_21', '$co_22', '$co_23', '$co_24', '$co_25', '$co_26', '$co_27', '$co_28', '$co_29', '$co_30', '$co_31', '$co_32', '$co_33', '$co_34', '$co_35', '$co_36') ";
@@ -314,19 +382,6 @@
             {
                 $sql_co = "INSERT INTO co_aplicantes (Id, C_N_serie_cliente, Relacion_solicitante, C_Primer_nombre, C_Apellido, C_Fecha_nacimiento, C_N_seguro_social, C_N_licencia_conducir, C_Estado, C_Vencimiento, C_Direccion, C_Cuanto_tiempo, C_Ciudad, C_Estado_ciudad, C_Zip, C_Telefono_casa, C_Telefono_celular, C_Direccion_anterior, C_Ciudad_anterior, C_Estado_anterior, C_Zip_anterior, C_Correo, C_Nombre_empleo, C_Direccion_empleo, C_Tiempo_empleo, C_Telefono_empleo, C_Posicion_empleo, C_Ingreso_bruto, C_Tipo_ingreso, C_Empleador_anterior, C_Fecha_empleo_anterior, C_Ciudad_empleo_anterior, C_Estado_empleo_anterior, C_Zip_empleo_anterior, C_N_telefono_empleo_anterior, C_Fuente_ingreso_extra, C_Cantidad_fuente_ingreso_extra) VALUES (NULL, '$n_serie', '$co_1', '$co_2', '$co_3', '$co_4', '$co_5', '$co_6', '$co_7', '$co_9', '$co_10', '$co_11', '$co_12', '$co_13', '$co_14', '$co_15', '$co_16', '$co_17', '$co_18', '$co_19', '$co_20', '$co_21', '$co_22', '$co_23', '$co_24', '$co_25', '$co_26', '$co_27', '$co_28', '$co_29', '$co_30', '$co_31', '$co_32', '$co_33', '$co_34', '$co_35', '$co_36') ";
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             // Verificar en co-aplicante si seguro social, licencia de conducir, telefono celular y correo no existen ya en la info de algun cliente
             $co_confirmacion_seguro_social = select($oCon, "SELECT C_N_seguro_social  FROM co_aplicantes WHERE C_N_seguro_social  = '$co_5' ");
@@ -350,23 +405,31 @@
                             
                             if(count($co_confirmacion_correo) < 1)
                             {
-                                // ejecutando la Query de insercion para co-aplicantes
-                                $res_co = command($oCon, $sql_co);
+                                if($confirmacion_cl == true)
+                                {
+                                    // ejecutando la Query de insercion para cliente y co-aplicantes
+                                    $res = command($oCon, $sql_cl);
+                                    $res_co = command($oCon, $sql_co);
+                                }
+                                else
+                                {
+                                    echo "Error desconocido, intente otra ves";
+                                }
                             }
-                            else if(count($confirmacion_correo) > 0)
+                            else if(count($co_confirmacion_correo) > 0)
                             {
-                                $res_co = "Ya existe este correo registrado en un cliente";
+                                $res_co = "Ya existe este correo registrado en un co-aplicante";
                             }
 
                         }
                         else if(count($co_confirmacion_telefono_celular) > 0)
                         {
-                            $res_co = "Ya existe este numero de celular registrado en un cliente";
+                            $res_co = "Ya existe este numero de celular registrado en un co-aplicante";
                         }
                     }
                     else if(count($co_confirmacion_licencia_conducir) > 0)
                     {
-                        $res_co = "Ya existe este numero de licencia de conducir registrado en un cliente";
+                        $res_co = "Ya existe este numero de licencia de conducir registrado en un co-aplicante";
                     }
                 }
                 else
@@ -381,24 +444,32 @@
                         
                         if(count($co_confirmacion_correo) < 1)
                         {
-                            // ejecutando la Query de insercion para co-aplicantes
-                            $res_co = command($oCon, $sql_co);
+                            if($confirmacion_cl == true)
+                            {
+                                // ejecutando la Query de insercion para cliente y co-aplicantes
+                                $res = command($oCon, $sql_cl);
+                                $res_co = command($oCon, $sql_co);
+                            }
+                            else
+                            {
+                                echo "Error desconocido, intente otra ves";
+                            }
                         }
-                        else if(count($confirmacion_correo) > 0)
+                        else if(count($co_confirmacion_correo) > 0)
                         {
-                            $res_co = "Ya existe este correo registrado en un cliente";
+                            $res_co = "Ya existe este correo registrado en un co-aplicante";
                         }
 
                     }
                     else if(count($co_confirmacion_telefono_celular) > 0)
                     {
-                        $res_co = "Ya existe este numero de celular registrado en un cliente";
+                        $res_co = "Ya existe este numero de celular registrado en un co-aplicante";
                     }
                 }
             }
             else if(count($co_confirmacion_seguro_social) > 0)
             {
-                $res_co = "Ya existe este seguro social registrado en un cliente";
+                $res_co = "Ya existe este seguro social registrado en un co-aplicante";
             }
 
         }
