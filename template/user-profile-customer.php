@@ -554,7 +554,7 @@
                                                         <img class="profile-bg-img img-fluid" src="assets/images/user-profile/bg-img1.jpg" alt="bg-img">
                                                         <div class="card-block user-info">
                                                             <div class="col-md-12">
-                                                                <div class="media-left" style="display: flex; justify-content: center; margin-bottom: 15px;">
+                                                                <div class="media-left" style="display: flex; justify-content: center; ">
 
                                                                     <style>
                                                                         .img-cliente{
