@@ -19,3 +19,9 @@ function get_customers()
 }
 
 get_customers()
+
+function perfil_cliente(id_cl, id_co)
+{
+    window.location.href = "user-profile-customer.php?id_cl="+id_cl+"&id_co="+id_co
+    
+}

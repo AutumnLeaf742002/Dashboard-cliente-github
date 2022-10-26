@@ -6,7 +6,7 @@
         include_once "commands.php";
 
         $oCon = connect();
-        $sql = "SELECT Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion FROM clientes";
+        $sql = "SELECT N_serie_cliente, Id, Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion FROM clientes";
         
         $res = select($oCon, $sql);
 
@@ -14,8 +14,21 @@
         {
             foreach($res as $item)
             {
+                $n_serie = $item["N_serie_cliente"];
+                $res_n_serie = select($oCon, "SELECT Id FROM co_aplicantes WHERE C_N_serie_cliente = '$n_serie'");
+
+                
+                if(count($res_n_serie) > 0)
+                {
+                    $id_co = $res_n_serie[0]["Id"];
+                }
+                else
+                {
+                    $id_co = 0;
+                }
+
                 echo'
-                    <tr>
+                    <tr class="hover" style="cursor: pointer;" onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                         <td>
                             <img src="Avatars/avatar-'.$item["Avatar"].'.svg" class="d-inline-block img-circle " alt="tbl">
                         </td>

@@ -53,6 +53,26 @@
 </head>
 
 <body>
+
+        <?php
+            if(isset($_GET))
+            {
+                include_once "backend/php/connection.php";
+                include_once "backend/php/commands.php";
+    
+                $id_cl = $_GET["id_cl"] ?? 1;
+                $id_co = $_GET["id_co"] ?? 1;
+    
+                $oCon = connect();
+                $sql_cl = "SELECT * FROM clientes WHERE Id = $id_cl";
+                $sql_co = "SELECT * FROM co_aplicantes WHERE Id = $id_co";
+    
+                $res_cl = select($oCon, $sql_cl);
+                $res_co = select($oCon, $sql_co);
+
+            }
+        ?>
+
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -528,16 +548,35 @@
                                                         <img class="profile-bg-img img-fluid" src="assets/images/user-profile/bg-img1.jpg" alt="bg-img">
                                                         <div class="card-block user-info">
                                                             <div class="col-md-12">
-                                                                <div class="media-left">
-                                                                    <a href="#" class="profile-image">
-                                                                        <img class="user-img img-circle" src="assets/images/user-profile/user-img.jpg" alt="user-img">
-                                                                    </a>
+                                                                <div class="media-left" style="display: flex; justify-content: center; margin-bottom: 15px;">
+
+                                                                    <style>
+                                                                        .img-cliente{
+
+                                                                            width: 15%;
+                                                                        }
+
+                                                                        @media screen and (max-width: 450px) {
+    
+                                                                            .img-cliente{
+
+                                                                                width: 35%;
+                                                                            }
+                                                                        }
+}
+                                                                    </style>
+
+                                                                    <img class="img-cliente" src="Avatars/avatar-<?php echo $res_cl[0]["Avatar"];?>.svg" alt="user-img">
                                                                 </div>
                                                                 <div class="media-body row">
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
-                                                                            <h2>Josephin Villa</h2>
-                                                                            <span class="text-white">Vendedora</span>
+                                                                            <h2>
+                                                                                <?php
+                                                                                    echo $res_cl[0]["Primer_nombre"];
+                                                                                ?>
+                                                                            </h2>
+                                                                            <span class="text-white">Cliente</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -595,11 +634,15 @@
                                                                                         <tbody>
                                                                                             <tr>
                                                                                                 <th scope="row">Analista asignado</th>
-                                                                                                <td>Carlos Castillo</td>
+                                                                                                <td>
+                                                                                                    <?php echo $res_cl[0]["Nombre_representante"]; ?>
+                                                                                                </td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <th scope="row">Cantidad Fiananciada</th>
-                                                                                                <td>US$1,000</td>
+                                                                                                <td>
+                                                                                                    <?php echo $res_cl[0]["Cantidad_financiada"]; ?>
+                                                                                                </td>
                                                                                             </tr>
                                                                                     </table>
                                                                                 </div>
@@ -685,43 +728,63 @@
                                                                                                 <tbody>
                                                                                                     <tr>
                                                                                                         <th scope="row">Primer Nombre</th>
-                                                                                                        <td>Josephine Villa</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Primer_nombre"]; ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Apellido</th>
-                                                                                                        <td>Femenino</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Apellido"];?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Fecha de nacimiento</th>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Fecha_nacimiento"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Numero de seguro social</th>
-                                                                                                        <td>October 25th, 1990</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["N_seguro_social"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Numero de Licencia de Conducir</th>
-                                                                                                        <td>Single</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["N_licencia_conducir"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Estado</th>
-                                                                                                        <td>New York, USA</td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Expedicion</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Estado"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Vencimiento</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Vencimiento"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Direccion</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Direccion"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">tiempo en esa direccion</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Cuanto_tiempo"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Correo</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Correo"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                 </tbody>
                                                                                             </table>
@@ -734,40 +797,58 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <th scope="row">Ciudad</th>
-                                                                                                    <td><a href="#!">Demo@phenix.com</a>
+                                                                                                    <td>
+                                                                                                            <?php echo $res_cl[0]["Ciudad"];?>
+                                                                                                        </td>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Estado</th>
-                                                                                                    <td>(0123) - 4567891</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Estado_ciudad"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Zip</th>
-                                                                                                    <td>@codedthemes</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Zip"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Telefono de casa</th>
-                                                                                                    <td>codedthemes.demo</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Telefono_casa"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Telefono Celular</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Telefono_celular"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Direccion Anterior</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Direccion_anterior"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Ciudad Anterior</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Ciudad_anterior"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Estado Anterior</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Estado_anterior"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Zip Anterior</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Zip_anterior"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 
                                                                                             </tbody>
@@ -831,31 +912,45 @@
                                                                                                 <tbody>
                                                                                                     <tr>
                                                                                                         <th scope="row">Nombre empleo</th>
-                                                                                                        <td>Josephine Villa</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Nombre_empleo"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Direccion empleo</th>
-                                                                                                        <td>Femenino</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Direccion_empleo"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Tiempo empleo</th>
-                                                                                                        <td>October 25th, 1990</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Tiempo_empleo"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Posicion empleo</th>
-                                                                                                        <td>Single</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Posicion_empleo"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Ingreso bruto</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Ingreso_bruto"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Número de telefono del empleo anterio</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["N_telefono_empleo_anterior"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Cantidad de la fuente ingreso extra</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"];?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                 </tbody>
                                                                                             </table>
@@ -869,27 +964,44 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <th scope="row">Tipo ingreso</th>
-                                                                                                    <td>New York, USA</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Tipo_ingreso"];?>
+                                                                                                    </td>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Cantidad de la fuente ingreso extra</th>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Empleador anterior</th>
-                                                                                                    <td>New York, USA</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Empleador_anterior"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Ciudad empleo anterior</th>
-                                                                                                    <td>New York, USA</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Ciudad_empleo_anterior"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Estado empleo anterior</th>
-                                                                                                    <td>New York, USA</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Estado_empleo_anterior"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Zip Empleo Anterior</th>
-                                                                                                    <td>New York, USA</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Zip_empleo_anterior"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Fuente de ingreso extra</th>
-                                                                                                    <td>New York, USA</td>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Fuente_ingreso_extra"];?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 
                                                                                             </tbody>
@@ -936,31 +1048,67 @@
                                                                                                     <tbody>
                                                                                                         <tr>
                                                                                                             <th scope="row">Estado de la hipoteca</th>
-                                                                                                            <td>Josephine Villa</td>
+                                                                                                            <td>
+                                                                                                                <?php
+                                                                                                                    $id_estado_hipoteca = select($oCon, 'SELECT Estado FROM estado_hipoteca WHERE Id = '.$res_cl[0]["Id_hipoteca_estado"].' ');
+                                                                                                                    if($id_estado_hipoteca[0]["Estado"] != "Default")
+                                                                                                                    {
+                                                                                                                        echo $id_estado_hipoteca[0]["Estado"];
+                                                                                                                    }
+                                                                                                                    else
+                                                                                                                    {
+                                                                                                                        echo "";
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                ?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Tipo de residencia de la hipoteca</th>
-                                                                                                            <td>Femenino</td>
+                                                                                                            <td>
+                                                                                                                <?php
+                                                                                                                        $id_tipo_residencia = select($oCon, 'SELECT Tipo FROM tipo_residencia_hipoteca WHERE Id = '.$res_cl[0]["Id_tipo_residencia_hipoteca"].' ');
+                                                                                                                        if($id_tipo_residencia[0]["Tipo"] != "Default")
+                                                                                                                        {
+                                                                                                                            echo $id_tipo_residencia[0]["Tipo"];
+                                                                                                                        }
+                                                                                                                        else
+                                                                                                                        {
+                                                                                                                            echo "";
+                                                                                                                        }
+                                                                                                                        
+                                                                                                                    ?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Direccion de la hipoteca</th>
-                                                                                                            <td>October 25th, 1990</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Direccion_hipoteca"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Pago de lahipoteca</th>
-                                                                                                            <td>Single</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Pago_hipoteca"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Número de telefono de hipoteca</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["N_telefono_hipoteca"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Referencia pariente nombre 1</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Referencia_pariente_nombre_1"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Referencia pariente direccion 1</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Referencia_pariente_direccion_1"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                     
                                                                                                     </tbody>
@@ -974,31 +1122,45 @@
                                                                                                 <tbody>
                                                                                                         <tr>
                                                                                                             <th scope="row">Referencia pariente telefono 1</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Referencia_pariente_telefono_1"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Referencia pariente relacion 1</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Referencia_pariente_relacion_1"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Referencia pariente nombre 2</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Referencia_pariente_nombre_2"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Referencia pariente direccion 2</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Referencia_pariente_direccion_2"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Referencia pariente telefono 2</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Referencia_pariente_telefono_2"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Referencia pariente relacion 2</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Referencia_pariente_relacion_2"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">fecha de creacion de este registro</th>
-                                                                                                            <td>New York, USA</td>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Fecha_creacion_registro"];?>
+                                                                                                            </td>
                                                                                                         </tr>
                                                                                                 </tbody>
                                                                                             </table>
@@ -1087,57 +1249,198 @@
                                                                                         <div class="table-responsive">
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
+
+                                                                                                    <?php
+                                                                                                    
+                                                                                                        if(count($res_co) > 0)
+                                                                                                        {
+                                                                                                            $con_co = true;
+                                                                                                        }
+                                                                                                        else{
+                                                                                                            $con_co = false;
+                                                                                                        }
+
+                                                                                                    ?>
+
                                                                                                     <tr>
                                                                                                         <th scope="row">Primer Nombre</th>
-                                                                                                        <td>Josephine Villa</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Primer_nombre"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Apellido</th>
-                                                                                                        <td>Femenino</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Apellido"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Numero de seguro social</th>
-                                                                                                        <td>October 25th, 1990</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_N_seguro_social"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Numero de Licencia de Conducir</th>
-                                                                                                        <td>Single</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_N_licencia_conducir"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Estado</th>
-                                                                                                        <td>New York, USA</td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Expedicion</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Estado"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Vencimiento</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Vencimiento"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Direccion</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Fuente de ingreso extra</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Fuente_ingreso_extra"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Zip empleo anterior</th>
-                                                                                                        <td>New York, USA</td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Zip_empleo_anterior"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Telefono Celular</th>
-                                                                                                        <td><a href="#!">www.demo.com</a></td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Telefono_celular"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Zip</th>
-                                                                                                        <td><a href="#!">www.demo.com</a></td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Zip"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Ciudad</th>
-                                                                                                        <td><a href="#!">www.demo.com</a></td>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Ciudad"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
                                                                                                     </tr>
                                                                                                 </tbody>
                                                                                             </table>
@@ -1150,56 +1453,211 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <th scope="row">Ciudad empleo anterior</th>
-                                                                                                    <td><a href="#!">Demo@phenix.com</a>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Ciudad_empleo_anterior"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <th scope="row">Estado empleo anterior</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Estado_empleo_anterior"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Empleador anterior</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Empleador_anterior"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Empleador anterior</th>
-                                                                                                    <td>(0123) - 4567891</td>
-                                                                                                </tr>
-                                                                                                <tr>
                                                                                                     <th scope="row">Tipo de ingreso</th>
-                                                                                                    <td>@codedthemes</td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Tipo_ingreso"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Posicion empleo</th>
-                                                                                                    <td>codedthemes.demo</td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Posicion_empleo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Tiempo en el empleo</th>    
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Tiempo_empleo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Direccion Empleo</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Direccion_empleo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Nombre empleo </th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Nombre_empleo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Zip Anterior</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Zip_anterior"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Estado Anterior</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Estado_anterior"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Ciudad Anterior</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Ciudad_anterior"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Telefono Casa</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Telefono_casa"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Estado Ciudad</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Estado_ciudad"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Tiempo en la vivienda</th>
-                                                                                                    <td><a href="#!">www.demo.com</a></td>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Cuanto_tiempo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
@@ -1280,9 +1738,7 @@
                                 </div>
                             </div>
                             <!-- Main body end -->
-                            <div id="styleSelector">
 
-                            </div>
                         </div>
                     </div>
                 </div>
