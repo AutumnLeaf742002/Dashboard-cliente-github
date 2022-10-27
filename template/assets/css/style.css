@@ -19328,3 +19328,7 @@ body.menu-bottom .navbar-wrapper {
 .card-header{
   position: relative;
 }
+#buscador-cliente{
+  width: 20%!important;
+  background-color: #0071D9;
+}

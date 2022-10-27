@@ -193,7 +193,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- search -->
+                            <!-- search 
                             <div id="morphsearch" class="morphsearch">
                                 <form class="morphsearch-form">
                                     <input class="morphsearch-input" type="search" placeholder="Search...">
@@ -234,7 +234,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <!-- /morphsearch-content -->
+                                 -->
                                 <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
                             </div>
                             <!-- search end -->
@@ -564,9 +564,20 @@
                                             </button>
                                         </div>
                                         <!--buscador-->
+                                     
                                         <div id="buscador" class="col-lg-4 offset-lg-4 col-sm-6 offset-sm-1 col-xs-12">
                                             <div  class="input-group input-group-button input-group-primary">
-                                                <input type="text" class="form-control" placeholder="Search here...">
+                                                <label id="filtrar-en-buscador" ></label>
+                                                <select>
+                                                    <option>Seleccionar filtro</option>
+                                                    <option>Nombre</option>
+                                                    <option>Numero de seguro social	</option>
+                                                    <option>Licencia de conducir</option>
+                                                    <option>Estado</option>
+                                                    <option>vencimiento</option>
+                                                    <option>Direccion</option>
+                                                </select>
+                                                <input id="buscador-cliente" type="text" class="form-control" placeholder="Search here...">
                                                 <span class="input-group-addon">
                                                     <button class="btn btn-primary">Search</button>
                                                 </span>
