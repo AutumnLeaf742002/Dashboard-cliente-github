@@ -19328,7 +19328,47 @@ body.menu-bottom .navbar-wrapper {
 .card-header{
   position: relative;
 }
+
 #buscador-cliente{
-  width: 20%!important;
-  background-color: #0071D9;
+
+  padding: 0px !important;
+  height: 40px !important;
+  margin: 5px;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+#buscador-cliente:focus{
+
+  box-shadow: none;
+}
+
+#container-buscador{
+
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+}
+
+#select-buscador{
+
+  height: 40px !important;
+  margin: 5px;
+}
+
+#btn-buscador{
+
+  height: 40px !important;
+  margin: 5px;
+}
+
+@media screen and (max-width: 600px){
+
+  #container-buscador{
+
+    flex-direction: column;
+    align-items: center;
+  }
 }
