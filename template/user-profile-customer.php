@@ -582,7 +582,6 @@
                                                                                     echo $res_cl[0]["Primer_nombre"];
                                                                                 ?>
                                                                             </h2>
-                                                                            <span class="text-white">Cliente</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
