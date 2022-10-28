@@ -26,13 +26,11 @@ function perfil_cliente(id_cl, id_co)
     
 }
 
-function get_customers_by_input()
-{
-    let buscador_cliente = document.getElementById('buscador-cliente')
-    let select_buscador = document.getElementById('select-buscador')
+let buscador_cliente = document.getElementById('buscador-cliente')
+let select_buscador = document.getElementById('select-buscador')
 
-    console.log('entra')
-    
+buscador_cliente.addEventListener('keyup', ()=>{
+
     if(select_buscador.value == 'todos')
     {
         get_customers()
@@ -53,5 +51,9 @@ function get_customers_by_input()
 
             request.send(`search=${buscador_cliente.value}&filtro=${select_buscador.value}`)
         }
+        else
+        {
+            get_customers()
+        }
     }
-}
+})

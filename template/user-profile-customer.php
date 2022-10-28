@@ -626,7 +626,7 @@
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <h5 class="card-header-text">Estado del cliente</h5> 
-                                                        <button id="boton-editar-perfil" class="btn btn-primary"></i>Editar</button>
+                                                        <button onclick="go_edit('<?php echo $id_cl;?>', '<?php echo $id_co;?>')" id="boton-editar-perfil" class="btn btn-primary"></i>Editar</button>
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="view-info">
@@ -1839,5 +1839,6 @@
     <script src="assets/js/demo-12.js"></script>
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script src="backend/js/go-edit.js"></script>
 </body>
 </html>

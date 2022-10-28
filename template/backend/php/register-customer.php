@@ -116,6 +116,14 @@
         $cl_51 = trim($cl_51);
         $avatar_selected = trim($avatar_selected);
 
+        // Poner el primer caracter en mayuscula
+        $cl_1 = ucfirst($cl_1);
+        $cl_2 = ucfirst($cl_2);
+        $cl_20 = strtolower($cl_20); // Poner el correo a todo minusculas
+
+        $cl_42 = ucfirst($cl_42);
+        $cl_46 = ucfirst($cl_46);
+
         // Creacion del numero de serie para el cliente
         $n_serie = create_serie();
 
@@ -373,6 +381,14 @@
             $co_34 = trim($co_34);
             $co_35 = trim($co_35);
             $co_36 = trim($co_36);
+
+            // Poner el primer caracter en mayuscula
+            $co_2 = ucfirst($co_2);
+            $co_3 = ucfirst($co_3);
+            $co_21 = strtolower($co_21); // Poner el correo a todo minusculas
+
+            $co_2 = ucfirst($co_2);
+            $co_2 = ucfirst($co_2);
 
             if($co_6 == "")
             {
