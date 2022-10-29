@@ -538,10 +538,10 @@
                                 </div>
                                 <div class="card-block">
                                     <p>
-                                        Click here to register a new Administrator.
+                                        Click al boton registrasr para registrar un nuevo administrador.
                                     </p>
                                     <p class="text-center">
-                                        <button type="button" class="btn btn-primary auth-btn" data-toggle="modal" data-target="#register">Register</button>
+                                        <button type="button" class="btn btn-primary auth-btn" data-toggle="modal" data-target="#register">Registrar</button>
                                     </p>
                                 </div>
                             </div>
@@ -635,36 +635,70 @@
                     <div class="row m-b-20">
                         <div class="col-md-12">
                             <div class="text-center">
-                                <img src="assets/images/auth/logo.png" alt="logo.png">
+                                <img src="assets/images/pasteur.png" alt="logo.png">
                             </div>
-                            <h3 class="text-center txt-primary">New analyst registration.</h3>
+                            <h3 class="text-center txt-primary">Registro de nuevo administrador</h3>
                         </div>
                     </div>
                     <hr>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Name">
+                        <input type="text" class="form-control" placeholder="Nombre">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Mail">
+                        <input type="text" class="form-control" placeholder="Correo Electronico">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Cell">
+                        <input type="password" class="form-control" placeholder="Celular">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Carnet">
+                        <input type="text" class="form-control" placeholder="Carnet">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="User">
+                        <select id="" type="text" class="form-control" name="Id_hipoteca_estado" valeue="Oficina">
+                            <option selected value="6">
+                                seleccionar Oficina
+                            </option>
+                            <option value="1">
+                                Connecticut 
+                            </option>
+                            <option value="2">
+                                Pensilvania 
+                            </option>
+                            <option value="3">
+                                Charlotte 
+                            </option>
+                            <option value="4">
+                                New York 
+                            </option>
+                            <option value="5">
+                                New Jersey 
+                            </option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Usuario">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
                         <input type="password" class="form-control" placeholder="Password">
                         <span class="md-line"></span>
                     </div>
+                     <!--inicio subir archivos-->
+                     <div class="card-block">
+                        <div class="jFiler jFiler-theme-dragdropbox">
+                            <input type="file" name="files[]" id="filer_input1" multiple="multiple" style="position: absolute; left: -9999px; top: -9999px; z-index: -9999;">
+                            <div class="jFiler-input-dragDrop">
+                                <div class="jFiler-input-inner">
+                                    <a class="jFiler-input-choose-btn btn btn-primary waves-effect waves-light">Click para subir foto</a>
+                                </div>
+                            </div>   
+                    </div>
+                    </div>
+   <!--final subir archivos-->
                     <div class="row m-t-25 text-left">
                         <div class="col-md-12">
                             <div class="checkbox-fade fade-in-primary">
