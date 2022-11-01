@@ -27,33 +27,24 @@ function perfil_cliente(id_cl, id_co)
 }
 
 let buscador_cliente = document.getElementById('buscador-cliente')
-let select_buscador = document.getElementById('select-buscador')
 
-buscador_cliente.addEventListener('keyup', ()=>{
+buscador_cliente.addEventListener('keyup', () => {
 
-    if(select_buscador.value == 'todos')
-    {
+    if (buscador_cliente.value.length > 0) {
+        let request = new XMLHttpRequest()
+        request.open('POST', 'backend/php/get-customer-by-input.php', true)
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+        request.onreadystatechange = function () {
+
+            if (request.readyState == 4 && request.status == 200) {
+                contenedor_clientes.innerHTML = request.responseText
+            }
+        }
+
+        request.send(`search=${buscador_cliente.value}`)
+    }
+    else {
         get_customers()
     }
-    else
-    {
-        if(buscador_cliente.value.length > 0)
-        {
-            let request = new XMLHttpRequest()
-            request.open('POST', 'backend/php/get-customer-by-input.php', true)
-            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-            request.onreadystatechange = function () {
-
-                if(request.readyState == 4 && request.status == 200) {
-                    contenedor_clientes.innerHTML = request.responseText
-                }
-            }
-
-            request.send(`search=${buscador_cliente.value}&filtro=${select_buscador.value}`)
-        }
-        else
-        {
-            get_customers()
-        }
-    }
 })
+

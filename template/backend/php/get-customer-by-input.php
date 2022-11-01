@@ -3,15 +3,48 @@
     if(isset($_POST))
     {
         $search = $_POST['search'] ?? "nada";
-        $filtro = $_POST['filtro'] ?? "nada";
+        $search = trim($search);
 
         include_once "connection.php";
         include_once "commands.php";
         
         $oCon = connect();
-        $sql = "SELECT * FROM clientes WHERE $filtro LIKE '$search%' ";
+        // $sql = "SELECT * FROM clientes WHERE $filtro LIKE '%$search%' ";
 
+        $sql = "SELECT * FROM clientes WHERE Primer_nombre LIKE '%$search%' ";
         $res = select($oCon, $sql);
+
+        if(count($res) <= 0)
+        {
+            $sql = "SELECT * FROM clientes WHERE N_seguro_social LIKE '%$search%' ";
+            $res = select($oCon, $sql);
+
+            if(count($res) <= 0)
+            {
+                $sql = "SELECT * FROM clientes WHERE N_licencia_conducir LIKE '%$search%' ";
+                $res = select($oCon, $sql);
+
+                if(count($res) <= 0)
+                {
+                    $sql = "SELECT * FROM clientes WHERE Estado LIKE '%$search%' ";
+                    $res = select($oCon, $sql);
+
+                    if(count($res) <= 0)
+                    {
+                        $sql = "SELECT * FROM clientes WHERE Vencimiento LIKE '%$search%' ";
+                        $res = select($oCon, $sql);
+
+                        if(count($res) <= 0)
+                        {
+                            $sql = "SELECT * FROM clientes WHERE Direccion LIKE '%$search%' ";
+                            $res = select($oCon, $sql);
+                        }
+                    }
+                }
+            }
+        }
+
+
 
         if(count($res) > 0)
         {
