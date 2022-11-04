@@ -709,9 +709,6 @@
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
-                                                                                               
-                                                                                                
-                                                                                            
                                                                                             </tbody>
                                                                                         </table>
                                                                                     </div>
@@ -877,13 +874,14 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Correo"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
+                                                                                                    <th scope="row">Ciudad</th>
+                                                                                                    <td><a href="#!">
+                                                                                                        <div class="input-group">
+                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Ciudad" value="<?php echo $res_cl[0]["Ciudad"]; ?>">
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                    </td>
+                                                                                                </tr>
                                                                                                 </tbody>
                                                                                             </table>
                                                                                         </div>
@@ -893,15 +891,7 @@
                                                                                     <div class="table-responsive">
                                                                                         <table class="table">
                                                                                             <tbody>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Ciudad</th>
-                                                                                                    <td><a href="#!">
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Ciudad" value="<?php echo $res_cl[0]["Ciudad"]; ?>">
-                                                                                                        </div>
-                                                                                                    </a>
-                                                                                                    </td>
-                                                                                                </tr>
+                                                                                                
                                                                                                 <tr>
                                                                                                     <th scope="row">Estado</th>
                                                                                                     <td>
@@ -966,7 +956,14 @@
                                                                                                         </div>
                                                                                                     </a></td>
                                                                                                 </tr>
-                                                                                                
+                                                                                                <tr>
+                                                                                                        <th scope="row">Correo</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Correo"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
                                                                                             </tbody>
                                                                                         </table>
                                                                                         </div>
@@ -1075,32 +1072,6 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Número de telefono del empleo anterio</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="N_telefono_empleo_anterio" value="<?php echo $res_cl[0]["N_telefono_empleo_anterior"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Cantidad de la fuente ingreso extra</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!--fin informacion de empleo-->
-                                                                                    <!-- end of table col-lg-6 -->
-                                                                                    <div class="col-lg-12 col-xl-6">
-                                                                                    <div class="table-responsive">
-                                                                                        <table class="table">
-                                                                                            <tbody>
-                                                                                                <tr>
                                                                                                     <th scope="row">Tipo ingreso</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
@@ -1117,6 +1088,27 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Empleador anterior</th>
+                                                                                                    <td>
+                                                                                                        <div class="input-group">
+                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Empleador_anterior" value="<?php echo $res_cl[0]["Empleador_anterior"]; ?>">
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--fin informacion de empleo-->
+                                                                                    <!-- end of table col-lg-6 -->
+                                                                                    <div class="col-lg-12 col-xl-6">
+                                                                                    <div class="table-responsive">
+                                                                                        <table class="table">
+                                                                                            <tbody>
+                                                                                                
+                                                                                                <tr>
+                                                                                                    <th scope="row">Fecha de empleo anterior</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input  id="" type="text" class="form-control cl_invalid" name="Empleador_anterior" value="<?php echo $res_cl[0]["Empleador_anterior"]; ?>">
@@ -1148,7 +1140,23 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Fuente de ingreso extra</th>
+                                                                                                        <th scope="row">Número de telefono del empleo anterio</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="N_telefono_empleo_anterio" value="<?php echo $res_cl[0]["N_telefono_empleo_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Fuente de ingreso extra	</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Otras fuentes de ingreso</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input  id="" type="text" class="form-control cl_invalid" name="Fuente_ingreso_extra" value="<?php echo $res_cl[0]["Fuente_ingreso_extra"]; ?>">

@@ -786,11 +786,12 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo</th>
-                                                                                                        <td>
-                                                                                                            <?php echo $res_cl[0]["Correo"];?>
+                                                                                                    <th scope="row">Ciudad</th>
+                                                                                                    <td>
+                                                                                                            <?php echo $res_cl[0]["Ciudad"];?>
                                                                                                         </td>
-                                                                                                    </tr>
+                                                                                                    </td>
+                                                                                                </tr>
                                                                                                 </tbody>
                                                                                             </table>
                                                                                         </div>
@@ -800,13 +801,6 @@
                                                                                     <div class="table-responsive">
                                                                                         <table class="table">
                                                                                             <tbody>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Ciudad</th>
-                                                                                                    <td>
-                                                                                                            <?php echo $res_cl[0]["Ciudad"];?>
-                                                                                                        </td>
-                                                                                                    </td>
-                                                                                                </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Estado</th>
                                                                                                     <td>
@@ -855,7 +849,12 @@
                                                                                                         <?php echo $res_cl[0]["Zip_anterior"];?>
                                                                                                     </td>
                                                                                                 </tr>
-                                                                                                
+                                                                                                <tr>
+                                                                                                        <th scope="row">Correo</th>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Correo"];?>
+                                                                                                        </td>
+                                                                                                    </tr>
                                                                                             </tbody>
                                                                                         </table>
                                                                                         </div>
@@ -934,6 +933,12 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
+                                                                                                        <th scope="row">Telefono de empleo</th>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Tiempo_empleo"];?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
                                                                                                         <th scope="row">Posicion empleo</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Posicion_empleo"];?>
@@ -946,17 +951,17 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Número de telefono del empleo anterio</th>
-                                                                                                        <td>
-                                                                                                            <?php echo $res_cl[0]["N_telefono_empleo_anterior"];?>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Cantidad de la fuente ingreso extra</th>
-                                                                                                        <td>
-                                                                                                            <?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"];?>
-                                                                                                        </td>
-                                                                                                    </tr>
+                                                                                                    <th scope="row">Tipo ingreso</th>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Tipo_ingreso"];?>
+                                                                                                    </td>
+                                                                                                <tr>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Empleador anterior</th>
+                                                                                                    <td>
+                                                                                                        <?php echo $res_cl[0]["Empleador_anterior"];?>
+                                                                                                    </td>
+                                                                                                </tr>
                                                                                                 </tbody>
                                                                                             </table>
                                                                                         </div>
@@ -968,23 +973,12 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Tipo ingreso</th>
-                                                                                                    <td>
-                                                                                                        <?php echo $res_cl[0]["Tipo_ingreso"];?>
-                                                                                                    </td>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Cantidad de la fuente ingreso extra</th>
-                                                                                                    <td>
-                                                                                                        <?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"];?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Empleador anterior</th>
-                                                                                                    <td>
-                                                                                                        <?php echo $res_cl[0]["Empleador_anterior"];?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
+                                                                                                        <th scope="row">Fecha de empleo anterior</th>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["N_telefono_empleo_anterior"];?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
                                                                                                     <th scope="row">Ciudad empleo anterior</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Ciudad_empleo_anterior"];?>
@@ -1003,12 +997,22 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
+                                                                                                        <th scope="row">Número de telefono del empleo anterio</th>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["N_telefono_empleo_anterior"];?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
                                                                                                     <th scope="row">Fuente de ingreso extra</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Fuente_ingreso_extra"];?>
                                                                                                     </td>
                                                                                                 </tr>
-                                                                                                
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Otras fuentes de ingreso</th>
+                                                                                                        <td>
+                                                                                                            <?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"];?>
+                                                                                                        </td>
                                                                                             </tbody>
                                                                                         </table>
                                                                                         </div>
@@ -1092,7 +1096,13 @@
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Pago de lahipoteca</th>
+                                                                                                            <th scope="row">Propietario o hipoteca titular</th>
+                                                                                                            <td>
+                                                                                                                <?php echo $res_cl[0]["Pago_hipoteca"];?>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Pago de la hipoteca</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Pago_hipoteca"];?>
                                                                                                             </td>
@@ -1266,7 +1276,21 @@
                                                                                                         }
 
                                                                                                     ?>
-
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Relacion del solicitante</th>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Primer_nombre"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
+                                                                                                    </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Primer Nombre</th>
                                                                                                         <td>
@@ -1289,6 +1313,21 @@
                                                                                                                 if($con_co == true)
                                                                                                                 {
                                                                                                                     echo $res_co[0]["C_Apellido"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Fecha de nacimiento</th>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Primer_nombre"];
                                                                                                                 }
                                                                                                                 else if($con_co == false)
                                                                                                                 {
@@ -1373,7 +1412,67 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Fuente de ingreso extra</th>
+                                                                                                        <th scope="row">Tiempo en la direccion</th>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Ciudad</th>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Estado</th>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Zip</th>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Correo electronico</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1388,6 +1487,89 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
+                                                                                                    <th scope="row">Nombre empleo </th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Nombre_empleo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>   
+                                                                                                <tr>
+                                                                                                    <th scope="row">Direccion Empleo</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Direccion_empleo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- end of table col-lg-6 -->
+                                                                                    <div class="col-lg-12 col-xl-6">
+                                                                                    <div class="table-responsive">
+                                                                                        <table class="table">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Tiempo en el empleo</th>    
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Tiempo_empleo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Telefono empleo</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Telefono_casa"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                        <th scope="row">Fuente de ingreso extra</th>
+                                                                                                        <td>
+                                                                                                            <?php
+                                                                                                                if($con_co == true)
+                                                                                                                {
+                                                                                                                    echo $res_co[0]["C_Fuente_ingreso_extra"];
+                                                                                                                }
+                                                                                                                else if($con_co == false)
+                                                                                                                {
+                                                                                                                    echo ""; 
+                                                                                                                }
+                                                                                                            ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                        <tr>
                                                                                                         <th scope="row">Zip empleo anterior</th>
                                                                                                         <td>
                                                                                                             <?php
@@ -1403,59 +1585,80 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Telefono Celular</th>
-                                                                                                        <td>
-                                                                                                            <?php
-                                                                                                                if($con_co == true)
-                                                                                                                {
-                                                                                                                    echo $res_co[0]["C_Telefono_celular"];
-                                                                                                                }
-                                                                                                                else if($con_co == false)
-                                                                                                                {
-                                                                                                                    echo ""; 
-                                                                                                                }
-                                                                                                            ?>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Zip</th>
-                                                                                                        <td>
-                                                                                                            <?php
-                                                                                                                if($con_co == true)
-                                                                                                                {
-                                                                                                                    echo $res_co[0]["C_Zip"];
-                                                                                                                }
-                                                                                                                else if($con_co == false)
-                                                                                                                {
-                                                                                                                    echo ""; 
-                                                                                                                }
-                                                                                                            ?>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Ciudad</th>
-                                                                                                        <td>
-                                                                                                            <?php
-                                                                                                                if($con_co == true)
-                                                                                                                {
-                                                                                                                    echo $res_co[0]["C_Ciudad"];
-                                                                                                                }
-                                                                                                                else if($con_co == false)
-                                                                                                                {
-                                                                                                                    echo ""; 
-                                                                                                                }
-                                                                                                            ?>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- end of table col-lg-6 -->
-                                                                                    <div class="col-lg-12 col-xl-6">
-                                                                                    <div class="table-responsive">
-                                                                                        <table class="table">
-                                                                                            <tbody>
+                                                                                                    <th scope="row">Posicion empleo</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Posicion_empleo"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Ingreso Bruto</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Tipo_ingreso"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Tipo de ingreso</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Tipo_ingreso"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Empleador Anterior</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Empleador_anterior"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Fecha Empleo Anterior</th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Empleador_anterior"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Ciudad empleo anterior</th>
                                                                                                     <td>
@@ -1485,96 +1688,6 @@
                                                                                                         ?>
                                                                                                     </td>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Empleador anterior</th>
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Empleador_anterior"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Tipo de ingreso</th>
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Tipo_ingreso"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Posicion empleo</th>
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Posicion_empleo"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Tiempo en el empleo</th>    
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Tiempo_empleo"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Direccion Empleo</th>
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Direccion_empleo"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Nombre empleo </th>
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Nombre_empleo"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
                                                                                                     <th scope="row">Zip Anterior</th>
                                                                                                     <td>
                                                                                                         <?php
@@ -1590,7 +1703,21 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Estado Anterior</th>
+                                                                                                    <th scope="row">Telefono Empleo anterior </th>
+                                                                                                    <td>
+                                                                                                        <?php
+                                                                                                            if($con_co == true)
+                                                                                                            {
+                                                                                                                echo $res_co[0]["C_Telefono_casa"];
+                                                                                                            }
+                                                                                                            else if($con_co == false)
+                                                                                                            {
+                                                                                                                echo ""; 
+                                                                                                            }
+                                                                                                        ?>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                    <th scope="row">Otra fuente de ingreso </th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1605,57 +1732,12 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Ciudad Anterior</th>
+                                                                                                    <th scope="row">Ingreso Mensuale </th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
                                                                                                             {
                                                                                                                 echo $res_co[0]["C_Ciudad_anterior"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Telefono Casa</th>
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Telefono_casa"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Estado Ciudad</th>
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Estado_ciudad"];
-                                                                                                            }
-                                                                                                            else if($con_co == false)
-                                                                                                            {
-                                                                                                                echo ""; 
-                                                                                                            }
-                                                                                                        ?>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Tiempo en la vivienda</th>
-                                                                                                    <td>
-                                                                                                        <?php
-                                                                                                            if($con_co == true)
-                                                                                                            {
-                                                                                                                echo $res_co[0]["C_Cuanto_tiempo"];
                                                                                                             }
                                                                                                             else if($con_co == false)
                                                                                                             {
@@ -1692,7 +1774,6 @@
                                                         </div>
                                                         <!-- personal card end-->
                                                     </div>
-                                                      
                                                     <!-- tab pane info end -->
                                                     <!-- tab pane contact start -->
                                                     <div class="tab-pane" id="contacts" role="tabpanel">
