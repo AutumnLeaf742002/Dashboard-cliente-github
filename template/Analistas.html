@@ -39,9 +39,59 @@
       <link rel="stylesheet" type="text/css" href="assets/css/simple-line-icons.css">
       <link rel="stylesheet" type="text/css" href="assets/css/ionicons.css">
       <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+      <link rel="stylesheet" href="alerts.css">
   </head>
 
   <body>
+
+
+
+    
+    <!-- Notificaciones -->
+    <div class="container-fluid container-notifi" style="position:absolute; top:0; z-index: 5000 !important;">
+        <div class="row">
+            <div id="notifi" class="col notifi p-2 d-flex align-items-center flex-column" style="display: none !important; position: relative; background-color: rgb(241, 31, 31);">
+                <h3 class="text-white" id="tittle-error" style="text-align: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="mx-2 text-warning bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
+                        <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    Error
+                </h3>
+                <p style="text-align: center;" class="text-white" id="text-error">
+                    Algo ha salido mal
+                </p>
+                <div onclick="close_notifi()" style="position: absolute; top: 10%; right: 1%; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-dark bi bi-x-octagon-fill" viewBox="0 0 16 16">
+                        <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Notificaciones -->
+    <!-- Notificaciones -->
+    <div class="container-fluid container-notifi" style="position:absolute; top:0; z-index: 5000 !important;">
+        <div class="row">
+            <div id="notifi2" class="col notifi p-2 d-flex align-items-center flex-column" style="display: none !important; position: relative; background-color: rgb(0, 177, 0);">
+                <h3 class="text-white" id="tittle-error2" style="text-align: center;">
+                    Hecho!
+                </h3>
+                <p style="text-align: center;" class="text-white" id="text-error2">
+                    Registrado con exito
+                </p>
+                <div onclick="close_notifi2()" style="position: absolute; top: 10%; right: 1%; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-dark bi bi-x-octagon-fill" viewBox="0 0 16 16">
+                        <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Notificaciones -->
+
+
+
+
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -557,7 +607,7 @@
                                 </div>
                                 
                                 <div class="card-block">
-                                    <div class="row users-card">
+                                    <div class="row users-card" id="list-analist">
                                         <div class="col-lg-12 col-xl-4">
                                             <div class="card user-card">
                                                 <div class="card-header-img">
@@ -629,10 +679,10 @@
 </div>
 
 <!-- inicio de formulario de registro de analista -->
-<div id="register" class="modal fade" role="dialog">
+<div id="register" class="modal fade" role="dialog" style="z-index: 4999 !important;">
     <div class="modal-dialog">
         <div class="login-card card-block login-card-modal">
-            <form class="md-float-material">
+            <form id="form-data" action="" method="post" class="md-float-material" enctype="multipart/form-data">
                 <div class="auth-box">
                     <div class="row m-b-20">
                         <div class="col-md-12">
@@ -644,35 +694,35 @@
                     </div>
                     <hr>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Nombre">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" required minlength="2" maxlength="100">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Correo electronico">
+                        <input type="text" class="form-control" name="correo" placeholder="Correo electronico" required minlength="5" maxlength="50">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Celular">
+                        <input type="text" class="form-control" name="celular" name="celular" placeholder="Celular" minlength="10" maxlength="20" required>
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Carnet">
+                        <input type="text" class="form-control" name="carnet" placeholder="Carnet" maxlength="20">
                         <span class="md-line"></span>
                     </div>
                     <!-- Comentario debajo del type text -->
                     <div style="display: flex !important; flex-direction:column !important;" class="input-group">
-                        <input style="width: 100% !important;" type="date" class="form-control" placeholder="Start date">
+                        <input style="width: 100% !important;" type="date" name="inicio" class="form-control" placeholder="Start date" required minlength="8" maxlength="8">
                         <code style="color: #0071D9 !important; background-color: white !important;">
                             Fecha de inicio
                         </code>
                     </div>
                     <!-- Comentario debajo del type text -->
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Reclutador">
+                        <input type="text" class="form-control" name="reclutador" placeholder="Reclutador" required minlength="2" maxlength="100">
                         <span class="md-line"></span>
                     </div>
-                    <div class="input-group">
-                        <select id="" type="text" class="form-control" name="Id_hipoteca_estado" valeue="Oficina">
+                    <div class="input-group" style="display: flex !important; flex-direction:column !important;">
+                        <select id="oficinas" type="text" name="oficina" class="w-100 form-control" valeue="Oficina" required>
                             <option selected value="6">
                                 seleccionar Oficina
                             </option>
@@ -692,9 +742,12 @@
                                 New Jersey 
                             </option>
                         </select>
+                        <code style="color: #0071D9 !important; background-color: white !important;">
+                            Seleccionar oficina
+                        </code>
                     </div>
-                    <div class="input-group">
-                        <select id="" type="text" class="form-control" name="Id_hipoteca_estado" valeue="Manager">
+                    <div class="input-group" style="display: flex !important; flex-direction:column !important;">
+                        <select id="managers" type="text" name="manager" class="form-control w-100" valeue="Manager" required>
                             <option selected value="6">
                                 seleccionar Manager
                             </option>
@@ -714,25 +767,21 @@
                                 Josephin
                             </option>
                         </select>
+                        <code style="color: #0071D9 !important; background-color: white !important;">
+                            Seleccionar manager
+                        </code>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Usuario">
+                        <input type="text" name="usuario" class="form-control" placeholder="Usuario" required minlength="5" maxlength="50">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" name="clave" class="form-control" placeholder="Contraseña" required minlength="5" maxlength="20">
                         <span class="md-line"></span>
                     </div>
                     <!--inicio subir archivos-->
-                    <div class="card-block">
-                        <div class="jFiler jFiler-theme-dragdropbox">
-                            <input type="file" name="files[]" id="filer_input1" multiple="multiple" style="position: absolute; left: -9999px; top: -9999px; z-index: -9999;">
-                            <div class="jFiler-input-dragDrop">
-                                <div class="jFiler-input-inner">
-                                    <a class="jFiler-input-choose-btn btn btn-primary waves-effect waves-light">Click para subir foto</a>
-                                </div>
-                            </div>   
-                    </div>
+                    <div class="input-group">
+                        <input class="form-control" name="foto" type="file" id="filer_input1" required> 
                     </div>
                     <!--final subir archivos-->
                     <div class="row m-t-25 text-left">
@@ -744,7 +793,7 @@
                         <div class="col-md-12">
                     <div class="row m-t-15">
                         <div class="col-md-12">
-                            <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center">Register Now</button>
+                            <input type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center" value="Registrar">
                         </div>
                     </div>
                     <div class="row">
@@ -821,6 +870,11 @@
 <script src="assets/js/demo-12.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/jquery.mousewheel.min.js"></script>
+<script src="backend/js/register-analist.js"></script>
+<script src="backend/js/get-analist.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<script src="alerts.js"></script>
+
 </body>
 
 </html>
