@@ -273,7 +273,7 @@ btn_enviar_customer.addEventListener('click', () => {
     if(cl_1.value.length > 0 &&
         cl_2.value.length > 0 &&
         cl_3.value.length > 0 &&
-        cl_4.value.length > 8 &&
+        cl_4.value.length > 7 &&
         cl_6.value.length > 0 &&
         cl_8.value.length > 0 &&
         cl_9.value.length > 0 &&
@@ -282,13 +282,13 @@ btn_enviar_customer.addEventListener('click', () => {
         cl_11.value.length > 0 &&
         cl_12.value.length > 0 &&
         cl_13.value.length > 0 &&
-        cl_15.value.length > 11 &&
+        cl_15.value.length > 9 &&
         cl_20.value.length > 0 &&
 
         cl_21.value.length > 0 &&
         cl_22.value.length > 0 &&
         cl_23.value.length > 0 &&
-        cl_24.value.length > 0 &&
+        cl_24.value.length > 9 &&
         cl_25.value.length > 0 &&
         cl_26.value.length > 0 &&
         cl_27.value.length > 0 &&
@@ -300,7 +300,7 @@ btn_enviar_customer.addEventListener('click', () => {
 
         cl_42.value.length > 0 &&
         cl_43.value.length > 0 &&
-        cl_44.value.length > 0 &&
+        cl_44.value.length > 9 &&
         cl_45.value.length > 0 &&
         cl_50.value.length > 0 &&
 
@@ -381,7 +381,7 @@ btn_enviar_customer.addEventListener('click', () => {
                     co_2.value.length > 0 &&
                     co_3.value.length > 0 &&
                     co_4.value.length > 0 &&
-                    co_5.value.length > 0 &&
+                    co_5.value.length > 7 &&
                     co_7.value.length > 0 &&
                     co_9.value.length > 0 &&
                     co_10.value.length > 0 &&
@@ -389,14 +389,14 @@ btn_enviar_customer.addEventListener('click', () => {
                     co_11.value.length > 0 &&
                     co_12.value.length > 0 &&
                     co_13.value.length > 0 &&
-                    co_14.value.length > 11 &&
-                    co_16.value.length > 0 &&
+                    co_14.value.length > 0 &&
+                    co_16.value.length > 9 &&
 
                     co_21.value.length > 0 &&
                     co_22.value.length > 0 &&
                     co_23.value.length > 0 &&
                     co_24.value.length > 0 &&
-                    co_25.value.length > 0 &&
+                    co_25.value.length > 9 &&
                     co_26.value.length > 0 &&
                     co_27.value.length > 0 &&
                     co_28.value.length > 0 &&
