@@ -26,6 +26,10 @@ function get_managers()
     request.send()
 }
 
+
+
+
+
 get_oficinas()
 get_managers()
 
@@ -35,36 +39,48 @@ $(document).ready()
 
     function ajax(event)
     {
+        const correo = document.getElementById('correo')
+        var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        var valido = expReg.test(correo.value)
+
         event.preventDefault()
         var datos = new FormData($("#form-data")[0])
 
-        $.ajax({
+        if (valido == true) 
+        {
 
-            url: "backend/php/register-analist.php",
-            type: "POST",
-            data: datos,
-            contentType: false,
-            processData: false,
-            success: function(datos){
-                if(datos == "Registro completado exitosamente")
-                {
-                    open_notifi2()
-                    get_analist()
+            $.ajax({
 
-                    const list_input = document.querySelectorAll('.form-control')
+                url: "backend/php/register-analist.php",
+                type: "POST",
+                data: datos,
+                contentType: false,
+                processData: false,
+                success: function (datos) {
+                    if (datos == "Registro completado exitosamente") {
+                        aparecer_n_2("Registro completado exitosamente")
 
-                    list_input.forEach(item =>{
+                        const list_input = document.querySelectorAll('.form-control')
 
-                        item.value = ""
-                    })
+                        list_input.forEach(item => {
+
+                            item.value = ""
+                        })
+                    }
+                    else {
+                        aparecer_n_3(datos)
+                    }
                 }
-                else
-                {
-                    open_notifi(`<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="mx-2 text-warning bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
-                    <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                    </svg>Error`, datos)
-                }
-            }
-        })
+            })
+        }
+        else
+        {
+            aparecer_n_1("Correo invalido")
+        }
     }
 } 
+
+function refresh()
+{
+    get_analist()
+}

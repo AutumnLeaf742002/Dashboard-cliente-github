@@ -47,46 +47,137 @@
 
 
     
-    <!-- Notificaciones -->
-    <div class="container-fluid container-notifi" style="position:absolute; top:0; z-index: 5000 !important;">
-        <div class="row">
-            <div id="notifi" class="col notifi p-2 d-flex align-items-center flex-column" style="display: none !important; position: relative; background-color: rgb(241, 31, 31);">
-                <h3 class="text-white" id="tittle-error" style="text-align: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="mx-2 text-warning bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
-                        <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                    </svg>
-                    Error
-                </h3>
-                <p style="text-align: center;" class="text-white" id="text-error">
-                    Algo ha salido mal
-                </p>
-                <div onclick="close_notifi()" style="position: absolute; top: 10%; right: 1%; cursor: pointer;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-dark bi bi-x-octagon-fill" viewBox="0 0 16 16">
-                        <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
+<!-- Notificaciones -->
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+   <!-- notify js Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.brighttheme.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="assets/pages/pnotify/notify.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--color css-->
+
+    <!-- css para las notificaciones -->
+    <link rel="stylesheet" href="alerts.css">
+
+    <div class="card-block table-border-style container-notificaciones" style="position: sticky !important; top: 0 !important; z-index: 9999;">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    
+                    <!-- Notificacion aviso principal -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-notice ui-pnotify-shadow n-personal" id="n-personal-1" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-1" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font" style="vertical-align: inherit;">Aviso!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                    
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de informacion -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-info ui-pnotify-shadow n-personal" id="n-personal-2" role="alert" style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-2" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Hecho!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de peligro -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-error ui-pnotify-shadow n-personal" id="n-personal-3" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-icon">
+                            <span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-3" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Peligro</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                </tbody>
+            </table>
+        </div>    
     </div>
-    <!-- Notificaciones -->
-    <!-- Notificaciones -->
-    <div class="container-fluid container-notifi" style="position:absolute; top:0; z-index: 5000 !important;">
-        <div class="row">
-            <div id="notifi2" class="col notifi p-2 d-flex align-items-center flex-column" style="display: none !important; position: relative; background-color: rgb(0, 177, 0);">
-                <h3 class="text-white" id="tittle-error2" style="text-align: center;">
-                    Hecho!
-                </h3>
-                <p style="text-align: center;" class="text-white" id="text-error2">
-                    Registrado con exito
-                </p>
-                <div onclick="close_notifi2()" style="position: absolute; top: 10%; right: 1%; cursor: pointer;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-dark bi bi-x-octagon-fill" viewBox="0 0 16 16">
-                        <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Notificaciones -->
 
 
@@ -100,7 +191,7 @@
     </div>
     <!-- Pre-loader end -->
 
-    <div id="pcoded" class="pcoded">
+    <div id="pcoded" class="pcoded" style="z-index: -100 !important;">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
 
@@ -602,7 +693,7 @@
                                     <h5>Simple Cards</h5>
                                     <div class="card-header-right">
                                         <i class="icofont icofont-rounded-down"></i>
-                                        <i class="icofont icofont-refresh"></i>
+                                        <i class="icofont icofont-refresh" onclick="refresh()"></i>
                                     </div>
                                 </div>
                                 
@@ -698,7 +789,7 @@
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="correo" placeholder="Correo electronico" required minlength="5" maxlength="50">
+                        <input type="mail" class="form-control" id="correo" name="correo" placeholder="Correo electronico" required minlength="5" maxlength="50">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">

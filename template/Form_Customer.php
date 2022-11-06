@@ -42,6 +42,17 @@
 
 <body class="multi-step-sign-up">
 
+    <?php
+    
+        include_once "backend/php/connection.php";
+        include_once "backend/php/commands.php";
+
+        $oCon = connect();
+        $sql = "SELECT * FROM analyst ORDER BY Name";
+        $res = select($oCon, $sql);
+        
+    ?>
+
     <!-- Notificaciones -->
 
     <!-- Required Fremwork -->
@@ -195,7 +206,16 @@
                 <input minlength="1" maxlength="50" id="cl_cantidad_financiada" type="text" class="cl_invalid form-control" name="Primer_nombre" placeholder="Cantidad financiada">
             </div>
             <div class="input-group">
-                <input minlength="1" maxlength="100" id="cl_nombre_representante" type="text" class="form-control cl_invalid" name="Primer_nombre" placeholder="Nombre del representante">
+                <select id="cl_nombre_representante" type="text" class="form-control cl_invalid" name="Primer_nombre">
+                    <?php
+                    
+                        foreach($res as $item)
+                        {
+                            echo '<option value="'.$item["Id"].'">'.$item["Name"].'</option>';
+                        }
+                    
+                    ?>
+                </select>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="cl_1" type="text" class="cl_invalid form-control" name="Primer_nombre" placeholder="Primer nombre">

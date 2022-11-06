@@ -61,6 +61,7 @@
 
         $id_cl = $_GET["id_cl"];
         $id_co = $_GET["id_co"];
+        $analista = $_GET["analista"];
 
         $oCon = connect();
         $sql_cl = "SELECT * FROM clientes WHERE Id = $id_cl";
@@ -686,18 +687,23 @@
                                                                                                     <td> 
                                                                                                         <!-- Opcional -->
                                                                                                         <select id="" type="text" class="form-control" name="Id_hipoteca_estado" valeue="Analista asignado">
-                                                                                                            <option selected value="6">
-                                                                                                                seleccionar
-                                                                                                            </option>
-                                                                                                            <option value="1">
-                                                                                                                Juan
-                                                                                                            </option>
-                                                                                                            <option value="2">
-                                                                                                                Pedro
-                                                                                                            </option>
-                                                                                                            <option value="3">
-                                                                                                                Maria
-                                                                                                            </option>
+                                                                                                            <?php
+                                                                                                            
+                                                                                                                $res_analista = select($oCon, "SELECT Id, Name FROM analyst ORDER BY Name");
+
+                                                                                                                foreach($res_analista as $item)
+                                                                                                                {
+                                                                                                                    if($item["Id"] == $analista)
+                                                                                                                    {
+                                                                                                                        echo '<option selected value="'.$item["Id"].'">'.$item["Name"].'</option>';
+                                                                                                                    }
+                                                                                                                    else
+                                                                                                                    {
+                                                                                                                        echo '<option value="'.$item["Id"].'">'.$item["Name"].'</option>';
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            
+                                                                                                            ?>
                                                                                                         </select>
                                                                                                     </td>
                                                                                                 </tr>
