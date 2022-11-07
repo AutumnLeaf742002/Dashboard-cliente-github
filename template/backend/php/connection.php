@@ -6,9 +6,9 @@
         if(!isset($oCon))
         {
             $host = "localhost";
-            $user = "root";
-            $password = "";
-            $db = "desechable";
+            $user = "qscbkfcv_dashboard-pasteur-user";
+            $password = "qscbkfcv_dashboard";
+            $db = "qscbkfcv_dashboard";
             $host_info = "mysql:hos=$host;dbname=$db;charset=utf8";
 
             try 
