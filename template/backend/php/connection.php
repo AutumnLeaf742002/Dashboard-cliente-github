@@ -7,7 +7,7 @@
         {
             $host = "localhost";
             $user = "qscbkfcv_dashboard-pasteur-user";
-            $password = "qscbkfcv_dashboard";
+            $password = "11712Ivandi";
             $db = "qscbkfcv_dashboard";
             $host_info = "mysql:hos=$host;dbname=$db;charset=utf8";
 
