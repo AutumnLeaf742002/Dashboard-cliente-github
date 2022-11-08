@@ -626,7 +626,7 @@
                                                     <!-- tab panel personal start -->
                                                      <!-- personal card start -->
                                                      <!--inicio boton de guardar-->
-                                                     <div class="card">
+                                                     <!-- <div class="card">
                                                         <div class="card-header">
                                                             <h5 class="card-header-text">Guardar Cambios</h5>
                                                         </div>
@@ -636,13 +636,13 @@
                                                                     <button onclick="javascript: history.go(-1)" id="boton-guardar-perfil" class="btn btn-default"><i class="icofont icofont-warning-alt"></i>Cancelar</button>
                                                                     <button id="boton-cancelar-perfil" class="btn btn-primary"><i class="icofont icofont-check-circled"></i>Guardar</button>
                                                                 </div>
-                                                                <!-- end of row -->
-                                                            </div>
+                                                                end of row -->
+                                                            <!-- </div> -->
                                                             <!-- end of view-info -->
                                                             
-                                                        </div>
+                                                        <!-- </div> -->
                                                         <!-- end of card-block -->
-                                                         </div>
+                                                         <!-- </div> -->
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                                 <!-- Main-body start -->
@@ -682,6 +682,9 @@
                                                                                     <div class="table-responsive">
                                                                                         <table class="table m-0">
                                                                                             <tbody>
+                                                                                                
+                                                                                                <!-- formulario -->
+                                                    <form action="" method="post" enctype="multipart/form-data" id="form-data">
                                                                                                 <tr>
                                                                                                     <th scope="row">Analista Asignado</th>
                                                                                                     <td> 
@@ -795,412 +798,15 @@
                                                         </div>
                                                     </div>
                                                     <!-- personal card end-->
-                                                    <div class="tab-pane active" id="personal" role="tabpanel">
-                                                        <!-- personal card start -->
-                                                        <div class="card">
-                                                            <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion Cliente</h5>
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <div class="view-info">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                            <div class="general-info">
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-12 col-xl-6">
-                                                                                        <div class="table-responsive">
-                                                                                            <table class="table m-0">
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Primer Nombre</th>
-                                                                                                        <td><div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Primer_nombre" value="<?php echo $res_cl[0]["Primer_nombre"]; ?>">
-                                                                                                        </div> </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Apellido</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Apellido" value="<?php echo $res_cl[0]["Apellido"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Fecha de nacimiento</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="date" class="form-control cl_invalid" name="Fecha de nacimiento" value="<?php echo $res_cl[0]["Fecha_nacimiento"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Numero de seguro social</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="N_seguro_social" value="<?php echo $res_cl[0]["N_seguro_social"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Numero de Licencia de Conducir</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="N_licencia_conducir" value="<?php echo $res_cl[0]["N_licencia_conducir"]; ?> ">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Estado</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Estado" value="<?php echo $res_cl[0]["Estado"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Vencimiento</th>
-                                                                                                        <td><div class="input-group">
-                                                                                                            <input  id="" type="date" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Vencimiento"]; ?>">
-                                                                                                        </div></td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Direccion</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Direccion"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">tiempo en esa direccion</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Cuanto_tiempo"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                    <th scope="row">Ciudad</th>
-                                                                                                    <td><a href="#!">
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Ciudad" value="<?php echo $res_cl[0]["Ciudad"]; ?>">
-                                                                                                        </div>
-                                                                                                    </a>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- end of table col-lg-6 -->
-                                                                                    <div class="col-lg-12 col-xl-6">
-                                                                                    <div class="table-responsive">
-                                                                                        <table class="table">
-                                                                                            <tbody>
-                                                                                                
-                                                                                                <tr>
-                                                                                                    <th scope="row">Estado</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Estado" value="<?php echo $res_cl[0]["Estado_ciudad"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Zip</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Zip" value="<?php echo $res_cl[0]["Zip"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Telefono de casa</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Telefono_casa" value="<?php echo $res_cl[0]["Telefono_casa"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Telefono Celular</th>
-                                                                                                    <td><a href="#!">
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Telefono_celular" value="<?php echo $res_cl[0]["Telefono_celular"]; ?>">
-                                                                                                        </div>
-                                                                                                    </a></td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Direccion Anterior</th>
-                                                                                                    <td><a href="#!">
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Direccion_anterior" value="<?php echo $res_cl[0]["Direccion_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </a></td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Ciudad Anterior</th>
-                                                                                                    <td><a href="#!">
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Ciudad_anterior" value="<?php echo $res_cl[0]["Ciudad_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </a></td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Estado Anterior</th>
-                                                                                                    <td><a href="#!">
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Estado_anterior" value="<?php echo $res_cl[0]["Estado_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </a></td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Zip Anterior</th>
-                                                                                                    <td><a href="#!">
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Zip_anterior" value="<?php echo $res_cl[0]["Zip_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </a></td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                        <th scope="row">Correo</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Correo"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- end of table col-lg-6 -->
-                                                                                </div>
-                                                                                <!-- end of row -->
-                                                                            </div>
-                                                                            <!-- end of general info -->
-                                                                        </div>
-                                                                        <!-- end of col-lg-12 -->
-                                                                    </div>
-                                                                    <!-- end of row -->
-                                                                </div>
-                                                                <!-- end of view-info -->
-                                                                
-                                                            </div>
-                                                            <!-- end of card-block -->
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                    <!-- Main-body start -->
-                                                                <div class="main-body">
-                                                                    <div class="page-wrapper">
-
-                                                                        
-                                                                        <!-- Page header end -->
-                                                                        <!-- Page body start -->
-                                                                        <div class="page-body">
-                                                                            <div class="row">
-                                                                                <div class="col-sm-12">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- Page body end -->
-                                                                    </div>
-                                                                </div>
-                                                                <!-- Main-body end -->
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        <!-- personal card end-->
-                                                        <!-- personal card start -->
-                                                        <div id="informacion-de-empleo" class="card">
-                                                            <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion de empleo</h5>
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <div class="view-info">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                            <div class="general-info">
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-12 col-xl-6">
-                                                                                        <div class="table-responsive">
-                                                                                            <table class="table m-0">
-                                                                                                <!--Inicio informacion de empleo-->
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Nombre empleo</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Nombre_empleo" value="<?php echo $res_cl[0]["Nombre_empleo"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Direccion empleo</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Direccion_empleo" value="<?php echo $res_cl[0]["Direccion_empleo"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Tiempo empleo</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" value="<?php echo $res_cl[0]["Tiempo_empleo"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Telefono del empleo</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" value="<?php echo $res_cl[0]["Telefono_empleo"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Posicion empleo</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Posicion_empleo" value="<?php echo $res_cl[0]["Posicion_empleo"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Ingreso bruto</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Ingreso_bruto" value="<?php echo $res_cl[0]["Ingreso_bruto"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                    <th scope="row">Tipo ingreso</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <select id="" type="text" class="cl_invalid form-control">
-                                                                                                                <option <?php if($res_cl[0]["Tipo_ingreso"] == "Anual"){echo "selected";} ?>  value="Anual">
-                                                                                                                    Anual
-                                                                                                                </option>
-                                                                                                                <option <?php if($res_cl[0]["Tipo_ingreso"] == "Mensual"){echo "selected";} ?> value="Mensual">
-                                                                                                                    Mensual
-                                                                                                                </option>   
-                                                                                                                
-                                                                                                            </select>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Empleador anterior</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Empleador_anterior" value="<?php echo $res_cl[0]["Empleador_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!--fin informacion de empleo-->
-                                                                                    <!-- end of table col-lg-6 -->
-                                                                                    <div class="col-lg-12 col-xl-6">
-                                                                                    <div class="table-responsive">
-                                                                                        <table class="table">
-                                                                                            <tbody>
-                                                                                                
-                                                                                                <tr>
-                                                                                                    <th scope="row">Fecha de empleo anterior</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Empleador_anterior" value="<?php echo $res_cl[0]["Empleador_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Ciudad empleo anterior</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Ciudad_empleo_anterior" value="<?php echo $res_cl[0]["Ciudad_empleo_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Estado empleo anterior</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Estado_empleo_anterior" value="<?php echo $res_cl[0]["Estado_empleo_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Zip Empleo Anterior</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Zip_empleo_anterior" value="<?php echo $res_cl[0]["Zip_empleo_anterior"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                        <th scope="row">Número de telefono del empleo anterio</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="N_telefono_empleo_anterio" value="<?php echo $res_cl[0]["N_telefono_empleo_anterior"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Fuente de ingreso extra	</th>
-                                                                                                        <td>
-                                                                                                            <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="" value="<?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"]; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Otras fuentes de ingreso</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="Fuente_ingreso_extra" value="<?php echo $res_cl[0]["Fuente_ingreso_extra"]; ?>">
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- end of table col-lg-6 -->
-                                                                                </div>
-                                                                                <!-- end of row -->
-                                                                            </div>
-                                                                            <!-- end of general info -->
-                                                                        </div>
-                                                                        <!-- end of col-lg-12 -->
-                                                                    </div>
-                                                                    <!-- end of row -->
-                                                                </div>
-                                                            
-                                                                <!-- end of view-info -->
-                                                                
-                                                            </div>
 
 
-                                                            <!-- end of card-block -->
-                                                            
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                    <!-- Main-body start -->
-                                                                        <!--inicio informacion de referencia-->
+
+                                                    
+                                                        <div class="tab-pane active" id="personal" role="tabpanel">
                                                             <!-- personal card start -->
                                                             <div class="card">
                                                                 <div class="card-header">
-                                                                    <h5 class="card-header-text">INFORMACIÓN Y REFERENCIAS DE LA HIPOTECA</h5>
+                                                                    <h5 class="card-header-text">Informacion Cliente</h5>
                                                                 </div>
                                                                 <div class="card-block">
                                                                     <div class="view-info">
@@ -1213,96 +819,82 @@
                                                                                                 <table class="table m-0">
                                                                                                     <tbody>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Estado de la hipoteca</th>
-                                                                                                            <td> 
-                                                                                                                <!-- Opcional -->
-                                                                                                                <select id="" type="text" class="form-control" name="Id_hipoteca_estado">
-                                                                                                                    <option <?php if($res_cl[0]["Id_hipoteca_estado"] == "1"){echo "selected";} ?> value="1">
-                                                                                                                        Pagado
-                                                                                                                    </option>
-                                                                                                                    <option <?php if($res_cl[0]["Id_hipoteca_estado"] == "2"){echo "selected";} ?> value="2">
-                                                                                                                        Hipotecado
-                                                                                                                    </option>
-                                                                                                                    <option <?php if($res_cl[0]["Id_hipoteca_estado"] == "3"){echo "selected";} ?> value="3">
-                                                                                                                        Rentado
-                                                                                                                    </option>
-                                                                                                                    <option <?php if($res_cl[0]["Id_hipoteca_estado"] == "6"){echo "selected";} ?> value="6">
-                                                                                                                        Default
-                                                                                                                    </option>
-                                                                                                                </select>
-                                                                                                            </td>
+                                                                                                            <th scope="row">Primer Nombre</th>
+                                                                                                            <td><div class="input-group">
+                                                                                                                <input required  id="" type="text" class="form-control cl_invalid" name="Primer_nombre" value="<?php echo $res_cl[0]["Primer_nombre"]; ?>">
+                                                                                                            </div> </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Tipo de residencia de la hipoteca</th>
-                                                                                                            <td>
-                                                                                                                <select id="" type="text" class="form-control" name="Id_tipo_residencia_hipoteca">
-                                                                                                                    <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "6"){echo "selected";} ?> value="6">
-                                                                                                                        Default
-                                                                                                                    </option>
-                                                                                                                    <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "1"){echo "selected";} ?> value="1">
-                                                                                                                        Casa
-                                                                                                                    </option>
-                                                                                                                    <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "2"){echo "selected";} ?> value="2">
-                                                                                                                        Departamento
-                                                                                                                    </option>
-                                                                                                                    <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "3"){echo "selected";} ?> value="3">
-                                                                                                                        Condominio
-                                                                                                                    </option>
-                                                                                                                    <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "4"){echo "selected";} ?> value="4">
-                                                                                                                        Casa Movil
-                                                                                                                    </option>
-                                                                                                                </select>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Direccion de la hipoteca</th>
+                                                                                                            <th scope="row">Apellido</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Direccion_hipoteca" value="<?php echo $res_cl[0]["Direccion_hipoteca"]; ?>">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="Apellido" value="<?php echo $res_cl[0]["Apellido"]; ?>">
                                                                                                                 </div>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Propietario o hipoteca titular</th>
+                                                                                                            <th scope="row">Fecha de nacimiento</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="PROPIETARIO_O_HIPOTECA_TITULAR" value="<?php echo $res_cl[0]["Propietario_hipoteca_titular"]; ?>">
+                                                                                                                    <input required id="" type="date" class="form-control cl_invalid" name="Fecha de nacimiento" value="<?php echo $res_cl[0]["Fecha_nacimiento"]; ?>">
                                                                                                                 </div>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Pago de la hipoteca</th>
+                                                                                                            <th scope="row">Numero de seguro social</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Pago_hipoteca" value="<?php echo $res_cl[0]["Pago_hipoteca"]; ?>">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="N_seguro_social" value="<?php echo $res_cl[0]["N_seguro_social"]; ?>">
                                                                                                                 </div>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Número de telefono de hipoteca</th>
+                                                                                                            <th scope="row">Numero de Licencia de Conducir</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="N_telefono_hipoteca" value="<?php echo $res_cl[0]["N_telefono_hipoteca"]; ?>">
+                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="N_licencia_conducir" value="<?php echo $res_cl[0]["N_licencia_conducir"]; ?> ">
                                                                                                                 </div>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente nombre 1</th>
+                                                                                                            <th scope="row">Estado</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_nombre_1" value="<?php echo $res_cl[0]["Referencia_pariente_nombre_1"]; ?>">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="Estado" value="<?php echo $res_cl[0]["Estado"]; ?>">
                                                                                                                 </div>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente direccion 1</th>
+                                                                                                            <th scope="row">Vencimiento</th>
+                                                                                                            <td><div class="input-group">
+                                                                                                                <input required id="" type="date" class="form-control cl_invalid" name="vencimiento" value="<?php echo $res_cl[0]["Vencimiento"]; ?>">
+                                                                                                            </div></td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Direccion</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_direccion_1" value="<?php echo $res_cl[0]["Referencia_pariente_nombre_1"]; ?>">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="direccion" value="<?php echo $res_cl[0]["Direccion"]; ?>">
                                                                                                                 </div>
                                                                                                             </td>
                                                                                                         </tr>
-                                                                                                    
+                                                                                                        <tr>
+                                                                                                            <th scope="row">tiempo en esa direccion</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="tiempo en la direccion" value="<?php echo $res_cl[0]["Cuanto_tiempo"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                        <th scope="row">Ciudad</th>
+                                                                                                        <td><a href="#!">
+                                                                                                            <div class="input-group">
+                                                                                                                <input required id="" type="text" class="form-control cl_invalid" name="Ciudad" value="<?php echo $res_cl[0]["Ciudad"]; ?>">
+                                                                                                            </div>
+                                                                                                        </a>
+                                                                                                        </td>
+                                                                                                    </tr>
                                                                                                     </tbody>
                                                                                                 </table>
                                                                                             </div>
@@ -1312,59 +904,76 @@
                                                                                         <div class="table-responsive">
                                                                                             <table class="table">
                                                                                                 <tbody>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Referencia pariente telefono 1</th>
+                                                                                                    
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Estado</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input required id="" type="text" class="form-control cl_invalid" name="Estado" value="<?php echo $res_cl[0]["Estado_ciudad"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Zip</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input required id="" type="text" class="form-control cl_invalid" name="Zip" value="<?php echo $res_cl[0]["Zip"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Telefono de casa</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Telefono_casa" value="<?php echo $res_cl[0]["Telefono_casa"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Telefono Celular</th>
+                                                                                                        <td><a href="#!">
+                                                                                                            <div class="input-group">
+                                                                                                                <input required id="" type="text" class="form-control cl_invalid" name="Telefono_celular" value="<?php echo $res_cl[0]["Telefono_celular"]; ?>">
+                                                                                                            </div>
+                                                                                                        </a></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Direccion Anterior</th>
+                                                                                                        <td><a href="#!">
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Direccion_anterior" value="<?php echo $res_cl[0]["Direccion_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </a></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Ciudad Anterior</th>
+                                                                                                        <td><a href="#!">
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Ciudad_anterior" value="<?php echo $res_cl[0]["Ciudad_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </a></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Estado Anterior</th>
+                                                                                                        <td><a href="#!">
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Estado_anterior" value="<?php echo $res_cl[0]["Estado_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </a></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Zip Anterior</th>
+                                                                                                        <td><a href="#!">
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Zip_anterior" value="<?php echo $res_cl[0]["Zip_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </a></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                            <th scope="row">Correo</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_telefono_1" value="<?php echo $res_cl[0]["Referencia_pariente_telefono_1"]; ?>">
-                                                                                                                </div>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Referencia pariente relacion 1</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_relacion_1" value="<?php echo $res_cl[0]["Referencia_pariente_relacion_1"]; ?>">
-                                                                                                                </div>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Referencia pariente nombre 2</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_nombre_2" value="<?php echo $res_cl[0]["Referencia_pariente_nombre_2"]; ?>">
-                                                                                                                </div>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Referencia pariente direccion 2</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_direccion_2" value="<?php echo $res_cl[0]["Referencia_pariente_direccion_2"]; ?>">
-                                                                                                                </div>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Referencia pariente telefono 2</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_telefono_2" value="<?php echo $res_cl[0]["Referencia_pariente_telefono_2"]; ?>">
-                                                                                                                </div>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Referencia pariente relacion 2</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_relacion_2" value="<?php echo $res_cl[0]["Referencia_pariente_relacion_2"]; ?>">
-                                                                                                                </div>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">fecha de creacion de este registro</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                    <input  id="" type="date" class="form-control cl_invalid" name="fecha_creacion_registro" value="<?php echo $res_cl[0]["Fecha_creacion_registro"]; ?>">
+                                                                                                                    <input required id="correo" type="email" class="form-control cl_invalid" name="correo" value="<?php echo $res_cl[0]["Correo"]; ?>">
                                                                                                                 </div>
                                                                                                             </td>
                                                                                                         </tr>
@@ -1390,52 +999,462 @@
                                                             <div class="row">
                                                                 <div class="col-lg-12">
                                                                         <!-- Main-body start -->
-                                                                <div class="main-body">
-                                                                    <div class="page-wrapper">
-                                                                        <!-- Page header start -->
-                                                                        
-                                                                        
-                                                                        <!-- Page header end -->
-                                                                        <!-- Page body start -->
-                                                                        <div class="page-body">
-                                                                            <div class="row">
-                                                                                <div class="col-sm-12">
-                                                                                
+                                                                    <div class="main-body">
+                                                                        <div class="page-wrapper">
+
+                                                                            
+                                                                            <!-- Page header end -->
+                                                                            <!-- Page body start -->
+                                                                            <div class="page-body">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-12">
+                                                                                        
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
+                                                                            <!-- Page body end -->
                                                                         </div>
-                                                                        <!-- Page body end -->
+                                                                    </div>
+                                                                    <!-- Main-body end -->
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <!-- personal card end-->
+                                                            <!-- personal card start -->
+                                                            <div id="informacion-de-empleo" class="card">
+                                                                <div class="card-header">
+                                                                    <h5 class="card-header-text">Informacion de empleo</h5>
+                                                                </div>
+                                                                <div class="card-block">
+                                                                    <div class="view-info">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-12">
+                                                                                <div class="general-info">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-12 col-xl-6">
+                                                                                            <div class="table-responsive">
+                                                                                                <table class="table m-0">
+                                                                                                    <!--Inicio informacion de empleo-->
+                                                                                                    <tbody>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Nombre empleo</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="Nombre_empleo" value="<?php echo $res_cl[0]["Nombre_empleo"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Direccion empleo</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="Direccion_empleo" value="<?php echo $res_cl[0]["Direccion_empleo"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Tiempo empleo</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="tiempo empleo" value="<?php echo $res_cl[0]["Tiempo_empleo"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Telefono del empleo</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="telefono del empleo anterior" value="<?php echo $res_cl[0]["Telefono_empleo"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Posicion empleo</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="Posicion_empleo" value="<?php echo $res_cl[0]["Posicion_empleo"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Ingreso bruto</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input required id="" type="text" class="form-control cl_invalid" name="Ingreso_bruto" value="<?php echo $res_cl[0]["Ingreso_bruto"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                        <th scope="row">Tipo ingreso</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <select required id="" name="tipo ingreso" type="text" class="cl_invalid form-control">
+                                                                                                                    <option <?php if($res_cl[0]["Tipo_ingreso"] == "Anual"){echo "selected";} ?>  value="Anual">
+                                                                                                                        Anual
+                                                                                                                    </option>
+                                                                                                                    <option <?php if($res_cl[0]["Tipo_ingreso"] == "Mensual"){echo "selected";} ?> value="Mensual">
+                                                                                                                        Mensual
+                                                                                                                    </option>   
+                                                                                                                    
+                                                                                                                </select>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Empleador anterior</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="Empleador_anterior" value="<?php echo $res_cl[0]["Empleador_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!--fin informacion de empleo-->
+                                                                                        <!-- end of table col-lg-6 -->
+                                                                                        <div class="col-lg-12 col-xl-6">
+                                                                                        <div class="table-responsive">
+                                                                                            <table class="table">
+                                                                                                <tbody>
+                                                                                                    
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Fecha de empleo anterior</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input required id="" type="text" class="form-control cl_invalid" name="fecha de empleo anterior" value="<?php echo $res_cl[0]["Fecha_empleo_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Ciudad empleo anterior</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input required id="" type="text" class="form-control cl_invalid" name="Ciudad_empleo_anterior" value="<?php echo $res_cl[0]["Ciudad_empleo_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Estado empleo anterior</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input required id="" type="text" class="form-control cl_invalid" name="Estado_empleo_anterior" value="<?php echo $res_cl[0]["Estado_empleo_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Zip Empleo Anterior</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input required id="" type="text" class="form-control cl_invalid" name="Zip_empleo_anterior" value="<?php echo $res_cl[0]["Zip_empleo_anterior"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                            <th scope="row">Número de telefono del empleo anterio</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="N_telefono_empleo_anterio" value="<?php echo $res_cl[0]["N_telefono_empleo_anterior"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Fuente de ingreso extra	</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                    <input  id="" type="text" class="form-control cl_invalid" name="fuente de ingreso extra" value="<?php echo $res_cl[0]["Fuente_ingreso_extra"]; ?>">
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Cantidad de fuente de ingreso</th>
+                                                                                                        <td>
+                                                                                                            <div class="input-group">
+                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="cantidad de fuente de ingreso extra" value="<?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"]; ?>">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!-- end of table col-lg-6 -->
+                                                                                    </div>
+                                                                                    <!-- end of row -->
+                                                                                </div>
+                                                                                <!-- end of general info -->
+                                                                            </div>
+                                                                            <!-- end of col-lg-12 -->
+                                                                        </div>
+                                                                        <!-- end of row -->
+                                                                    </div>
+                                                                
+                                                                    <!-- end of view-info -->
+                                                                    
+                                                                </div>
+
+
+                                                                <!-- end of card-block -->
+                                                                
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                        <!-- Main-body start -->
+                                                                            <!--inicio informacion de referencia-->
+                                                                <!-- personal card start -->
+                                                                <div class="card">
+                                                                    <div class="card-header">
+                                                                        <h5 class="card-header-text">INFORMACIÓN Y REFERENCIAS DE LA HIPOTECA</h5>
+                                                                    </div>
+                                                                    <div class="card-block">
+                                                                        <div class="view-info">
+                                                                            <div class="row">
+                                                                                <div class="col-lg-12">
+                                                                                    <div class="general-info">
+                                                                                        <div class="row">
+                                                                                            <div class="col-lg-12 col-xl-6">
+                                                                                                <div class="table-responsive">
+                                                                                                    <table class="table m-0">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Estado de la hipoteca</th>
+                                                                                                                <td> 
+                                                                                                                    <!-- Opcional -->
+                                                                                                                    <select id="" type="text" class="form-control" name="Id_hipoteca_estado">
+                                                                                                                        <option <?php if($res_cl[0]["Id_hipoteca_estado"] == "1"){echo "selected";} ?> value="1">
+                                                                                                                            Pagado
+                                                                                                                        </option>
+                                                                                                                        <option <?php if($res_cl[0]["Id_hipoteca_estado"] == "2"){echo "selected";} ?> value="2">
+                                                                                                                            Hipotecado
+                                                                                                                        </option>
+                                                                                                                        <option <?php if($res_cl[0]["Id_hipoteca_estado"] == "3"){echo "selected";} ?> value="3">
+                                                                                                                            Rentado
+                                                                                                                        </option>
+                                                                                                                        <option <?php if($res_cl[0]["Id_hipoteca_estado"] == "6"){echo "selected";} ?> value="6">
+                                                                                                                            Default
+                                                                                                                        </option>
+                                                                                                                    </select>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Tipo de residencia de la hipoteca</th>
+                                                                                                                <td>
+                                                                                                                    <select id="" type="text" class="form-control" name="Id_tipo_residencia_hipoteca">
+                                                                                                                        <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "6"){echo "selected";} ?> value="6">
+                                                                                                                            Default
+                                                                                                                        </option>
+                                                                                                                        <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "1"){echo "selected";} ?> value="1">
+                                                                                                                            Casa
+                                                                                                                        </option>
+                                                                                                                        <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "2"){echo "selected";} ?> value="2">
+                                                                                                                            Departamento
+                                                                                                                        </option>
+                                                                                                                        <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "3"){echo "selected";} ?> value="3">
+                                                                                                                            Condominio
+                                                                                                                        </option>
+                                                                                                                        <option <?php if($res_cl[0]["Id_tipo_residencia_hipoteca"] == "4"){echo "selected";} ?> value="4">
+                                                                                                                            Casa Movil
+                                                                                                                        </option>
+                                                                                                                    </select>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Direccion de la hipoteca</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="Direccion_hipoteca" value="<?php echo $res_cl[0]["Direccion_hipoteca"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Propietario o hipoteca titular</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="PROPIETARIO_O_HIPOTECA_TITULAR" value="<?php echo $res_cl[0]["Propietario_hipoteca_titular"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Pago de la hipoteca</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="Pago_hipoteca" value="<?php echo $res_cl[0]["Pago_hipoteca"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Número de telefono de hipoteca</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="N_telefono_hipoteca" value="<?php echo $res_cl[0]["N_telefono_hipoteca"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Referencia pariente nombre 1</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input required id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_nombre_1" value="<?php echo $res_cl[0]["Referencia_pariente_nombre_1"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Referencia pariente direccion 1</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input required id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_direccion_1" value="<?php echo $res_cl[0]["Referencia_pariente_direccion_1"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- end of table col-lg-6 -->
+                                                                                            <div class="col-lg-12 col-xl-6">
+                                                                                            <div class="table-responsive">
+                                                                                                <table class="table">
+                                                                                                    <tbody>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Referencia pariente telefono 1</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input required id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_telefono_1" value="<?php echo $res_cl[0]["Referencia_pariente_telefono_1"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Referencia pariente relacion 1</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input required id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_relacion_1" value="<?php echo $res_cl[0]["Referencia_pariente_relacion_1"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Referencia pariente nombre 2</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_nombre_2" value="<?php echo $res_cl[0]["Referencia_pariente_nombre_2"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Referencia pariente direccion 2</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_direccion_2" value="<?php echo $res_cl[0]["Referencia_pariente_direccion_2"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Referencia pariente telefono 2</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_telefono_2" value="<?php echo $res_cl[0]["Referencia_pariente_telefono_2"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">Referencia pariente relacion 2</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_relacion_2" value="<?php echo $res_cl[0]["Referencia_pariente_relacion_2"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <th scope="row">fecha de creacion de este registro</th>
+                                                                                                                <td>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <input required id="" type="date" class="form-control cl_invalid" name="fecha_creacion_registro" value="<?php echo $res_cl[0]["Fecha_creacion_registro"]; ?>">
+                                                                                                                    </div>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-12 d-flex justify-content-center">
+                                                            
+                                                                                                <button class="btn btn-secondary mx-2" style="cursor: pointer;">
+                                                                                                    Cancelar
+                                                                                                </button>
+                                                                                                <button class="btn btn-primary cursor-pointer mx-2">
+                                                                                                    Guardar
+                                                                                                </button>
+
+                                                                                            </div>
+                                                                                            <!-- end of table col-lg-6 -->
+                                                                                        </div>
+                                                                                        <!-- end of row -->
+                                                                                    </div>
+                                                                                    <!-- end of general info -->
+                                                                                </div>
+                                                                                <!-- end of col-lg-12 -->
+                                                                            </div>
+                                                                            <!-- end of row -->
+                                                                        </div>
+                                                                        <!-- end of view-info -->
+                                                                        
+                                                                    </div>
+                                                                    <!-- end of card-block -->
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                            <!-- Main-body start -->
+                                                                    <div class="main-body">
+                                                                        <div class="page-wrapper">
+                                                                            <!-- Page header start -->
+                                                                            
+                                                                            
+                                                                            <!-- Page header end -->
+                                                                            <!-- Page body start -->
+                                                                            <div class="page-body">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-12">
+                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- Page body end -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Main-body end -->
+                                
                                                                     </div>
                                                                 </div>
-                                                                <!-- Main-body end -->
+                                                                <!-- personal card end-->
+                                                                    <!--fin informacion de referencia-->
+                                                                    <div class="main-body">
+                                                                        <div class="page-wrapper">
+                                                                            
+                                                                            
+                                                                            <!-- Page header end -->
+                                                                            <!-- Page body start -->
+                                                                            <div class="page-body">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-12">
+                                                                                    
+                                                                                        
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- Page body end -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Main-body end -->
                             
                                                                 </div>
                                                             </div>
                                                             <!-- personal card end-->
-                                                                <!--fin informacion de referencia-->
-                                                                <div class="main-body">
-                                                                    <div class="page-wrapper">
-                                                                        
-                                                                        
-                                                                        <!-- Page header end -->
-                                                                        <!-- Page body start -->
-                                                                        <div class="page-body">
-                                                                            <div class="row">
-                                                                                <div class="col-sm-12">
-                                                                                
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- Page body end -->
-                                                                    </div>
-                                                                </div>
-                                                                <!-- Main-body end -->
-                        
-                                                            </div>
                                                         </div>
-                                                        <!-- personal card end-->
-                                                    </div>
+                                                    </form>
+                                                    
                                                     <!-- tab pane personal end -->
                                                     <!-- tab pane info start -->
                                                     <div class="tab-pane card_co" id="binfo" role="tabpanel">
@@ -1996,6 +2015,7 @@
     <script src="assets/js/demo-12.js"></script>
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script src="backend/js/edit-customers.js"></script>
 
     <script src="backend/js/co-aplicante-true.js"></script>
     <script>

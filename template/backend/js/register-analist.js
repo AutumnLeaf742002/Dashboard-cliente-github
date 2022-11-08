@@ -61,6 +61,7 @@ $(document).ready()
                         aparecer_n_2("Registro completado exitosamente")
 
                         const list_input = document.querySelectorAll('.form-control')
+                        get_analist()
 
                         list_input.forEach(item => {
 

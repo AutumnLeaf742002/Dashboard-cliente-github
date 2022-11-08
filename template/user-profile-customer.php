@@ -943,7 +943,7 @@
                                                                                                     <tr>
                                                                                                         <th scope="row">Telefono de empleo</th>
                                                                                                         <td>
-                                                                                                            <?php echo $res_cl[0]["Tiempo_empleo"];?>
+                                                                                                            <?php echo $res_cl[0]["Telefono_empleo"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -983,7 +983,7 @@
                                                                                                 <tr>
                                                                                                         <th scope="row">Fecha de empleo anterior</th>
                                                                                                         <td>
-                                                                                                            <?php echo $res_cl[0]["N_telefono_empleo_anterior"];?>
+                                                                                                            <?php echo $res_cl[0]["Fecha_empleo_anterior"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -1017,7 +1017,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Otras fuentes de ingreso</th>
+                                                                                                        <th scope="row">Cantidad de fuentes de ingreso extra</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"];?>
                                                                                                         </td>
@@ -1106,7 +1106,7 @@
                                                                                                         <tr>
                                                                                                             <th scope="row">Propietario o hipoteca titular</th>
                                                                                                             <td>
-                                                                                                                <?php echo $res_cl[0]["Pago_hipoteca"];?>
+                                                                                                                <?php echo $res_cl[0]["Propietario_hipoteca_titular"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
@@ -1290,7 +1290,7 @@
                                                                                                             <?php
                                                                                                                 if($con_co == true)
                                                                                                                 {
-                                                                                                                    echo $res_co[0]["C_Primer_nombre"];
+                                                                                                                    echo $res_co[0]["Relacion_solicitante"];
                                                                                                                 }
                                                                                                                 else if($con_co == false)
                                                                                                                 {
@@ -1335,7 +1335,7 @@
                                                                                                             <?php
                                                                                                                 if($con_co == true)
                                                                                                                 {
-                                                                                                                    echo $res_co[0]["C_Primer_nombre"];
+                                                                                                                    echo $res_co[0]["C_Fecha_nacimiento"];
                                                                                                                 }
                                                                                                                 else if($con_co == false)
                                                                                                                 {
@@ -1425,7 +1425,7 @@
                                                                                                             <?php
                                                                                                                 if($con_co == true)
                                                                                                                 {
-                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                    echo $res_co[0]["C_Cuanto_tiempo"];
                                                                                                                 }
                                                                                                                 else if($con_co == false)
                                                                                                                 {
@@ -1440,7 +1440,7 @@
                                                                                                             <?php
                                                                                                                 if($con_co == true)
                                                                                                                 {
-                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                    echo $res_co[0]["C_Ciudad"];
                                                                                                                 }
                                                                                                                 else if($con_co == false)
                                                                                                                 {
@@ -1455,7 +1455,7 @@
                                                                                                             <?php
                                                                                                                 if($con_co == true)
                                                                                                                 {
-                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                    echo $res_co[0]["C_Estado_ciudad"];
                                                                                                                 }
                                                                                                                 else if($con_co == false)
                                                                                                                 {
@@ -1470,7 +1470,7 @@
                                                                                                             <?php
                                                                                                                 if($con_co == true)
                                                                                                                 {
-                                                                                                                    echo $res_co[0]["C_Direccion"];
+                                                                                                                    echo $res_co[0]["C_Zip"];
                                                                                                                 }
                                                                                                                 else if($con_co == false)
                                                                                                                 {
@@ -1485,7 +1485,7 @@
                                                                                                             <?php
                                                                                                                 if($con_co == true)
                                                                                                                 {
-                                                                                                                    echo $res_co[0]["C_Fuente_ingreso_extra"];
+                                                                                                                    echo $res_co[0]["C_Correo"];
                                                                                                                 }
                                                                                                                 else if($con_co == false)
                                                                                                                 {
@@ -1554,7 +1554,7 @@
                                                                                                         <?php
                                                                                                             if($con_co == true)
                                                                                                             {
-                                                                                                                echo $res_co[0]["C_Telefono_casa"];
+                                                                                                                echo $res_co[0]["C_Telefono_empleo"];
                                                                                                             }
                                                                                                             else if($con_co == false)
                                                                                                             {
@@ -1613,7 +1613,7 @@
                                                                                                         <?php
                                                                                                             if($con_co == true)
                                                                                                             {
-                                                                                                                echo $res_co[0]["C_Tipo_ingreso"];
+                                                                                                                echo $res_co[0]["C_Ingreso_bruto"];
                                                                                                             }
                                                                                                             else if($con_co == false)
                                                                                                             {
@@ -1658,7 +1658,7 @@
                                                                                                         <?php
                                                                                                             if($con_co == true)
                                                                                                             {
-                                                                                                                echo $res_co[0]["C_Empleador_anterior"];
+                                                                                                                echo $res_co[0]["C_Fecha_empleo_anterior"];
                                                                                                             }
                                                                                                             else if($con_co == false)
                                                                                                             {
@@ -1716,7 +1716,7 @@
                                                                                                         <?php
                                                                                                             if($con_co == true)
                                                                                                             {
-                                                                                                                echo $res_co[0]["C_Telefono_casa"];
+                                                                                                                echo $res_co[0]["C_N_telefono_empleo_anterior"];
                                                                                                             }
                                                                                                             else if($con_co == false)
                                                                                                             {
@@ -1730,7 +1730,7 @@
                                                                                                         <?php
                                                                                                             if($con_co == true)
                                                                                                             {
-                                                                                                                echo $res_co[0]["C_Estado_anterior"];
+                                                                                                                echo $res_co[0]["C_Fuente_ingreso_extra"];
                                                                                                             }
                                                                                                             else if($con_co == false)
                                                                                                             {
@@ -1740,12 +1740,12 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Ingreso Mensuale </th>
+                                                                                                    <th scope="row">Ingreso Mensual</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
                                                                                                             {
-                                                                                                                echo $res_co[0]["C_Ciudad_anterior"];
+                                                                                                                echo $res_co[0]["C_Cantidad_fuente_ingreso_extra"];
                                                                                                             }
                                                                                                             else if($con_co == false)
                                                                                                             {
