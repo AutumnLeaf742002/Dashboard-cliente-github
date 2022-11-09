@@ -18,7 +18,7 @@
             <div class="card user-card">
                 <div class="">
                     <div class="card-header-img">
-                        <img style="height: 200px; width: 200px; object-fit: cover;" class="img-fluid w-50 rounded" src="backend/php/img-analist/'.$item["Foto"].'">
+                        <img style="height: 200px; width: 200px; object-fit: cover;" class="img-fluid w-50 rounded-circle" src="backend/php/img-analist/'.$item["Foto"].'">
                     </div>
                     <h4>
                         '.$item["Name"].'
