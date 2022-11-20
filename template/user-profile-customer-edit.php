@@ -765,20 +765,18 @@
                                                 <div class="tab-header">
                                                     <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist" id="mytab">
                                                         <li class="nav-item">
-                                                            <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Informacion Personal</a>
+                                                            
+                                                        </li>
+                                                        <li class="nav-item">
+                                                        <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Informacion Personal</a>
                                                             <div class="slide"></div>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" data-toggle="tab" href="#binfo" role="tab">informacion de co aplicante</a>
+                                                        <a class="nav-link" data-toggle="tab" href="#binfo" role="tab">informacion de co aplicante</a>
                                                             <div class="slide"></div>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" data-toggle="tab" href="#contacts" role="tab">User's Contacts</a>
-                                                            <div class="slide"></div>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" data-toggle="tab" href="#review" role="tab">Reviews</a>
-                                                            <div class="slide"></div>
+                                                            
                                                         </li>
                                                     </ul>
                                                     
@@ -1542,7 +1540,7 @@
                                                                                             <div class="col-12 d-flex justify-content-center">
                                                             
                                                                                                 <button class="btn btn-secondary mx-2" style="cursor: pointer;">
-                                                                                                    Cancelar
+                                                                                                    volver
                                                                                                 </button>
                                                                                                 <input type="submit" class="btn btn-primary cursor-pointer mx-2" value="Guardar">
                                                                                                     
