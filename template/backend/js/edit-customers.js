@@ -96,14 +96,35 @@ function edit_finally()
 
         if (request.readyState == 4 && request.status == 200) {
 
-            if(request.responseText == "Correct")
+            let res = request.responseText
+            if(res == "Correct")
             {
                 aparecer_n_2("Cambios guardados")
                 cerrar()
             }
+            else if(res.includes("for key 'N_seguro_social'") == true)
+            {
+                aparecer_n_3("El Seguro Social ya se esta utilizando en un cliente")
+                cerrar()
+            }
+            else if(res.includes("for key 'N_licencia_conducir'") == true)
+            {
+                aparecer_n_3("La Licencia de Conducir ya se esta utilizando en un cliente")
+                cerrar()
+            }
+            else if(res.includes("for key 'Telefono_celular'") == true)
+            {
+                aparecer_n_3("El Numero de Celular ya se esta utilizando en un cliente")
+                cerrar()
+            }
+            else if(res.includes("for key 'Correo'") == true)
+            {
+                aparecer_n_3("El Correo ya se esta utilizando en un cliente")
+                cerrar()
+            }
             else
             {
-                aparecer_n_3(`Error desconocido: ${request.responseText}`)
+                aparecer_n_3(`Error desconocido: ${res}`)
                 cerrar()
             }
         }

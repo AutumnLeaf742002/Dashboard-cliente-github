@@ -1521,7 +1521,7 @@
                                                                                                                 <th scope="row">Referencia pariente relacion 2</th>
                                                                                                                 <td>
                                                                                                                     <div class="input-group">
-                                                                                                                        <input  id="" type="text" class="form-control cl_invalid" name="Referencia_pariente_relacion_2" value="<?php echo $res_cl[0]["Referencia_pariente_relacion_2"]; ?>">
+                                                                                                                        <input  id="id_cl" type="text" class="form-control cl_invalid" name="Referencia_pariente_relacion_2" value="<?php echo $res_cl[0]["Referencia_pariente_relacion_2"]; ?>">
                                                                                                                         <input style="display: none;" id="" type="text" class="form-control cl_invalid" name="id_cliente" value="<?php echo $id_cl; ?>">
                                                                                                                     </div>
                                                                                                                 </td>
@@ -1533,9 +1533,9 @@
                                                                                             </div>
                                                                                             <div class="col-12 d-flex justify-content-center">
                                                             
-                                                                                                <button class="btn btn-secondary mx-2" style="cursor: pointer;">
+                                                                                                <a href="user-profile-customer.php?id_cl=<?php echo $id_cl ?>&id_co=<?php echo $id_co ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
                                                                                                     volver
-                                                                                                </button>
+                                                                                                </a>
                                                                                                 <input type="submit" class="btn btn-primary cursor-pointer mx-2" value="Guardar">
                                                                                                     
                                                                                             </div>
@@ -2189,7 +2189,6 @@
     <script>
         co_aplicante_true(<?php echo count($res_co); ?>)
     </script>
-
 
 </body>
 
