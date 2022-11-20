@@ -637,7 +637,6 @@
                                                             
                                                         </li>
                                                     </ul>
-                                                    
                                                 </div>
                                                 <!-- tab header end -->
                                                 <!-- tab content start -->

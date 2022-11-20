@@ -784,12 +784,11 @@
                                                 <!-- tab header end -->
                                                 <!-- tab content start -->
                                                 <div class="tab-pane" id="contacts" role="tabpanel">
-                                                      
                                                 <div class="tab-content">
                                                     <!-- tab panel personal start -->
-                                                     <!-- personal card start -->
-                                                     <!--inicio boton de guardar-->
-                                                     <!-- <div class="card">
+                                                <!-- personal card start -->
+                                                <!--inicio boton de guardar-->
+                                                        <!-- <div class="card">
                                                         <div class="card-header">
                                                             <h5 class="card-header-text">Guardar Cambios</h5>
                                                         </div>
@@ -802,36 +801,29 @@
                                                                 end of row -->
                                                             <!-- </div> -->
                                                             <!-- end of view-info -->
-                                                            
                                                         <!-- </div> -->
                                                         <!-- end of card-block -->
-                                                         <!-- </div> -->
+                                                        <!-- </div> -->
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                                 <!-- Main-body start -->
                                                         <div class="main-body">
                                                             <div class="page-wrapper">
                                                                 <!-- Page header start -->
-                                                                
-                                                                
                                                                 <!-- Page header end -->
                                                                 <!-- Page body start -->
                                                                 <div class="page-body">
                                                                     <div class="row">
                                                                         <div class="col-sm-12">
-                                                                        
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- Page body end -->
                                                             </div>
                                                         </div>
-                                                        <!-- Main-body end -->
-                    
                                                         </div>
                                                     </div>
-                                                     <!--final boton de guardar-->
-                                                     <div class="card">
+                                                    <!--final boton de guardar-->
+                                                    <div class="card">
                                                         <div class="card-header">
                                                             <h5 class="card-header-text">Estado del cliente</h5>
                                                         </div>
@@ -991,9 +983,11 @@
                                                                                                     <tbody>
                                                                                                         <tr>
                                                                                                             <th scope="row">Primer Nombre</th>
-                                                                                                            <td><div class="input-group">
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
                                                                                                                 <input required  id="" type="text" class="form-control cl_invalid" name="Primer_nombre" value="<?php echo $res_cl[0]["Primer_nombre"]; ?>">
-                                                                                                            </div> </td>
+                                                                                                            </div> 
+                                                                                                        </td>
                                                                                                         </tr>
                                                                                                         <tr>
                                                                                                             <th scope="row">Apellido</th>
