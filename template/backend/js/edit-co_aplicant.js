@@ -76,7 +76,6 @@ $(document).ready()
 
 function edit_finally_co()
 {
-    console.log(sql_co)
     let request = new XMLHttpRequest()
     request.open('POST', 'backend/php/edit-co_aplicant-finally.php', true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
@@ -85,10 +84,9 @@ function edit_finally_co()
         if (request.readyState == 4 && request.status == 200) {
 
             let res = request.responseText
-            alert(res)
             if(res == "Correct")
             {
-                aparecer_n_2("Cambios guardados")
+                aparecer_n_2("Cambios del co aplicante guardados")
                 cerrar()
 
                 setTimeout(function(){

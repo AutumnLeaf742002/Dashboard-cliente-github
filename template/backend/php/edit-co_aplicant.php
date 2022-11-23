@@ -13,11 +13,11 @@
 
         $sql = "UPDATE co_aplicantes 
         SET Relacion_solicitante = '$values[0]', 
-        Primer_nombre = '$values[1]',
-        Apellido = '$values[2]',
-        Fecha_nacimiento = '$values[3]', 
-        N_seguro_social = '$values[4]',
-        N_licencia_conducir = '$values[5]',
+        C_Primer_nombre = '$values[1]',
+        C_Apellido = '$values[2]',
+        C_Fecha_nacimiento = '$values[3]', 
+        C_N_seguro_social = '$values[4]',
+        C_N_licencia_conducir = '$values[5]',
         C_Estado = '$values[6]',
         C_Vencimiento = '$values[7]',
         C_Direccion = '$values[8]', 
@@ -40,12 +40,13 @@
         C_Ingreso_bruto = '$values[25]',
         C_Tipo_ingreso = '$values[26]',
         C_Empleador_anterior = '$values[27]',
-        posicion_28 = '$values[28]', 
-        posicion_29 = '$values[29]',
-        posicion_30 = '$values[30]',
-        posicion_31 = '$values[31]',
-        posicion_32 = '$values[32]',
-        posicion_33 = '$values[33]' ";
+        C_Fecha_empleo_anterior = '$values[28]', 
+        C_Ciudad_empleo_anterior = '$values[29]',
+        C_Estado_empleo_anterior = '$values[30]',
+        C_Zip_empleo_anterior = '$values[31]',
+        C_N_telefono_empleo_anterior = '$values[32]',
+        C_Fuente_ingreso_extra = '$values[33]',
+        C_Cantidad_fuente_ingreso_extra = '$values[34]' WHERE C_N_serie_cliente = '$values[35]' ";
         
         echo $sql;
     }

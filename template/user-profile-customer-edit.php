@@ -1628,20 +1628,20 @@
                                                                                                     <tr>
                                                                                                         <th scope="row">Relacion del solicitante</th>
                                                                                                         <td><div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Relacion_solicitante" value="<?php echo $res_co[0]["Relacion_solicitante"]; ?>">
+                                                                                                            <input maxlength="100" id="" type="text" class="form-control cl_invalid" name="C_Relacion_solicitante" value="<?php echo $res_co[0]["Relacion_solicitante"]; ?>">
                                                                                                         </div> </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Primer Nombre</th>
                                                                                                         <td><div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Primer_nombre" value="<?php echo $res_co[0]["C_Primer_nombre"]; ?>">
+                                                                                                            <input maxlength="100" id="" type="text" class="form-control cl_invalid" name="C_Primer_nombre" value="<?php echo $res_co[0]["C_Primer_nombre"]; ?>">
                                                                                                         </div> </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Apellido</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Apellido" value="<?php echo $res_co[0]["C_Apellido"]; ?>">
+                                                                                                                <input  id="100" type="text" class="form-control cl_invalid" name="C_Apellido" value="<?php echo $res_co[0]["C_Apellido"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1649,7 +1649,7 @@
                                                                                                         <th scope="row">Fecha de nacimiento</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="date" class="form-control cl_invalid" name="C_Fecha de nacimiento" value="<?php echo $res_co[0]["C_Fecha_nacimiento"]; ?>">
+                                                                                                                <input maxlength="8" id="" type="date" class="form-control cl_invalid" name="C_Fecha de nacimiento" value="<?php echo $res_co[0]["C_Fecha_nacimiento"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1657,7 +1657,7 @@
                                                                                                         <th scope="row">Numero de seguro social</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_N_seguro_social" value="<?php echo $res_co[0]["C_N_seguro_social"]; ?>">
+                                                                                                                <input maxlength="30" id="" type="text" class="form-control cl_invalid" name="C_N_seguro_social" value="<?php echo $res_co[0]["C_N_seguro_social"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1665,7 +1665,7 @@
                                                                                                         <th scope="row">Numero de Licencia de Conducir</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_N_licencia_conducir" value="<?php echo $res_co[0]["C_N_licencia_conducir"]; ?>">
+                                                                                                                <input maxlength="30" id="" type="text" class="form-control cl_invalid" name="C_N_licencia_conducir" value="<?php echo $res_co[0]["C_N_licencia_conducir"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1673,21 +1673,21 @@
                                                                                                         <th scope="row">Estado</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Estado" value="<?php echo $res_co[0]["C_Estado"]; ?>">
+                                                                                                                <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Estado" value="<?php echo $res_co[0]["C_Estado"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Vencimiento</th>
                                                                                                         <td><div class="input-group">
-                                                                                                            <input  id="" type="date" class="form-control cl_invalid" name="C_Vencimiento" value="<?php echo $res_co[0]["C_Vencimiento"]; ?>">
+                                                                                                            <input maxlength="8" id="" type="date" class="form-control cl_invalid" name="C_Vencimiento" value="<?php echo $res_co[0]["C_Vencimiento"]; ?>">
                                                                                                         </div></td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Direccion</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Direccion" value="<?php echo $res_co[0]["C_Direccion"]; ?>">
+                                                                                                                <input maxlength="300" id="" type="text" class="form-control cl_invalid" name="C_Direccion" value="<?php echo $res_co[0]["C_Direccion"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1695,7 +1695,7 @@
                                                                                                         <th scope="row">Tiempo en esa direccion</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_tiempo en esa direccion" value="<?php echo $res_co[0]["C_Cuanto_tiempo"]; ?>">
+                                                                                                                <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_tiempo en esa direccion" value="<?php echo $res_co[0]["C_Cuanto_tiempo"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1714,7 +1714,7 @@
                                                                                                     <th scope="row">Ciudad</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Ciudad" value="<?php echo $res_co[0]["C_Ciudad"]; ?>">
+                                                                                                            <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Ciudad" value="<?php echo $res_co[0]["C_Ciudad"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1722,7 +1722,7 @@
                                                                                                     <th scope="row">Estado</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Estado_ciudad" value="<?php echo $res_co[0]["C_Estado_ciudad"]; ?>">
+                                                                                                            <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Estado_ciudad" value="<?php echo $res_co[0]["C_Estado_ciudad"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1730,7 +1730,7 @@
                                                                                                     <th scope="row">Zip</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Zip" value="<?php echo $res_co[0]["C_Zip"]; ?>">
+                                                                                                            <input maxlength="30" id="" type="text" class="form-control cl_invalid" name="C_Zip" value="<?php echo $res_co[0]["C_Zip"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1738,7 +1738,7 @@
                                                                                                     <th scope="row">Telefono de casa</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Telefono_casa" value="<?php echo $res_co[0]["C_Telefono_casa"]; ?>">
+                                                                                                            <input maxlength="20" id="" type="text" class="form-control cl_invalid" name="C_Telefono_casa" value="<?php echo $res_co[0]["C_Telefono_casa"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1746,7 +1746,7 @@
                                                                                                     <th scope="row">Telefono Celular</th>
                                                                                                     <td><a href="#!">
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Telefono_celular" value="<?php echo $res_co[0]["C_Telefono_celular"]; ?>">
+                                                                                                            <input maxlength="20" id="" type="text" class="form-control cl_invalid" name="C_Telefono_celular" value="<?php echo $res_co[0]["C_Telefono_celular"]; ?>">
                                                                                                         </div>
                                                                                                     </a></td>
                                                                                                 </tr>
@@ -1754,7 +1754,7 @@
                                                                                                     <th scope="row">Direccion Anterior</th>
                                                                                                     <td><a href="#!">
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Direccion_anterior" value="<?php echo $res_co[0]["C_Direccion_anterior"]; ?>">
+                                                                                                            <input maxlength="300" id="" type="text" class="form-control cl_invalid" name="C_Direccion_anterior" value="<?php echo $res_co[0]["C_Direccion_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </a></td>
                                                                                                 </tr>
@@ -1762,7 +1762,7 @@
                                                                                                     <th scope="row">Ciudad Anterior</th>
                                                                                                     <td><a href="#!">
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Ciudad_anterior" value="<?php echo $res_co[0]["C_Ciudad_anterior"]; ?>">
+                                                                                                            <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Ciudad_anterior" value="<?php echo $res_co[0]["C_Ciudad_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </a></td>
                                                                                                 </tr>
@@ -1770,7 +1770,7 @@
                                                                                                     <th scope="row">Estado Anterior</th>
                                                                                                     <td><a href="#!">
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Estado_anterior" value="<?php echo $res_co[0]["C_Estado_anterior"]; ?>">
+                                                                                                            <input maxlength="70" id="" type="text" class="form-control cl_invalid" name="C_Estado_anterior" value="<?php echo $res_co[0]["C_Estado_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </a></td>
                                                                                                 </tr>
@@ -1778,7 +1778,7 @@
                                                                                                     <th scope="row">Zip Anterior</th>
                                                                                                     <td><a href="#!">
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Zip_anterior" value="<?php echo $res_co[0]["C_Zip_anterior"]; ?>">
+                                                                                                            <input maxlength="30" id="" type="text" class="form-control cl_invalid" name="C_Zip_anterior" value="<?php echo $res_co[0]["C_Zip_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </a></td>
                                                                                                 </tr>
@@ -1786,7 +1786,7 @@
                                                                                                         <th scope="row">Correo</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="correo_co" type="text" class="form-control cl_invalid" name="C_Correo" value="<?php echo $res_co[0]["C_Correo"]; ?>">
+                                                                                                                <input maxlength="50" id="correo_co" type="text" class="form-control cl_invalid" name="C_Correo" value="<?php echo $res_co[0]["C_Correo"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1853,7 +1853,7 @@
                                                                                                         <th scope="row">Nombre empleo</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Nombre_empleo" value="<?php echo $res_co[0]["C_Nombre_empleo"]; ?>">
+                                                                                                                <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Nombre_empleo" value="<?php echo $res_co[0]["C_Nombre_empleo"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1861,7 +1861,7 @@
                                                                                                         <th scope="row">Direccion empleo</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Direccion_empleo" value="<?php echo $res_co[0]["C_Direccion_empleo"]; ?>">
+                                                                                                                <input maxlength="300" id="" type="text" class="form-control cl_invalid" name="C_Direccion_empleo" value="<?php echo $res_co[0]["C_Direccion_empleo"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1869,7 +1869,7 @@
                                                                                                         <th scope="row">Tiempo empleo</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Tiempo_empleo" value="<?php echo $res_co[0]["C_Tiempo_empleo"]; ?>">
+                                                                                                                <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Tiempo_empleo" value="<?php echo $res_co[0]["C_Tiempo_empleo"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1877,7 +1877,7 @@
                                                                                                         <th scope="row">Telefono de empleo</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Telefono_empleo" value="<?php echo $res_co[0]["C_Telefono_empleo"]; ?>">
+                                                                                                                <input maxlength="20" id="" type="text" class="form-control cl_invalid" name="C_Telefono_empleo" value="<?php echo $res_co[0]["C_Telefono_empleo"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1885,7 +1885,7 @@
                                                                                                         <th scope="row">Posicion empleo</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Posicion_empleo" value="<?php echo $res_co[0]["C_Posicion_empleo"]; ?>">
+                                                                                                                <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Posicion_empleo" value="<?php echo $res_co[0]["C_Posicion_empleo"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1893,7 +1893,7 @@
                                                                                                         <th scope="row">Ingreso bruto</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Ingreso_bruto" value="<?php echo $res_co[0]["C_Ingreso_bruto"]; ?>">
+                                                                                                                <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Ingreso_bruto" value="<?php echo $res_co[0]["C_Ingreso_bruto"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1901,7 +1901,7 @@
                                                                                                     <th scope="row">Tipo ingreso</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <select id="" type="text" class="cl_invalid form-control" name="C_Tipo_ingreso">
+                                                                                                            <select maxlength="50" id="" type="text" class="cl_invalid form-control" name="C_Tipo_ingreso">
                                                                                                                 <option <?php if($res_co[0]["C_Tipo_ingreso"] == "Mensual" ){echo "selected";} ?> value="Mensual">
                                                                                                                     Mensual
                                                                                                                 </option>   
@@ -1915,7 +1915,7 @@
                                                                                                     <th scope="row">Empleador anterior</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Empleador_anterior" value="<?php echo $res_co[0]["C_Empleador_anterior"]; ?>">
+                                                                                                            <input maxlength="100" id="" type="text" class="form-control cl_invalid" name="C_Empleador_anterior" value="<?php echo $res_co[0]["C_Empleador_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1931,10 +1931,10 @@
                                                                                             <tbody>
                                                                                            
                                                                                                 <tr>
-                                                                                                    <th scope="row">Fecha de Empleador anterior</th>
+                                                                                                    <th scope="row">Fechas de Empleo anterior</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="date" class="form-control cl_invalid" name="" value="<?php echo $res_co[0]["C_Empleador_anterior"]; ?>">
+                                                                                                            <input maxlength="300" id="" type="text" class="form-control cl_invalid" name="C_Fecha_empleo_anterior" value="<?php echo $res_co[0]["C_Fecha_empleo_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1942,7 +1942,7 @@
                                                                                                     <th scope="row">Ciudad empleo anterior</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Ciudad_empleo_anterior" value="<?php echo $res_co[0]["C_Ciudad_empleo_anterior"]; ?>">
+                                                                                                            <input maxlength="100" id="" type="text" class="form-control cl_invalid" name="C_Ciudad_empleo_anterior" value="<?php echo $res_co[0]["C_Ciudad_empleo_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1950,7 +1950,7 @@
                                                                                                     <th scope="row">Estado empleo anterior</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Estado_empleo_anterior" value="<?php echo $res_co[0]["C_Estado_empleo_anterior"]; ?>">
+                                                                                                            <input maxlength="100" id="" type="text" class="form-control cl_invalid" name="C_Estado_empleo_anterior" value="<?php echo $res_co[0]["C_Estado_empleo_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1958,7 +1958,7 @@
                                                                                                     <th scope="row">Zip Empleo Anterior</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Zip_empleo_anterior" value="<?php echo $res_co[0]["C_Zip_empleo_anterior"]; ?>">
+                                                                                                            <input maxlength="30" id="" type="text" class="form-control cl_invalid" name="C_Zip_empleo_anterior" value="<?php echo $res_co[0]["C_Zip_empleo_anterior"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1966,7 +1966,7 @@
                                                                                                         <th scope="row">Número de telefono del empleo anterio</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_N_telefono_empleo_anterio" value="<?php echo $res_co[0]["C_N_telefono_empleo_anterior"]; ?>">
+                                                                                                                <input maxlength="30" id="" type="text" class="form-control cl_invalid" name="C_N_telefono_empleo_anterio" value="<?php echo $res_co[0]["C_N_telefono_empleo_anterior"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
@@ -1974,7 +1974,7 @@
                                                                                                     <th scope="row">Fuente de ingreso extra</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                            <input  id="" type="text" class="form-control cl_invalid" name="C_Fuente_ingreso_extra" value="<?php echo $res_co[0]["C_Fuente_ingreso_extra"]; ?>">
+                                                                                                            <input maxlength="100" id="" type="text" class="form-control cl_invalid" name="C_Fuente_ingreso_extra" value="<?php echo $res_co[0]["C_Fuente_ingreso_extra"]; ?>">
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1982,7 +1982,8 @@
                                                                                                         <th scope="row">Cantidad de la fuente ingreso extra</th>
                                                                                                         <td>
                                                                                                             <div class="input-group">
-                                                                                                                <input  id="" type="text" class="form-control cl_invalid" name="C_Cantidad_fuente_ingreso_extra" value="<?php echo $res_co[0]["C_Cantidad_fuente_ingreso_extra"]; ?>">
+                                                                                                                <input maxlength="50" id="" type="text" class="form-control cl_invalid" name="C_Cantidad_fuente_ingreso_extra" value="<?php echo $res_co[0]["C_Cantidad_fuente_ingreso_extra"]; ?>">
+                                                                                                                <input style="display: none;"  id="" type="text" class="form-control cl_invalid" name="qwert" value="<?php echo $res_cl[0]["N_serie_cliente"]; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                     </tr>
