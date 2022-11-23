@@ -7,6 +7,7 @@
 
         foreach($_POST as $item)
         {
+            $item = trim($item);
             array_push($values, $item);
         }
 
