@@ -13,15 +13,21 @@ let n_personal_3 = document.getElementById('n-personal-3')
 btn_n_personal_1.addEventListener('click', ()=>{
 
     n_personal_1.style.display = 'none'
+    n_personal_2.style.display = 'none'
+    n_personal_3.style.display = 'none'
 })
 
 btn_n_personal_2.addEventListener('click', ()=>{
 
+    n_personal_1.style.display = 'none'
     n_personal_2.style.display = 'none'
+    n_personal_3.style.display = 'none'
 })
 
 btn_n_personal_3.addEventListener('click', ()=>{
 
+    n_personal_1.style.display = 'none'
+    n_personal_2.style.display = 'none'
     n_personal_3.style.display = 'none'
 })
 
@@ -32,16 +38,25 @@ function aparecer_n_1(aviso)
     let mensaje_aviso_1 = document.getElementById('mensaje-aviso-1')
     mensaje_aviso_1.innerHTML = `${aviso}`
     n_personal_1.style.display = 'block'
+
+    n_personal_2.style.display = 'none'
+    n_personal_3.style.display = 'none'
 }
 function aparecer_n_2(aviso)
 {
     let mensaje_aviso_2 = document.getElementById('mensaje-aviso-2')
     mensaje_aviso_2.innerHTML = `${aviso}`
     n_personal_2.style.display = 'block'
+
+    n_personal_1.style.display = 'none'
+    n_personal_3.style.display = 'none'
 }
 function aparecer_n_3(aviso)
 {
     let mensaje_aviso_3 = document.getElementById('mensaje-aviso-3')
     mensaje_aviso_3.innerHTML = `${aviso}`
     n_personal_3.style.display = 'block'
+
+    n_personal_1.style.display = 'none'
+    n_personal_2.style.display = 'none'
 }
