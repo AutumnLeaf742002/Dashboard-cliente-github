@@ -199,7 +199,7 @@
         <!-- type text para escribir -->
         <!-- type password para contrasenas -->
         <fieldset>
-            <img class="logo" src="assets/images/auth/logo.png" alt="logo.png">
+            <img class="logo" src="assets/images/pasteur.png" alt="logo.png">
             
             <h3 class="fs-subtitle">Registrar un nuevo cliente</h3>
             <div class="input-group">
