@@ -54,6 +54,191 @@
 
 <body>
 
+    <!--inicio de ventana emergente-->
+    <div id="ventana-confirmacion" style="display: none;">
+        <!-- sweet alert framework -->
+        <link rel="stylesheet" type="text/css" href="../bower_components/sweetalert/css/sweetalert.css">
+                    <!-- Style.css -->
+                    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+                    <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -169px;"><div class="sa-icon sa-error" style="display: none;">
+                        <span   span class="sa-x-mark">
+                            <span class="sa-line sa-left"></span>
+                        <span class="sa-line sa-right"></span>
+                    </span>
+                    </div><div class="sa-icon sa-warning pulseWarning" style="display: block;">
+                    <span class="sa-body pulseWarningIns"></span>
+                    <span class="sa-dot pulseWarningIns"></span>
+                    </div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success" style="display: none;">
+                    <span class="sa-line sa-tip"></span>
+                    <span class="sa-line sa-long"></span>
+                    
+                    <div class="sa-placeholder"></div>
+                    <div class="sa-fix"></div>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas realizar esta acción?</h2>
+                    <p style="display: block;">Si haces click en aceptar se eliminara este cliente y su co aplicante vinculado.</p>
+                    <fieldset>
+                    <input type="text" tabindex="3" placeholder="">
+                    <div class="sa-input-error"></div>
+                    </fieldset><div class="sa-error-container">
+                    <div class="icon">!</div>
+                    <p>You need to write something!</p>
+                    </div><div class="sa-button-container">
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <div class="sa-confirm-button-container">
+                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: #e74c3c !important; box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Eliminar</button><div class="la-ball-fall">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    </div>
+                    </div>
+                    </div></div>
+    </div>
+    <!--final de ventana emergente-->
+
+
+
+
+
+
+
+    
+    <!-- Notificaciones -->
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+   <!-- notify js Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.brighttheme.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="assets/pages/pnotify/notify.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--color css-->
+
+    <!-- css para las notificaciones -->
+    <link rel="stylesheet" href="alerts.css">
+
+    <div class="card-block table-border-style container-notificaciones">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    
+                    <!-- Notificacion aviso principal -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-notice ui-pnotify-shadow n-personal" id="n-personal-1" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-1" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font" style="vertical-align: inherit;">Aviso!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                    
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de informacion -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-info ui-pnotify-shadow n-personal" id="n-personal-2" role="alert" style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-2" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Hecho!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de peligro -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-error ui-pnotify-shadow n-personal" id="n-personal-3" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-icon">
+                            <span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-3" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Peligro</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                </tbody>
+            </table>
+        </div>    
+    </div>
+
+    <!-- Notificaciones -->
+
+
+
+
+
         <?php
 
         // inicializar el usuario seleccionado si hay un get en esta pagina
@@ -646,8 +831,11 @@
                                                         $res_analista = select($oCon, 'SELECT Name, Id FROM analyst WHERE Id = '.$res_cl[0]["Nombre_representante"]);
                                                         $analista = $res_analista[0]["Id"];
                                                     ?>
-                                                        <h5 class="card-header-text">Estado del cliente</h5> 
-                                                        <button onclick="go_edit('<?php echo $id_cl;?>', '<?php echo $id_co;?>', '<?php echo $analista;?>')" id="boton-editar-perfil" class="btn btn-primary"></i>Editar</button>
+                                                        <h5 class="text-header-botones card-header-text">Estado del cliente</h5> 
+                                                        <div class="container-botones d-flex justify-content-center">
+                                                            <button onclick="go_edit('<?php echo $id_cl;?>', '<?php echo $id_co;?>', '<?php echo $analista;?>')" id="boton-editar-perfil" class="btn-same btn btn-primary">Editar</button>
+                                                            <button onclick="" id="boton-eliminar-perfil" class="btn-same btn btn-danger">Eliminar</button>
+                                                        </div>
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="view-info">
@@ -1905,6 +2093,13 @@
 <![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
+    <script>
+        function get_target()
+        {
+            return "<?php echo $id_cl; ?>, <?php echo $id_co; ?>"
+        }
+        
+    </script>
     <script type="text/javascript" src="../bower_components/jquery/js/jquery.min.js"></script>
     <script type="text/javascript" src="../bower_components/jquery-ui/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../bower_components/popper.js/js/popper.min.js"></script>
@@ -1946,5 +2141,7 @@
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
     <script src="backend/js/go-edit.js"></script>
+    <script src="backend/js/delete-customer.js"></script>
+    <script src="alerts.js"></script>
 </body>
 </html>

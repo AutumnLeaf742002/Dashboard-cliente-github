@@ -19319,12 +19319,30 @@ body.menu-bottom .navbar-wrapper {
   margin: 5px;
 }
 #boton-editar-perfil{
-  position: absolute;
-  top: 50%;
-  right: 1%;
-  transform: translateY(-50%);
+
+  margin-right: 5px;
+}
+
+.container-botones{
+
 
 }
+
+.btn-same{
+
+  min-width: 10% !important;
+}
+
+@media screen and (max-width: 780px) {
+  
+  .text-header-botones{
+
+    margin-bottom: 10px !important;
+    width: 100%;
+    text-align: center !important;
+  }
+}
+
 .card-header{
   position: relative;
 }
@@ -19371,4 +19389,14 @@ body.menu-bottom .navbar-wrapper {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.navbar{
+
+  z-index:100 !important;
+}
+
+.pcoded-navbar{
+
+  z-index: 100 !important;
 }
