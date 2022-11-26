@@ -2,7 +2,7 @@
 <html lang="es">
     
 <head>
-    <script src="backend/js/session.js"></script>
+    <!-- <script src="backend/js/session.js"></script> -->
     <title>Dashboard</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
