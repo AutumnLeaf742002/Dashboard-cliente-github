@@ -15,18 +15,12 @@ $(document).ready()
                 contentType: false,
                 processData: false,
                 success: function (datos) {
-                    if (datos == "Registro completado exitosamente") {
-                        aparecer_n_2("Registro completado exitosamente")
+                    if (datos == "true")
+                    {
 
-                        const list_input = document.querySelectorAll('.form-control')
-                        get_analist()
-
-                        list_input.forEach(item => {
-
-                            item.value = ""
-                        })
                     }
-                    else {
+                    else
+                    {
                         aparecer_n_3(datos)
                     }
                 }
