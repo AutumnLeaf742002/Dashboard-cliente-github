@@ -14,7 +14,7 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-			<form class="login">
+			<form id="form-data" class="login" action="" method="POST">
 				<div class="navbar-logo">
 					<a class="mobile-menu" id="mobile-collapse" href="#!">
 						<i class="ti-menu"></i>
@@ -28,11 +28,24 @@
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Usuario">
+					<input name="user" type="text" class="login__input" placeholder="Usuario">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Contraseña">
+					<input name="pass" type="password" class="login__input" placeholder="Contraseña">
+				</div>
+				<div class="login__field">
+					<select class="option" name="rol" id="">
+						<option selected value="1">
+							Administrador
+						</option>
+						<option value="2">
+							Manager
+						</option>
+						<option value="3">
+							Analista
+						</option>
+					</select>
 				</div>
 				<button class="button login__submit">
 					<span class="button__text">Iniciar Sesion</span>
