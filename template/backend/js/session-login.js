@@ -1,4 +1,4 @@
-function session()
+function session_login()
 {
 
     let request = new XMLHttpRequest()
@@ -8,9 +8,11 @@ function session()
 
         if (request.readyState == 4 && request.status == 200) {
             
-            if(request.responseText == "False")
+            if(request.responseText == "True")
             {
-                window.location.href = "login.html"
+                const body = document.querySelector(".bodyxd")
+                body.innerHTML = ""
+                window.location.href = "crm-contact.html"
             }
         }
     }
@@ -18,4 +20,4 @@ function session()
     request.send("u=true")
 }
 
-session()
+session_login()

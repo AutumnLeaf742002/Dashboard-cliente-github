@@ -207,10 +207,14 @@ body {
 
 .container_alert{
 
+	display: none;
 	position: absolute;
 	top: 0%;
 	width: 100%;
 	padding: 5px;
 	z-index: 300;
-	color: white;
+	background: url("../images/fondo_alert.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
