@@ -19266,12 +19266,19 @@ body.menu-bottom .navbar-wrapper {
 #roles{
   background-color: #0071D9;
 }
+#Managers{
+  background-color: #0071D9;
+}
+#Analyst{
+  background-color: #0071D9;
+}
 .svg-roles{
   margin: auto auto;
   margin-left: 8px;
   margin-right: 8px;
 
 }
+
 
 /*# sourceMappingURL=style.css.map */
 
