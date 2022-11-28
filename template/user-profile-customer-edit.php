@@ -414,7 +414,7 @@
                                 </li>
                                 
                                 <li class="user-profile header-notification">
-                                    <a href="#!">
+                                <a href="#!" id="info_profile">
                                         <img src="assets/images/user.png" alt="User-Profile-Image">
                                         <span>Carlos Castillo</span>
                                         <i class="ti-angle-down"></i>
@@ -2301,6 +2301,7 @@
     <script src="assets/js/jquery.mousewheel.min.js"></script>
     <script src="backend/js/edit-customers.js"></script>
     <script src="backend/js/edit-co_aplicant.js"></script>
+    <script src="backend/js/get-profile.js"></script>
 
     <script src="backend/js/co-aplicante-true.js"></script>
     <script>

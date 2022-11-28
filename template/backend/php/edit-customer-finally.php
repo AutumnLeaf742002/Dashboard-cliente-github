@@ -11,5 +11,9 @@
 
         echo $res;
     }
+    else
+    {
+        header("location: crm-contact.html");
+    }
 
 ?>

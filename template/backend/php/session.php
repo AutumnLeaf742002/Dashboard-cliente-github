@@ -15,5 +15,9 @@
             echo "False";
         }
     }
+    else
+    {
+        header("location: crm-contact.html");
+    }
 
 ?>

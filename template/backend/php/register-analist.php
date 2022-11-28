@@ -80,5 +80,9 @@
             echo "El archivo seleccionado no es una imagen, asegurate que la imagen sea de extension jepg, jpg o png";
         }
     }
+    else
+    {
+        header("location: crm-contact.html");
+    }
 
 ?>

@@ -377,7 +377,7 @@
                                 </li>
                                 
                                 <li class="user-profile header-notification">
-                                    <a href="#!">
+                                    <a href="#!" id="info_profile">
                                         <img src="assets/images/user.png" alt="User-Profile-Image">
                                         <span>Carlos Castillo</span>
                                         <i class="ti-angle-down"></i>
@@ -2172,5 +2172,6 @@
     <script src="backend/js/go-edit.js"></script>
     <script src="backend/js/delete-customer.js"></script>
     <script src="alerts.js"></script>
+    <script src="backend/js/get-profile.js"></script>
 </body>
 </html>

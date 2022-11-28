@@ -62,4 +62,8 @@
             echo 'none';
         }
     }
+    else
+    {
+        header("location: crm-contact.html");
+    }
 ?>

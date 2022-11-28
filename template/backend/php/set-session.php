@@ -48,5 +48,9 @@
             echo "Error desconocido";
         }
     }
+    else
+    {
+        header("location: crm-contact.html");
+    }
 
 ?>

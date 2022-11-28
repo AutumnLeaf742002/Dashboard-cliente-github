@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_POST))
+    if(!empty($_POST))
     {
         // Llamada a los modulos que contienen la conexion a la base de datos y funciones de insercion
         include_once "commands.php";
@@ -491,6 +491,10 @@
         }
 
         echo "status:$res - status:$res_co";
+    }
+    else
+    {
+        header("location: crm-contact.html");
     }
 
 ?>
