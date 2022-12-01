@@ -32,13 +32,18 @@
 
         if(count($res) == 1)
         {
+            $nombre = trim($res[0]["Name"]);
             if($rol == 3)
             {
                 echo '
-                    <img class="rounded m-2 img-fluid" src="backend/php/img-analist/'.$res[0]["Foto"].'" alt="User-Profile-Image">
-                    <span>'.$res[0]["Name"].'</span>
-                    <i class="ti-angle-down"></i>
-                    ';
+                <div class="rounded-circle" style="overflow: hidden; display: inline-block; position: relative; width: 45px; height: 45px; margin-top: 5px">
+                    <img style="width: 45px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="img-fluid" src="backend/php/img-analist/'.$res[0]["Foto"].'" alt="User-Profile-Image">
+                </div>
+                <div class="" style="overflow: hidden; display: inline-block; position: relative; width: 55px; height: 45px; margin-top: 5px">
+                    <span style="display: inline-block; postition: absolute !important; top: 0% !important; margin-bottom: 0px;">'.$nombre.'</span>
+                    <i class="p-0 m-0 ti-angle-down"></i>                
+                </div>
+                ';
             }
             else
             {

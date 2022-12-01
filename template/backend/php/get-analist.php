@@ -17,10 +17,10 @@
             echo '<div class="col-lg-12 col-xl-4">
             <div class="card user-card">
                 <div class="">
-                    <div class="card-header-img">
-                        <img style="height: 200px; width: 200px; object-fit: cover;" class="img-fluid w-50 rounded-circle" src="backend/php/img-analist/'.$item["Foto"].'">
+                    <div class="card-header-img" style="overflow: hidden; width: 200px; height: 200px; border: 2px solid #f2f2f2; border-radius: 50%; margin: auto auto;">
+                        <img style="height: auto; width: 100%; object-fit: cover;" class="img-fluid" src="backend/php/img-analist/'.$item["Foto"].'">
                     </div>
-                    <h4>
+                    <h4 class="my-2">
                         '.$item["Name"].'
                     </h4>
                     <h5>
