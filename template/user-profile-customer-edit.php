@@ -314,7 +314,7 @@
     <!-- Pre-loader end -->
 
     <div id="pcoded" class="pcoded">
-        <div class="pcoded-overlay-box"></div>
+    <div class=""></div><!--clase que da overlay al hacer clic en menu a nivel movil pcoded-overlay-box-->
         <div class="pcoded-container navbar-wrapper">
 
             <nav class="navbar header-navbar pcoded-header" style="z-index: 100 !important;">
