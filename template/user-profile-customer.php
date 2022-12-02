@@ -768,9 +768,9 @@
                                                         <i class="icofont icofont-home"></i>
                                                     </a>
                                                 </li>
-                                                <li class="breadcrumb-item"><a href="#!">User Profile</a>
+                                                <li class="breadcrumb-item"><a href="#!">Clientes</a>
                                                 </li>
-                                                <li class="breadcrumb-item"><a href="#!">User Profile</a>
+                                                <li class="breadcrumb-item"><a href="#!">Perfil del cliente</a>
                                                 </li>
                                             </ul>
                                                 </div>
