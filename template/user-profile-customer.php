@@ -3,13 +3,13 @@
 
 <head>
     <script src="backend/js/session.js"></script>
-    <title>Mash Able - Premium Admin Template</title>
+    <title>Perfil de los clientes</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -648,15 +648,14 @@
             <!-- Sidebar inner chat end-->
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                   <nav class="pcoded-navbar">
+                <nav class="pcoded-navbar">
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
-
                         <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
                             
                             <li>
-                               <a id="" href="dashboard-project.html">
+                            <a id="" href="dashboard-project.html">
                                 <span class="pcoded-micon"><i class="ti-home"></i></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                             </a>
@@ -689,11 +688,11 @@
                             <a href="managers.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                  </svg></span>
+                                </svg></span>
                                 <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-video2" viewBox="0 0 16 16">
                                     <path d="M10 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                                     <path d="M2 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2ZM1 3a1 1 0 0 1 1-1h2v2H1V3Zm4 10V2h9a1 1 0 0 1 1 1v9c0 .285-.12.543-.31.725C14.15 11.494 12.822 10 10 10c-3.037 0-4.345 1.73-4.798 3H5Zm-4-2h3v2H2a1 1 0 0 1-1-1v-1Zm3-1H1V8h3v2Zm0-3H1V5h3v2Z"/>
-                                  </svg>Managers</span>
+                                </svg>Managers</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
@@ -701,10 +700,10 @@
                             <a href="Analistas.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                  </svg></span>
+                                </svg></span>
                                 <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                  </svg>Analistas</span>
+                                </svg>Analistas</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
@@ -715,7 +714,7 @@
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                                  </svg></span>
+                                </svg></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.default">Clientes</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
@@ -726,7 +725,7 @@
                             <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
                                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                              </svg></span>
+                            </svg></span>
                             <span class="pcoded-mtext" data-i18n="nav.dash.default">Crear Citas</span>
                             <span class="pcoded-mcaret"></span>
                         </a>  
@@ -735,7 +734,7 @@
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
                                     <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                                     <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
-                                  </svg></span>
+                                </svg></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.default">Chat</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
@@ -745,7 +744,6 @@
             </nav> 
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
-
                             <!-- Main body start -->
                             <div class="main-body user-profile">
                                 <div class="page-wrapper">
@@ -777,8 +775,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Page-header end -->
-                                
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <!--profile cover start-->
@@ -930,7 +926,7 @@
                                                         
                                                     </div>
                                                     <!-- end of card-block -->
-                                                     </div>
+                                                    </div>
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                             <!-- Main-body start -->
@@ -952,7 +948,6 @@
                                                         </div>
                                                     </div>
                                                     <!-- Main-body end -->
-                
                                                     </div>
                                                 </div>
                                                 <div class="tab-content">
@@ -1122,7 +1117,6 @@
                                                                     <!-- Main-body start -->
                                                                 <div class="main-body">
                                                                     <div class="page-wrapper">
-
                                                                         
                                                                         <!-- Page header end -->
                                                                         <!-- Page body start -->
@@ -1270,12 +1264,9 @@
                                                                     </div>
                                                                     <!-- end of row -->
                                                                 </div>
-                                                            
                                                                 <!-- end of view-info -->
                                                                 
                                                             </div>
-
-
                                                             <!-- end of card-block -->
                                                             
                                                         </div>
@@ -1442,48 +1433,38 @@
                                                             <div class="row">
                                                                 <div class="col-lg-12">
                                                                         <!-- Main-body start -->
-                            <div class="main-body">
-                                <div class="page-wrapper">
-                                    <!-- Page header start -->
-                                    
-                                    
-                                    <!-- Page header end -->
-                                    <!-- Page body start -->
-                                    <div class="page-body">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                            
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Page body end -->
-                                </div>
-                            </div>
-                            <!-- Main-body end -->
-                            
+                                                                <div class="main-body">
+                                                                    <div class="page-wrapper">
+                                                                        <!-- Page body start -->
+                                                                        <div class="page-body">
+                                                                            <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- Page body end -->
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Main-body end -->
                                                                 </div>
                                                             </div>
                                                             <!-- personal card end-->
                                                                 <!--fin informacion de referencia-->
-                        <div class="main-body">
-                            <div class="page-wrapper">
-                                
-                                
-                                <!-- Page header end -->
-                                <!-- Page body start -->
-                                <div class="page-body">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                           
-                                               
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Page body end -->
-                            </div>
-                        </div>
-                        <!-- Main-body end -->
-                        
+                                                            <div class="main-body">
+                                                                <div class="page-wrapper">
+                                                                    <!-- Page header end -->
+                                                                    <!-- Page body start -->
+                                                                    <div class="page-body">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-12">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Page body end -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- Main-body end -->
                                                             </div>
                                                         </div>
                                                         <!-- personal card end-->
@@ -2006,7 +1987,7 @@
                                                                     
                                                                 </div>
                                                                 <!-- end of view-info -->
-                                                               <!--fin informacion de referencia-->
+                                                            <!--fin informacion de referencia-->
                                                             </div>
                                                             <!-- end of card-block -->
                                                         </div>

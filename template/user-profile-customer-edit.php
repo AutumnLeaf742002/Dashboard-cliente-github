@@ -292,19 +292,10 @@
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
                         </div>
                     </div>
-
                 </tbody>
             </table>
         </div>    
     </div>
-
-    <!-- Notificaciones -->
-
-
-
-
-
-
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
