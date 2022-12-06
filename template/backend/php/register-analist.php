@@ -8,15 +8,28 @@
         $oCon = connect();
 
         $nombre = $_POST["nombre"];
+        $nombre = trim($nombre);
+        $nombre = ucfirst($nombre);
         $correo = $_POST["correo"];
+        $correo = trim($correo);
+        $correo = strtolower($correo);
         $celular = $_POST["celular"];
+        $celular = trim($celular);
         $carnet = $_POST["carnet"];
+        $carnet = trim($carnet);
         $inicio = $_POST["inicio"];
+        $inicio = trim($inicio);
         $reclutador = $_POST["reclutador"];
+        $reclutador = trim($reclutador);
+        $reclutador = ucfirst($reclutador);
         $oficina = $_POST["oficina"];
+        $oficina = trim($oficina);
         $manager = $_POST["manager"];
+        $manager = trim($manager);
         $usuario = $_POST["usuario"];
+        $usuario = trim($usuario);
         $clave = $_POST["clave"];
+        $clave = trim($clave);
         $clave = encrypt($clave);
         $foto = $_FILES["foto"];
 

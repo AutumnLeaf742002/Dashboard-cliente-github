@@ -26,10 +26,6 @@ function get_managers()
     request.send()
 }
 
-
-
-
-
 get_oficinas()
 get_managers()
 
@@ -76,7 +72,7 @@ $(document).ready()
         }
         else
         {
-            aparecer_n_1("Correo invalido")
+            aparecer_n_1("Correo invalido: Asegurate que el correo sea valido o no tenga mayúsculas ni espacios de mas")
         }
     }
 } 
