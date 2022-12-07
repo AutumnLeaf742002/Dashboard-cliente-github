@@ -17,8 +17,6 @@
         $celular = trim($celular);
         $carnet = $_POST["carnet"];
         $carnet = trim($carnet);
-        $oficina = $_POST["oficina"];
-        $oficina = trim($oficina);
         $usuario = $_POST["usuario"];
         $usuario = trim($usuario);
         $clave = $_POST["clave"];
@@ -31,11 +29,12 @@
             {
                 if($carnet == "")
                 {
-                    $sql = "INSERT INTO `managers` (`Id`, `Name`, `Mail`, `Cell`, `Carnet`, `Id_office`, `Id_rol`, `User`, `Password`) VALUES (NULL, '$nombre', '$correo', '$celular', NULL, '$oficina', '2', '$usuario', '$clave');";
+                    $sql = "INSERT INTO `administrators` (`Id`, `Name`, `Mail`, `Cell`, `Carnet`, `Id_rol`, `User`, `Password`) VALUES (NULL, '$nombre', '$correo', '$celular', NULL, '1', '$usuario', '$clave');";
                 }
                 else
                 {
-                    $sql = "INSERT INTO `managers` (`Id`, `Name`, `Mail`, `Cell`, `Carnet`, `Id_office`, `Id_rol`, `User`, `Password`) VALUES (NULL, '$nombre', '$correo', '$celular', '$carnet', '$oficina', '2', '$usuario', '$clave');";                }
+                    $sql = "INSERT INTO `administrators` (`Id`, `Name`, `Mail`, `Cell`, `Carnet`, `Id_rol`, `User`, `Password`) VALUES (NULL, '$nombre', '$correo', '$celular', '$carnet', '1', '$usuario', '$clave');";
+                }
 
                 $res = command($oCon, $sql);
 

@@ -43,6 +43,167 @@
   </head>
 
   <body>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Notificaciones -->
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+   <!-- notify js Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.brighttheme.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="assets/pages/pnotify/notify.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--color css-->
+
+    <!-- css para las notificaciones -->
+    <link rel="stylesheet" href="alerts.css">
+
+    <div class="card-block table-border-style container-notificaciones" style="position: sticky !important; top: 0 !important; z-index: 9999;">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    
+                    <!-- Notificacion aviso principal -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-notice ui-pnotify-shadow n-personal" id="n-personal-1" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-1" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font" style="vertical-align: inherit;">Aviso!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                    
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de informacion -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-info ui-pnotify-shadow n-personal" id="n-personal-2" role="alert" style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-2" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Hecho!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de peligro -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-error ui-pnotify-shadow n-personal" id="n-personal-3" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-icon">
+                            <span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-3" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Peligro</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                </tbody>
+            </table>
+        </div>    
+    </div>
+
+    <!-- Notificaciones -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -568,7 +729,7 @@
                                     </div>
                                 </div>
                                 <div class="card-block">
-                                    <div class="row users-card">
+                                    <div class="row users-card" id="list-administrators">
                                         <div class="col-lg-12 col-xl-4">
                                             <div class="card user-card">
                                                 <div class="card-header-img">
@@ -654,63 +815,30 @@
                     </div>
                     <hr>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Nombre">
+                        <input id="nombre" type="text" class="required form-control" placeholder="Nombre">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Correo Electronico">
+                        <input id="correo" type="text" class="required form-control" placeholder="Correo Electronico">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Celular">
+                        <input id="celular" type="text" class="required form-control" placeholder="Celular">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Carnet">
+                        <input id="carnet" type="text" class="form-control" placeholder="Carnet">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <select id="" type="text" class="form-control" name="Id_hipoteca_estado" valeue="Oficina">
-                            <option selected value="6">
-                                seleccionar Oficina
-                            </option>
-                            <option value="1">
-                                Connecticut 
-                            </option>
-                            <option value="2">
-                                Pensilvania 
-                            </option>
-                            <option value="3">
-                                Charlotte 
-                            </option>
-                            <option value="4">
-                                New York 
-                            </option>
-                            <option value="5">
-                                New Jersey 
-                            </option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Usuario">
+                        <input id="usuario" type="text" class="required form-control" placeholder="Usuario">
                         <span class="md-line"></span>
                     </div>
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input id="clave" type="password" class="required form-control" placeholder="Password">
                         <span class="md-line"></span>
                     </div>
-                     <!--inicio subir archivos-->
-                     <div class="card-block">
-                        <div class="jFiler jFiler-theme-dragdropbox">
-                            <input type="file" name="files[]" id="filer_input1" multiple="multiple" style="position: absolute; left: -9999px; top: -9999px; z-index: -9999;">
-                            <div class="jFiler-input-dragDrop">
-                                <div class="jFiler-input-inner">
-                                    <input type="file" class="">Click para subir foto</input>
-                                </div>
-                            </div>   
-                    </div>
-                    </div>
-   <!--final subir archivos-->
+
                     <div class="row m-t-25 text-left">
                         <div class="col-md-12">
                             <div class="checkbox-fade fade-in-primary">
@@ -720,7 +848,7 @@
                         <div class="col-md-12">
                     <div class="row m-t-15">
                         <div class="col-md-12">
-                            <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center">Register Now</button>
+                            <button onclick="register_administrator()" type="button" class="btn btn-primary btn-md btn-block waves-effect text-center">Register Now</button>
                         </div>
                     </div>
                     <div class="row">
@@ -801,6 +929,10 @@
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/jquery.mousewheel.min.js"></script>
 <script src="backend/js/get-profile.js"></script>
+<script src="backend/js/register-administrator.js"></script>
+<script src="backend/js/get-administrators.js"></script>
+<script src="alerts.js"></script>
+
 </body>
 
 </html>
