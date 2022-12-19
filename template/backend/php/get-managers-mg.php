@@ -17,6 +17,9 @@
             echo '<div class="col-lg-12 col-xl-4">
             <div class="card user-card">
                 <div class="">
+                    <div class="card-header-img" style="overflow: hidden; width: 200px; height: 200px; border: 2px solid #f2f2f2; border-radius: 50%; margin: auto auto;">
+                        <img style="height: auto; width: 100%; object-fit: cover;" class="img-fluid" src="./assets/images/user-redondo.svg">
+                    </div>
                     <h4 class="my-2">
                         '.$item["Name"].'
                     </h4>
