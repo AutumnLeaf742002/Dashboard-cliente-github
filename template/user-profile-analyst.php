@@ -1,4 +1,29 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    if(!empty($_GET))
+    {
+        include_once "./backend/php/connection.php";
+        include_once "./backend/php/commands.php";
+        $id = $_GET["vmekmsi23xmfvwe155"]??0;
+
+        $oCon = connect();
+        define("sql", "SELECT * FROM analyst WHERE Id = $id");
+        $res = select($oCon, sql);
+
+        $id_o = $res[0]["Id_office"];
+        define("sql_o", "SELECT * FROM offices WHERE Id = $id_o");
+        $res_o = select($oCon, sql_o);
+
+        $ofi = $res_o[0]["Name_office"];
+    }
+    else
+    {
+        header("location: Analistas.html");
+    }
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -579,14 +604,14 @@
                                                         <div class="card-block user-info">
                                                             <div class="col-md-12">
                                                                 <div class="media-left">
-                                                                    <a href="#" class="profile-image">
-                                                                        <img class="user-img img-circle" src="assets/images/user-profile/user-img.jpg" alt="user-img">
-                                                                    </a>
+                                                                    <div class="card-header-img" style="overflow: hidden; width: 125px; height: 125px; border: 2px solid #f2f2f2; border-radius: 50%; margin: auto auto;">
+                                                                        <img style="height: auto; width: 100%; object-fit: cover;" class="img-fluid" src="backend/php/img-analist/<?php echo $res[0]["Foto"]; ?>" alter="img-user">
+                                                                    </div>                                                                
                                                                 </div>
                                                                 <div class="media-body row">
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
-                                                                            <h2>Josephin Villa</h2>
+                                                                            <h2><?php echo $res[0]["Name"]; ?></h2>
                                                                             <span class="text-white">Analista</span>
                                                                         </div>
                                                                     </div>
@@ -612,9 +637,9 @@
                                                     <div class="tab-pane active" id="personal" role="tabpanel">
                                                         <!-- personal card start -->
                                                         <div class="card">
-                                                            <div class="card-header">
+                                                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <h5 class="card-header-text">Informacion del Analista</h5>
-                                                                <button onclick="" id="boton-editar-perfil"  class="btn btn-primary"></i>Editar</button>
+                                                                <button id="boton-editar-perfil"  class="btn btn-primary"></i>Editar</button>
                                                             </button>
                                                             </div>
                                                             <div class="card-block">
@@ -628,24 +653,24 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Primer Nombre</th>
-                                                                                                        <td>carlos ivan</td>
+                                                                                                        <th scope="row">Nombre</th>
+                                                                                                        <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Apellido</th>
-                                                                                                        <td>castillo</td>
+                                                                                                        <th scope="row">Correo</th>
+                                                                                                        <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Telefono Celular</th>
-                                                                                                        <td>+18054236587</td>
+                                                                                                        <td><?php echo $res[0]["Cell"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Carnet</th>
-                                                                                                        <td>0258741369</td>
+                                                                                                        <td><?php echo $res[0]["Carnet"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Incentivo</th>
-                                                                                                        <td>20%</td>
+                                                                                                        <td><?php echo $res[0]["Comision"]; ?></td>
                                                                                                     </tr>
                                                                                                 </tbody>
                                                                                             </table>
@@ -658,19 +683,19 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <th scope="row">Fecha de inicio</th>
-                                                                                                    <td>04-12-2021</td>
+                                                                                                    <td><?php echo $res[0]["Start_date"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Reclutador</th>
-                                                                                                    <td>Alexis perez</td>
+                                                                                                    <td><?php echo $res[0]["Recruiter"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Oficina</th>
-                                                                                                    <td>New York, USA</td>
+                                                                                                    <td><?php echo $ofi; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Usuario</th>
-                                                                                                    <td>11carlosivan</td>
+                                                                                                    <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
                                                                                                
                                                                                             </tbody>
@@ -730,8 +755,6 @@
                                                                             <div class="card product-add-modal">
                                                                                 <div class="card-header">
                                                                                     <h5>Clientes Asignados</h5>
-                                                                                    <button onclick="location.href='Form_Customer.php'" type="button" class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger"> <i class="icofont icofont-plus m-r-5"></i>Add Customer
-                                                                                    </button>
                                                                                 </div>
                                                                                 <!--buscador-->
                                                                              
@@ -882,6 +905,9 @@
     </div>
 
 
+        <p id="ibwisaduiwd" style="display: none;">
+            <?php echo $id; ?>dsdwasd
+        </p>
 
     <!-- Warning Section Starts -->
     <!-- Older IE warning message -->
@@ -968,6 +994,11 @@
     <script src="assets/js/demo-12.js"></script>
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script src="backend/js/get-customer-analist.js"></script>
+
+    <script>
+        get_customer_analist(<?php echo $id; ?>)
+    </script>
 </body>
 
 </html>

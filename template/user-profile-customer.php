@@ -854,7 +854,7 @@
                                                     <div class="card-header">
                                                     <?php
                                                         $res_analista = select($oCon, 'SELECT Name, Id FROM analyst WHERE Id = '.$res_cl[0]["Nombre_representante"]);
-                                                        $analista = $res_analista[0]["Id"];
+                                                        $analista = $res_analista[0]["Id"]??0;
                                                     ?>
                                                         <h5 class="text-header-botones card-header-text">Estado del cliente</h5> 
                                                         <div class="container-botones d-flex justify-content-center">
@@ -876,9 +876,16 @@
                                                                                                 <th scope="row">Analista asignado</th>
                                                                                                 <td>
                                                                                                     <?php 
-                                                                                                    
-                                                                                                    echo $res_analista[0]["Name"]; 
-                                                                                                    
+                                                                                                    if(count($res_analista) > 0)
+                                                                                                    {
+                                                                                                        $analista = $res_analista[0]["Name"];
+                                                                                                        
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        $analista = "";
+                                                                                                    }
+                                                                                                    echo $analista;
                                                                                                     ?>
                                                                                                 </td>
                                                                                             </tr>

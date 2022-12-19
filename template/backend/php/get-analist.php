@@ -33,8 +33,7 @@
                 </div>
                 
                 <div class="set-btn">
-                    <button type="button" class="btn btn-primary btn-outline-primary waves-effect waves-light m-r-15"><i class="icofont icofont-plus m-r-5" src="user-profile.html"> </i>Ver Clientes </button>
-                    <button type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button>
+                    <button onclick="go_edit_analist('.$item["Id"].')" type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button>
                 </div>
             </div>
             </div>';
