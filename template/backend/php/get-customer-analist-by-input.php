@@ -54,7 +54,6 @@
             {
                 $n_serie = $item["N_serie_cliente"];
                 $res_n_serie = select($oCon, "SELECT Id FROM co_aplicantes WHERE C_N_serie_cliente = '$n_serie'");
-
                 
                 if(count($res_n_serie) > 0)
                 {
