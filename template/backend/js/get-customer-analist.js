@@ -1,7 +1,8 @@
 const contenedor_clientes = document.getElementById('contenedor-clientes')
 const contenedor_tabla_clientes = document.getElementById('contenedor-tabla-clientes')
+const sss = document.getElementById("ibwisaduiwd")
 
-function get_customer_analist(ibwisaduiwd)
+function get_customer_analist()
 {
     let request = new XMLHttpRequest()
         request.open('POST', 'backend/php/get-customer-analist.php', true)
@@ -12,7 +13,7 @@ function get_customer_analist(ibwisaduiwd)
                 contenedor_clientes.innerHTML = request.responseText
             }
         }
-        request.send(`ibwisaduiwd=${ibwisaduiwd}`)
+        request.send(`ibwisaduiwd=${sss.textContent}`)
 }
 
 get_customer_analist()
@@ -23,13 +24,12 @@ function perfil_cliente(id_cl, id_co)
 }
 
 const buscador_cliente = document.getElementById('buscador-cliente')
-const ibwisaduiwd = document.getElementById("ibwisaduiwd")
 
 buscador_cliente.addEventListener('keyup', () => {
 
     if (buscador_cliente.value.length > 0) {
         let request = new XMLHttpRequest()
-        request.open('POST', 'backend/php/get-customer-by-input.php', true)
+        request.open('POST', 'backend/php/get-customer-analist-by-input.php', true)
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
         request.onreadystatechange = function () {
 
@@ -38,10 +38,10 @@ buscador_cliente.addEventListener('keyup', () => {
             }
         }
 
-        request.send(`search=${buscador_cliente.value}`)
+        request.send(`search=${buscador_cliente.value}&ibwisaduiwd=${sss.textContent}`)
     }
     else {
-        get_customers()
+        get_customer_analist()
     }
 })
 

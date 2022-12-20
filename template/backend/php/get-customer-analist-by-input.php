@@ -4,6 +4,8 @@
     {
         $search = $_POST['search'] ?? "nada";
         $search = trim($search);
+        $ibwisaduiwd = $_POST['ibwisaduiwd'] ?? "nada";
+        $ibwisaduiwd = trim($ibwisaduiwd);
 
         include_once "connection.php";
         include_once "commands.php";
@@ -11,32 +13,32 @@
         $oCon = connect();
         // $sql = "SELECT * FROM clientes WHERE $filtro LIKE '%$search%' ";
 
-        $sql = "SELECT * FROM clientes WHERE Primer_nombre LIKE '%$search%' ";
+        $sql = "SELECT * FROM clientes WHERE Nombre_representante = $ibwisaduiwd AND Primer_nombre LIKE '%$search%' ";
         $res = select($oCon, $sql);
 
         if(count($res) <= 0)
         {
-            $sql = "SELECT * FROM clientes WHERE N_seguro_social LIKE '%$search%' ";
+            $sql = "SELECT * FROM clientes WHERE Nombre_representante = $ibwisaduiwd AND N_seguro_social LIKE '%$search%' ";
             $res = select($oCon, $sql);
 
             if(count($res) <= 0)
             {
-                $sql = "SELECT * FROM clientes WHERE N_licencia_conducir LIKE '%$search%' ";
+                $sql = "SELECT * FROM clientes WHERE Nombre_representante = $ibwisaduiwd AND N_licencia_conducir LIKE '%$search%' ";
                 $res = select($oCon, $sql);
 
                 if(count($res) <= 0)
                 {
-                    $sql = "SELECT * FROM clientes WHERE Estado LIKE '%$search%' ";
+                    $sql = "SELECT * FROM clientes WHERE Nombre_representante = $ibwisaduiwd AND Estado LIKE '%$search%' ";
                     $res = select($oCon, $sql);
 
                     if(count($res) <= 0)
                     {
-                        $sql = "SELECT * FROM clientes WHERE Vencimiento LIKE '%$search%' ";
+                        $sql = "SELECT * FROM clientes WHERE Nombre_representante = $ibwisaduiwd AND Vencimiento LIKE '%$search%' ";
                         $res = select($oCon, $sql);
 
                         if(count($res) <= 0)
                         {
-                            $sql = "SELECT * FROM clientes WHERE Direccion LIKE '%$search%' ";
+                            $sql = "SELECT * FROM clientes WHERE Nombre_representante = $ibwisaduiwd AND Direccion LIKE '%$search%' ";
                             $res = select($oCon, $sql);
                         }
                     }
@@ -94,7 +96,7 @@
         }
         else
         {
-            // si no hay nada en la tabla, devuelve none
+            // si no hay nada en la tabla, devuelve vacio
             echo '';
         }
         echo "";

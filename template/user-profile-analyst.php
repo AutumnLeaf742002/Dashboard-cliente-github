@@ -906,7 +906,7 @@
 
 
         <p id="ibwisaduiwd" style="display: none;">
-            <?php echo $id; ?>dsdwasd
+            <?php echo $id; ?>
         </p>
 
     <!-- Warning Section Starts -->
@@ -996,9 +996,6 @@
     <script src="assets/js/jquery.mousewheel.min.js"></script>
     <script src="backend/js/get-customer-analist.js"></script>
 
-    <script>
-        get_customer_analist(<?php echo $id; ?>)
-    </script>
 </body>
 
 </html>
