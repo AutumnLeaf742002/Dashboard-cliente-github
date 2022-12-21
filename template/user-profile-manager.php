@@ -1,4 +1,29 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    if(!empty($_GET))
+    {
+        include_once "./backend/php/connection.php";
+        include_once "./backend/php/commands.php";
+        $id = $_GET["vmekmsi23xmfvwe155"]??0;
+
+        $oCon = connect();
+        define("sql", "SELECT * FROM managers WHERE Id = $id");
+        $res = select($oCon, sql);
+
+        $id_o = $res[0]["Id_office"];
+        define("sql_o", "SELECT * FROM offices WHERE Id = $id_o");
+        $res_o = select($oCon, sql_o);
+
+        $ofi = $res_o[0]["Name_office"];
+    }
+    else
+    {
+        header("location: Analistas.html");
+    }
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -437,18 +462,19 @@
             <!-- Sidebar inner chat end-->
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                <nav class="pcoded-navbar">
-                    <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a>
-                </div>
+                   <nav class="pcoded-navbar">
+                    <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
+
                         <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
+                            
                             <li>
-                            <a id="" href="dashboard-project.html">
+                               <a id="menu-dashboard" href="dashboard-project.html">
                                 <span class="pcoded-micon"><i class="ti-home"></i></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                             </a>
-                            <li id="roles"  class="pcoded-hasmenu">
+                            <li class="pcoded-hasmenu">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
                                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
@@ -473,15 +499,15 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li id="Managers">
+                        <li class="">
                             <a href="managers.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></span>
+                                  </svg></span>
                                 <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-video2" viewBox="0 0 16 16">
                                     <path d="M10 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                                     <path d="M2 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2ZM1 3a1 1 0 0 1 1-1h2v2H1V3Zm4 10V2h9a1 1 0 0 1 1 1v9c0 .285-.12.543-.31.725C14.15 11.494 12.822 10 10 10c-3.037 0-4.345 1.73-4.798 3H5Zm-4-2h3v2H2a1 1 0 0 1-1-1v-1Zm3-1H1V8h3v2Zm0-3H1V5h3v2Z"/>
-                                </svg>Managers</span>
+                                  </svg>Managers</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
@@ -489,10 +515,10 @@
                             <a href="Analistas.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></span>
+                                  </svg></span>
                                 <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg>Analistas</span>
+                                  </svg>Analistas</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
@@ -503,7 +529,7 @@
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                                </svg></span>
+                                  </svg></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.default">Clientes</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
@@ -514,7 +540,7 @@
                             <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
                                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                            </svg></span>
+                              </svg></span>
                             <span class="pcoded-mtext" data-i18n="nav.dash.default">Crear Citas</span>
                             <span class="pcoded-mcaret"></span>
                         </a>  
@@ -523,8 +549,7 @@
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
                                     <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                                     <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
-                                </svg>
-                            </span>
+                                  </svg></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.default">Chat</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
@@ -544,8 +569,8 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de clientes</h4>
-                                                        <span>Toda la informacion del manager se encuentra en este perfil</span>
+                                                        <h4>Perfil de Manager</h4>
+                                                        <span>Toda la informacion del Manager se encuentra en este perfil</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -557,7 +582,7 @@
                                                         <i class="icofont icofont-home"></i>
                                                     </a>
                                                 </li>
-                                                <li class="breadcrumb-item"><a href="managers.html">Managers</a>
+                                                <li class="breadcrumb-item"><a href="#!">User Profile</a>
                                                 </li>
                                                 <li class="breadcrumb-item"><a href="#!">User Profile</a>
                                                 </li>
@@ -579,15 +604,15 @@
                                                         <div class="card-block user-info">
                                                             <div class="col-md-12">
                                                                 <div class="media-left">
-                                                                    <a href="#" class="profile-image">
-                                                                        <img class="user-img img-circle" src="assets/images/user-profile/user-img.jpg" alt="user-img">
-                                                                    </a>
+                                                                    <div class="card-header-img" style="overflow: hidden; width: 125px; height: 125px; border: 2px solid #f2f2f2; border-radius: 50%; margin: auto auto;">
+                                                                        <img style="height: auto; width: 100%; object-fit: cover;" class="img-fluid" src="assets/images/user-redondo.svg" alter="img-user">
+                                                                    </div>                                                                
                                                                 </div>
                                                                 <div class="media-body row">
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
-                                                                            <h2>Josephin Villa</h2>
-                                                                            <span class="text-white">Vendedora</span>
+                                                                            <h2><?php echo $res[0]["Name"]; ?></h2>
+                                                                            <span class="text-white">Manager</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -612,9 +637,9 @@
                                                     <div class="tab-pane active" id="personal" role="tabpanel">
                                                         <!-- personal card start -->
                                                         <div class="card">
-                                                            <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion del Analista</h5>
-                                                                <button onclick="" id="boton-editar-perfil"  class="btn btn-primary"></i>Editar</button>
+                                                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                                                <h5 class="card-header-text">Informacion del Manager</h5>
+                                                                <button id="boton-editar-perfil"  class="btn btn-primary"></i>Editar</button>
                                                             </button>
                                                             </div>
                                                             <div class="card-block">
@@ -628,16 +653,20 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row"> Nombre</th>
-                                                                                                        <td>carlos ivan castillo</td>
+                                                                                                        <th scope="row">Nombre</th>
+                                                                                                        <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo Electronico</th>
-                                                                                                        <td>correo@11cimedia.com</td>
+                                                                                                        <th scope="row">Correo</th>
+                                                                                                        <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Telefono Celular</th>
-                                                                                                        <td>+18054236587</td>
+                                                                                                        <td><?php echo $res[0]["Cell"]; ?></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <th scope="row">Carnet</th>
+                                                                                                        <td><?php echo $res[0]["Carnet"]; ?></td>
                                                                                                     </tr>
                                                                                                 </tbody>
                                                                                             </table>
@@ -649,17 +678,14 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
-                                                                                                    <td>11carlosivan</td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Carnet</th>
-                                                                                                    <td>0258741369</td>
-                                                                                                </tr>
-                                                                                                <tr>
                                                                                                     <th scope="row">Oficina</th>
-                                                                                                    <td>New York, USA</td>
-                                                                                                </tr>   
+                                                                                                    <td><?php echo $ofi; ?></td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <td><?php echo $res[0]["User"]; ?></td>
+                                                                                                </tr>
+                                                                                               
                                                                                             </tbody>
                                                                                         </table>
                                                                                         </div>
@@ -716,9 +742,7 @@
                                                                         <div class="page-body">
                                                                             <div class="card product-add-modal">
                                                                                 <div class="card-header">
-                                                                                    <h5>Clientes Asignados</h5>
-                                                                                    <button onclick="location.href='Form_Customer.php'" type="button" class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger"> <i class="icofont icofont-plus m-r-5"></i>Add Customer
-                                                                                    </button>
+                                                                                    <h5>Analistas Asignados</h5>
                                                                                 </div>
                                                                                 <!--buscador-->
                                                                              
@@ -869,6 +893,9 @@
     </div>
 
 
+        <p id="ibwisaduiwd" style="display: none;">
+            <?php echo $id; ?>
+        </p>
 
     <!-- Warning Section Starts -->
     <!-- Older IE warning message -->
@@ -955,6 +982,8 @@
     <script src="assets/js/demo-12.js"></script>
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script src="backend/js/get-customer-analist.js"></script>
+
 </body>
 
 </html>
