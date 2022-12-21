@@ -50,3 +50,10 @@ function cerrar()
 {
     container_alert.style.display = "none"
 }
+
+window.addEventListener('keydown', function(event) {
+    if (event.keyCode === 13)
+    {
+        set_session()
+    }
+});

@@ -10,6 +10,11 @@
         define("sql", "SELECT * FROM managers WHERE Id = $id");
         $res = select($oCon, sql);
 
+        if(count($res) <= 0)
+        {
+            header("location: managers.html");
+        }
+
         $id_o = $res[0]["Id_office"];
         define("sql_o", "SELECT * FROM offices WHERE Id = $id_o");
         $res_o = select($oCon, sql_o);
@@ -18,7 +23,7 @@
     }
     else
     {
-        header("location: Analistas.html");
+        header("location: managers.html");
     }
 ?>
 
@@ -762,104 +767,13 @@
                                                                                                         <th>
                                                                                                         </th>
                                                                                                         <th>Nombre</th>
-                                                                                                        <th>Numero de seguro social</th>
-                                                                                                        <th>Licencia de conducir </th>
-                                                                                                        <th>Estado</th>
-                                                                                                        <th>vencimiento</th>
-                                                                                                        <th>Direccion</th>
+                                                                                                        <th>Correo</th>
+                                                                                                        <th>Celular</th>
+                                                                                                        <th>Usuario</th>
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody id="contenedor-clientes">
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-1.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Sortino
-                                                                                                        </td>
-                                                                                                        <td>Sortino@domain.com</td>
-                                                                                                        <td>Accountant</td>
-                                                                                                        <td>New York</td>
-                                                                                                        <td>45</td>
-                                                                                                        <td>+447662552550</td>
-                                                                                                        <td>12/12/2016</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-2.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-                                                                                                                                                                                                                                                                             ">
-                                                                                                            Larry
-                                                                                                        </td>
-                                                                                                        <td>Larry@domain.com</td>
-                                                                                                        <td>Web Designer</td>
-                                                                                                        <td>Singapore</td>
-                                                                                                        <td>25</td>
-                                                                                                        <td>+442566156222</td>
-                                                                                                        <td>6/10/2016</td>
                                                                                                     
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-3.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Jacob
-                                                                                                        </td>
-                                                                                                        <td>Jacob@domain.com</td>
-                                                                                                        <td>Web Developer</td>
-                                                                                                        <td>London</td>
-                                                                                                        <td>45</td>
-                                                                                                        <td>+419996156222</td>
-                                                                                                        <td>11/09/2014</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-5.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Mark
-                                                                                                        </td>
-                                                                                                        <td>Mark@domain.com</td>
-                                                                                                        <td>Chief Financial Officer (CFO)</td>
-                                                                                                        <td>Abu Dhabi</td>
-                                                                                                        <td>33</td>
-                                                                                                        <td>+124455645889</td>
-                                                                                                        <td>01/05/2013</td>
-                                                                                                       
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-4.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Steve
-                                                                                                        </td>
-                                                                                                        <td>Steve@domain.com</td>
-                                                                                                        <td>Customer Support</td>
-                                                                                                        <td>New York</td>
-                                                                                                        <td>48</td>
-                                                                                                        <td>+111322574563</td>
-                                                                                                        <td>02/1/2012</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-1.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Larry the Bird
-                                                                                                        </td>
-                                                                                                        <td>Larry@domain.com</td>
-                                                                                                        <td>Team Leader</td>
-                                                                                                        <td>San Francisco</td>
-                                                                                                        <td>22</td>
-                                                                                                        <td>+146772555563</td>
-                                                                                                        <td>19/12/2015</td>
-                                                                                                        
-                                                                                                    </tr>
                                                                                                   
                                                                                                 </tbody>
                                                                                                 <tfoot>
@@ -893,9 +807,9 @@
     </div>
 
 
-        <p id="ibwisaduiwd" style="display: none;">
-            <?php echo $id; ?>
-        </p>
+    <div id="niiibdsw" style="display: none;">
+        <?php echo $id; ?>
+    </div>
 
     <!-- Warning Section Starts -->
     <!-- Older IE warning message -->
@@ -982,7 +896,8 @@
     <script src="assets/js/demo-12.js"></script>
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
-    <script src="backend/js/get-customer-analist.js"></script>
+    <!-- <script src="backend/js/get-customer-analist.js"></script> -->
+    <script src="backend/js/get-analist-for-profile-manager.js"></script>
 
 </body>
 

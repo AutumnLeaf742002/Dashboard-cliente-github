@@ -10,6 +10,11 @@
         define("sql", "SELECT * FROM analyst WHERE Id = $id");
         $res = select($oCon, sql);
 
+        if(count($res) <= 0)
+        {
+            header("location: Analistas.html");
+        }
+
         $id_o = $res[0]["Id_office"];
         define("sql_o", "SELECT * FROM offices WHERE Id = $id_o");
         $res_o = select($oCon, sql_o);

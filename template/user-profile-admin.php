@@ -1,4 +1,27 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    if(!empty($_GET))
+    {
+        include_once "./backend/php/connection.php";
+        include_once "./backend/php/commands.php";
+        $id = $_GET["vmekmsi23xmfvwe155"]??0;
+
+        $oCon = connect();
+        define("sql", "SELECT * FROM administrators WHERE Id = $id");
+        $res = select($oCon, sql);
+
+        if(count($res) <= 0)
+        {
+            header("location: Analistas.html");
+        }
+
+    }
+    else
+    {
+        header("location: administradores.html");
+    }
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -545,7 +568,7 @@
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
                                                         <h4>Perfil de Administrador</h4>
-                                                        <span>Toda la informacion del administrador se encuentra en este perfil</span>
+                                                        <span>Toda la informacion del Administrador se encuentra en este perfil</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -579,14 +602,14 @@
                                                         <div class="card-block user-info">
                                                             <div class="col-md-12">
                                                                 <div class="media-left">
-                                                                    <a href="#" class="profile-image">
-                                                                        <img class="user-img img-circle" src="assets/images/user-profile/user-img.jpg" alt="user-img">
-                                                                    </a>
+                                                                    <div class="card-header-img" style="overflow: hidden; width: 125px; height: 125px; border: 2px solid #f2f2f2; border-radius: 50%; margin: auto auto;">
+                                                                        <img style="height: auto; width: 100%; object-fit: cover;" class="img-fluid" src="assets/images/user-redondo.svg" alter="img-user">
+                                                                    </div>  
                                                                 </div>
                                                                 <div class="media-body row">
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
-                                                                            <h2>Josephin Villa</h2>
+                                                                            <h2><?php echo $res[0]["Name"]; ?></h2>
                                                                             <span class="text-white">Administrador</span>
                                                                         </div>
                                                                     </div>
@@ -612,7 +635,7 @@
                                                     <div class="tab-pane active" id="personal" role="tabpanel">
                                                         <!-- personal card start -->
                                                         <div class="card">
-                                                            <div class="card-header">
+                                                            <div class="card-header"  style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <h5 class="card-header-text">Informacion del Analista</h5>
                                                                 <button onclick="" id="boton-editar-perfil"  class="btn btn-primary"></i>Editar</button>
                                                             </button>
@@ -628,16 +651,16 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row"> Nombre</th>
-                                                                                                        <td>carlos ivan castillo</td>
+                                                                                                        <th scope="row">Nombre</th>
+                                                                                                        <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Correo Electronico</th>
-                                                                                                        <td>correo@11cimedia.com</td>
+                                                                                                        <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Telefono Celular</th>
-                                                                                                        <td>+18054236587</td>
+                                                                                                        <th scope="row">Celular</th>
+                                                                                                        <td><?php echo $res[0]["Cell"]; ?></td>
                                                                                                     </tr>
                                                                                                     
                                                                                                     
@@ -653,17 +676,12 @@
                                                                                                 
                                                                                                 <tr>
                                                                                                     <th scope="row">Carnet</th>
-                                                                                                    <td>0258741369</td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Oficina</th>
-                                                                                                    <td>New York, USA</td>
-                                                                                                </tr>   
+                                                                                                    <td><?php echo $res[0]["Carnet"]; ?></td>
+                                                                                                </tr>  
                                                                                                 <tr>
                                                                                                     <th scope="row">Usuario</th>
-                                                                                                    <td>11carlosivan</td>
+                                                                                                    <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
-                                                                                                
                                                                                             </tbody>
                                                                                         </table>
                                                                                         </div>
@@ -710,155 +728,7 @@
                                                     </div>
                                                     <!-- tab pane info end -->
                                                     <!-- tab pane contact start -->
-                                                    <div class="tab-pane" id="contacts" role="tabpanel">
-                                                        <div class="row">
-
-                                                            <div class="col-lg-12">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <!-- Page-body start -->
-                                                                        <div class="page-body">
-                                                                            <div class="card product-add-modal">
-                                                                                <div class="card-header">
-                                                                                    <h5>Clientes Asignados</h5>
-                                                                                    <button onclick="location.href='Form_Customer.php'" type="button" class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger"> <i class="icofont icofont-plus m-r-5"></i>Add Customer
-                                                                                    </button>
-                                                                                </div>
-                                                                                <!--buscador-->
-                                                                             
-                                                                                <div id="buscador" class="">
-                                                                                    <div id="container-buscador" class="">
-                                                                                        <input id="buscador-cliente" type="text" class="form-control" placeholder="Buscar...">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <!--buscador-->
-                                                                                <div class="card-block">
-                                                                                    <div class="table-content crm-table">
-                                                                                        <div class="project-table" id="contenedor-tabla-clientes">
-                                                                                            <table id="crm-contact" class="table table-striped table-responsive nowrap">
-                                                                                                <a href="#final">ir al final</a>
-                                                                                                <thead>
-                                                                                                    <tr>
-                                                                                                        <th>
-                                                                                                        </th>
-                                                                                                        <th>Nombre</th>
-                                                                                                        <th>Numero de seguro social</th>
-                                                                                                        <th>Licencia de conducir </th>
-                                                                                                        <th>Estado</th>
-                                                                                                        <th>vencimiento</th>
-                                                                                                        <th>Direccion</th>
-                                                                                                    </tr>
-                                                                                                </thead>
-                                                                                                <tbody id="contenedor-clientes">
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-1.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Sortino
-                                                                                                        </td>
-                                                                                                        <td>Sortino@domain.com</td>
-                                                                                                        <td>Accountant</td>
-                                                                                                        <td>New York</td>
-                                                                                                        <td>45</td>
-                                                                                                        <td>+447662552550</td>
-                                                                                                        <td>12/12/2016</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-2.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-                                                                                                                                                                                                                                                                             ">
-                                                                                                            Larry
-                                                                                                        </td>
-                                                                                                        <td>Larry@domain.com</td>
-                                                                                                        <td>Web Designer</td>
-                                                                                                        <td>Singapore</td>
-                                                                                                        <td>25</td>
-                                                                                                        <td>+442566156222</td>
-                                                                                                        <td>6/10/2016</td>
-                                                                                                    
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-3.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Jacob
-                                                                                                        </td>
-                                                                                                        <td>Jacob@domain.com</td>
-                                                                                                        <td>Web Developer</td>
-                                                                                                        <td>London</td>
-                                                                                                        <td>45</td>
-                                                                                                        <td>+419996156222</td>
-                                                                                                        <td>11/09/2014</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-5.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Mark
-                                                                                                        </td>
-                                                                                                        <td>Mark@domain.com</td>
-                                                                                                        <td>Chief Financial Officer (CFO)</td>
-                                                                                                        <td>Abu Dhabi</td>
-                                                                                                        <td>33</td>
-                                                                                                        <td>+124455645889</td>
-                                                                                                        <td>01/05/2013</td>
-                                                                                                       
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-4.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Steve
-                                                                                                        </td>
-                                                                                                        <td>Steve@domain.com</td>
-                                                                                                        <td>Customer Support</td>
-                                                                                                        <td>New York</td>
-                                                                                                        <td>48</td>
-                                                                                                        <td>+111322574563</td>
-                                                                                                        <td>02/1/2012</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-1.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Larry the Bird
-                                                                                                        </td>
-                                                                                                        <td>Larry@domain.com</td>
-                                                                                                        <td>Team Leader</td>
-                                                                                                        <td>San Francisco</td>
-                                                                                                        <td>22</td>
-                                                                                                        <td>+146772555563</td>
-                                                                                                        <td>19/12/2015</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                  
-                                                                                                </tbody>
-                                                                                                <tfoot>
-                                                                                                </tfoot>
-                                                                                            </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- Container-fluid ends -->
-                                                                        </div>
-                                                                        <!-- Page-body end -->
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- tab content end -->
+                                                    
                                             </div>
                                         </div>
                                     </div>
