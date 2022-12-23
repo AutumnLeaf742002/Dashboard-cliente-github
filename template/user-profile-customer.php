@@ -874,7 +874,7 @@
                                                                                         <tbody>
                                                                                             <tr>
                                                                                                 <th scope="row">Analista asignado</th>
-                                                                                                <td>
+                                                                                                <td style="display: flex; align-items:center;">
                                                                                                     <?php 
                                                                                                     if(count($res_analista) > 0)
                                                                                                     {
@@ -887,6 +887,12 @@
                                                                                                     }
                                                                                                     echo $analista;
                                                                                                     ?>
+                                                                                                    <a href="user-profile-analyst.php?vmekmsi23xmfvwe155=<?php echo $res_cl[0]["Nombre_representante"]; ?>" style="display: flex; align-items:center;" title="Ver perfil del Analista">
+                                                                                                        <svg style="cursor: pointer; margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                                                                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                                                                                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                                                                                        </svg>
+                                                                                                    </a>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>

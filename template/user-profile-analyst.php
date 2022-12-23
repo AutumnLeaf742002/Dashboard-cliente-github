@@ -20,6 +20,12 @@
         $res_o = select($oCon, sql_o);
 
         $ofi = $res_o[0]["Name_office"];
+
+        //
+        $id_s = $res[0]["Id_supervisor"];
+        define("sql_s", "SELECT Name FROM managers WHERE Id = $id_s");
+        $res_s = select($oCon, sql_s);
+        $name_s = $res_s[0]["Name"];
     }
     else
     {
@@ -658,6 +664,18 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
+                                                                                                        <th scope="row">Manager asignado</th>
+                                                                                                        <td style="display: flex; align-items:center;">
+                                                                                                            <?php echo $name_s; ?>
+                                                                                                            <a href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_s; ?>" style="display: flex; align-items:center;" title="Ver perfil del Analista">
+                                                                                                                <svg style="cursor: pointer; margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                                                                                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                                                                                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                                                                                                </svg>
+                                                                                                            </a>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
                                                                                                         <th scope="row">Nombre</th>
                                                                                                         <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
@@ -673,10 +691,6 @@
                                                                                                         <th scope="row">Carnet</th>
                                                                                                         <td><?php echo $res[0]["Carnet"]; ?></td>
                                                                                                     </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Incentivo</th>
-                                                                                                        <td><?php echo $res[0]["Comision"]; ?></td>
-                                                                                                    </tr>
                                                                                                 </tbody>
                                                                                             </table>
                                                                                         </div>
@@ -686,6 +700,10 @@
                                                                                     <div class="table-responsive">
                                                                                         <table class="table">
                                                                                             <tbody>
+                                                                                                <tr>
+                                                                                                    <th scope="row">Incentivo</th>
+                                                                                                    <td><?php echo $res[0]["Comision"]; ?></td>
+                                                                                                </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Fecha de inicio</th>
                                                                                                     <td><?php echo $res[0]["Start_date"]; ?></td>
