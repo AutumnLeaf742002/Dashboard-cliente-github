@@ -218,3 +218,21 @@ body {
 	background-position: center;
 	background-size: cover;
 }
+
+@media screen and (max-width: 400px) {
+	
+	.screen{
+
+		width: 100vw !important;
+		height: 100vh !important;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	
+	.screen__background__shape3 {
+
+		background: linear-gradient(270deg, #89c6ff, #66b4fd);
+	}
+}
+
