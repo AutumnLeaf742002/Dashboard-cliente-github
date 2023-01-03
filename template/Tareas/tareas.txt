@@ -1,0 +1,10 @@
+Poner un buen nombre al perfil de los clientes.
+Poner nombre al formulario de los clientes.
+Poner nombre al perfil de editar clientes.
+Poner nombre a las páginas de los tres roles.
+Poner nombre a la página que se redirecciona cuando se da clic al menú de algo que aún no está terminado.
+Poner todo en español.
+Cambiar lo que dice simple card en las páginas de agregar roles.
+Agregar algo para indicar los campos que son obligatorios en todos los formularios.
+Copiar y pegar el código que hace que se vea como si estuviera cargando la parte de arriba del perfil de quien está logueado
+Arreglar que en el menú lateral se ver vendedores en editar roles
