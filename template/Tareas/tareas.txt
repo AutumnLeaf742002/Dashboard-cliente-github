@@ -8,3 +8,4 @@ Cambiar lo que dice simple card en las páginas de agregar roles.
 Agregar algo para indicar los campos que son obligatorios en todos los formularios.
 Copiar y pegar el código que hace que se vea como si estuviera cargando la parte de arriba del perfil de quien está logueado
 Arreglar que en el menú lateral se ver vendedores en editar roles
+poner la etiqueta html en espanol osea en "es" en ves de "en"

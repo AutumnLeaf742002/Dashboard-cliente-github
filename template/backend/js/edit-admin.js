@@ -6,9 +6,8 @@ const name_dom = document.getElementById('name')
 const mail_dom = document.getElementById('mail')
 const cell_dom = document.getElementById('cell')
 const carnet_dom = document.getElementById('carnet')
-const oficce_dom = document.getElementById('oficce')
 const user_dom = document.getElementById('user')
-let id_m = 0
+let id_ad = 0
 
 btn_edit.addEventListener('click', function(){
 
@@ -21,15 +20,14 @@ btn_confirm_cl.addEventListener('click', function(){
     const mail = mail_dom.value
     const cell = cell_dom.value
     const carnet = carnet_dom.value
-    const office = oficce_dom.value
     const user = user_dom.value
 
-    if(name.length > 0 && mail.length > 0 && cell.length > 0 && office.length > 0 && user.length > 0)
+    if(name.length > 0 && mail.length > 0 && cell.length > 0 && user.length > 0)
     {
-        if(id_m > 0)
+        if(id_ad > 0)
         {
             let request = new XMLHttpRequest()
-            request.open('POST', 'backend/php/edit-manager.php', true)
+            request.open('POST', 'backend/php/edit-admin.php', true)
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
             request.onreadystatechange = function () {
     
@@ -76,7 +74,7 @@ btn_confirm_cl.addEventListener('click', function(){
                 }
             }
     
-            request.send(`id_m=${id_m}&name=${name}&mail=${mail}&cell=${cell}&carnet=${carnet}&office=${office}&user=${user}`)    
+            request.send(`id_ad=${id_ad}&name=${name}&mail=${mail}&cell=${cell}&carnet=${carnet}&user=${user}`)    
         }
     }
     else
@@ -93,10 +91,10 @@ function cerrar()
 
 function set_id(id)
 {
-    id_m = id
+    id_ad = id
 }
 
 function re()
 {
-    window.location.href = `user-profile-manager.php?vmekmsi23xmfvwe155=${id_m}`
+    window.location.href = `user-profile-admin.php?vmekmsi23xmfvwe155=${id_ad}`
 }

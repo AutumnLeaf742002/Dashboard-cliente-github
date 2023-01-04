@@ -1,9 +1,57 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<?php
+
+    if(!empty($_GET))
+    {
+        include_once "./backend/php/connection.php";
+        include_once "./backend/php/commands.php";
+
+        $name = "";
+        $mail = "";
+        $cell = "";
+        $carnet = "";
+        $user = "";
+
+        $id_ad = $_GET["wdasjoiwjioasdw"]??0;
+
+        $oCon = connect();
+        define("sql", "SELECT * FROM administrators WHERE Id = ".$id_ad);
+        $res = select($oCon, sql);
+
+        if(is_array($res))
+        {
+            if(count($res) == 1)
+            {
+                $name = $res[0]["Name"];
+                $mail = $res[0]["Mail"];
+                $cell = $res[0]["Cell"];
+                $carnet = $res[0]["Carnet"];
+                $user = $res[0]["User"];
+
+                $name = trim($name);
+                $mail = trim($mail);
+                $cell = trim($cell);
+                $carnet = trim($carnet);
+                $user = trim($user);
+            }
+        }
+        else
+        {
+            header("location: administradores.html");
+        }
+    }
+    else
+    {
+        header("location: administradores.html");
+    }
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
     <script src="backend/js/session.js"></script>
-    <title>Mash Able - Premium Admin Template</title>
+    <title>Administrador</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -51,6 +99,187 @@
 </head>
 
 <body>
+
+
+
+<!-- Notificaciones -->
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+   <!-- notify js Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.brighttheme.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="assets/pages/pnotify/notify.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--color css-->
+
+    <!-- css para las notificaciones -->
+    <link rel="stylesheet" href="alerts.css">
+
+    <div class="card-block table-border-style container-notificaciones">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    
+                    <!-- Notificacion aviso principal -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-notice ui-pnotify-shadow n-personal" id="n-personal-1" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-1" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font" style="vertical-align: inherit;">Aviso!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                    
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de informacion -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-info ui-pnotify-shadow n-personal" id="n-personal-2" role="alert" style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-2" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Hecho!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de peligro -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-error ui-pnotify-shadow n-personal" id="n-personal-3" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-icon">
+                            <span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-3" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Peligro</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                </tbody>
+            </table>
+        </div>    
+    </div>
+
+    <!-- Notificaciones -->
+
+
+        <!--inicio de ventana emergente-->
+    <div id="ventana-confirmacion" style="display: none;">
+        <!-- sweet alert framework -->
+        <link rel="stylesheet" type="text/css" href="../bower_components/sweetalert/css/sweetalert.css">
+                    <!-- Style.css -->
+                    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+                    <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -169px;"><div class="sa-icon sa-error" style="display: none;">
+                        <span   span class="sa-x-mark">
+                            <span class="sa-line sa-left"></span>
+                        <span class="sa-line sa-right"></span>
+                    </span>
+                    </div><div class="sa-icon sa-warning pulseWarning" style="display: block;">
+                    <span class="sa-body pulseWarningIns"></span>
+                    <span class="sa-dot pulseWarningIns"></span>
+                    </div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success" style="display: none;">
+                    <span class="sa-line sa-tip"></span>
+                    <span class="sa-line sa-long"></span>
+                    
+                    <div class="sa-placeholder"></div>
+                    <div class="sa-fix"></div>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas guardar los cambios?</h2>
+                    <p style="display: block;">Si haces click en aceptar se guardaran los cambios realizados.</p>
+                    <fieldset>
+                    <input type="text" tabindex="3" placeholder="">
+                    <div class="sa-input-error"></div>
+                    </fieldset><div class="sa-error-container">
+                    <div class="icon">!</div>
+                    <p>You need to write something!</p>
+                    </div><div class="sa-button-container">
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <div class="sa-confirm-button-container">
+                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    </div>
+                    </div>
+                    </div></div>
+    </div>
+<!--final de ventana emergente-->
+
+
+
+
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -427,100 +656,61 @@
             <!-- Sidebar inner chat end-->
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                <nav class="pcoded-navbar">
+                    <nav class="pcoded-navbar">
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
                         <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
-                            
                             <li>
-                            <a id="" href="dashboard-project.html">
-                                <span class="pcoded-micon"><i class="ti-home"></i></span>
-                                <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
-                            </a>
-                            <li id="roles" class="pcoded-hasmenu">
-                                <a href="javascript:void(0)">
-                                    <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
-                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
-                                    </svg>
-                                    </i>
-                                </span>
-                                    <!--Roles-->
-                                    <span class="pcoded-mtext" data-i18n="nav.page_layout.main">Roles</span>
+                                <a href="dashboard-project.html">
+                                    <span class="pcoded-micon"><i class="ti-home"></i></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                </a>
+                                
+                            </li>
+                            <li class="">
+                                <a href="user-card.html">
+                                    <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+                                    </svg></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Vendedores</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
-                        <ul class="pcoded-submenu">
-                        </li>
-                        <li id="admin">
-                            <a href="administradores.html">
-                                <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+                            </li>
+                            <li id="menu-clientes">
+                                <a href="crm-contact.html">
+                                    <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                    </svg></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Clientes</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="event-full-calender.html">
+                                <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                                    <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                 </svg></span>
-                                <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                                    <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-                                    <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
-                                </svg>Administradores</span>
+                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Crear Citas</span>
                                 <span class="pcoded-mcaret"></span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="managers.html">
-                                <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></span>
-                                <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-video2" viewBox="0 0 16 16">
-                                    <path d="M10 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-                                    <path d="M2 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2ZM1 3a1 1 0 0 1 1-1h2v2H1V3Zm4 10V2h9a1 1 0 0 1 1 1v9c0 .285-.12.543-.31.725C14.15 11.494 12.822 10 10 10c-3.037 0-4.345 1.73-4.798 3H5Zm-4-2h3v2H2a1 1 0 0 1-1-1v-1Zm3-1H1V8h3v2Zm0-3H1V5h3v2Z"/>
-                                </svg>Managers</span>
-                                <span class="pcoded-mcaret"></span>
-                            </a>
-                        </li>
-                        <li id="">
-                            <a href="Analistas.html">
-                                <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></span>
-                                <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg>Analistas</span>
-                                <span class="pcoded-mcaret"></span>
-                            </a>
-                        </li>
-                        <!--Roles-->
-                    </ul>
-                        <li id="">
-                            <a href="crm-contact.html">
-                                <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                            </svg></span>
-                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Clientes</span>
-                                <span class="pcoded-mcaret"></span>
-                            </a>
-                        </li>
+                            </a>  
+                            <li id="">
+                                <a href="chat.html">
+                                    <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+                                        <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                        <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                                    </svg></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Chat</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
                             
-                        <li class="">
-                            <a href="event-full-calender.html">
-                            <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
-                                <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                            </svg></span>
-                            <span class="pcoded-mtext" data-i18n="nav.dash.default">Crear Citas</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>  
-                        <li id="">
-                            <a href="chat.html">
-                                <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
-                                    <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                                    <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
-                                </svg></span>
-                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Chat</span>
-                                <span class="pcoded-mcaret"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav> 
+                </nav>
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
                             <!-- Main body start -->
@@ -532,8 +722,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de administrador</h4>
-                                                        <span>Toda la informacion del administrador se encuentra en este perfil</span>
+                                                        <h4>Editar Administrador</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -564,17 +753,17 @@
                                                     <div class="profile-bg-img">
                                                         <img class="profile-bg-img img-fluid" src="assets/images/user-profile/bg-img1.jpg" alt="bg-img">
                                                         <div class="card-block user-info">
-                                                            <div class="col-md-12">
+                                                        <div class="col-md-12">
                                                                 <div class="media-left">
-                                                                    <a href="#" class="profile-image">
-                                                                        <img class="user-img img-circle" src="assets/images/user-profile/user-img.jpg" alt="user-img">
-                                                                    </a>
+                                                                    <div class="card-header-img" style="overflow: hidden; width: 125px; height: 125px; border: 2px solid #f2f2f2; border-radius: 50%; margin: auto auto;">
+                                                                        <img style="height: auto; width: 100%; object-fit: cover;" class="img-fluid" src="./assets/images/user-redondo.svg" alter="img-user">
+                                                                    </div>                                                                
                                                                 </div>
                                                                 <div class="media-body row">
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
-                                                                            <h2>Josephin Villa</h2>
-                                                                            <span class="text-white">Vendedora</span>
+                                                                            <h2><?php echo $name; ?></h2>
+                                                                            <span class="text-white">Administrador</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -600,7 +789,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion del Analista</h5>
+                                                                <h5 class="card-header-text">Informacion del Administrador</h5>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
@@ -617,15 +806,15 @@
                                                                                                             <th scope="row">Nombre</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                <input required  id="" type="text" class="form-control cl_invalid" name="" value="">
+                                                                                                                <input  maxlength="100" id="name" type="text" class="form-control" name="" value="<?php echo $name; ?>">
                                                                                                             </div> 
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Correo Electronico	</th>
+                                                                                                            <th scope="row">Correo</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                <input required  id="" type="text" class="form-control cl_invalid" name="" value="">
+                                                                                                                <input maxlength="50" id="mail" type="text" class="form-control " name="" value="<?php echo $mail; ?>">
                                                                                                             </div>
                                                                                                         </td>
                                                                                                         </tr>
@@ -633,11 +822,18 @@
                                                                                                             <th scope="row">Telefono Celular</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
-                                                                                                                <input required  id="" type="text" class="form-control cl_invalid" name="" value="">
+                                                                                                                <input maxlength="20" id="cell" type="text" class="form-control " name="" value="<?php echo $cell; ?>">
                                                                                                             </div> 
                                                                                                         </td>
                                                                                                         </tr>
-                                                                                                       
+                                                                                                        <tr>
+                                                                                                            <th scope="row">Carnet</th>
+                                                                                                            <td>
+                                                                                                                <div class="input-group">
+                                                                                                                <input maxlength="20" id="carnet" type="text" class="form-control " name="" value="<?php echo $carnet; ?>">
+                                                                                                            </div> 
+                                                                                                        </td>
+                                                                                                        </tr>
                                                                                                     </form>
                                                                                                 </tbody>
                                                                                             </table>
@@ -650,45 +846,10 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Carnet</th>
+                                                                                                    <th scope="row">Usuario</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
-                                                                                                        <input required  id="" type="text" class="form-control cl_invalid" name="" value="">
-                                                                                                    </div> 
-                                                                                                </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Oficina</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group" style="display: flex !important; flex-direction:column !important;">
-                                                                                                            <select id="oficinas" type="text" name="oficina" class="w-100 form-control" valeue="Oficina" required>
-                                                                                                                <option selected value="6">
-                                                                                                                    seleccionar Oficina
-                                                                                                                </option>
-                                                                                                                <option value="1">
-                                                                                                                    Connecticut 
-                                                                                                                </option>
-                                                                                                                <option value="2">
-                                                                                                                    Pensilvania 
-                                                                                                                </option>
-                                                                                                                <option value="3">
-                                                                                                                    Charlotte 
-                                                                                                                </option>
-                                                                                                                <option value="4">
-                                                                                                                    New York 
-                                                                                                                </option>
-                                                                                                                <option value="5">
-                                                                                                                    New Jersey 
-                                                                                                                </option>
-                                                                                                            </select>
-                                                                                                        </div>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">usuario</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input required  id="" type="text" class="form-control cl_invalid" name="" value="">
+                                                                                                            <input maxlength="50" id="user" type="text" class="form-control " name="" value="<?php echo $user; ?>">
                                                                                                         </div> 
                                                                                                     </td>
                                                                                                 </tr>
@@ -705,10 +866,12 @@
                                                         </div>
                                                         <div class="col-12 d-flex justify-content-center">
                                                             
-                                                            <a href="user-profile-customer.php?id_cl=<?php echo $id_cl ?>&id_co=<?php echo $id_co ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
+                                                            <a href="user-profile-admin.php?vmekmsi23xmfvwe155=<?php echo $id_ad; ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
                                                                 volver
                                                             </a>
-                                                            <input type="submit" class="btn btn-primary cursor-pointer mx-2" value="Guardar">
+                                                            <button id="btn-edit" class="btn btn-primary cursor-pointer mx-2">
+                                                                Guardar
+                                                            </button>
                                                                 
                                                         </div>
                                                         <div class="row">
@@ -805,6 +968,12 @@
     <script src="assets/js/demo-12.js"></script>
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script src="alerts.js"></script>
+    <script src="./backend/js/edit-admin.js"></script>
+
+    <script>
+        set_id(<?php echo $id_ad; ?>)
+    </script>
 </body>
 
 </html>

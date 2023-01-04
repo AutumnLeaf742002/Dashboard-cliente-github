@@ -637,7 +637,7 @@
                                                         <div class="card">
                                                             <div class="card-header"  style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <h5 class="card-header-text">Informacion del Analista</h5>
-                                                                <button onclick="" id="boton-editar-perfil"  class="btn btn-primary"></i>Editar</button>
+                                                                <a href="user-profile-admin-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
                                                             </button>
                                                             </div>
                                                             <div class="card-block">

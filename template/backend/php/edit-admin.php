@@ -7,17 +7,13 @@
 
         $oCon = connect();
 
-        $id_a = $_POST["id_a"]??0;
-        $id_a = trim($id_a);
+        $id_ad = $_POST["id_ad"]??0;
+        $id_ad = trim($id_ad);
 
         $name = $_POST["name"]??"";
         $mail = $_POST["mail"]??"";
         $cell = $_POST["cell"]??"";
         $carnet = $_POST["carnet"]??"";
-        $comision = $_POST["comision"]??"";
-        $start_date = $_POST["start_date"]??"";
-        $recruiter = $_POST["recruiter"]??"";
-        $office = $_POST["office"]??"";
         $user = $_POST["user"]??"";
 
         $name = trim($name);
@@ -26,36 +22,32 @@
         $mail = strtolower($mail);
         $cell = trim($cell);
         $carnet = trim($carnet);
-        $comision = trim($comision);
-        $start_date =trim($start_date);
-        $recruiter = trim($recruiter);
-        $office = trim($office);
         $user = trim($user);
 
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) 
         {
             if($carnet == "")
             {
-                define("sql", "CALL sp_edit_analist(".$id_a.", '".$name."', '".$mail."', '".$cell."', NULL, '".$start_date."', '".$recruiter."', ".$office.", '".$comision."', '".$user."');");
+                define("sql", "CALL sp_edit_administrator(".$id_ad.", '".$name."', '".$mail."', '".$cell."', NULL, '".$user."');");
 
             }
             else
             {
-                define("sql", "CALL sp_edit_analist(".$id_a.", '".$name."', '".$mail."', '".$cell."', '".$carnet."', '".$start_date."', '".$recruiter."', ".$office.", '".$comision."', '".$user."');");
+                define("sql", "CALL sp_edit_administrator(".$id_ad.", '".$name."', '".$mail."', '".$cell."', '".$carnet."', '".$user."');");
             }
 
             $res = command($oCon, sql);
 
             echo $res;
         }
-        else 
+        else
         {
             echo "mf";
         }
     }
     else
     {
-        header("location: ../../Analistas.html");
+        header("location: ../../managers.html");
     }
 
 ?>

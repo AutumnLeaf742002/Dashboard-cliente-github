@@ -902,7 +902,7 @@
                                                         </div>
                                                         <div class="col-12 d-flex justify-content-center">
                                                             
-                                                            <a href="user-profile-analyst.php?vmekmsi23xmfvwe155=<?php echo $id_a; ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
+                                                            <a href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_m; ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
                                                                 volver
                                                             </a>
                                                             <button id="btn-edit" class="btn btn-primary cursor-pointer mx-2">
@@ -1005,10 +1005,10 @@
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
     <script src="alerts.js"></script>
-    <script src="./backend/js/edit-analist.js"></script>
+    <script src="./backend/js/edit-manager.js"></script>
 
     <script>
-        set_id(<?php echo $id_a; ?>)
+        set_id(<?php echo $id_m; ?>)
     </script>
 </body>
 

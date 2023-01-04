@@ -46,6 +46,8 @@ btn_confirm_cl.addEventListener('click', function(){
                     {
                         aparecer_n_2("Cambios guardados")
                         cerrar()
+
+                        setTimeout(re, 3000)
                     }
                     else if(res.includes("for key 'Mail_2'"))
                     {
@@ -65,6 +67,11 @@ btn_confirm_cl.addEventListener('click', function(){
                     else if(res.includes("for key 'User'"))
                     {
                         aparecer_n_3("Este Usuario ya existe")
+                        cerrar()
+                    }
+                    else if(res == "mf")
+                    {
+                        aparecer_n_3("Correo invalido")
                         cerrar()
                     }
                     else
@@ -93,4 +100,9 @@ function cerrar()
 function set_id(id)
 {
     id_a = id
+}
+
+function re()
+{
+    window.location.href = `user-profile-analyst.php?vmekmsi23xmfvwe155=${id_a}`
 }
