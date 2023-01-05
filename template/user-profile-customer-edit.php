@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <script src="backend/js/session.js"></script>
-    <title>Mash Able - Premium Admin Template</title>
+    <title>Perfil de cliente</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -343,7 +343,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                        <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
+                                        <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -353,7 +353,7 @@
                                         </li>
                                         <li>
                                             <a href="#" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                             </a>
                                         </li>
                                         
@@ -405,9 +405,9 @@
                                 </li>
                                 
                                 <li class="user-profile header-notification">
-                                <a href="#!" id="info_profile">
-                                        <img src="assets/images/user.png" alt="User-Profile-Image">
-                                        <span>Carlos Castillo</span>
+                                    <a href="#!" id="info_profile" class="p-0" style="position: relative;">
+                                        <img src="assets/images/user-redondo.svg" alt="User-Profile-Image">
+                                        <span>Cargando...</span>
                                         <i class="ti-angle-down"></i>
                                     </a>
                                     <ul class="show-notification profile-notification">
@@ -427,7 +427,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>
                             </ul>
                             <!-- search -->
                             <div id="morphsearch" class="morphsearch">
@@ -735,7 +735,7 @@
                         </ul>
                         <!--Roles-->
                             <li id="">
-                                <a href="crm-contact.html">
+                                <a href="clientes.html">
                                     <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -788,13 +788,6 @@
                                                 <div class="page-header-breadcrumb">
                                                     <ul class="breadcrumb-title">
                                                 <li class="breadcrumb-item">
-                                                    <a href="index.html">
-                                                        <i class="icofont icofont-home"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="breadcrumb-item"><a href="#!">User Profile</a>
-                                                </li>
-                                                <li class="breadcrumb-item"><a href="#!">User Profile</a>
                                                 </li>
                                             </ul>
                                                 </div>
