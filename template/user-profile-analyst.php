@@ -1068,6 +1068,7 @@
     <script src="assets/js/jquery.mousewheel.min.js"></script>
     <script src="backend/js/get-customer-analist.js"></script>
     <script src="backend/js/delete-analist.js"></script>
+    <script src="backend/js/get-profile.js"></script>
 
     <script>
         get_id(<?php echo $id; ?>)

@@ -12,7 +12,7 @@ btn_confirm_cl.addEventListener("click", function(){
     if(id_ > 0)
     {
         let request = new XMLHttpRequest()
-        request.open('POST', 'backend/php/delete-analist.php', true)
+        request.open('POST', 'backend/php/delete-admin.php', true)
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
         request.onreadystatechange = function () {
 
@@ -20,7 +20,15 @@ btn_confirm_cl.addEventListener("click", function(){
 
                 if(request.responseText == "Correct")
                 {
-                    window.location.href = "Analistas.html"
+                    window.location.href = "administradores.html"
+                }
+                else if(request.responseText == "admin")
+                {
+                    alert("Imposible realizar esta acción")
+                }
+                else if(request.responseText == "actual")
+                {
+                    alert("No puedes borrar tu mismo usuario")
                 }
                 else
                 {

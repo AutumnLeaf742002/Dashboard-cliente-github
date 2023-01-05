@@ -1078,6 +1078,7 @@
     <script src="assets/js/jquery.mousewheel.min.js"></script>
     <script src="alerts.js"></script>
     <script src="./backend/js/edit-analist.js"></script>
+    <script src="backend/js/get-profile.js"></script>
 
     <script>
         set_id(<?php echo $id_a; ?>)

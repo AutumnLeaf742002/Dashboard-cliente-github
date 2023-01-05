@@ -12,7 +12,7 @@ btn_confirm_cl.addEventListener("click", function(){
     if(id_ > 0)
     {
         let request = new XMLHttpRequest()
-        request.open('POST', 'backend/php/delete-analist.php', true)
+        request.open('POST', 'backend/php/delete-manager.php', true)
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
         request.onreadystatechange = function () {
 
@@ -20,7 +20,7 @@ btn_confirm_cl.addEventListener("click", function(){
 
                 if(request.responseText == "Correct")
                 {
-                    window.location.href = "Analistas.html"
+                    window.location.href = "managers.html"
                 }
                 else
                 {

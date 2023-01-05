@@ -77,6 +77,50 @@
 </head>
 
 <body>
+
+
+    <!--inicio de ventana emergente-->
+    <div id="ventana-confirmacion" style="display: none;">
+        <!-- sweet alert framework -->
+        <link rel="stylesheet" type="text/css" href="../bower_components/sweetalert/css/sweetalert.css">
+                    <!-- Style.css -->
+                    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+                    <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -169px;"><div class="sa-icon sa-error" style="display: none;">
+                        <span   span class="sa-x-mark">
+                            <span class="sa-line sa-left"></span>
+                        <span class="sa-line sa-right"></span>
+                    </span>
+                    </div><div class="sa-icon sa-warning pulseWarning" style="display: block;">
+                    <span class="sa-body pulseWarningIns"></span>
+                    <span class="sa-dot pulseWarningIns"></span>
+                    </div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success" style="display: none;">
+                    <span class="sa-line sa-tip"></span>
+                    <span class="sa-line sa-long"></span>
+                    
+                    <div class="sa-placeholder"></div>
+                    <div class="sa-fix"></div>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas realizar esta acción?</h2>
+                    <p style="display: block;">Si haces click en aceptar los cambios no podran ser revertidos.</p>
+                    <fieldset>
+                    <input type="text" tabindex="3" placeholder="">
+                    <div class="sa-input-error"></div>
+                    </fieldset><div class="sa-error-container">
+                    <div class="icon">!</div>
+                    <p>You need to write something!</p>
+                    </div><div class="sa-button-container">
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <div class="sa-confirm-button-container">
+                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    </div>
+                    </div>
+                    </div></div>
+    </div>
+    <!--final de ventana emergente-->
+
+
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -637,7 +681,12 @@
                                                         <div class="card">
                                                             <div class="card-header"  style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <h5 class="card-header-text">Informacion del Analista</h5>
+                                                                <div style="display: flex; gap: 10px;">
+                                                                    <button onclick="show()" id="delete" class="btn btn-danger">
+                                                                        Eliminar
+                                                                    </button>
                                                                 <a href="user-profile-admin-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
+                                                            </div>
                                                             </button>
                                                             </div>
                                                             <div class="card-block">
@@ -829,6 +878,12 @@
     <script src="assets/js/demo-12.js"></script>
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script src="backend/js/delete-admin.js"></script>
+    <script src="backend/js/get-profile.js"></script>
+
+    <script>
+        get_id(<?php echo $id; ?>)
+    </script>
 </body>
 
 </html>

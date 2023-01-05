@@ -1,3 +1,4 @@
 Poner nombre a la página que se redirecciona cuando se da clic al menú de algo que aún no está terminado.
 Poner todo en español.(falta por completar)
 Agregar algo para indicar los campos que son obligatorios en todos los formularios.
+En la parte de editar manager aun aparece venderdores en el menu lateral
