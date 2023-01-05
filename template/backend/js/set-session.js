@@ -23,7 +23,7 @@ function set_session()
 
                     if(request.responseText == "True")
                     {
-                        cerrar_()
+                        cerrar()
                         window.location.href = "clientes.html"
                     }
                     else
