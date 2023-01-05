@@ -23,8 +23,8 @@ function set_session()
 
                     if(request.responseText == "True")
                     {
-                        window.location.href = "crm-contact.html"
                         cerrar_()
+                        window.location.href = "clientes.html"
                     }
                     else
                     {

@@ -12,7 +12,7 @@ function session_login()
             {
                 const body = document.querySelector(".bodyxd")
                 body.innerHTML = ""
-                window.location.href = "crm-contact.html"
+                window.location.href = "clientes.html"
             }
         }
     }
