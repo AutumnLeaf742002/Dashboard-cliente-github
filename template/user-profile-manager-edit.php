@@ -242,7 +242,7 @@
     <!-- Notificaciones -->
 
 
-        <!--inicio de ventana emergente-->
+    <!--inicio de ventana emergente-->
     <div id="ventana-confirmacion" style="display: none;">
         <!-- sweet alert framework -->
         <link rel="stylesheet" type="text/css" href="../bower_components/sweetalert/css/sweetalert.css">
