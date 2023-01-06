@@ -2,12 +2,27 @@
 
     if(!empty($_GET))
     {
+        session_start();
+
         include_once "./backend/php/connection.php";
         include_once "./backend/php/commands.php";
+
         $id = $_GET["vmekmsi23xmfvwe155"]??0;
 
         $oCon = connect();
-        define("sql", "SELECT * FROM analyst WHERE Id = $id");
+
+        $id_m = $_SESSION["id"];
+        $rol = $_SESSION["rol"];
+
+        if($rol == "2")
+        {
+            define("sql", "SELECT * FROM analyst WHERE Id = $id AND Id_supervisor = $id_m");
+        }
+        else
+        {
+            define("sql", "SELECT * FROM analyst WHERE Id = $id");
+        }
+
         $res = select($oCon, sql);
 
         if(count($res) <= 0)

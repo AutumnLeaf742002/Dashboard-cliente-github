@@ -5,8 +5,19 @@
         include_once "connection.php";
         include_once "commands.php";
 
+        session_start();
         $oCon = connect();
-        $sql = "SELECT * FROM analyst";
+
+        if($_SESSION["rol" ] == "2")
+        {
+            $id_m = $_SESSION["id"];
+            $sql = "SELECT * FROM analyst WHERE Id_supervisor = $id_m";
+        }
+        else
+        {
+            $sql = "SELECT * FROM analyst";
+        }
+
         $res = select($oCon, $sql);
 
         foreach($res as $item)

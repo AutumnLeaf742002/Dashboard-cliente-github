@@ -72,6 +72,20 @@
         $res_cl = select($oCon, $sql_cl);
         $res_co = select($oCon, $sql_co);
 
+        $serie_cl = 0;
+        $serie_co = 0;
+
+        $serie_cl = $res_cl[0]["N_serie_cliente"];
+        $serie_co = $res_co[0]["C_N_serie_cliente"]??"nothing";
+
+        if(count($res_co) > 0)
+        {
+            if($serie_cl != $serie_co)
+            {
+                $res_co = select($oCon, "SELECT * FROM co_aplicantes WHERE Id = 0");
+            }
+        }
+
         
     }
 

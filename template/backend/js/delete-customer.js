@@ -25,7 +25,7 @@ boton_eliminar_perfil.addEventListener("click", ()=>{
                     aparecer_n_2("Eliminado exitosamente")
                     setTimeout(function(){
 
-                        window.location.href = "crm-contact.html"
+                        window.location.href = "clientes.html"
                     }, 2000)
                 }
                 else

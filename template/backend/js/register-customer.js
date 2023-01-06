@@ -519,7 +519,7 @@ btn_enviar_customer.addEventListener('click', () => {
                                 // Redireccion para ver los clientes
                                 setTimeout(function () {
 
-                                    window.location.href = 'crm-contact.html'
+                                    window.location.href = 'clientes.html'
                                 }, 2000)
                             }
                             else {

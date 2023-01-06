@@ -9,7 +9,6 @@ const carnet_dom = document.getElementById('carnet')
 const comision_dom = document.getElementById('comision')
 const start_date_dom = document.getElementById('start_date')
 const recruiter_dom = document.getElementById('recruiter')
-const oficce_dom = document.getElementById('oficce')
 const user_dom = document.getElementById('user')
 let id_a = 0
 
@@ -27,10 +26,9 @@ btn_confirm_cl.addEventListener('click', function(){
     const comision = comision_dom.value
     const start_date = start_date_dom.value
     const recruiter = recruiter_dom.value
-    const office = oficce_dom.value
     const user = user_dom.value
 
-    if(name.length > 0 && mail.length > 0 && cell.length > 0 && start_date.length > 0 && office.length > 0 && user.length > 0)
+    if(name.length > 0 && mail.length > 0 && cell.length > 0 && start_date.length > 0 && user.length > 0)
     {
         if(id_a > 0)
         {
@@ -82,7 +80,7 @@ btn_confirm_cl.addEventListener('click', function(){
                 }
             }
     
-            request.send(`id_a=${id_a}&name=${name}&mail=${mail}&cell=${cell}&carnet=${carnet}&comision=${comision}&start_date=${start_date}&recruiter=${recruiter}&office=${office}&user=${user}&`)    
+            request.send(`id_a=${id_a}&name=${name}&mail=${mail}&cell=${cell}&carnet=${carnet}&comision=${comision}&start_date=${start_date}&recruiter=${recruiter}&user=${user}&`)    
         }
     }
     else

@@ -6,7 +6,19 @@
         include_once "commands.php";
 
         $oCon = connect();
-        $sql = "SELECT N_serie_cliente, Id, Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion FROM clientes";
+
+        session_start();
+        $id_logued = $_SESSION["id"];
+        $rol = $_SESSION["rol"];
+
+        if($rol == "3")
+        {
+            $sql = "SELECT N_serie_cliente, Id, Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion FROM clientes WHERE Nombre_representante = $id_logued";
+        }
+        else if($rol == "1")
+        {
+            $sql = "SELECT N_serie_cliente, Id, Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion FROM clientes";
+        }
         
         $res = select($oCon, $sql);
 

@@ -10,32 +10,88 @@
         
         $oCon = connect();
 
-        $sql = "SELECT * FROM clientes WHERE Primer_nombre LIKE '%$search%' ";
+        session_start();
+        $id_logued = $_SESSION["id"];
+        $rol = $_SESSION["rol"];
+
+        if($rol == "3")
+        {
+            $sql = "SELECT * FROM clientes WHERE Primer_nombre LIKE '%$search%' AND Nombre_representante = $id_logued";
+        }
+        else if($rol == "1")
+        {
+            $sql = "SELECT * FROM clientes WHERE Primer_nombre LIKE '%$search%'";
+        }
+
         $res = select($oCon, $sql);
 
         if(count($res) <= 0)
         {
-            $sql = "SELECT * FROM clientes WHERE N_seguro_social LIKE '%$search%' ";
+
+            if($rol == "3")
+            {
+                $sql = "SELECT * FROM clientes WHERE N_seguro_social LIKE '%$search%' AND Nombre_representante = $id_logued";
+            }
+            else if($rol == "1")
+            {
+                $sql = "SELECT * FROM clientes WHERE N_seguro_social LIKE '%$search%' ";
+            }
+
             $res = select($oCon, $sql);
 
             if(count($res) <= 0)
             {
-                $sql = "SELECT * FROM clientes WHERE N_licencia_conducir LIKE '%$search%' ";
+
+                if($rol == "3")
+                {
+                    $sql = "SELECT * FROM clientes WHERE N_licencia_conducir LIKE '%$search%' AND Nombre_representante = $id_logued";
+                }
+                else if($rol == "1")
+                {
+                    $sql = "SELECT * FROM clientes WHERE N_licencia_conducir LIKE '%$search%' ";
+                }
+
                 $res = select($oCon, $sql);
 
                 if(count($res) <= 0)
                 {
-                    $sql = "SELECT * FROM clientes WHERE Estado LIKE '%$search%' ";
+
+                    if($rol == "3")
+                    {
+                        $sql = "SELECT * FROM clientes WHERE Estado LIKE '%$search%' AND Nombre_representante = $id_logued";
+                    }
+                    else if($rol == "1")
+                    {
+                        $sql = "SELECT * FROM clientes WHERE Estado LIKE '%$search%' ";
+                    }
+
                     $res = select($oCon, $sql);
 
                     if(count($res) <= 0)
                     {
-                        $sql = "SELECT * FROM clientes WHERE Vencimiento LIKE '%$search%' ";
+
+                        if($rol == "3")
+                        {
+                            $sql = "SELECT * FROM clientes WHERE Vencimiento LIKE '%$search%' AND Nombre_representante = $id_logued";
+                        }
+                        else if($rol == "1")
+                        {
+                            $sql = "SELECT * FROM clientes WHERE Vencimiento LIKE '%$search%' ";
+                        }
+
                         $res = select($oCon, $sql);
 
                         if(count($res) <= 0)
                         {
-                            $sql = "SELECT * FROM clientes WHERE Direccion LIKE '%$search%' ";
+
+                            if($rol == "3")
+                            {
+                                $sql = "SELECT * FROM clientes WHERE Direccion LIKE '%$search%' AND Nombre_representante = $id_logued";
+                            }
+                            else if($rol == "1")
+                            {
+                                $sql = "SELECT * FROM clientes WHERE Direccion LIKE '%$search%' ";
+                            }
                             $res = select($oCon, $sql);
                         }
                     }

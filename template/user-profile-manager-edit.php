@@ -9,7 +9,6 @@
         $mail = "";
         $cell = "";
         $carnet = "";
-        $id_office = 0;
         $user = "";
 
         $id_m = $_GET["wdasjoiwjioasdw"]??0;
@@ -26,28 +25,23 @@
                 $mail = $res[0]["Mail"];
                 $cell = $res[0]["Cell"];
                 $carnet = $res[0]["Carnet"];
-                $id_office = $res[0]["Id_office"];
                 $user = $res[0]["User"];
 
                 $name = trim($name);
                 $mail = trim($mail);
                 $cell = trim($cell);
                 $carnet = trim($carnet);
-                $id_office = trim($id_office);
                 $user = trim($user);
             }
         }
         else
         {
-            header("location: Analistas.html");
+            header("location: managers.html");
         }
-
-        define("sql_of", "SELECT Id, Name_office FROM offices");
-        $res_of = select($oCon, sql_of);
     }
     else
     {
-        header("location: Analistas.html");
+        header("location: managers.html");
     }
 
 ?>
@@ -888,36 +882,6 @@
                                                                                     <div class="table-responsive">
                                                                                         <table class="table">
                                                                                             <tbody>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Oficina</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <select id="oficce" class="form-control " name="">
-                                                                                                                <?php
-                                                                                                                
-                                                                                                                    if(is_array($res_of))
-                                                                                                                    {
-                                                                                                                        if(count($res_of) > 0)
-                                                                                                                        {
-                                                                                                                            foreach($res_of as $item)
-                                                                                                                            {
-                                                                                                                                if($item["Id"] == $id_office)
-                                                                                                                                {
-                                                                                                                                    echo '<option selected value="'.$item["Id"].'">'.$item["Name_office"].'</option>';
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    echo '<option value="'.$item["Id"].'">'.$item["Name_office"].'</option>';
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                
-                                                                                                                ?>
-                                                                                                            </select>
-                                                                                                        </div> 
-                                                                                                    </td>
-                                                                                                </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Usuario</th>
                                                                                                     <td>

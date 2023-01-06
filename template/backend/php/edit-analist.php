@@ -44,12 +44,12 @@
         {
             if($carnet == "")
             {
-                define("sql", "CALL sp_edit_analist(".$id_a.", '".$name."', '".$mail."', '".$cell."', NULL, '".$start_date."', '".$recruiter."', ".$office.", '".$comision."', '".$user."');");
+                define("sql", "CALL sp_edit_analist(".$id_a.", '".$name."', '".$mail."', '".$cell."', NULL, '".$start_date."', '".$recruiter."', '".$comision."', '".$user."');");
 
             }
             else
             {
-                define("sql", "CALL sp_edit_analist(".$id_a.", '".$name."', '".$mail."', '".$cell."', '".$carnet."', '".$start_date."', '".$recruiter."', ".$office.", '".$comision."', '".$user."');");
+                define("sql", "CALL sp_edit_analist(".$id_a.", '".$name."', '".$mail."', '".$cell."', '".$carnet."', '".$start_date."', '".$recruiter."', '".$comision."', '".$user."');");
             }
 
             $res = command($oCon, sql);

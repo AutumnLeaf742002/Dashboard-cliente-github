@@ -11,6 +11,9 @@
     if(!empty($_POST) && $r == true)
     {
 
+        include_once "connection.php";
+        include_once "commands.php";
+
         $values = array();
 
         foreach($_POST as $item)
@@ -71,7 +74,7 @@
             Referencia_pariente_nombre_2 = '$values[47]',
             Referencia_pariente_direccion_2 = '$values[48]',
             Referencia_pariente_telefono_2 = '$values[49]',
-            Referencia_pariente_relacion_2 = '$values[50]' WHERE Id = $values[51]";
+            Referencia_pariente_relacion_2 = '$values[50]' WHERE Id = $values[51];";
         }
         else if($_SESSION["rol"] == "1")
         {
@@ -126,10 +129,16 @@
             Referencia_pariente_nombre_2 = '$values[47]',
             Referencia_pariente_direccion_2 = '$values[48]',
             Referencia_pariente_telefono_2 = '$values[49]',
-            Referencia_pariente_relacion_2 = '$values[50]' WHERE Id = $values[51]";
+            Referencia_pariente_relacion_2 = '$values[50]' WHERE Id = $values[51];";
         }
         
-        echo $sql;
+        $oCon = connect();
+        $sql_new_office = "SELECT Id_office FROM analyst WHERE Id = $values[0];";
+        $res_new_office = select($oCon, $sql_new_office);
+        $new_office = $res_new_office[0]["Id_office"];
+        $sql_set = "UPDATE clientes SET Id_office = $new_office WHERE Id = $values[51];";
+
+        echo "$sql $sql_set";
     }
     else
     {

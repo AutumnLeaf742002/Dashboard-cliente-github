@@ -1,7 +1,12 @@
 <?php
 
     session_start();
-    if(!empty($_POST) && $_SESSION["rol"] == "1")
+    $sf = false;
+    if($_SESSION["rol"] == "1" || $_SESSION["rol"] == "2")
+    {
+        $sf = true;
+    }
+    if(!empty($_POST) && $sf == true)
     {
         include_once "connection.php";
         include_once "commands.php";

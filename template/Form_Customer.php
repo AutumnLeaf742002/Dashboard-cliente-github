@@ -1,4 +1,35 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    
+        include_once "backend/php/connection.php";
+        include_once "backend/php/commands.php";
+
+        session_start();
+        $id_logued = $_SESSION["id"];
+        $rol_logued = $_SESSION["rol"];
+
+        $oCon = connect();
+        
+        if($rol_logued == "1")
+        {
+            $sql = "SELECT * FROM analyst ORDER BY Name";
+        }
+        else if($rol_logued == "2")
+        {
+            $res_o_m = select($oCon, "SELECT Id_office FROM managers WHERE Id = $id_logued");
+            $office_actual = $res_o_m[0]["Id_office"];
+
+            $sql = "SELECT * FROM analyst WHERE Id_office = $office_actual ORDER BY Name";
+        }
+        else if($rol_logued == "3")
+        {
+            $sql = "SELECT * FROM analyst WHERE Id = $id_logued ORDER BY Name";
+        }
+
+        $res = select($oCon, $sql);
+        
+    ?>
+
+<!DOCTYPE html>
 <html lang="es">
     
 <head>
@@ -42,17 +73,6 @@
 </head>
 
 <body class="multi-step-sign-up">
-
-    <?php
-    
-        include_once "backend/php/connection.php";
-        include_once "backend/php/commands.php";
-
-        $oCon = connect();
-        $sql = "SELECT * FROM analyst ORDER BY Name";
-        $res = select($oCon, $sql);
-        
-    ?>
 
     <!-- Notificaciones -->
 
@@ -216,10 +236,12 @@
             <div class="input-group">
                 <select id="cl_nombre_representante" type="text" class="form-control cl_invalid" name="Primer_nombre">
                     <?php
-                    
+
                         foreach($res as $item)
                         {
-                            echo '<option value="'.$item["Id"].'">'.$item["Name"].'</option>';
+                            $dwdsdw = select($oCon, 'SELECT Name_office FROM offices WHERE Id = '.$item["Id_office"]);
+
+                            echo '<option value="'.$item["Id"].'">'.$item["Name"].' - OFICINA: '.$dwdsdw[0]["Name_office"].'</option>';
                         }
                     
                     ?>

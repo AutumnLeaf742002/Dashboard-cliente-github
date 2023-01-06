@@ -5,6 +5,11 @@
         include_once "./backend/php/connection.php";
         include_once "./backend/php/commands.php";
 
+        session_start();
+
+        $id_m = $_SESSION["id"];
+        $rol = $_SESSION["rol"];
+
         $name = "";
         $mail = "";
         $cell = "";
@@ -12,14 +17,26 @@
         $comision = "";
         $start_date = "";
         $recruiter = "";
-        $id_office = 0;
         $user = "";
 
         $id_a = $_GET["wdasjoiwjioasdw"]??0;
 
+        if($rol == "2")
+        {
+            define("sql", "SELECT * FROM analyst WHERE Id = $id_a AND Id_supervisor = $id_m");
+        }
+        else
+        {
+            define("sql", "SELECT * FROM analyst WHERE Id = $id_a");
+        }
+
         $oCon = connect();
-        define("sql", "SELECT * FROM analyst WHERE Id = ".$id_a);
         $res = select($oCon, sql);
+
+        if(count($res) <= 0)
+        {
+            header("location: Analistas.html");
+        }
 
         if(is_array($res))
         {
@@ -32,7 +49,6 @@
                 $comision = $res[0]["Comision"];
                 $start_date = $res[0]["Start_date"];
                 $recruiter = $res[0]["Recruiter"];
-                $id_office = $res[0]["Id_office"];
                 $user = $res[0]["User"];
 
                 $name = trim($name);
@@ -42,7 +58,6 @@
                 $comision = trim($comision);
                 $start_date =trim($start_date);
                 $recruiter = trim($recruiter);
-                $id_office = trim($id_office);
                 $user = trim($user);
             }
         }
@@ -50,9 +65,6 @@
         {
             header("location: Analistas.html");
         }
-
-        define("sql_of", "SELECT Id, Name_office FROM offices");
-        $res_of = select($oCon, sql_of);
     }
     else
     {
@@ -914,36 +926,6 @@
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="100" id="recruiter" type="text" class="form-control " name="" value="<?php echo $recruiter; ?>">
-                                                                                                        </div> 
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Oficina</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <select id="oficce" class="form-control " name="">
-                                                                                                                <?php
-                                                                                                                
-                                                                                                                    if(is_array($res_of))
-                                                                                                                    {
-                                                                                                                        if(count($res_of) > 0)
-                                                                                                                        {
-                                                                                                                            foreach($res_of as $item)
-                                                                                                                            {
-                                                                                                                                if($item["Id"] == $id_office)
-                                                                                                                                {
-                                                                                                                                    echo '<option selected value="'.$item["Id"].'">'.$item["Name_office"].'</option>';
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    echo '<option value="'.$item["Id"].'">'.$item["Name_office"].'</option>';
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                
-                                                                                                                ?>
-                                                                                                            </select>
                                                                                                         </div> 
                                                                                                     </td>
                                                                                                 </tr>

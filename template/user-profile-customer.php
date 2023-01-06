@@ -1,4 +1,74 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+        // inicializar el usuario seleccionado si hay un get en esta pagina
+
+            if(isset($_GET))
+            {
+                include_once "backend/php/connection.php";
+                include_once "backend/php/commands.php";
+                
+                // Capturar el id del cliente seleccionado y el id del 
+                $id_cl = $_GET["id_cl"] ?? 0;
+                $id_co = $_GET["id_co"] ?? 0;
+                
+                // Objeto de conexion y querys para traer los datos del cliente y co aplicante
+                $oCon = connect();
+                $sql_cl = "SELECT * FROM clientes WHERE Id = $id_cl";
+                $sql_co = "SELECT * FROM co_aplicantes WHERE Id = $id_co";
+                
+                // Ejecucion de los querys
+                $res_cl = select($oCon, $sql_cl);
+                $res_co = select($oCon, $sql_co);
+
+                $serie_cl = 0;
+                $serie_co = 0;
+
+                $serie_cl = $res_cl[0]["N_serie_cliente"];
+                $serie_co = $res_co[0]["C_N_serie_cliente"]??"nothing";
+
+                if(count($res_co) > 0)
+                {
+                    if($serie_cl != $serie_co)
+                    {
+                        $res_co = select($oCon, "SELECT * FROM co_aplicantes WHERE Id = 0");
+                    }
+                }
+
+                session_start();
+                $id_ac = $_SESSION["id"];
+                $rol = $_SESSION["rol"];
+                if($rol == "3")
+                {
+                    if($res_cl[0]["Nombre_representante"] != $id_ac)
+                    {
+                        header("location: clientes.html");
+                    }
+                }
+                else if($rol == "2")
+                {
+                    $id_representante = $res_cl[0]["Nombre_representante"];
+
+                    $res_analistass = select($oCon, "SELECT Id FROM analyst WHERE Id_supervisor = $id_ac");
+
+                    $con = false;
+
+                    foreach($res_analistass as $item)
+                    {
+                        if($item["Id"] == $id_representante)
+                        {
+                            $con = true;
+                        }
+                    }
+
+                    if($con == false)
+                    {
+                        header("location: Analistas.html");
+                    }
+                }
+            }
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -236,34 +306,6 @@
 
     <!-- Notificaciones -->
 
-
-
-
-
-        <?php
-
-        // inicializar el usuario seleccionado si hay un get en esta pagina
-
-            if(isset($_GET))
-            {
-                include_once "backend/php/connection.php";
-                include_once "backend/php/commands.php";
-                
-                // Capturar el id del cliente seleccionado y el id del 
-                $id_cl = $_GET["id_cl"] ?? 0;
-                $id_co = $_GET["id_co"] ?? 0;
-                
-                // Objeto de conexion y querys para traer los datos del cliente y co aplicante
-                $oCon = connect();
-                $sql_cl = "SELECT * FROM clientes WHERE Id = $id_cl";
-                $sql_co = "SELECT * FROM co_aplicantes WHERE Id = $id_co";
-                
-                // Ejecucion de los querys
-                $res_cl = select($oCon, $sql_cl);
-                $res_co = select($oCon, $sql_co);
-
-            }
-        ?>
 
     <!-- Pre-loader start -->
     <div class="theme-loader">

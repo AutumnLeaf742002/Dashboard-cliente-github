@@ -112,6 +112,7 @@
         $cl_49 = trim($cl_49);
         $cl_50 = trim($cl_50);
         $cl_51 = trim($cl_51);
+        $cl_nombre_representante = trim($cl_nombre_representante);
         $avatar_selected = trim($avatar_selected);
 
         // Poner el primer caracter en mayuscula
@@ -128,6 +129,17 @@
         // Inicializacion del objeto de coneccion
         $oCon = connect();
 
+        $sql_o = "SELECT Id_office FROM analyst WHERE Id = $cl_nombre_representante";
+        $res_o = select($oCon, $sql_o);
+        $id_o = 0;
+        if(is_array($res_o))
+        {
+            if(count($res_o) == 1)
+            {
+                $id_o = $res_o[0]["Id_office"];
+            }
+        }
+
 
         // Declara una variable que busca el codigo de serie creado para ver si existe, si existe, crea otro codigo hasta que no exista
         $n_serie_existente = select($oCon, "SELECT N_serie_cliente FROM clientes WHERE N_serie_cliente = '$n_serie' ");
@@ -143,11 +155,11 @@
 
         if($cl_5 == "")
         {
-            $sql_cl = "INSERT INTO clientes (Id, Primer_nombre, Apellido, Fecha_nacimiento, N_seguro_social, Estado, Vencimiento, Direccion, Cuanto_tiempo, Ciudad, Estado_ciudad, Zip, Telefono_casa, Telefono_celular, Direccion_anterior, Ciudad_anterior, Estado_anterior, Zip_anterior, Correo, Nombre_empleo, Direccion_empleo, Tiempo_empleo, Telefono_empleo, Posicion_empleo, Ingreso_bruto, Tipo_ingreso, Empleador_anterior, Fecha_empleo_anterior, Ciudad_empleo_anterior, Estado_empleo_anterior, Zip_empleo_anterior, N_telefono_empleo_anterior, Fuente_ingreso_extra, Cantidad_fuente_ingreso_extra, Id_hipoteca_estado, Id_tipo_residencia_hipoteca, Propietario_hipoteca_titular, Direccion_hipoteca, Pago_hipoteca, N_telefono_hipoteca, Referencia_pariente_nombre_1, Referencia_pariente_direccion_1, Referencia_pariente_telefono_1, Referencia_pariente_relacion_1, Referencia_pariente_nombre_2, Referencia_pariente_direccion_2, Referencia_pariente_telefono_2, Referencia_pariente_relacion_2, Fecha_creacion_registro, Cantidad_financiada, Nombre_representante, Avatar, N_serie_cliente) VALUES (NULL, '$cl_1', '$cl_2', '$cl_3', '$cl_4', '$cl_6', '$cl_8', '$cl_9', '$cl_10', '$cl_11', '$cl_12', '$cl_13', '$cl_14', '$cl_15', '$cl_16', '$cl_17', '$cl_18', '$cl_19', '$cl_20', '$cl_21', '$cl_22', '$cl_23', '$cl_24', '$cl_25', '$cl_26', '$cl_27', '$cl_28', '$cl_29', '$cl_30', '$cl_31', '$cl_32', '$cl_33', '$cl_34', '$cl_35', $cl_36, $cl_37, '$cl_39', '$cl_38', '$cl_40', '$cl_41', '$cl_42', '$cl_43', '$cl_44', '$cl_45', '$cl_46', '$cl_47', '$cl_48', '$cl_49', '$cl_50', '$cl_cantidad_financiada', $cl_nombre_representante, '$avatar_selected', '$n_serie') ";
+            $sql_cl = "INSERT INTO clientes (Id, Primer_nombre, Apellido, Fecha_nacimiento, N_seguro_social, Estado, Vencimiento, Direccion, Cuanto_tiempo, Ciudad, Estado_ciudad, Zip, Telefono_casa, Telefono_celular, Direccion_anterior, Ciudad_anterior, Estado_anterior, Zip_anterior, Correo, Nombre_empleo, Direccion_empleo, Tiempo_empleo, Telefono_empleo, Posicion_empleo, Ingreso_bruto, Tipo_ingreso, Empleador_anterior, Fecha_empleo_anterior, Ciudad_empleo_anterior, Estado_empleo_anterior, Zip_empleo_anterior, N_telefono_empleo_anterior, Fuente_ingreso_extra, Cantidad_fuente_ingreso_extra, Id_hipoteca_estado, Id_tipo_residencia_hipoteca, Propietario_hipoteca_titular, Direccion_hipoteca, Pago_hipoteca, N_telefono_hipoteca, Referencia_pariente_nombre_1, Referencia_pariente_direccion_1, Referencia_pariente_telefono_1, Referencia_pariente_relacion_1, Referencia_pariente_nombre_2, Referencia_pariente_direccion_2, Referencia_pariente_telefono_2, Referencia_pariente_relacion_2, Fecha_creacion_registro, Cantidad_financiada, Nombre_representante, Avatar, N_serie_cliente, Id_office) VALUES (NULL, '$cl_1', '$cl_2', '$cl_3', '$cl_4', '$cl_6', '$cl_8', '$cl_9', '$cl_10', '$cl_11', '$cl_12', '$cl_13', '$cl_14', '$cl_15', '$cl_16', '$cl_17', '$cl_18', '$cl_19', '$cl_20', '$cl_21', '$cl_22', '$cl_23', '$cl_24', '$cl_25', '$cl_26', '$cl_27', '$cl_28', '$cl_29', '$cl_30', '$cl_31', '$cl_32', '$cl_33', '$cl_34', '$cl_35', $cl_36, $cl_37, '$cl_39', '$cl_38', '$cl_40', '$cl_41', '$cl_42', '$cl_43', '$cl_44', '$cl_45', '$cl_46', '$cl_47', '$cl_48', '$cl_49', '$cl_50', '$cl_cantidad_financiada', $cl_nombre_representante, '$avatar_selected', '$n_serie', $id_o) ";
         }
         else
         {
-            $sql_cl = "INSERT INTO clientes (Id, Primer_nombre, Apellido, Fecha_nacimiento, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion, Cuanto_tiempo, Ciudad, Estado_ciudad, Zip, Telefono_casa, Telefono_celular, Direccion_anterior, Ciudad_anterior, Estado_anterior, Zip_anterior, Correo, Nombre_empleo, Direccion_empleo, Tiempo_empleo, Telefono_empleo, Posicion_empleo, Ingreso_bruto, Tipo_ingreso, Empleador_anterior, Fecha_empleo_anterior, Ciudad_empleo_anterior, Estado_empleo_anterior, Zip_empleo_anterior, N_telefono_empleo_anterior, Fuente_ingreso_extra, Cantidad_fuente_ingreso_extra, Id_hipoteca_estado, Id_tipo_residencia_hipoteca, Propietario_hipoteca_titular, Direccion_hipoteca, Pago_hipoteca, N_telefono_hipoteca, Referencia_pariente_nombre_1, Referencia_pariente_direccion_1, Referencia_pariente_telefono_1, Referencia_pariente_relacion_1, Referencia_pariente_nombre_2, Referencia_pariente_direccion_2, Referencia_pariente_telefono_2, Referencia_pariente_relacion_2, Fecha_creacion_registro, Cantidad_financiada, Nombre_representante, Avatar, N_serie_cliente) VALUES (NULL, '$cl_1', '$cl_2', '$cl_3', '$cl_4', '$cl_5', '$cl_6', '$cl_8', '$cl_9', '$cl_10', '$cl_11', '$cl_12', '$cl_13', '$cl_14', '$cl_15', '$cl_16', '$cl_17', '$cl_18', '$cl_19', '$cl_20', '$cl_21', '$cl_22', '$cl_23', '$cl_24', '$cl_25', '$cl_26', '$cl_27', '$cl_28', '$cl_29', '$cl_30', '$cl_31', '$cl_32', '$cl_33', '$cl_34', '$cl_35', $cl_36, $cl_37, '$cl_39', '$cl_38', '$cl_40', '$cl_41', '$cl_42', '$cl_43', '$cl_44', '$cl_45', '$cl_46', '$cl_47', '$cl_48', '$cl_49', '$cl_50', '$cl_cantidad_financiada', $cl_nombre_representante, '$avatar_selected', '$n_serie') ";
+            $sql_cl = "INSERT INTO clientes (Id, Primer_nombre, Apellido, Fecha_nacimiento, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion, Cuanto_tiempo, Ciudad, Estado_ciudad, Zip, Telefono_casa, Telefono_celular, Direccion_anterior, Ciudad_anterior, Estado_anterior, Zip_anterior, Correo, Nombre_empleo, Direccion_empleo, Tiempo_empleo, Telefono_empleo, Posicion_empleo, Ingreso_bruto, Tipo_ingreso, Empleador_anterior, Fecha_empleo_anterior, Ciudad_empleo_anterior, Estado_empleo_anterior, Zip_empleo_anterior, N_telefono_empleo_anterior, Fuente_ingreso_extra, Cantidad_fuente_ingreso_extra, Id_hipoteca_estado, Id_tipo_residencia_hipoteca, Propietario_hipoteca_titular, Direccion_hipoteca, Pago_hipoteca, N_telefono_hipoteca, Referencia_pariente_nombre_1, Referencia_pariente_direccion_1, Referencia_pariente_telefono_1, Referencia_pariente_relacion_1, Referencia_pariente_nombre_2, Referencia_pariente_direccion_2, Referencia_pariente_telefono_2, Referencia_pariente_relacion_2, Fecha_creacion_registro, Cantidad_financiada, Nombre_representante, Avatar, N_serie_cliente, Id_office) VALUES (NULL, '$cl_1', '$cl_2', '$cl_3', '$cl_4', '$cl_5', '$cl_6', '$cl_8', '$cl_9', '$cl_10', '$cl_11', '$cl_12', '$cl_13', '$cl_14', '$cl_15', '$cl_16', '$cl_17', '$cl_18', '$cl_19', '$cl_20', '$cl_21', '$cl_22', '$cl_23', '$cl_24', '$cl_25', '$cl_26', '$cl_27', '$cl_28', '$cl_29', '$cl_30', '$cl_31', '$cl_32', '$cl_33', '$cl_34', '$cl_35', $cl_36, $cl_37, '$cl_39', '$cl_38', '$cl_40', '$cl_41', '$cl_42', '$cl_43', '$cl_44', '$cl_45', '$cl_46', '$cl_47', '$cl_48', '$cl_49', '$cl_50', '$cl_cantidad_financiada', $cl_nombre_representante, '$avatar_selected', '$n_serie', $id_o) ";
         }
         $res_co = "none";
         $res = "none";

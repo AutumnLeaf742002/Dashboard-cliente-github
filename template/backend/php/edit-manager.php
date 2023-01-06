@@ -15,7 +15,6 @@
         $mail = $_POST["mail"]??"";
         $cell = $_POST["cell"]??"";
         $carnet = $_POST["carnet"]??"";
-        $office = $_POST["office"]??"";
         $user = $_POST["user"]??"";
 
         $name = trim($name);
@@ -24,19 +23,18 @@
         $mail = strtolower($mail);
         $cell = trim($cell);
         $carnet = trim($carnet);
-        $office = trim($office);
         $user = trim($user);
 
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) 
         {
             if($carnet == "")
             {
-                define("sql", "CALL sp_edit_manager(".$id_m.", '".$name."', '".$mail."', '".$cell."', NULL, ".$office.", '".$user."');");
+                define("sql", "CALL sp_edit_manager(".$id_m.", '".$name."', '".$mail."', '".$cell."', NULL, '".$user."');");
 
             }
             else
             {
-                define("sql", "CALL sp_edit_manager(".$id_m.", '".$name."', '".$mail."', '".$cell."', '".$carnet."', ".$office.", '".$user."');");
+                define("sql", "CALL sp_edit_manager(".$id_m.", '".$name."', '".$mail."', '".$cell."', '".$carnet."', '".$user."');");
             }
 
             $res = command($oCon, sql);
