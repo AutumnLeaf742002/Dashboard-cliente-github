@@ -1,11 +1,10 @@
 <?php
-
-    if(!empty($_POST))
+    session_start();
+    if(!empty($_POST) && $_SESSION["rol"] == "1")
     {
         include_once "connection.php";
         include_once "commands.php";
 
-        session_start();
         $rol = $_SESSION["rol"];
         $id_s = $_SESSION["id"];
 

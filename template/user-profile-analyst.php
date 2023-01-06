@@ -39,6 +39,7 @@
 
 <head>
     <script src="backend/js/session.js"></script>
+    <script src="backend/js/restrictor-analist.js"></script>
     <title>Perfil de analista</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

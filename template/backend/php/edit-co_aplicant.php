@@ -1,6 +1,14 @@
 <?php
     
-    if(!empty($_POST))
+    $r = false;
+    session_start();
+
+    if($_SESSION["rol"] == "1" || $_SESSION["rol"] == "2")
+    {
+        $r = true;
+    }
+
+    if(!empty($_POST) && $r == true)
     {
 
         $values = array();
