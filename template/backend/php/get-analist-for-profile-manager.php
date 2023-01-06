@@ -47,6 +47,6 @@
     }
     else
     {
-        header("location: crm-contact.html");
+        header("location: login.html");
     }
 ?>

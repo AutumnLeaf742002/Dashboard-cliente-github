@@ -2,11 +2,9 @@
 
     if(!empty($_POST))
     {
-        // Llamada a los modulos que contienen la conexion a la base de datos y funciones de insercion
         include_once "commands.php";
         include_once "connection.php";
 
-        // Obtencion de los datos enviados a traves de Ajax mediante register-customer.js
         $cl_1 = $_POST["cl_1"];
         $cl_2 = $_POST["cl_2"];
         $cl_3 = $_POST["cl_3"];
