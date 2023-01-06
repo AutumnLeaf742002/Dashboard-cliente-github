@@ -634,13 +634,6 @@
                                                 <div class="page-header-breadcrumb">
                                                     <ul class="breadcrumb-title">
                                                 <li class="breadcrumb-item">
-                                                    <a href="index.html">
-                                                        <i class="icofont icofont-home"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="breadcrumb-item"><a href="#!">User Profile</a>
-                                                </li>
-                                                <li class="breadcrumb-item"><a href="#!">User Profile</a>
                                                 </li>
                                             </ul>
                                                 </div>
