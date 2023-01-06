@@ -9,7 +9,6 @@
         include_once "commands.php";
         
         $oCon = connect();
-        // $sql = "SELECT * FROM clientes WHERE $filtro LIKE '%$search%' ";
 
         $sql = "SELECT * FROM clientes WHERE Primer_nombre LIKE '%$search%' ";
         $res = select($oCon, $sql);
