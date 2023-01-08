@@ -19410,3 +19410,7 @@ body.menu-bottom .navbar-wrapper {
 
   z-index: 100 !important;
 }
+.input-group:has(input:required) label:after {
+  content: "*";
+  color: red; 
+}

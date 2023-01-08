@@ -259,8 +259,10 @@
             <div class="input-group">
                 <input minlength="8" maxlength="8" id="cl_3" type="date" class="cl_invalid form-control" name="Fecha de nacimiento" placeholder="Fecha de nacimiento">
             </div> 
+            
             <div class="input-group">
-                <input minlength="8" maxlength="30" id="cl_4" type="text" class="cl_invalid form-control" name="N_seguro_social" placeholder="Número seguro social">
+            <label for="">seguro social</label><br></br>
+                <input minlength="8" maxlength="30" id="cl_4" type="text" Required class="cl_invalid form-control" name="N_seguro_social" placeholder="Número seguro social">
             </div> 
             <div class="alpaca6" style="margin-bottom: 15px;">
                 <a style="color: orange;">Puede quedar vacio</a>
