@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
     include_once "connection.php";
     include_once "commands.php";
@@ -9,10 +10,13 @@
 
     foreach($res as $item)
     {
-        echo' 
-        <option value="'.$item["Id"].'">
-            '.$item["Name_office"].'
-        </option>
-        ';
+        if($_SESSION["rol"] == "1")
+        {
+            echo' 
+            <option value="'.$item["Id"].'">
+                '.$item["Name_office"].'
+            </option>
+            ';
+        }
     }
 ?>
