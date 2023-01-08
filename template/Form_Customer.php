@@ -231,10 +231,11 @@
             
             <h3 class="fs-subtitle">Registrar un nuevo cliente</h3>
             <div class="input-group">
-                <input minlength="1" maxlength="50" id="cl_cantidad_financiada" type="text" class="cl_invalid form-control" name="Primer_nombre" placeholder="Cantidad financiada">
+                <input minlength="1" maxlength="50" id="cl_cantidad_financiada" type="text" class="cl_invalid form-control" name="Primer_nombre" placeholder=" ">
+                <label for="">Cantidad financiada</label>
             </div>
             <div class="input-group">
-                <select id="cl_nombre_representante" type="text" class="form-control cl_invalid" name="Primer_nombre">
+                <select id="cl_nombre_representante" type="text" class="form-control form-personal cl_invalid" name="Primer_nombre">
                     <?php
 
                         foreach($res as $item)
@@ -248,21 +249,24 @@
                 </select>
             </div>
             <div class="input-group">
-                <input minlength="1" maxlength="100" id="cl_1" type="text" class="cl_invalid form-control" name="Primer_nombre" placeholder="Primer nombre">
+                <input minlength="1" maxlength="100" id="cl_1" type="text" class="cl_invalid form-control" name="Primer_nombre" placeholder=" ">
+                <label for="">Primer Nombre</label>
             </div>
             <div class="input-group">
-                <input minlength="1" maxlength="100" id="cl_2" type="text" class="cl_invalid form-control" name="Apellido" placeholder="Apellido">
+                <input minlength="1" maxlength="100" id="cl_2" type="text" class="cl_invalid form-control" name="Apellido" placeholder=" ">
+                <label for="">Apellido</label>
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
                 <a>Fecha de nacimiento</a>
             </div>
             <div class="input-group">
-                <input minlength="8" maxlength="8" id="cl_3" type="date" class="cl_invalid form-control" name="Fecha de nacimiento" placeholder="Fecha de nacimiento">
+                <input minlength="8" maxlength="8" id="cl_3" type="date" class="cl_invalid form-control" name="Fecha de nacimiento" placeholder=" ">
+                <label for="">Fecha de nacimiento</label>
             </div> 
             
             <div class="input-group">
-            <label for="">seguro social</label><br></br>
-                <input minlength="8" maxlength="30" id="cl_4" type="text" Required class="cl_invalid form-control" name="N_seguro_social" placeholder="Número seguro social">
+                <input minlength="8" maxlength="30" id="cl_4" type="text" Required class="cl_invalid form-control" name="N_seguro_social" placeholder=" ">
+                <label for="">Numero de seguro social</label>
             </div> 
             <div class="alpaca6" style="margin-bottom: 15px;">
                 <a style="color: orange;">Puede quedar vacio</a>
@@ -819,6 +823,7 @@
     <script type="text/javascript" src="../bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
     <script src="backend/js/register-customer.js"></script>
     <script src="alerts.js"></script>
+    <script src="quitar-label.js"></script>
 
 </body>
 
