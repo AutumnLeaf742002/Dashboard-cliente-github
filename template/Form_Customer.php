@@ -253,7 +253,7 @@
                 <label for="">Primer Nombre</label>
             </div>
             <div class="input-group">
-                <input minlength="1" maxlength="100" id="cl_2" type="text" class="cl_invalid form-control" name="Apellido" placeholder=" ">
+                <input minlength="1" maxlength="100" id="cl_2" type="text" class="cl_invalid form-control required" name="Apellido" placeholder=" ">
                 <label for="">Apellido</label>
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
@@ -265,7 +265,7 @@
             </div> 
             
             <div class="input-group">
-                <input minlength="8" maxlength="30" id="cl_4" type="text" Required class="cl_invalid form-control" name="N_seguro_social" placeholder=" ">
+                <input minlength="8" maxlength="30" id="cl_4" type="text" class="form-control required" name="N_seguro_social" placeholder=" ">
                 <label for="">Numero de seguro social</label>
             </div> 
             <div class="alpaca6" style="margin-bottom: 15px;">

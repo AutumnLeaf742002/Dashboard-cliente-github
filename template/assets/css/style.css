@@ -19450,3 +19450,14 @@ input:not(:placeholder-shown) ~ label{
   color: #2196f3;
   font-size: 18px;
 }
+
+input[type="text"]:required {
+
+  border: 2px solid blue;
+}
+
+.input-group:has(.required) label:after {
+
+  content: " *";
+  color: red;
+}
