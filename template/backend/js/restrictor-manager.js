@@ -9,7 +9,7 @@ function get_rol()
 
             if(request.responseText == 2)
             {
-                window.location.href = "resctric.html"
+                window.location.href = "pagina-no-autorizada.html"
             }
         }
     }

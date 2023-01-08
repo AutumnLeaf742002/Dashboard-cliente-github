@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins';
 }
 
 html{
@@ -24,10 +25,142 @@ html{
   width: 50%;
   height: 100vh;
   background-color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.111111111rem;
+  padding: 20px;
 }
+
+.s-1 h1{
+
+  color: #00113f;
+  font-size: 5.222222rem;
+  line-height: 5.666666666rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.s-1 button{
+
+  background-color: #ff3251;
+  color: white;
+  border: none;
+  padding: 0.555555rem;
+  border-radius: 50px;
+  font-size: 1.444444rem;
+  font-family: 'Poppins', sans-serif;
+  width: 16.666666666rem;
+  transition: background, 0.3s;
+}
+
+.s-1 button:hover{
+
+  background-color: #db2b45;
+}
+
 .s-2{
 
   width: 50%;
   height: 100vh;
-  background-image: url("../src/images/ff.svg");
+  background-image: url("../src/images/no_autorizada.png");
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1070px) {
+  
+  html{
+
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  
+  html{
+
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+  html{
+
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  
+  html{
+
+    font-size: 18px;
+  }
+  
+  .c{
+  
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .s-1{
+  
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.111111111rem;
+    padding: 20px;
+  }
+  
+  .s-1 h1{
+  
+    color: white;
+    font-size: 2.222222rem;
+    line-height: 2.666666666rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  .s-1 button{
+  
+    background-color: #ff3251;
+    color: white;
+    border: none;
+    padding: 0.555555rem;
+    border-radius: 50px;
+    font-size: 1.444444rem;
+    font-family: 'Poppins', sans-serif;
+    width: 16.666666666rem;
+    transition: background, 0.3s;
+  }
+  
+  .s-1 button:hover{
+  
+    background-color: #db2b45;
+  }
+  
+  .s-2{
+    
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;  
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../src/images/no_autorizada.png");
+    background-position: center;
+    background-size: cover;
+  }
 }
