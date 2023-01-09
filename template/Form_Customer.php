@@ -500,27 +500,24 @@
                 <label for="">(1) Relacion del pariente cercano</label>
             </div>
             <div class="input-group">
-                <input minlength="1" maxlength="100" id="cl_46" type="text" class="form-control required" name="Referencia_pariente_nombre_2" placeholder=" ">
+                <input minlength="1" maxlength="100" id="cl_46" type="text" class="form-control" name="Referencia_pariente_nombre_2" placeholder=" ">
                 <label for="">(2) Nombre de pariente cercano</label>
             </div>
             <div class="input-group">
-                <input minlength="1" maxlength="300" id="cl_47" type="text" class="form-control required" name="Referencia_pariente_direccion_2" placeholder=" ">
+                <input minlength="1" maxlength="300" id="cl_47" type="text" class="form-control" name="Referencia_pariente_direccion_2" placeholder=" ">
                 <label for="">(2) Direccion pariente cercano</label>
             </div>
             <div class="input-group">
-                <input minlength="10" maxlength="20" id="cl_48" type="text" class="form-control required" name="Referencia_pariente_telefono_2" placeholder=" ">
+                <input minlength="10" maxlength="20" id="cl_48" type="text" class="form-control" name="Referencia_pariente_telefono_2" placeholder=" ">
                 <label for="">(2) Telefono pariente cercano</label>
             </div>
             <div class="input-group">
-                <input minlength="1" maxlength="50" id="cl_49" type="text" class="form-control required" name="Referencia_pariente_relacion_2" placeholder=" ">
+                <input minlength="1" maxlength="50" id="cl_49" type="text" class="form-control" name="Referencia_pariente_relacion_2" placeholder=" ">
                 <label for="">(2) Relacion del pariente cercano</label>
             </div>
-            <div class="alpaca6" style="margin-bottom: 15px;">
-                <a>Fecha de creacion del registro</a>
-            </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
-                <input minlength="8" maxlength="8" id="cl_50" style="width: 100%;" type="date" class="cl_invalid form-control" name="fecha_creacion_registro" placeholder="fecha de creacion de este registro">
-                <label for="">  </label>
+                <input minlength="8" maxlength="8" id="cl_50" style="width: 100%;" type="date" class="cl_invalid form-control" name="fecha_creacion_registro" placeholder=" ">
+                <label for="">Fecha de creacion del registro</label>
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
                 <a>¿Solicitud con co-aplicante?</a>
@@ -571,9 +568,6 @@
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="co_7" type="text" class="co_invalid form-control required" name="Estado" placeholder=" ">
                 <label for="">Estado</label>
-            </div>
-            <div class="alpaca6" style="margin-bottom: 15px;">
-                <a>Vencimiento</a>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="8" maxlength="8" id="co_9" style="width: 100%;" type="date" class="co_invalid form-control required" name="Vencimiento" placeholder=" ">
@@ -656,7 +650,7 @@
                 <label for="">Posición</label>
             </div>
             <div class="input-group">
-                <input minlength="1" maxlength="50" id="co_27" type="text" class="co_invalid form-control" name="Ingreso_bruto" placeholder=" ">
+                <input minlength="1" maxlength="50" id="co_27" type="text" class="co_invalid form-control required" name="Ingreso_bruto" placeholder=" ">
                 <label for="">Ingreso en bruto</label>
             </div>
             <div class="input-group">
@@ -673,9 +667,6 @@
                     </option>
                 </select>
             </div>
-            <div class="alpaca6" style="margin-bottom: 15px;">
-                <a style="color: orange;">Puede quedar vacio</a>
-            </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="100" id="co_29" type="text" class="form-control" name="Empleador_anterior" placeholder="Empleador anterior (si tiene menos de 3 años)">
@@ -683,20 +674,17 @@
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="1" maxlength="30" id="co_30" style="width: 100%;" type="text" class="co_invalid form-control required" name="fechas de empleo" placeholder="Fechas de empleo">
             </div>
-
+            <!-- Opcional -->
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="co_31" type="text" class="co_invalid form-control required" name="Ciudad_empleo_anterior" placeholder="Ciudad">
             </div>
-
+            <!-- Opcional -->
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="co_32" type="text" class="co_invalid form-control required" name="Estado_empleo_anterior" placeholder="Estado">
             </div>
-
+            <!-- Opcional -->
             <div class="input-group">
                 <input minlength="1" maxlength="30" id="co_33" type="text" class="co_invalid form-control required" name=" Zip_empleo_anterior" placeholder="Zip">
-            </div>
-            <div class="alpaca6" style="margin-bottom: 15px;">
-                <a style="color: orange;">Puede quedar vacio</a>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
@@ -709,9 +697,6 @@
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="100" id="co_35" type="text" class="form-control" title="LA PENSIÓN ALIMENTICIA O MANUTENCIÓN DE MENORES POR SEPARADO SON INFORMACIÓNES OPCIONALES." name="Fuente_ingreso_extra" placeholder="Otras fuentes de ingreso" >
-            </div>
-            <div class="alpaca6" style="margin-bottom: 15px;">
-                <a style="color: orange;">Puede quedar vacio</a>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
