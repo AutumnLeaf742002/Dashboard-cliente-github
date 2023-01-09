@@ -230,6 +230,9 @@
             <img class="logo" src="assets/images/pasteur.png" alt="logo.png">
             
             <h3 class="fs-subtitle">Registrar un nuevo cliente</h3>
+            <h5  class="fs-subtitle" style="display: inline;">Los campos marcados con <h5 style="color: red; display: inline;">*</h5> son obligatorios</h5>
+            <br>
+            </br>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_cantidad_financiada" type="text" class="cl_invalid form-control required" name="Primer_nombre" placeholder=" ">
                 <label for="">Cantidad financiada</label>
