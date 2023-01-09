@@ -22,6 +22,10 @@
         {
             $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%'";
         }
+        else if($rol == "2")
+        {
+            $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND Primer_nombre LIKE '%$search%'";
+        }
 
         $res = select($oCon, $sql);
 
@@ -35,6 +39,10 @@
             else if($rol == "1")
             {
                 $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' ";
+            }
+            else if($rol == "2")
+            {
+                $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND N_seguro_social LIKE '%$search%'";
             }
 
             $res = select($oCon, $sql);
@@ -50,6 +58,10 @@
                 {
                     $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' ";
                 }
+                else if($rol == "2")
+                {
+                    $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND offices.Name_office LIKE '%$search%'";
+                }
 
                 $res = select($oCon, $sql);
 
@@ -63,6 +75,10 @@
                     else if($rol == "1")
                     {
                         $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' ";
+                    }
+                    else if($rol == "2")
+                    {
+                        $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND Estado LIKE '%$search%'";
                     }
 
                     $res = select($oCon, $sql);
@@ -78,6 +94,10 @@
                         {
                             $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' ";
                         }
+                        else if($rol == "2")
+                        {
+                            $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND Vencimiento LIKE '%$search%'";
+                        }
 
                         $res = select($oCon, $sql);
 
@@ -91,6 +111,10 @@
                             else if($rol == "1")
                             {
                                 $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' ";
+                            }
+                            else if($rol == "2")
+                            {
+                                $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND Direccion LIKE '%$search%'";
                             }
                             $res = select($oCon, $sql);
                         }
