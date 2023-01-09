@@ -16,11 +16,11 @@
 
         if($rol == "3")
         {
-            $sql = "SELECT * FROM clientes WHERE Primer_nombre LIKE '%$search%' AND Nombre_representante = $id_logued";
+            $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%' AND Nombre_representante = $id_logued";
         }
         else if($rol == "1")
         {
-            $sql = "SELECT * FROM clientes WHERE Primer_nombre LIKE '%$search%'";
+            $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%'";
         }
 
         $res = select($oCon, $sql);
@@ -30,11 +30,11 @@
 
             if($rol == "3")
             {
-                $sql = "SELECT * FROM clientes WHERE N_seguro_social LIKE '%$search%' AND Nombre_representante = $id_logued";
+                $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' AND Nombre_representante = $id_logued";
             }
             else if($rol == "1")
             {
-                $sql = "SELECT * FROM clientes WHERE N_seguro_social LIKE '%$search%' ";
+                $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' ";
             }
 
             $res = select($oCon, $sql);
@@ -44,11 +44,11 @@
 
                 if($rol == "3")
                 {
-                    $sql = "SELECT * FROM clientes WHERE N_licencia_conducir LIKE '%$search%' AND Nombre_representante = $id_logued";
+                    $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' AND Nombre_representante = $id_logued";
                 }
                 else if($rol == "1")
                 {
-                    $sql = "SELECT * FROM clientes WHERE N_licencia_conducir LIKE '%$search%' ";
+                    $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' ";
                 }
 
                 $res = select($oCon, $sql);
@@ -58,11 +58,11 @@
 
                     if($rol == "3")
                     {
-                        $sql = "SELECT * FROM clientes WHERE Estado LIKE '%$search%' AND Nombre_representante = $id_logued";
+                        $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' AND Nombre_representante = $id_logued";
                     }
                     else if($rol == "1")
                     {
-                        $sql = "SELECT * FROM clientes WHERE Estado LIKE '%$search%' ";
+                        $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' ";
                     }
 
                     $res = select($oCon, $sql);
@@ -72,11 +72,11 @@
 
                         if($rol == "3")
                         {
-                            $sql = "SELECT * FROM clientes WHERE Vencimiento LIKE '%$search%' AND Nombre_representante = $id_logued";
+                            $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' AND Nombre_representante = $id_logued";
                         }
                         else if($rol == "1")
                         {
-                            $sql = "SELECT * FROM clientes WHERE Vencimiento LIKE '%$search%' ";
+                            $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' ";
                         }
 
                         $res = select($oCon, $sql);
@@ -86,11 +86,11 @@
 
                             if($rol == "3")
                             {
-                                $sql = "SELECT * FROM clientes WHERE Direccion LIKE '%$search%' AND Nombre_representante = $id_logued";
+                                $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' AND Nombre_representante = $id_logued";
                             }
                             else if($rol == "1")
                             {
-                                $sql = "SELECT * FROM clientes WHERE Direccion LIKE '%$search%' ";
+                                $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' ";
                             }
                             $res = select($oCon, $sql);
                         }
@@ -130,7 +130,7 @@
                             '.$item["N_seguro_social"].'
                         </td>
                         <td>
-                            '.$item["N_licencia_conducir"].'
+                            '.$item["office"].'
                         </td>
                         <td>
                             '.$item["Estado"].'

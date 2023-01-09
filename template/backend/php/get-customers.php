@@ -13,11 +13,11 @@
 
         if($rol == "3")
         {
-            $sql = "SELECT N_serie_cliente, Id, Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion FROM clientes WHERE Nombre_representante = $id_logued";
+            $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Nombre_representante = $id_logued";
         }
         else if($rol == "1")
         {
-            $sql = "SELECT N_serie_cliente, Id, Avatar, Primer_nombre, N_seguro_social, N_licencia_conducir, Estado, Vencimiento, Direccion FROM clientes";
+            $sql = "SELECT N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id";
         }
         
         $res = select($oCon, $sql);
@@ -51,7 +51,7 @@
                             '.$item["N_seguro_social"].'
                         </td>
                         <td>
-                            '.$item["N_licencia_conducir"].'
+                            '.$item["office"].'
                         </td>
                         <td>
                             '.$item["Estado"].'
