@@ -67,7 +67,7 @@
                             '.$item["Direccion"].'
                         </td>
                         <td>
-                        <button onclick="" id="boton-eliminar-perfil" class="btn-same btn btn-danger">agendar cita</button>
+                            <button onclick="" id="boton-eliminar-perfil" class="btn-same btn btn-danger">agendar cita</button>
                         </td>
                     </tr>';
             }

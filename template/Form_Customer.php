@@ -260,7 +260,7 @@
                 <label for="">Apellido</label>
             </div>   
             <div class="input-group">
-                <input minlength="8" maxlength="8" id="cl_3" type="date" class="cl_invalid form-control" name="Fecha de nacimiento" placeholder=" ">
+                <input minlength="8" maxlength="8" id="cl_3" type="date" class="cl_invalid form-control required" name="Fecha de nacimiento" placeholder=" ">
                 <label for="">Fecha de nacimiento</label>
             </div> 
             
@@ -367,7 +367,7 @@
                 <select id="cl_27" type="text" class="cl_invalid form-control required" name="Tipo_ingreso" placeholder=" ">
                 <label for="">Tipo de ingreso</label>
                     <option selected value="">
-                        seleccionar tipo de ingreso
+                        seleccionar tipo de ingreso *(Obligatorio)
                     </option>
                     <option value="Mensual">
                         Mensual
@@ -519,7 +519,7 @@
                 <label for="">(2) Relacion del pariente cercano</label>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
-                <input minlength="8" maxlength="8" id="cl_50" style="width: 100%;" type="date" class="cl_invalid form-control" name="fecha_creacion_registro" placeholder=" ">
+                <input minlength="8" maxlength="8" id="cl_50" style="width: 100%;" type="date" class="cl_invalid form-control required" name="fecha_creacion_registro" placeholder=" ">
                 <label for="">Fecha de creacion del registro</label>
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">

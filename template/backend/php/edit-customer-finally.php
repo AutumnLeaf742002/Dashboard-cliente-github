@@ -15,9 +15,16 @@
 
         $oCon = connect();
         $sql = $_POST["sql"];
-        $res = command($oCon, $sql);
 
-        echo $res;
+        if($sql != "n/d")
+        {
+            $res = command($oCon, $sql);
+            echo $res;
+        }
+        else
+        {
+            echo "Algo ha salido mal, recargue la pagina y vuelva a intentar";
+        }
     }
     else
     {

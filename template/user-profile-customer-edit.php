@@ -1,4 +1,45 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    if(isset($_GET))
+    {
+        session_start();
+        $id_logued = $_SESSION["id"];
+        $rol = $_SESSION["rol"];
+
+        include_once "backend/php/connection.php";
+        include_once "backend/php/commands.php";
+
+        $id_cl = $_GET["id_cl"];
+        $id_co = $_GET["id_co"];
+        $analista = $_GET["analista"];
+
+        $oCon = connect();
+        $sql_cl = "SELECT * FROM clientes WHERE Id = $id_cl";
+        $sql_co = "SELECT * FROM co_aplicantes WHERE Id = $id_co";
+
+        $res_cl = select($oCon, $sql_cl);
+        $res_co = select($oCon, $sql_co);
+
+        $serie_cl = 0;
+        $serie_co = 0;
+
+        $serie_cl = $res_cl[0]["N_serie_cliente"];
+        $serie_co = $res_co[0]["C_N_serie_cliente"]??"nothing";
+
+        if(count($res_co) > 0)
+        {
+            if($serie_cl != $serie_co)
+            {
+                $res_co = select($oCon, "SELECT * FROM co_aplicantes WHERE Id = 0");
+            }
+        }
+
+        
+    }
+
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -54,42 +95,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
 </head>
 
-<?php
-
-    if(isset($_GET))
-    {
-        include_once "backend/php/connection.php";
-        include_once "backend/php/commands.php";
-
-        $id_cl = $_GET["id_cl"];
-        $id_co = $_GET["id_co"];
-        $analista = $_GET["analista"];
-
-        $oCon = connect();
-        $sql_cl = "SELECT * FROM clientes WHERE Id = $id_cl";
-        $sql_co = "SELECT * FROM co_aplicantes WHERE Id = $id_co";
-
-        $res_cl = select($oCon, $sql_cl);
-        $res_co = select($oCon, $sql_co);
-
-        $serie_cl = 0;
-        $serie_co = 0;
-
-        $serie_cl = $res_cl[0]["N_serie_cliente"];
-        $serie_co = $res_co[0]["C_N_serie_cliente"]??"nothing";
-
-        if(count($res_co) > 0)
-        {
-            if($serie_cl != $serie_co)
-            {
-                $res_co = select($oCon, "SELECT * FROM co_aplicantes WHERE Id = 0");
-            }
-        }
-
-        
-    }
-
-?>
 
 <body>
 
@@ -951,7 +956,14 @@
                                                                                                         <select id="" type="text" class="form-control" name="analista" valeue="Analista asignado">
                                                                                                             <?php
                                                                                                             
-                                                                                                                $res_analista = select($oCon, "SELECT Id, Name FROM analyst ORDER BY Name");
+                                                                                                                if($rol == "2")
+                                                                                                                {
+                                                                                                                    $res_analista = select($oCon, "SELECT Id, Name FROM analyst WHERE Id_supervisor = $id_logued ORDER BY Name");
+                                                                                                                }
+                                                                                                                else if($rol == "1")
+                                                                                                                {
+                                                                                                                    $res_analista = select($oCon, "SELECT Id, Name FROM analyst ORDER BY Name");
+                                                                                                                }
 
                                                                                                                 foreach($res_analista as $item)
                                                                                                                 {

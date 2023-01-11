@@ -1,2 +1,1 @@
-Agregar algo para indicar los campos que son obligatorios en todos los formularios.
-xD
+Arreglar que cuando se esta en la parte de editar un cliente, en el menu lateral aparece roles en azul, cuando deberia aparecer clientes en azul

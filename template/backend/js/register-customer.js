@@ -468,7 +468,8 @@ btn_enviar_customer.addEventListener('click', () => {
                                                 window.location.href = 'clientes.html'
                                             }, 2000)
                                         }
-                                        else {
+                                        else 
+                                        {
                                             let msg = request.responseText
                                             aparecer_n_3(msg)
                                         }
