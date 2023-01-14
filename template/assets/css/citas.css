@@ -1,0 +1,180 @@
+*{
+
+    box-sizing: border-box;
+}
+
+.contain-all{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contain-menu{
+
+    background-color: white;
+    width: 754px;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.div-create{
+
+    width: 354px;
+    height: 95px;
+    background-color: #3C21F7;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    cursor: pointer;
+}
+
+.p{
+
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+
+.icon{
+
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3C21F7;
+    font-size: 25px;
+}
+
+.contain-calender{
+
+    width: 754px;
+    background-color: white;
+    padding: 25px 15px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contain-calender-header{
+
+    width: 100%;
+    display: flex;
+    padding: 10px 0px;
+}
+
+.f-l{
+
+    background-color: #ece8ff;
+    color: #3C21F7;
+    width: 45px;
+    height: 38px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.f-l:hover{
+
+    background-color: #3C21F7;
+    color: white;
+}
+
+.f-r{
+
+    background-color: #EBE8FF;
+    color: #3C21F7;
+    width: 45px;
+    height: 38px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.f-r:hover{
+
+    background-color: #3C21F7;
+    color: white;
+}
+
+.contain-month{
+
+    margin: 0 auto;
+}
+
+.contain-month p{
+
+    color: #273444;
+    font-size: 26px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.filtro select{
+
+    font-size: 18px;
+    width: 150px;
+}
+
+.contain-days{
+
+    width: 100%;
+    background-color: white;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contain-days table{
+
+    width: 100%;
+    border: 2px solid #f0f0f0;
+    border-collapse: collapse;
+}
+
+.contain-days table thead tr th{
+
+    text-align: center;
+    border: 2px solid #f0f0f0;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 15px;
+    font-weight: bold;  
+}
+
+.contain-day{
+
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.h-day{
+
+    width: 107.7142px;
+    display: flex;
+    flex-direction: column;
+}
+
+.d{
+
+    width: 100%;
+    height: 100px;
+    border-left: 2px solid #f0f0f0;
+    border-bottom: 2px solid #f0f0f0;
+    border-right: 2px solid #f0f0f0;
+}

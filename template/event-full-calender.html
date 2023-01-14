@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <script src="coming-soon.js"></script>
+ <!-- <script src="coming-soon.js"></script> -->
     <title>Mash Able - Premium Admin Template</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,6 +42,7 @@
       <link rel="stylesheet" type="text/css" href="assets/css/simple-line-icons.css">
       <link rel="stylesheet" type="text/css" href="assets/css/ionicons.css">
       <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+      <link rel="stylesheet" href="./assets/css/citas.css">
   </head>
 
   <body>
@@ -522,73 +523,167 @@
             </nav>
                 <div class="pcoded-content">
                     <div class="pcoded-inner-content">
-                        <!-- Main-body start -->
-                        <div class="main-body">
-                            <div class="page-wrapper">
-                                <div class="page-header">
-                                    <div class="page-header-title">
-                                        <h4>Full Calender</h4>
-                                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                        <!-- contenido -->
+                        
+
+                        <div class="contain-all">
+                            <div class="contain-menu">
+                                <div class="div-create">
+                                    <div class="icon">
+                                        +
                                     </div>
-                                    <div class="page-header-breadcrumb">
-                                        <ul class="breadcrumb-title">
-                                            <li class="breadcrumb-item">
-                                                <a href="index.html">
-                                                    <i class="icofont icofont-home"></i>
-                                                </a>
-                                            </li>
-                                            <li class="breadcrumb-item"><a href="#!">Event Calendar</a>
-                                            </li>
-                                            <li class="breadcrumb-item"><a href="#!">Full Calender</a>
-                                            </li>
-                                        </ul>
+                                    <h1 class="p">
+                                        Crear cita
+                                    </h1>
+                                </div>
+                            </div>
+    
+                            <div class="contain-calender">
+                                <div class="contain-calender-header">
+                                    <div class="f-l">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="f-r">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="contain-month">
+                                        <p>
+                                            Septiembre 2020
+                                        </p>
+                                    </div>
+                                    <div class="filtro">
+                                        <select class="form-control">
+                                            <option value="">
+                                                2020
+                                            </option>
+                                            <option value="">
+                                                2021
+                                            </option>
+                                            <option value="">
+                                                2022
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="page-body">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5>Full Calender</h5>
-                                            <div class="card-header-right">
-                                                <i class="icofont icofont-rounded-down"></i>
-                                                <i class="icofont icofont-refresh"></i>
-                                                <i class="icofont icofont-close-circled"></i>
+                                <div class="contain-days">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Lunes
+                                                </th>
+                                                <th>
+                                                    Martes
+                                                </th>
+                                                <th>
+                                                    Miercoles
+                                                </th>
+                                                <th>
+                                                    Jueves
+                                                </th>
+                                                <th>
+                                                    Viernes
+                                                </th>
+                                                <th>
+                                                    Sabado
+                                                </th>
+                                                <th>
+                                                    Domingo
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+
+                                    <div class="contain-day">
+                                        <div class="h-day" id="lunes">
+                                            <div class="d">
+                                                1
+                                            </div>
+                                            <div class="d">
+                                                2
+                                            </div>
+                                            <div class="d">
+                                                3
                                             </div>
                                         </div>
-                                        <div class="card-block">
-                                            <div class="row">
-                                                <div class="col-xl-2 col-md-12">
-                                                    <div id="external-events">
-                                                        <h6 class="m-b-30 m-t-20">Events</h6>
-                                                        <div class="fc-event ui-draggable ui-draggable-handle">My Event 1</div>
-                                                        <div class="fc-event ui-draggable ui-draggable-handle">My Event 2</div>
-                                                        <div class="fc-event ui-draggable ui-draggable-handle">My Event 3</div>
-                                                        <div class="fc-event ui-draggable ui-draggable-handle">My Event 4</div>
-                                                        <div class="fc-event ui-draggable ui-draggable-handle">My Event 5</div>
-                                                        <div class="checkbox-fade fade-in-primary m-t-10">
-                                                            <label>
-                                                                <input type="checkbox" value="">
-                                                                <span class="cr">
-                                                                    <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                                                </span>
-                                                                <span>Remove After Drop</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-10 col-md-12">
-                                                    <div id='calendar'></div>
-                                                </div>
+                                        <div class="h-day">
+                                            <div class="d">
+                                                1
+                                            </div>
+                                            <div class="d">
+                                                2
+                                            </div>
+                                            <div class="d">
+                                                3
+                                            </div>
+                                        </div>
+                                        <div class="h-day">
+                                            <div class="d">
+                                                1
+                                            </div>
+                                            <div class="d">
+                                                2
+                                            </div>
+                                            <div class="d">
+                                                3
+                                            </div>
+                                        </div>
+                                        <div class="h-day">
+                                            <div class="d">
+                                                1
+                                            </div>
+                                            <div class="d">
+                                                2
+                                            </div>
+                                            <div class="d">
+                                                3
+                                            </div>
+                                        </div>
+                                        <div class="h-day">
+                                            <div class="d">
+                                                1
+                                            </div>
+                                            <div class="d">
+                                                2
+                                            </div>
+                                            <div class="d">
+                                                3
+                                            </div>
+                                        </div>
+                                        <div class="h-day">
+                                            <div class="d">
+                                                1
+                                            </div>
+                                            <div class="d">
+                                                2
+                                            </div>
+                                            <div class="d">
+                                                3
+                                            </div>
+                                        </div>
+                                        <div class="h-day">
+                                            <div class="d">
+                                                1
+                                            </div>
+                                            <div class="d">
+                                                2
+                                            </div>
+                                            <div class="d">
+                                                3
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
-                        <!-- Main-body end -->
 
-                        <div id="styleSelector">
 
-                        </div>
+                        <!-- contenido -->
                     </div>
                 </div>
             </div>
@@ -597,51 +692,6 @@
 </div>
 
 
-
-<!-- Warning Section Starts -->
-<!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-<!-- Warning Section Ends -->
 <!-- Required Jquery -->
 <script type="text/javascript" src="../bower_components/jquery/js/jquery.min.js"></script>
 <script type="text/javascript" src="../bower_components/jquery-ui/js/jquery-ui.min.js"></script>
