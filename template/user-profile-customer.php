@@ -931,6 +931,17 @@
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
+                                                                                                <th scope="row">Oficina</th>
+                                                                                                <td>
+                                                                                                    <?php
+                                                                                                        $id_o = $res_cl[0]["Id_office"];
+                                                                                                        $res_o = select($oCon, "SELECT Name_office FROM offices WHERE Id = $id_o");
+                                                                                                        $name_o = $res_o[0]["Name_office"];
+                                                                                                        echo $name_o;
+                                                                                                    ?>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
                                                                                                 <th scope="row">Cantidad Fiananciada</th>
                                                                                                 <td>
                                                                                                     <?php echo $res_cl[0]["Cantidad_financiada"]; ?>
