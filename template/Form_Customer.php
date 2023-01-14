@@ -244,7 +244,7 @@
                         foreach($res as $item)
                         {
                             $dwdsdw = select($oCon, 'SELECT Name_office FROM offices WHERE Id = '.$item["Id_office"]);
-
+                            
                             echo '<option value="'.$item["Id"].'">'.$item["Name"].' - OFICINA: '.$dwdsdw[0]["Name_office"].'</option>';
                         }
                     
