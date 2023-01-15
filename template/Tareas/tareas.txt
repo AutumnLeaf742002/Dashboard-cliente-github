@@ -2,3 +2,4 @@ Arreglar que cuando se esta en la parte de editar un cliente, en el menu lateral
 alex:
 terminar lo de los estatus con los colores
 eliminar elementos html segun cada rol para visualizar
+eliminar el codigo que se encuentra en event-full-calendar mas adelante
