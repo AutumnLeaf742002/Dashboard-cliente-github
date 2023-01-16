@@ -1,34 +1,4 @@
-﻿<?php
-
-    if(!empty($_GET))
-    {
-        include_once "./backend/php/connection.php";
-        include_once "./backend/php/commands.php";
-        $id = $_GET["vmekmsi23xmfvwe155"]??0;
-
-        $oCon = connect();
-        define("sql", "SELECT * FROM managers WHERE Id = $id");
-        $res = select($oCon, sql);
-
-        if(count($res) <= 0)
-        {
-            header("location: managers.html");
-        }
-
-        $id_o = $res[0]["Id_office"];
-        define("sql_o", "SELECT * FROM offices WHERE Id = $id_o");
-        $res_o = select($oCon, sql_o);
-
-        $ofi = $res_o[0]["Name_office"];
-    }
-    else
-    {
-        header("location: managers.html");
-    }
-?>
-
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -691,11 +661,7 @@
                                                             <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <h5 class="card-header-text">Informacion del Manager</h5>
                                                                 <div style="display: flex; gap: 10px;">
-                                                                    <button onclick="show()" id="delete" class="btn btn-danger">
-                                                                        Eliminar
-                                                                    </button>
-                                                                    <a href="user-profile-manager-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
-                                                                </div>
+                                                                    </div>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">

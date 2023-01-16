@@ -1,27 +1,4 @@
-﻿<?php
-
-    if(!empty($_GET))
-    {
-        include_once "./backend/php/connection.php";
-        include_once "./backend/php/commands.php";
-        $id = $_GET["vmekmsi23xmfvwe155"]??0;
-
-        $oCon = connect();
-        define("sql", "SELECT * FROM administrators WHERE Id = $id");
-        $res = select($oCon, sql);
-
-        if(count($res) <= 0)
-        {
-            header("location: Analistas.html");
-        }
-
-    }
-    else
-    {
-        header("location: administradores.html");
-    }
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -29,13 +6,6 @@
     <script src="backend/js/restrictor-analist.js"></script>
     <script src="backend/js/restrictor-manager.js"></script>
     <title>Perfil de administrador</title>
-    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -121,8 +91,6 @@
                     </div></div>
     </div>
     <!--final de ventana emergente-->
-
-
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -677,12 +645,7 @@
                                                             <div class="card-header"  style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <h5 class="card-header-text">Informacion del Analista</h5>
                                                                 <div style="display: flex; gap: 10px;">
-                                                                    <button onclick="show()" id="delete" class="btn btn-danger">
-                                                                        Eliminar
-                                                                    </button>
-                                                                <a href="user-profile-admin-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
                                                             </div>
-                                                            </button>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
