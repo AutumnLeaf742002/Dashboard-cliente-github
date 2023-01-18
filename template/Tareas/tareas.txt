@@ -1,4 +1,8 @@
 Arreglar que cuando se esta en la parte de editar un cliente, en el menu lateral aparece roles en azul, cuando deberia aparecer clientes en azul
+Poner bien lo de la foto del perfil de quien esta logueado en la pagina de las citas
+poner el nombre de la pagina de citas en el menu lateral ya que la puse como php y no como html
+
+
 alex:
 terminar lo de los estatus con los colores
 eliminar elementos html segun cada rol para visualizar

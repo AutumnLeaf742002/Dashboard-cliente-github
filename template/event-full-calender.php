@@ -1,9 +1,36 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    include_once "backend/php/connection.php";
+    include_once "backend/php/commands.php";
+    $oCon = connect();
+    session_start();
+
+    $id_logued = $_SESSION["id"];
+    $rol_logued = $_SESSION["rol"];
+
+    if($rol_logued == "1")
+    {
+        define("sql_cl", "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN offices ON offices.Id = clientes.Id_office ORDER BY Primer_nombre");
+    }
+    else if($rol_logued == "2")
+    {
+        define("sql_cl", "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON clientes.Nombre_representante = analyst.Id JOIN managers ON analyst.Id_supervisor = managers.Id JOIN offices ON offices.Id = clientes.Id_office WHERE managers.Id = $id_logued ORDER BY Primer_nombre");
+    }
+    else if($rol_logued == "3")
+    {
+        define("sql_cl", "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN offices ON offices.Id = clientes.Id_office WHERE clientes.Nombre_representante = $id_logued ORDER BY Primer_nombre");
+    }
+
+
+    $res_cl = select($oCon, sql_cl);
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <!-- <script src="coming-soon.js"></script> -->
-    <title>Mash Able - Premium Admin Template</title>
+    <title>Citas</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,6 +75,142 @@
 </head>
 
 <body>
+
+
+<!-- Notificaciones -->
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+   <!-- notify js Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.brighttheme.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="assets/pages/pnotify/notify.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--color css-->
+
+    <!-- css para las notificaciones -->
+    <link rel="stylesheet" href="alerts.css">
+
+    <div class="card-block table-border-style container-notificaciones">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    
+                    <!-- Notificacion aviso principal -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-notice ui-pnotify-shadow n-personal" id="n-personal-1" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-1" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font" style="vertical-align: inherit;">Aviso!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                    
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de informacion -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-info ui-pnotify-shadow n-personal" id="n-personal-2" role="alert" style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-closer"></span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;"><span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                        </div>
+                        <div class="ui-pnotify-icon"><span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-2" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Hecho!</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Notificacion aviso de peligro -->
+                    <div class="brighttheme ui-pnotify-container brighttheme-error ui-pnotify-shadow n-personal" id="n-personal-3" role="alert"
+                        style="min-height: 16px;">
+                        <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Cerca"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-closer">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick"
+                            style="cursor: pointer; visibility: hidden;">
+                            <span class="brighttheme-icon-sticker" aria-pressed="false">
+                    
+                            </span>
+                        </div>
+                        <div class="ui-pnotify-icon">
+                            <span class="icofont icofont-info-circle"></span>
+                        </div>
+                        <button id="btn-n-personal-3" class="close" aria-label="close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                        </button>
+                        <h4 class="ui-pnotify-title">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Peligro</font>
+                            </font>
+                        </h4>
+                        <div class="ui-pnotify-text" aria-role="alert">
+                            <font style="vertical-align: inherit;">
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                            </font>
+                        </div>
+                        <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                        </div>
+                    </div>
+
+                </tbody>
+            </table>
+        </div>    
+    </div>
+
+    <!-- Notificaciones -->
+
+
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -674,43 +837,24 @@
                                                             <th>Instalador</th>
                                                             <th>Fecha</th>
                                                             <th>Hora</th>
-                                                            <th>direccion</th>
+                                                            <th>Direccion</th>
+                                                            <th>Estado</th>
+                                                            <th>ID Agendador</th>
+                                                            <th>Rol</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody id="tbody_citas">
                                                         <tr>
-                                                            <th scope="row">0001</th>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
-                                                            <td>3:00pm</td>
-                                                            <td>calle 1, casa #2 edificio 3</td>
+                                                            <td>ID</td>
+                                                            <td>cliente</td>
+                                                            <td>Instalador</td>
+                                                            <td>Fecha</td>
+                                                            <td>Hora</td>
+                                                            <td>Direccion</td>
+                                                            <td>Estado</td>
+                                                            <td>Agendador</th>
+                                                            <td>Rol</td>
                                                         </tr>
-                                                        <tr>
-                                                            <th scope="row">0002</th>
-                                                            <td>yolo</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
-                                                            <td>4:00pm</td>
-                                                            <td>calle 1, casa #2 edificio 3</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">0003</th>
-                                                            <td>Jacob</td>
-                                                            <td>Thornton</td>
-                                                            <td>@fat</td>
-                                                            <td>5:00pm</td>
-                                                            <td>calle 1, casa #2 edificio 3</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">0004</th>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>@twitter</td>
-                                                            <td>6:00pm</td>
-                                                            <td>calle 1, casa #2 edificio 3</td>
-                                                        </tr>
-
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -879,8 +1023,6 @@
                                         style="z-index: 4999 !important;">
                                         <div class="modal-dialog">
                                             <div class="login-card card-block login-card-modal">
-                                                <form id="form-data" action="" method="post" class="md-float-material"
-                                                    enctype="multipart/form-data">
                                                     <div class="auth-box">
                                                         <div class="row m-b-20">
                                                             <div class="col-md-12">
@@ -889,102 +1031,81 @@
                                                                 </div>
                                                                 <h3 class="text-center txt-primary">Registro de nueva cita</h3>
                                                                 
-                                                                <h5  class="fs-subtitle" style="display: inline;">Los campos marcados con <p style="color: red; display: inline;">*</p> son obligatorios</h5>
+                                                                <h5 class="fs-subtitle text-center" style="display: inline;">Los campos marcados con <p class="text-center" style="color: red; display: inline;">*</p> son obligatorios</h5>
                                                             </div>
                                                         </div>
                                                         <hr>
                                                         <div class="input-group">
-                                                            <input type="" class="form-control" name="nombre"
-                                                                placeholder=" " required minlength="2"
-                                                                maxlength="100">
-                                                                <label for="">Cliente</label>
-                                                            <span class="md-line"></span>
+                                                            <select class="form-control" id="id_cliente">
+                                                                <option selected value="">
+                                                                    Seleccione un cliente
+                                                                </option>
+                                                                <?php
+
+                                                                    foreach($res_cl as $item)
+                                                                    {
+                                                                        echo '<option value="'.$item["Id"].'">'.$item["Primer_nombre"].' '.$item["Apellido"].' - OFICINA: '.$item["office"].'</option>';
+                                                                    }
+
+                                                                ?>
+                                                            <select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <input type="" class="form-control" placeholder=" " minlength="10"
-                                                                maxlength="20" required>
+                                                            <input type="text" class="form-control" placeholder=" "
+                                                                maxlength="50" id="nombre_plomero">
                                                             <span class="md-line"></span>
-                                                            <label for="">Instalador</label>
+                                                            <label for="">Nombre del Instalador</label>
                                                         </div>  
                                                         <!-- Comentario debajo del type text -->
                                                         <div style="display: flex !important; flex-direction:column !important;"
                                                             class="input-group">
-                                                            <input style="width: 100% !important;" type="date"
-                                                                name="inicio" class="form-control"
-                                                                placeholder="Start date" required minlength="8"
-                                                                maxlength="8">
-                                                                <label for="">Fecha de la cita</label>
+                                                            <input style="width: 100% !important;" type="text"
+                                                                class="form-control"
+                                                                placeholder=" "
+                                                                maxlength="50" id="apellido_plomero">
+                                                                <label for="">Apellido del Instalador</label>
                                                         </div>
                                                         <!-- Comentario debajo del type text -->
                                                         <div class="input-group">
-                                                            <input type="" class="form-control" name="reclutador"
+                                                            <input type="text" class="form-control"
+                                                                placeholder=" "
+                                                                maxlength="20" id="cell_plomero">
+                                                            <span class="md-line"></span>
+                                                            <label for="">Celular del Instalador</label>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <input type="date" class="form-control"
                                                                 placeholder=" " required minlength="2"
-                                                                maxlength="100">
+                                                                maxlength="100" id="fecha">
                                                             <span class="md-line"></span>
-                                                            <label for="">Reclutador</label>
-                                                        </div>
-                                                        <div class="input-group c-m"
-                                                            style="display: flex !important; flex-direction:column !important;">
-                                                            <select id="oficinas" type="text" name="oficina"
-                                                                class="w-100 form-control" valeue="Oficina" required>
-                                                                <option selected value="6">
-                                                                    seleccionar Oficina
-                                                                </option>
-                                                                <option value="1">
-                                                                    Connecticut
-                                                                </option>
-                                                                <option value="2">
-                                                                    Pensilvania
-                                                                </option>
-                                                                <option value="3">
-                                                                    Charlotte
-                                                                </option>
-                                                                <option value="4">
-                                                                    New York
-                                                                </option>
-                                                                <option value="5">
-                                                                    New Jersey
-                                                                </option>
-                                                            </select>
-                                                            
-                                                        </div>
-                                                        <div class="input-group c-m"
-                                                            style="display: flex !important; flex-direction:column !important;">
-                                                            <select id="managers" type="text" name="manager"
-                                                                class="form-control w-100" valeue="Manager" required>
-                                                                <option selected value="6">
-                                                                    seleccionar Manager
-                                                                </option>
-                                                                <option value="1">
-                                                                    Juan
-                                                                </option>
-                                                                <option value="2">
-                                                                    Pedro
-                                                                </option>
-                                                                <option value="3">
-                                                                    Maria
-                                                                </option>
-                                                                <option value="4">
-                                                                    Jose
-                                                                </option>
-                                                                <option value="5">
-                                                                    Josephin
-                                                                </option>
-                                                            </select>
+                                                            <label for="">Fecha</label>
                                                         </div>
                                                         <div class="input-group">
-                                                            <input type="" name="usuario" class="form-control"
-                                                                placeholder=" " required minlength="5"
-                                                                maxlength="50">
+                                                            <input type="time" class="form-control"
+                                                                placeholder=" "
+                                                                id="hora">
                                                             <span class="md-line"></span>
-                                                            <label for="">Usuario</label>
+                                                            <label for="">Hora</label>
                                                         </div>
                                                         <div class="input-group">
-                                                            <input type="password" name="clave" class="form-control"
-                                                                placeholder=" " required minlength="5"
-                                                                maxlength="20">
+                                                            <input type="text" class="form-control"
+                                                                placeholder=" "
+                                                                id="direccion" maxlength="200">
                                                             <span class="md-line"></span>
-                                                            <label for="">Contraseña    </label>
+                                                            <label for="">Dirección</label>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <select class="form-control" id="tipo_instalacion">
+                                                                <option selected value="">
+                                                                    Seleccione un tipo de instalación
+                                                                </option>
+                                                                <option value="Panel Solar">
+                                                                    Panel Solar
+                                                                </option>
+                                                                <option value="Filtros de Agua">
+                                                                    Filtros de Agua
+                                                                </option>
+                                                            <select>
                                                         </div>
                                                         <!--inicio subir archivos-->
                                                         <!--final subir archivos-->
@@ -997,15 +1118,15 @@
                                                         <div class="col-md-12">
                                                             <div class="row m-t-15">
                                                                 <div class="col-md-12">
-                                                                    <input type="submit"
-                                                                        class="btn btn-primary btn-md btn-block waves-effect text-center"
-                                                                        value="Registrar">
+                                                                    <button onclick="register_cita()"
+                                                                        class="btn btn-primary btn-md btn-block waves-effect text-center">
+                                                                        Registrar Cita
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                             </div>
                                                         </div>
-                                                </form>
                                                 <!-- final formulario de registro de analista-->
                                                 <!--popup de regsitro-->
                                                 <!-- contenido -->
@@ -1052,6 +1173,8 @@
                         <script src="assets/js/demo-12.js"></script>
                         <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
                         <script src="assets/js/jquery.mousewheel.min.js"></script>
+                        <script src="backend/js/register-citas.js"></script>
+                        <script src="alerts.js"></script>
 </body>
 
 </html>
