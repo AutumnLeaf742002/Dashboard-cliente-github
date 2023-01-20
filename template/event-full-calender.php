@@ -658,7 +658,7 @@
                                         <span class="pcoded-micon"><i class="ti-home"></i></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                     </a>
-                                <li class="pcoded-hasmenu">
+                                <li class="pcoded-hasmenu r_analist">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                 height="16" fill="currentColor" class="bi bi-person-badge-fill"
@@ -671,7 +671,7 @@
                                     </a>
                                     <ul class="pcoded-submenu">
                                 </li>
-                                <li class="">
+                                <li class="r_manager">
                                     <a href="administradores.html">
                                         <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                 height="16" fill="currentColor" class="bi bi-briefcase"
@@ -690,7 +690,7 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="">
+                                <li class="r_manager">
                                     <a href="managers.html">
                                         <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                 height="16" fill="currentColor" class="bi bi-briefcase"
@@ -1174,7 +1174,9 @@
                         <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
                         <script src="assets/js/jquery.mousewheel.min.js"></script>
                         <script src="backend/js/register-citas.js"></script>
+                        <script src="backend/js/remove-elements.js"></script>
                         <script src="alerts.js"></script>
+                        <script src="backend/js/get-profile.js"></script>
 </body>
 
 </html>
