@@ -1,109 +1,45 @@
-﻿<?php
-
-    if(!empty($_GET))
-    {
-        include_once "./backend/php/connection.php";
-        include_once "./backend/php/commands.php";
-
-        $name = "";
-        $mail = "";
-        $cell = "";
-        $carnet = "";
-        $user = "";
-
-        $id_ad = $_GET["wdasjoiwjioasdw"]??0;
-
-        $oCon = connect();
-        define("sql", "SELECT * FROM administrators WHERE Id = ".$id_ad);
-        $res = select($oCon, sql);
-
-        if(is_array($res))
-        {
-            if(count($res) == 1)
-            {
-                $name = $res[0]["Name"];
-                $mail = $res[0]["Mail"];
-                $cell = $res[0]["Cell"];
-                $carnet = $res[0]["Carnet"];
-                $user = $res[0]["User"];
-
-                $name = trim($name);
-                $mail = trim($mail);
-                $cell = trim($cell);
-                $carnet = trim($carnet);
-                $user = trim($user);
-            }
-        }
-        else
-        {
-            header("location: administradores.html");
-        }
-    }
-    else
-    {
-        header("location: administradores.html");
-    }
-
-?>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <script src="backend/js/session.js"></script>
     <script src="backend/js/restrictor-analist.js"></script>
-    <script src="backend/js/restrictor-manager.js"></script>
-    <title>Perfil de administrador</title>
-    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="#">
-    <meta name="keywords" content="Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
-    <meta name="author" content="#">
-    <!-- Favicon icon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <!-- Google font-->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> -->
-    <link href="../../../../css.css?family=Mada:300,400,500,600,700" rel="stylesheet">
-    <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/css/bootstrap.min.css">
-    <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Date-time picker css -->
-    <link rel="stylesheet" type="text/css" href="assets/pages/advance-elements/css/bootstrap-datetimepicker.css">
-    <!-- Date-range picker css  -->
-    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap-daterangepicker/css/daterangepicker.css">
-    <!-- Date-Dropper css -->
-    <link rel="stylesheet" type="text/css" href="../bower_components/datedropper/css/datedropper.min.css">
-    <!-- Data Table Css -->
-    <link rel="stylesheet" type="text/css" href="../bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
-    <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
-    <!-- flag icon framework css -->
-    <link rel="stylesheet" type="text/css" href="assets/pages/flag-icon/flag-icon.min.css">
-    <!-- Menu-Search css -->
-    <link rel="stylesheet" type="text/css" href="assets/pages/menu-search/css/component.css">
-    <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/linearicons.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/simple-line-icons.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/ionicons.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
-</head>
+    <title>Instaladores</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="#">
+      <meta name="keywords" content="Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+      <meta name="author" content="11cimedia.com">
+      <!-- Favicon icon -->
+      
+      <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+      <!-- Google font-->
+      <link href="../../../../css.css?family=Mada:300,400,500,600,700" rel="stylesheet">
+      <!-- Required Fremwork -->
+      <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/css/bootstrap.min.css">
+      <!-- themify-icons line icon -->
+      <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+      <!-- flag icon framework css -->
+      <link rel="stylesheet" type="text/css" href="assets/pages/flag-icon/flag-icon.min.css">
+      <!-- Menu-Search css -->
+      <link rel="stylesheet" type="text/css" href="assets/pages/menu-search/css/component.css">
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      <!-- color .css -->
 
-<body>
+      <link rel="stylesheet" type="text/css" href="assets/css/linearicons.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/simple-line-icons.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/ionicons.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+      <link rel="stylesheet" href="alerts.css">
+  </head>
 
+  <body>
 
-
+    
 <!-- Notificaciones -->
 
     <!-- Required Fremwork -->
@@ -123,7 +59,7 @@
     <!-- css para las notificaciones -->
     <link rel="stylesheet" href="alerts.css">
 
-    <div class="card-block table-border-style container-notificaciones">
+    <div class="card-block table-border-style container-notificaciones" style="position: sticky !important; top: 0 !important; z-index: 9999;">
         <div class="table-responsive">
             <table class="table">
                 <tbody>
@@ -238,48 +174,6 @@
     <!-- Notificaciones -->
 
 
-        <!--inicio de ventana emergente-->
-    <div id="ventana-confirmacion" style="display: none;">
-        <!-- sweet alert framework -->
-        <link rel="stylesheet" type="text/css" href="../bower_components/sweetalert/css/sweetalert.css">
-                    <!-- Style.css -->
-                    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-                    <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -169px;"><div class="sa-icon sa-error" style="display: none;">
-                        <span   span class="sa-x-mark">
-                            <span class="sa-line sa-left"></span>
-                        <span class="sa-line sa-right"></span>
-                    </span>
-                    </div><div class="sa-icon sa-warning pulseWarning" style="display: block;">
-                    <span class="sa-body pulseWarningIns"></span>
-                    <span class="sa-dot pulseWarningIns"></span>
-                    </div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success" style="display: none;">
-                    <span class="sa-line sa-tip"></span>
-                    <span class="sa-line sa-long"></span>
-                    
-                    <div class="sa-placeholder"></div>
-                    <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas guardar los cambios?</h2>
-                    <p style="display: block;">Si haces click en aceptar se guardaran los cambios realizados.</p>
-                    <fieldset>
-                    <input type="text" tabindex="3" placeholder="">
-                    <div class="sa-input-error"></div>
-                    </fieldset><div class="sa-error-container">
-                    <div class="icon">!</div>
-                    <p>You need to write something!</p>
-                    </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
-                    <div class="sa-confirm-button-container">
-                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    </div>
-                    </div>
-                    </div></div>
-    </div>
-<!--final de ventana emergente-->
-
-
 
 
     <!-- Pre-loader start -->
@@ -289,9 +183,11 @@
         </div>
     </div>
     <!-- Pre-loader end -->
-    <div id="pcoded" class="pcoded">
+
+    <div id="pcoded" class="pcoded" style="z-index: -100 !important;">
         <div class=""></div><!--clase que da overlay al hacer clic en menu a nivel movil pcoded-overlay-box-->
         <div class="pcoded-container navbar-wrapper">
+
             <nav class="navbar header-navbar pcoded-header">
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
@@ -312,8 +208,9 @@
                         <div>
                             <ul class="nav-left">
                                 <li>
-                                    <div class="sidebar_toggle"><a href=""><i class="ti-menu"></i></a></div>
+                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
                                 </li>
+                            
                                 <li>
                                     <a href="#!" onclick="javascript:toggleFullScreen()">
                                         <i class="ti-fullscreen"></i>
@@ -345,6 +242,8 @@
                                 </li>
                                 </li>
 						<!--final multi-lenguaje-->
+                                    
+                            
                                 <li class="header-notification">
                                     <a href="#!">
                                         <i class="ti-bell"></i>
@@ -387,6 +286,7 @@
                                         </li>
                                     </ul>
                                 </li>
+                                
                                 <li class="user-profile header-notification">
                                     <a href="#!" id="info_profile" class="p-0" style="position: relative;">
                                         <img src="assets/images/user-redondo.svg" alt="User-Profile-Image">
@@ -461,6 +361,7 @@
                     </div>
                 </div>
             </nav>
+
             <!-- Sidebar chat start -->
             <div id="sidebar" class="users p-chat-user showChat">
                 <div class="had-container">
@@ -658,66 +559,68 @@
             <!-- Sidebar inner chat end-->
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                   <nav class="pcoded-navbar">
+                <nav class="pcoded-navbar">
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
-
                         <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
+                            
                             <li>
-                               <!--Roles-->
-                               <a id="" href="dashboard-project.html">
+                            <a id="" href="dashboard-project.html">
                                 <span class="pcoded-micon"><i class="ti-home"></i></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                             </a>
-                            <li class="pcoded-hasmenu">
+                            <li id="roles" class="pcoded-hasmenu">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
                                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
-                                      </svg></i></span>
+                                    </svg>
+                                    </i>
+                                </span>
+                                    <!--Roles-->
                                     <span class="pcoded-mtext" data-i18n="nav.page_layout.main">Roles</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                         <ul class="pcoded-submenu">
                         </li>
-                        <li class="">
+                        <li class="r_manager">
                             <a href="administradores.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                  </svg></span>
+                                </svg></span>
                                 <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
                                     <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                                     <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
-                                  </svg>Administradores</span>
+                                </svg>Administradores</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="r_manager">
                             <a href="managers.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                  </svg></span>
+                                </svg></span>
                                 <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-video2" viewBox="0 0 16 16">
                                     <path d="M10 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                                     <path d="M2 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2ZM1 3a1 1 0 0 1 1-1h2v2H1V3Zm4 10V2h9a1 1 0 0 1 1 1v9c0 .285-.12.543-.31.725C14.15 11.494 12.822 10 10 10c-3.037 0-4.345 1.73-4.798 3H5Zm-4-2h3v2H2a1 1 0 0 1-1-1v-1Zm3-1H1V8h3v2Zm0-3H1V5h3v2Z"/>
-                                  </svg>Managers</span>
+                                </svg>Managers</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li class="">
-                            <a href="Analistas.html">
+                        <li id="Analyst">
+                            <a href="Instaladores.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                  </svg></span>
+                                </svg></span>
                                 <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                  </svg>Analistas</span>
+                                </svg>Instaladores</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
+                        <!--Roles-->
                     </ul>
-                    <!--Roles-->
-                        <li id="vendedores">
+                        <li id="">
                             <a href="clientes.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -738,7 +641,7 @@
                             <span class="pcoded-mcaret"></span>
                         </a>  
                         <li id="">
-                        <a href="Instaladores.html">
+                            <a href="Instaladores.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
                                     <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
                                   </svg></span>
@@ -748,266 +651,286 @@
                         </li>
                     </ul>
                 </div>
-                </nav>
+            </nav> 
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                
+                                <!-- Page-body start -->
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
                             
-                </nav>
-                    <div class="pcoded-content">
-                        <div class="pcoded-inner-content">
-                            <!-- Main body start -->
-                            <div class="main-body user-profile">
-                                <div class="page-wrapper">
-                                <!-- Page-header start -->
-                                    <div class="page-header">
-                                        <div class="row align-items-end">
-                                            <div class="col-sm-8">
-                                                <div class="page-header-title">
-                                                    <div class="d-inline">
-                                                        <h4>Editar Administrador</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="page-header-breadcrumb">
-                                                    <ul class="breadcrumb-title">
-                                                <li class="breadcrumb-item">
-                                                </li>
-                                            </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Page-header end -->
-                                    <!-- Page-body start -->
-                                    <div class="page-body">
-                                        <!--profile cover start-->
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="cover-profile">
-                                                    <div class="profile-bg-img">
-                                                        <img class="profile-bg-img img-fluid" src="assets/images/user-profile/bg-img1.jpg" alt="bg-img">
-                                                        <div class="card-block user-info">
-                                                        <div class="col-md-12">
-                                                                <div class="media-left">
-                                                                    <div class="card-header-img" style="overflow: hidden; width: 125px; height: 125px; border: 2px solid #f2f2f2; border-radius: 50%; margin: auto auto;">
-                                                                        <img style="height: auto; width: 100%; object-fit: cover;" class="img-fluid" src="./assets/images/user-redondo.svg" alter="img-user">
-                                                                    </div>                                                                
-                                                                </div>
-                                                                <div class="media-body row">
-                                                                    <div class="col-lg-12">
-                                                                        <div class="user-title">
-                                                                            <h2><?php echo $name; ?></h2>
-                                                                            <span class="text-white">Administrador</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--profile cover end-->
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <!-- tab header start -->
-                                                
-                                                <!-- tab header end -->
-                                                <!-- tab content start -->
-                                                <div class="tab-content">
-                                                    <!-- tab panel personal start -->
-                                                    <div class="tab-pane active" id="personal" role="tabpanel">
-                                                        <!-- personal card start -->
-                                                        <div class="card">
-                                                            <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion del Administrador</h5>
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <div class="view-info">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                            <div class="general-info">
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-12 col-xl-6">
-                                                                                        <div class="table-responsive">
-                                                                                            <table class="table m-0">
-                                                                                                <tbody>
-                                                                                                    <form>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Nombre</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                <input  maxlength="100" id="name" type="text" class="form-control" name="" value="<?php echo $name; ?>">
-                                                                                                            </div> 
-                                                                                                        </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Correo</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                <input maxlength="50" id="mail" type="text" class="form-control " name="" value="<?php echo $mail; ?>">
-                                                                                                            </div>
-                                                                                                        </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Telefono Celular</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                <input maxlength="20" id="cell" type="text" class="form-control " name="" value="<?php echo $cell; ?>">
-                                                                                                            </div> 
-                                                                                                        </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <th scope="row">Carnet</th>
-                                                                                                            <td>
-                                                                                                                <div class="input-group">
-                                                                                                                <input maxlength="20" id="carnet" type="text" class="form-control " name="" value="<?php echo $carnet; ?>">
-                                                                                                            </div> 
-                                                                                                        </td>
-                                                                                                        </tr>
-                                                                                                    </form>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- end of table col-lg-6 -->
-                                                                                    
-                                                                                    <div class="col-lg-12 col-xl-6">
-                                                                                    <div class="table-responsive">
-                                                                                        <table class="table">
-                                                                                            <tbody>
-                                                                                                <tr>
-                                                                                                    <th scope="row">Usuario</th>
-                                                                                                    <td>
-                                                                                                        <div class="input-group">
-                                                                                                            <input maxlength="50" id="user" type="text" class="form-control " name="" value="<?php echo $user; ?>">
-                                                                                                        </div> 
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 d-flex justify-content-center">
-                                                            
-                                                            <a href="user-profile-admin.php?vmekmsi23xmfvwe155=<?php echo $id_ad; ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
-                                                                volver
-                                                            </a>
-                                                            <button id="btn-edit" class="btn btn-primary cursor-pointer mx-2">
-                                                                Guardar
-                                                            </button>
-                                                                
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                    <!-- Main-body start -->
-                                                                <div class="main-body">
-                                                                    <div class="page-wrapper">
-                                                                        <!-- Page header end -->
-                                                                        <!-- Page body start -->
-                                                                        <div class="page-body">
-                                                                            <div class="row">
-                                                                                <div class="col-sm-12">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- Page body end -->
-                                                                    </div>
-                                                                </div>
-                                                                <!-- Main-body end -->
-                                                            </div>
-                                                        </div>
-                                                        <!-- personal card end-->
-                                                    <div class="tab-pane" id="binfo" role="tabpanel">
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                    <!-- Main-body start -->
-                                                            </div>
-                                                        </div>
-                                                        <!-- personal card end-->
-                                                    </div>
-                                                    <!-- tab pane info end -->
-                                                    <!-- tab pane contact start -->
-                                                    <div class="tab-pane" id="contacts" role="tabpanel">
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <!-- inicio div de registro de analista -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Registrar Instaladores</h5>
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-rounded-down"></i>
+                                        <i class="icofont icofont-refresh"></i>
+                                        
                                     </div>
                                 </div>
+                                <div class="card-block">
+                                    <p>
+                                        Click al boton para registrar un nuevo analista.
+                                    </p>
+                                    <p class="text-center">
+                                        <button type="button" class="btn btn-primary auth-btn" data-toggle="modal" data-target="#register">Registrar</button>
+                                    </p>
+                                </div>
                             </div>
+                            <!-- final div de registro de analista -->
+                            
+                            <!-- Simple card start -->
+                            <div class="card simple-cards">
+                                <div class="card-header">
+                                    <h5>Instaladores</h5>
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-rounded-down"></i>
+                                        <i class="icofont icofont-refresh" onclick="refresh()"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-block">
+                                    <div class="row users-card" id="list-analist">
+                                        <div class="col-lg-12 col-xl-4">
+                                            <div class="card user-card">
+                                                <div class="card-header-img">
+                                                    <img class="img-fluid img-circle" src="assets/images/user-card/card/installer.png" alt="card-img">
+                                                    <h4>Michelle House</h4>
+                                                    <h5>abc123@domain.com</h5>
+                                                    <h4>Instalador</h4>
+                                                </div>
+                                                
+                                                <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.</p>
+                                                <div class="set-btn">
+                                                    <!--<button type="button" class="btn btn-primary btn-outline-primary waves-effect waves-light m-r-15"><i class="icofont icofont-plus m-r-5" src="user-profile-analyst.html"> </i>Ver Clientes </button>
+                                                <button type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-xl-4">
+                                            <div class="card user-card">
+                                                <div class="card-header-img">
+                                                    <img class="img-fluid img-circle" src="assets/images/user-card/card/installer.png" alt="card-img">
+                                                    <h4>Cara Stevens</h4>
+                                                    <h5>abc123@domain.com</h5>
+                                                    <h4>Instalador</h4>
+                                                </div>
+                                                <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.</p>
+                                                <a href="user-profile-analyst.html">
+                                                <div class="set-btn">
+                                                    <!-- <button type="button" class="btn btn-primary btn-outline-primary waves-effect waves-light m-r-15"><i class="icofont icofont-plus m-r-5"src="user-profile"></i>Ver Clientes</button>
+                                                    <button type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                        <div class="col-lg-12 col-xl-4">
+                                            <div class="card user-card">
+                                                <div class="card-header-img">
+                                                    <img class="img-fluid img-circle" src="assets/images/user-card/card/installer.png" alt="card-img">
+                                                    <h4>Cedric Kelly</h4>
+                                                    <h5>abc123@domain.com</h5>
+                                                    <h4>Instalador</h4>
+                                                </div>
+                                              
+                                                <p>Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.</p>
+                                                <div class="set-btn">
+                                                    <!-- <button type="button" class="btn btn-primary btn-outline-primary waves-effect waves-light m-r-15"><i class="icofont icofont-plus m-r-5"></i>Ver Clientes</button>
+                                                    <button type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of row -->
+                                </div>
+                            </div>
+                            <!-- Simple card end -->
                         </div>
                     </div>
                 </div>
+                <!-- Page-body end -->
             </div>
         </div>
+        <!-- Main-body end -->
+        
     </div>
-    <!-- Warning Section Ends -->
-    <!-- Required Jquery -->
-    <script type="text/javascript" src="../bower_components/jquery/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../bower_components/popper.js/js/popper.min.js"></script>
-    <script type="text/javascript" src="../bower_components/bootstrap/js/bootstrap.min.js"></script>
-    <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="../bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
-    <!-- modernizr js -->
-    <script type="text/javascript" src="../bower_components/modernizr/js/modernizr.js"></script>
-    <script type="text/javascript" src="../bower_components/modernizr/js/css-scrollbars.js"></script>
-    <!-- classie js -->
-    <script type="text/javascript" src="../bower_components/classie/js/classie.js"></script>
-    <!-- Bootstrap date-time-picker js -->
-    <script type="text/javascript" src="assets/pages/advance-elements/moment-with-locales.min.js"></script>
-    <script type="text/javascript" src="../bower_components/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="assets/pages/advance-elements/bootstrap-datetimepicker.min.js"></script>
-    <!-- Date-range picker js -->
-    <script type="text/javascript" src="../bower_components/bootstrap-daterangepicker/js/daterangepicker.js"></script>
-    <!-- Date-dropper js -->
-    <script type="text/javascript" src="../bower_components/datedropper/js/datedropper.min.js"></script>
-    <!-- data-table js -->
-    <script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="../bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="../bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="../bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <!-- ck editor -->
-    <script src="assets/pages/ckeditor/ckeditor.js"></script>
-    <!-- echart js -->
-    <script src="assets/pages/chart/echarts/js/echarts-all.js" type="text/javascript"></script>
-    <!-- i18next.min.js -->
-    <script type="text/javascript" src="../bower_components/i18next/js/i18next.min.js"></script>
-    <script type="text/javascript" src="../bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascript" src="../bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="../bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
-    <!-- Custom js -->
-    <script type="text/javascript" src="assets/js/script.js"></script>
-    <script src="assets/pages/user-profile.js"></script>
-    <script src="assets/js/pcoded.min.js"></script>
-    <script src="assets/js/demo-12.js"></script>
-    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="assets/js/jquery.mousewheel.min.js"></script>
-    <script src="alerts.js"></script>
-    <script src="./backend/js/edit-admin.js"></script>
-    <script src="backend/js/get-profile.js"></script>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    <script>
-        set_id(<?php echo $id_ad; ?>)
-    </script>
+<!-- inicio de formulario de registro de analista -->
+<div id="register" class="modal fade" role="dialog" style="z-index: 4999 !important;">
+    <div class="modal-dialog">
+        <div class="login-card card-block login-card-modal">
+            <form id="form-data" action="" method="post" class="md-float-material" enctype="multipart/form-data">
+                <div class="auth-box">
+                    <div class="row m-b-20">
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                <img src="assets/images/pasteur.png" alt="logo.png">
+                            </div>
+                            <h3 class="text-center txt-primary">Registro de nuevo instalador</h3>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" required minlength="2" maxlength="100">
+                        <span class="md-line"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="mail" class="form-control" id="correo" name="correo" placeholder="Correo electronico" required minlength="5" maxlength="50">
+                        <span class="md-line"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="celular" name="celular" placeholder="Celular" minlength="10" maxlength="20" required>
+                        <span class="md-line"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="carnet" placeholder="Carnet" maxlength="20">
+                        <span class="md-line"></span>
+                    </div>
+                    <!-- Comentario debajo del type text -->
+                    <div style="display: flex !important; flex-direction:column !important;" class="input-group">
+                        <input style="width: 100% !important;" type="date" name="inicio" class="form-control" placeholder="Start date" required minlength="8" maxlength="8">
+                        <code style="color: #0071D9 !important; background-color: white !important;">
+                            Fecha de inicio
+                        </code>
+                    </div>
+                    <!-- Comentario debajo del type text -->
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="reclutador" placeholder="Reclutador" required minlength="2" maxlength="100">
+                        <span class="md-line"></span>
+                    </div>
+                    <div class="input-group c-m" style="display: flex !important; flex-direction:column !important;">
+                        <select id="oficinas" type="text" name="oficina" class="w-100 form-control" valeue="Oficina" required>
+                            <option selected value="6">
+                                seleccionar Oficina
+                            </option>
+                            <option value="1">
+                                Connecticut 
+                            </option>
+                            <option value="2">
+                                Pensilvania 
+                            </option>
+                            <option value="3">
+                                Charlotte 
+                            </option>
+                            <option value="4">
+                                New York 
+                            </option>
+                            <option value="5">
+                                New Jersey 
+                            </option>
+                        </select>
+                        <code style="color: #0071D9 !important; background-color: white !important;">
+                            Seleccionar oficina
+                        </code>
+                    </div>
+                    <div class="input-group c-m" style="display: flex !important; flex-direction:column !important;">
+                        <select id="managers" type="text" name="manager" class="form-control w-100" valeue="Manager" required>
+                            <option selected value="6">
+                                seleccionar Manager
+                            </option>
+                            <option value="1">
+                                Juan 
+                            </option>
+                            <option value="2">
+                                Pedro 
+                            </option>
+                            <option value="3">
+                                Maria 
+                            </option>
+                            <option value="4">
+                                Jose
+                            </option>
+                            <option value="5">
+                                Josephin
+                            </option>
+                        </select>
+                        <code style="color: #0071D9 !important; background-color: white !important;">
+                            Seleccionar manager
+                        </code>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="usuario" class="form-control" placeholder="Usuario" required minlength="5" maxlength="50">
+                        <span class="md-line"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="clave" class="form-control" placeholder="Contraseña" required minlength="5" maxlength="20">
+                        <span class="md-line"></span>
+                    </div>
+                    <!--inicio subir archivos-->
+                    <div class="input-group">
+                        <input class="form-control" name="foto" type="file" id="filer_input1" required> 
+                    </div>
+                    <!--final subir archivos-->
+                    <div class="row m-t-25 text-left">
+                        <div class="col-md-12">
+                            <div class="checkbox-fade fade-in-primary">
+                               
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-12">
+                    <div class="row m-t-15">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center" value="Registrar">
+                        </div>
+                    </div>
+                    <div class="row">
+                    </div>
+                </div>
+            </form>
+            <!-- final formulario de registro de analista-->
+
+
+<!-- Warning Section Ends -->
+<!-- Required Jquery -->
+<script type="text/javascript" src="../bower_components/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="../bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../bower_components/popper.js/js/popper.min.js"></script>
+<script type="text/javascript" src="../bower_components/bootstrap/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="../bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="../bower_components/modernizr/js/modernizr.js"></script>
+<script type="text/javascript" src="../bower_components/modernizr/js/css-scrollbars.js"></script>
+<!-- classie js -->
+<script type="text/javascript" src="../bower_components/classie/js/classie.js"></script>
+<!-- i18next.min.js -->
+<script type="text/javascript" src="../bower_components/i18next/js/i18next.min.js"></script>
+<script type="text/javascript" src="../bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
+<script type="text/javascript" src="../bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+<script type="text/javascript" src="../bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+<!-- Custom js -->
+<script type="text/javascript" src="assets/js/script.js"></script>
+
+<script src="assets/js/pcoded.min.js"></script>
+<script src="assets/js/demo-12.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/jquery.mousewheel.min.js"></script>
+<script src="backend/js/register-analist.js"></script>
+<script src="backend/js/get-analist.js"></script>
+<script src="backend/js/get-profile.js"></script>
+<script src="./backend/js/empty_manager.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<script src="alerts.js"></script>
+<script src="./backend/js/go-edit-analist.js"></script>
+<script src="./backend/js/remove-elements.js"></script>
+
 </body>
 
 </html>
