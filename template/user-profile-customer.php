@@ -701,7 +701,7 @@
                                 <span class="pcoded-micon"><i class="ti-home"></i></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                             </a>
-                            <li class="pcoded-hasmenu">
+                            <li class="pcoded-hasmenu r_analist">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
                                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
@@ -714,7 +714,7 @@
                                 </a>
                         <ul class="pcoded-submenu">
                         </li>
-                        <li class="">
+                        <li class="r_manager">
                             <a href="administradores.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
@@ -726,7 +726,7 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="r_manager">
                             <a href="managers.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
@@ -892,7 +892,7 @@
                                                         $analista = $res_analista[0]["Id"]??0;
                                                     ?>
                                                         <h5 class="text-header-botones card-header-text">Estado del cliente</h5> 
-                                                        <div class="container-botones d-flex justify-content-center">
+                                                        <div class="container-botones d-flex justify-content-center r_analist">
                                                             <button onclick="go_edit('<?php echo $id_cl;?>', '<?php echo $id_co;?>', '<?php echo $analista;?>')" id="boton-editar-perfil" class="btn-same btn btn-primary">Editar</button>
                                                             <button onclick="" id="boton-eliminar-perfil" class="btn-same btn btn-danger">Eliminar</button>
                                                         </div>
@@ -922,7 +922,7 @@
                                                                                                     }
                                                                                                     echo $analista;
                                                                                                     ?>
-                                                                                                    <a href="user-profile-analyst.php?vmekmsi23xmfvwe155=<?php echo $res_cl[0]["Nombre_representante"]; ?>" style="display: flex; align-items:center;" title="Ver perfil del Analista">
+                                                                                                    <a class="r_analist" href="user-profile-analyst.php?vmekmsi23xmfvwe155=<?php echo $res_cl[0]["Nombre_representante"]; ?>" style="display: flex; align-items:center;" title="Ver perfil del Analista">
                                                                                                         <svg style="cursor: pointer; margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                                                                                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                                                                                             <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
@@ -2213,5 +2213,6 @@
     <script src="backend/js/delete-customer.js"></script>
     <script src="alerts.js"></script>
     <script src="backend/js/get-profile.js"></script>
+    <script src="backend/js/remove-elements.js"></script>
 </body>
 </html>

@@ -558,7 +558,7 @@
                                 </a>
                         <ul class="pcoded-submenu">
                         </li>
-                        <li class="">
+                        <li class="r_manager">
                             <a href="administradores.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
@@ -570,7 +570,7 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="r_manager">
                             <a href="managers.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
@@ -704,7 +704,7 @@
                                                             <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <h5 class="card-header-text">Informacion del Analista</h5>
                                                                 <div style="display: flex; gap: 10px;">
-                                                                    <button onclick="show()" id="delete" class="btn btn-danger">
+                                                                    <button onclick="show()" id="delete" class="btn btn-danger r_manager">
                                                                         Eliminar
                                                                     </button>
                                                                     <a href="user-profile-analyst-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
@@ -725,7 +725,7 @@
                                                                                                         <th scope="row">Manager asignado</th>
                                                                                                         <td style="display: flex; align-items:center;">
                                                                                                             <?php echo $name_s; ?>
-                                                                                                            <a href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_s; ?>" style="display: flex; align-items:center;" title="Ver perfil del Analista">
+                                                                                                            <a class="r_manager" href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_s; ?>" style="display: flex; align-items:center;" title="Ver perfil del Manager">
                                                                                                                 <svg style="cursor: pointer; margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                                                                                                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                                                                                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
@@ -1078,6 +1078,7 @@
     <script src="backend/js/get-customer-analist.js"></script>
     <script src="backend/js/delete-analist.js"></script>
     <script src="backend/js/get-profile.js"></script>
+    <script src="backend/js/remove-elements.js"></script>
 
     <script>
         get_id(<?php echo $id; ?>)
