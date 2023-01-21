@@ -13,7 +13,7 @@
                 
                 // Objeto de conexion y querys para traer los datos del cliente y co aplicante
                 $oCon = connect();
-                $sql_cl = "SELECT * FROM clientes WHERE Id = $id_cl";
+                $sql_cl = "SELECT clientes.*, estatus.Estatus as estatus, estatus.Color as color FROM clientes JOIN estatus ON estatus.Id = clientes.Estatus WHERE clientes.Id = $id_cl";
                 $sql_co = "SELECT * FROM co_aplicantes WHERE Id = $id_co";
                 
                 // Ejecucion de los querys
@@ -941,7 +941,7 @@
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
-                                                                                                <th scope="row">Cantidad Fiananciada</th>
+                                                                                                <th scope="row">Cantidad Financiada</th>
                                                                                                 <td>
                                                                                                     <?php echo $res_cl[0]["Cantidad_financiada"]; ?>
                                                                                                 </td>
@@ -954,18 +954,14 @@
                                                                             <div class="table-responsive">
                                                                                 <table class="table">
                                                                                     <tbody>
-                                                                                            <tr>
+                                                                                            <tr">
                                                                                                 <th scope="row">Estatus</th>
                                                                                                 <td>
-                                                                                                    <span class="label label-warning">Pendiente </span>
-                                                                                                    <label class="label label-md label-danger">Cancelado</label>
-                                                                                                    <label class="label label-md label-success">Competado</label>
+                                                                                                    <p style="background-color: <?php echo $res_cl[0]["color"];?>; color: white; font-weight: bold; padding: 3px 5px; border-radius: 7px; text-align: center; font-size: 14px; display: flex; justify-content: center; max-width: 170px">
+                                                                                                        <?php echo $res_cl[0]["estatus"]; ?>
+                                                                                                    </p>
                                                                                                 </td>
                                                                                             </tr>
-                                                                                            <th>Fecha de mantenimiento</th>
-                                                                                            <td>04/12/1995</td>
-                                                                                            </tr>
-                                                                                        
                                                                                     </tbody>
                                                                                 </table>
                                                                                 </div>

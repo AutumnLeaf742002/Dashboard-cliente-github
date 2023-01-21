@@ -998,7 +998,7 @@
                                                                                 <div class="table-responsive">
                                                                                     <table class="table">
                                                                                         <tbody>
-                                                                                                <tr>
+                                                                                                <tr class="r_manager">
                                                                                                     <th scope="row">Estatus</th>
                                                                                                     <td>
                                                                                                         <select id="" type="text" class="form-control" name="Estatus">

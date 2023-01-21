@@ -1,9 +1,12 @@
 Arreglar que cuando se esta en la parte de editar un cliente, en el menu lateral aparece roles en azul, cuando deberia aparecer clientes en azul
 Poner bien lo de la foto del perfil de quien esta logueado en la pagina de las citas
 poner el nombre de la pagina de citas en el menu lateral ya que la puse como php y no como html
+Revisar cada formulario de la pagina y a los campos que aparescan con un borde en azul, quitarle el atributo required del input
 
 
 alex:
-terminar lo de los estatus con los colores
 eliminar elementos html segun cada rol para visualizar
 eliminar el codigo que se encuentra en event-full-calendar mas adelante
+Terminar lo de los instaladores
+Terminar lo de las citas
+Hacer de alguna manera que cuando un mantenimiento se esta acercando, aparezca en rojo o algun color
