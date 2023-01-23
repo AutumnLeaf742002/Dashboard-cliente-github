@@ -808,7 +808,7 @@
                                                                 </div>
 
                                                                 <div class="card-block">
-                                                                    <div class="row users-card" id="list-analist">
+                                                                    <div class="row users-card" id="list-instaladores">
                                                                         <div class="col-lg-12 col-xl-4">
                                                                             <div class="card user-card">
                                                                                 <div class="card-header-img">
@@ -937,6 +937,7 @@
                             <script src="./backend/js/restrictor-analist.js"></script>
                             <script src="./backend/js/restrictor-manager.js"></script>
                             <script src="./backend/js/register-instalador.js"></script>
+                            <script src="./backend/js/get-instaladores.js"></script>
                             <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 
 </body>

@@ -1,3 +1,5 @@
+const list_instaladores = document.getElementById("list-instaladores")
+
 function get_instaladores()
 {
     let request = new XMLHttpRequest()
@@ -7,7 +9,7 @@ function get_instaladores()
 
         if (request.readyState == 4 && request.status == 200) {
 
-            alert(request.responseText)
+            list_instaladores.innerHTML = request.responseText
         }
     }
 
