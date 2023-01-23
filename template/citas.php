@@ -1047,7 +1047,7 @@
                                                             <select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder=" "
+                                                            <input type="text" class="form-control required" placeholder=" "
                                                                 maxlength="50" id="nombre_plomero">
                                                             <span class="md-line"></span>
                                                             <label for="">Nombre del Instalador</label>
@@ -1056,42 +1056,42 @@
                                                         <div style="display: flex !important; flex-direction:column !important;"
                                                             class="input-group">
                                                             <input style="width: 100% !important;" type="text"
-                                                                class="form-control"
+                                                                class="form-control required"
                                                                 placeholder=" "
                                                                 maxlength="50" id="apellido_plomero">
                                                                 <label for="">Apellido del Instalador</label>
                                                         </div>
                                                         <!-- Comentario debajo del type text -->
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control"
+                                                            <input type="text" class="form-control required"
                                                                 placeholder=" "
                                                                 maxlength="20" id="cell_plomero">
                                                             <span class="md-line"></span>
                                                             <label for="">Celular del Instalador</label>
                                                         </div>
                                                         <div class="input-group">
-                                                            <input type="date" class="form-control"
+                                                            <input type="date" class="form-control required"
                                                                 placeholder=" " required minlength="2"
                                                                 maxlength="100" id="fecha">
                                                             <span class="md-line"></span>
                                                             <label for="">Fecha</label>
                                                         </div>
                                                         <div class="input-group">
-                                                            <input type="time" class="form-control"
+                                                            <input type="time" class="form-control required"
                                                                 placeholder=" "
                                                                 id="hora">
                                                             <span class="md-line"></span>
                                                             <label for="">Hora</label>
                                                         </div>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control"
+                                                            <input type="text" class="form-control required"
                                                                 placeholder=" "
                                                                 id="direccion" maxlength="200">
                                                             <span class="md-line"></span>
                                                             <label for="">Dirección</label>
                                                         </div>
                                                         <div class="input-group">
-                                                            <select class="form-control" id="tipo_instalacion">
+                                                            <select class="form-control required" id="tipo_instalacion">
                                                                 <option selected value="">
                                                                     Seleccione un tipo de instalación
                                                                 </option>

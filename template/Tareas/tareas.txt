@@ -8,3 +8,5 @@ eliminar el codigo que se encuentra en event-full-calendar mas adelante
 Terminar lo de los instaladores
 Terminar lo de las citas
 Hacer de alguna manera que cuando un mantenimiento se esta acercando, aparezca en rojo o algun color
+en el registro de citas, seleccionar instalador, quitar apellido y numero del instalador
+que la direccion del cliente, se seleccione segun el cliente seleccionado
