@@ -8,7 +8,7 @@
     }
     else
     {
-        echo "fulanito";
+        header("location: ../../login.html");
     }
 
 ?>

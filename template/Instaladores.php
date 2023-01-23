@@ -1,9 +1,20 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    include_once "backend/php/connection.php";
+    include_once "backend/php/commands.php";
+    $oCon = connect();
+
+    define("sql_o", "SELECT * FROM offices");
+    $res_offices = select($oCon, sql_o);
+
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <script src="backend/js/session.js"></script>
-    <script src="backend/js/restrictor-analist.js"></script>
+
     <title>Instaladores</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -773,7 +784,7 @@
                                                                 </div>
                                                                 <div class="card-block">
                                                                     <p>
-                                                                        Click al boton para registrar un nuevo analista.
+                                                                        Click al boton para registrar un nuevo Instalador.
                                                                     </p>
                                                                     <p class="text-center">
                                                                         <button type="button"
@@ -805,62 +816,13 @@
                                                                                         src="assets/images/user-card/card/installer.png"
                                                                                         alt="card-img">
                                                                                     <h4>Michelle House</h4>
-                                                                                    <h5>abc123@domain.com</h5>
+                                                                                    <h5>Celular</h5>
                                                                                     <h4>Instalador</h4>
-                                                                                </div>
-
-                                                                                <p>Lorem ipsum dolor sit amet, consectet
-                                                                                    ur adipisicing elit, sed do eiusmod
-                                                                                    temp or incidi dunt ut labore et.
-                                                                                </p>
-                                                                                <div class="set-btn">
-                                                                                    <!--<button type="button" class="btn btn-primary btn-outline-primary waves-effect waves-light m-r-15"><i class="icofont icofont-plus m-r-5" src="user-profile-analyst.html"> </i>Ver Clientes </button>
-                                                <button type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button> -->
+                                                                                    <h4>Oficina</h4>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-lg-12 col-xl-4">
-                                                                            <div class="card user-card">
-                                                                                <div class="card-header-img">
-                                                                                    <img class="img-fluid img-circle"
-                                                                                        src="assets/images/user-card/card/installer.png"
-                                                                                        alt="card-img">
-                                                                                    <h4>Cara Stevens</h4>
-                                                                                    <h5>abc123@domain.com</h5>
-                                                                                    <h4>Instalador</h4>
-                                                                                </div>
-                                                                                <p>Lorem ipsum dolor sit amet, consectet
-                                                                                    ur adipisicing elit, sed do eiusmod
-                                                                                    temp or incidi dunt ut labore et.
-                                                                                </p>
-                                                                                <a href="user-profile-analyst.html">
-                                                                                    <div class="set-btn">
-                                                                                        <!-- <button type="button" class="btn btn-primary btn-outline-primary waves-effect waves-light m-r-15"><i class="icofont icofont-plus m-r-5"src="user-profile"></i>Ver Clientes</button>
-                                                    <button type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button> -->
-                                                                                    </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        </a>
-                                                                        <div class="col-lg-12 col-xl-4">
-                                                                            <div class="card user-card">
-                                                                                <div class="card-header-img">
-                                                                                    <img class="img-fluid img-circle"
-                                                                                        src="assets/images/user-card/card/installer.png"
-                                                                                        alt="card-img">
-                                                                                    <h4>Cedric Kelly</h4>
-                                                                                    <h5>abc123@domain.com</h5>
-                                                                                    <h4>Instalador</h4>
-                                                                                </div>
-                                                                                <p>Lorem ipsum dolor sit amet, consectet
-                                                                                    ur adipisicing elit, sed do eiusmod
-                                                                                    temp or incidi dunt ut labore et.
-                                                                                </p>
-                                                                                <div class="set-btn">
-                                                                                    <!-- <button type="button" class="btn btn-primary btn-outline-primary waves-effect waves-light m-r-15"><i class="icofont icofont-plus m-r-5"></i>Ver Clientes</button>
-                                                    <button type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button> -->
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                        
                                                                     </div>
                                                                     <!-- end of row -->
                                                                 </div>
@@ -898,40 +860,35 @@
                                     </div>
                                     <hr>
                                     <div class="input-group">
-                                        <input type="text" class="form-control required" name="nombre" placeholder=" "
-                                            required minlength="2" maxlength="100">
+                                        <input id="name" type="text" class="form-control required" name="nombre" placeholder=" "
+                                        maxlength="100">
                                         <span class="md-line"></span>
                                         <label for="">Nombre</label>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" class="form-control required" name="celular" name="celular"
-                                            placeholder=" " minlength="10" maxlength="20" required>
+                                        <input id="cell" type="text" class="form-control required"
+                                        placeholder=" "  maxlength="20">
                                         <span class="md-line"></span>
                                         <label for="">Celular</label>
                                     </div>
                                     <div class="input-group c-m"
                                         style="display: flex !important; flex-direction:column !important;">
-                                        <select id="oficinas" type="text" name="oficina" class="w-100 form-control"
-                                            valeue="Oficina" required>
-                                            <option selected value="6">
+                                        <select id="office" type="text" class="w-100 form-control">
+                                            <option selected value="">
                                                 seleccionar Oficina
                                             </option>
-                                            <option value="1">
-                                                Connecticut
-                                            </option>
-                                            <option value="2">
-                                                Pensilvania
-                                            </option>
-                                            <option value="3">
-                                                Charlotte
-                                            </option>
-                                            <option value="4">
-                                                New York
-                                            </option>
-                                            <option value="5">
-                                                New Jersey
-                                            </option>
+                                            <?php 
+                                                foreach($res_offices as $item)
+                                                {
+                                                    echo '<option value="'.$item["Id"].'">'.$item["Name_office"].'</option>';
+                                                }
+                                            ?>
                                         </select>
+                                        <div class="row m-t-15">
+                                        <div class="col-md-12">
+                                            <button onclick="register_instalador()" type="button" class="btn btn-primary btn-md btn-block waves-effect text-center">Register Now</button>
+                                        </div>
+                                    </div>
                                     </div>
                                     <div class="row">
                                     </div>
@@ -973,14 +930,14 @@
                             <script src="assets/js/demo-12.js"></script>
                             <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
                             <script src="assets/js/jquery.mousewheel.min.js"></script>
-                            <script src="backend/js/register-analist.js"></script>
-                            <script src="backend/js/get-analist.js"></script>
+
                             <script src="backend/js/get-profile.js"></script>
-                            <script src="./backend/js/empty_manager.js"></script>
-                            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
                             <script src="alerts.js"></script>
-                            <script src="./backend/js/go-edit-analist.js"></script>
                             <script src="./backend/js/remove-elements.js"></script>
+                            <script src="./backend/js/restrictor-analist.js"></script>
+                            <script src="./backend/js/restrictor-manager.js"></script>
+                            <script src="./backend/js/register-instalador.js"></script>
+                            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 
 </body>
 
