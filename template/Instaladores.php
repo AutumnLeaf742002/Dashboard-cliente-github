@@ -743,7 +743,7 @@
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             <li id="instaladores">
-                                <a href="Instaladores.html">
+                                <a href="Instaladores.php">
                                     <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                             height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
                                             <path
