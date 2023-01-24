@@ -6,14 +6,13 @@
         include_once "commands.php";
         $oCon = connect();
 
-        define("sql", "SELECT instaladores.*, offices.Name_office as office FROM instaladores JOIN offices ON offices.Id = instaladores.Id_office");
+        define("sql", "SELECT instaladores.*, offices.Name_office as office FROM instaladores JOIN offices ON offices.Id = instaladores.Id_office;");
 
-        $res = command($oCon, sql);
-
-        // if(is_array($res))
-        // {
-        //     if(count($res) > 0)
-        //     {
+        $res = select($oCon, sql);
+        if(is_array($res) == true)
+        {
+            if(count($res) > 0)
+            {
                     foreach($res as $item)
                     {
                         echo '<div class="col-lg-12 col-xl-4">
@@ -30,8 +29,8 @@
                                 </div>
                             </div>';
                     }
-            // }
-    //     }
+            }
+        }
 
     }
     else
