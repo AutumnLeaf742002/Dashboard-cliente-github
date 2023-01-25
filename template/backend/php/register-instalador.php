@@ -1,6 +1,9 @@
 <?php
 
-    if(!empty($_POST))
+    session_start();
+    $rol_logued = $_SESSION["rol"];
+
+    if(!empty($_POST) && $rol_logued == "1")
     {
         include_once "connection.php";
         include_once "commands.php";

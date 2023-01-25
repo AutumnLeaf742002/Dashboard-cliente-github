@@ -9,30 +9,77 @@
         $id_logued = $_SESSION["id"];
         $rol_logued = $_SESSION["rol"];
 
-        $id_cliente = $_POST["id_cliente"];
-        $nombre_plomero = $_POST["nombre_plomero"];
-        $apellido_plomero = $_POST["apellido_plomero"];
-        $cell_plomero = $_POST["cell_plomero"];
+        $cliente = $_POST["cliente"];
+        $instalador = $_POST["instalador"];
         $fecha = $_POST["fecha"];
         $hora = $_POST["hora"];
-        $direccion = $_POST["direccion"];
         $tipo_instalacion = $_POST["tipo_instalacion"];
 
-        $id_cliente = trim($id_cliente);
-        $nombre_plomero = trim($nombre_plomero);
-        $nombre_plomero = ucfirst($nombre_plomero);
-        $apellido_plomero = trim($apellido_plomero);
-        $apellido_plomero = ucfirst($apellido_plomero);
-        $cell_plomero = trim($cell_plomero);
+        $cliente = trim($cliente);
+        $instalador = trim($instalador);
         $fecha = trim($fecha);
         $hora = trim($hora);
-        $direccion = trim($direccion);
         $tipo_instalacion = trim($tipo_instalacion);
 
-        define("sql", "INSERT INTO citas (Id_cliente, Nombre_plomero, Apellido_plomero, Cell_plomero, Fecha, Hora, Direccion, Tipo_instalacion, Id_agendador, Rol, Estado_cita) VALUES ($id_cliente, '$nombre_plomero', '$apellido_plomero', '$cell_plomero', '$fecha', '$hora', '$direccion', '$tipo_instalacion', $id_logued, $rol_logued, 4)");
-        $res = command($oCon, sql);
+        //confirmacion
 
-        echo $res;
+        $res_office_instalador = select($oCon, "SELECT Id_office FROM instaladores WHERE Id = $instalador");
+        $res_office_cliente = select($oCon, "SELECT Id_office FROM clientes WHERE Id = $cliente");
+
+        if($res_office_cliente[0]["Id_office"] == $res_office_instalador[0]["Id_office"])
+        {
+            $confirmacion = true;
+
+            $res_confirmacion = select($oCon, "SELECT * FROM citas WHERE Id_instalador = $instalador");
+
+            if(is_array($res_confirmacion) == true)
+            {
+                if(count($res_confirmacion) > 0)
+                {
+                    foreach($res_confirmacion as $item)
+                    {
+                        if($item["Fecha"] == $fecha)
+                        {
+                            $array_hora_b = explode(":", $item["Hora"]);
+                            $array_hora_a = explode(":", $hora);
+                            $total_b = (intval($array_hora_b[0])*60)+intval($array_hora_b[1]);
+                            $total_a = (intval($array_hora_a[0])*60)+intval($array_hora_a[1]);
+                            $diferencia = $total_a - $total_b;
+
+                            if($diferencia >= 180 || $diferencia <= -180)
+                            {
+                                $confirmacion = true;
+                            }
+                            else
+                            {
+                                $confirmacion = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if($confirmacion == true)
+            {
+                //ejecucion
+
+                define("sql", "INSERT INTO citas (Id_cliente, Id_instalador, Fecha, Hora, Tipo_instalacion, Id_agendador, Rol, Estado_cita) VALUES ($cliente, '$instalador', '$fecha', '$hora', '$tipo_instalacion', $id_logued, $rol_logued, 4)");
+                $res = command($oCon, sql);
+
+                echo $res;
+            }
+            else
+            {
+                echo "Cada cita con el mismo Instalador debe tener minimo una diferencia de 3 horas si son el mismo dia";
+            }
+        }
+        else
+        {
+            echo "La oficina del Cliente y el Instalador debe ser la misma";
+        }
+
+
     }
     else
     {

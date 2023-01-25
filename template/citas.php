@@ -1,5 +1,7 @@
 ﻿<?php
 
+    error_reporting(E_ERROR);
+
     include_once "backend/php/connection.php";
     include_once "backend/php/commands.php";
     $oCon = connect();
@@ -8,21 +10,62 @@
     $id_logued = $_SESSION["id"];
     $rol_logued = $_SESSION["rol"];
 
-    if($rol_logued == "1")
+    $create = false;
+    $cl = 0;
+
+    if(!empty($_GET))
     {
-        define("sql_cl", "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN offices ON offices.Id = clientes.Id_office ORDER BY Primer_nombre");
-    }
-    else if($rol_logued == "2")
-    {
-        define("sql_cl", "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON clientes.Nombre_representante = analyst.Id JOIN managers ON analyst.Id_supervisor = managers.Id JOIN offices ON offices.Id = clientes.Id_office WHERE managers.Id = $id_logued ORDER BY Primer_nombre");
-    }
-    else if($rol_logued == "3")
-    {
-        define("sql_cl", "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN offices ON offices.Id = clientes.Id_office WHERE clientes.Nombre_representante = $id_logued ORDER BY Primer_nombre");
+        $create = true;
+        $cl = $_GET["cl"]??0;
     }
 
+    $res_cl = select($oCon, "SELECT Primer_nombre, Id_office FROM clientes WHERE Id = $cl");
+    $cl_office = $res_cl[0]["Id_office"];
 
-    $res_cl = select($oCon, sql_cl);
+    define("sql_instalador", "SELECT instaladores.*, offices.Name_office FROM instaladores JOIN offices ON offices.Id = instaladores.Id_office WHERE instaladores.Id_office = $cl_office");
+    $res_instaladores = select($oCon, sql_instalador);
+
+    $options_instaladores = "";
+
+    foreach($res_instaladores as $item)
+    {
+        $options_instaladores .= '<option value="'.$item["Id"].'">'.$item["Nombre"].'</option>';
+    }
+
+//
+
+    // if($rol_logued == "1")
+    // {
+    //     define("sql_cita", "SELECT");
+    // }
+    // else if($rol_logued == "2")
+    // {
+    //     define("sql_cita", "");
+    // }
+    // else if($rol_logued == "3")
+    // {
+    //     define("sql_cita", "");
+    // }
+
+    if($rol_logued == "3")
+    {
+        $stay = false;
+        $res_clientes_analista = select($oCon, "SELECT Id FROM clientes WHERE Nombre_representante = $id_logued");
+
+        foreach($res_clientes_analista as $item)
+        {
+            if($cl == $item["Id"])
+            {
+                $stay = true;
+            }
+        }
+
+        if($stay == false)
+        {
+            header("location: login.html");
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -754,7 +797,7 @@
                                     <span class="pcoded-mtext" data-i18n="nav.dash.default">Crear Citas</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
-                            <li id="">
+                            <li class="r_analist r_manager" id="">
                             <a href="Instaladores.php">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
                                     <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
@@ -783,28 +826,37 @@
                                             <div class="row">
                                                 <div class="col-md-12">
 
-                                                    <!-- inicio div de registro de analista -->
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            <h5>Registrar cita</h5>
-                                                            <div class="card-header-right">
-                                                                <i class="icofont icofont-rounded-down"></i>
-                                                                <i class="icofont icofont-refresh"></i>
-
+                                                    <?php
+                                                    
+                                                        if($create == true)
+                                                        {
+                                                            echo '
+                                                            <!-- inicio div de registro de analista -->
+                                                            <div class="card">
+                                                                <div class="card-header">
+                                                                    <h5>Registrar cita</h5>
+                                                                    <div class="card-header-right">
+                                                                        <i class="icofont icofont-rounded-down"></i>
+                                                                        <i class="icofont icofont-refresh"></i>
+        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-block">
+                                                                    <p>
+                                                                        Click al boton para Agendar nueva cita
+                                                                    </p>
+                                                                    <p class="text-center">
+                                                                        <button type="button" class="btn btn-primary auth-btn"
+                                                                            data-toggle="modal"
+                                                                            data-target="#register">Registrar</button>
+                                                                    </p>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="card-block">
-                                                            <p>
-                                                                Click al boton para Agendar nueva cita
-                                                            </p>
-                                                            <p class="text-center">
-                                                                <button type="button" class="btn btn-primary auth-btn"
-                                                                    data-toggle="modal"
-                                                                    data-target="#register">Registrar</button>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- final div de registro de analista -->
+                                                            <!-- final div de registro de analista -->
+                                                            ';
+                                                        }
+                                                    
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -1019,110 +1071,91 @@
                                         style="z-index: 4999 !important;">
                                         <div class="modal-dialog">
                                             <div class="login-card card-block login-card-modal">
+                                                <?php
+                                                    if($create == true)
+                                                    {
+                                                        echo '
                                                     <div class="auth-box">
-                                                        <div class="row m-b-20">
-                                                            <div class="col-md-12">
-                                                                <div class="text-center">
-                                                                    <img src="assets/images/pasteur.png" alt="logo.png">
-                                                                </div>
-                                                                <h3 class="text-center txt-primary">Registro de nueva cita</h3>
-                                                                
-                                                                <h5 class="fs-subtitle text-center" style="display: inline;">Los campos marcados con <p class="text-center" style="color: red; display: inline;">*</p> son obligatorios</h5>
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="input-group">
-                                                            <select class="form-control" id="id_cliente">
-                                                                <option selected value="">
-                                                                    Seleccione un cliente
-                                                                </option>
-                                                                <?php
-
-                                                                    foreach($res_cl as $item)
-                                                                    {
-                                                                        echo '<option value="'.$item["Id"].'">'.$item["Primer_nombre"].' '.$item["Apellido"].' - OFICINA: '.$item["office"].'</option>';
-                                                                    }
-
-                                                                ?>
-                                                            <select>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control required" placeholder=" "
-                                                                maxlength="50" id="nombre_plomero">
-                                                            <span class="md-line"></span>
-                                                            <label for="">Nombre del Instalador</label>
-                                                        </div>  
-                                                        <!-- Comentario debajo del type text -->
-                                                        <div style="display: flex !important; flex-direction:column !important;"
-                                                            class="input-group">
-                                                            <input style="width: 100% !important;" type="text"
-                                                                class="form-control required"
-                                                                placeholder=" "
-                                                                maxlength="50" id="apellido_plomero">
-                                                                <label for="">Apellido del Instalador</label>
-                                                        </div>
-                                                        <!-- Comentario debajo del type text -->
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control required"
-                                                                placeholder=" "
-                                                                maxlength="20" id="cell_plomero">
-                                                            <span class="md-line"></span>
-                                                            <label for="">Celular del Instalador</label>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <input type="date" class="form-control required"
-                                                                placeholder=" " required minlength="2"
-                                                                maxlength="100" id="fecha">
-                                                            <span class="md-line"></span>
-                                                            <label for="">Fecha</label>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <input type="time" class="form-control required"
-                                                                placeholder=" "
-                                                                id="hora">
-                                                            <span class="md-line"></span>
-                                                            <label for="">Hora</label>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control required"
-                                                                placeholder=" "
-                                                                id="direccion" maxlength="200">
-                                                            <span class="md-line"></span>
-                                                            <label for="">Dirección</label>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <select class="form-control required" id="tipo_instalacion">
-                                                                <option selected value="">
-                                                                    Seleccione un tipo de instalación
-                                                                </option>
-                                                                <option value="Panel Solar">
-                                                                    Panel Solar
-                                                                </option>
-                                                                <option value="Filtros de Agua">
-                                                                    Filtros de Agua
-                                                                </option>
-                                                            <select>
-                                                        </div>
-                                                        <!--inicio subir archivos-->
-                                                        <!--final subir archivos-->
-                                                        <div class="row m-t-25 text-left">
-                                                            <div class="col-md-12">
-                                                                <div class="checkbox-fade fade-in-primary">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                    <div class="row m-b-20">
                                                         <div class="col-md-12">
-                                                            <div class="row m-t-15">
-                                                                <div class="col-md-12">
-                                                                    <button onclick="register_cita()"
-                                                                        class="btn btn-primary btn-md btn-block waves-effect text-center">
-                                                                        Registrar Cita
-                                                                    </button>
-                                                                </div>
+                                                            <div class="text-center">
+                                                                <img src="assets/images/pasteur.png" alt="logo.png">
                                                             </div>
-                                                            <div class="row">
+                                                            <h3 class="text-center txt-primary">Registro de nueva cita</h3>
+                                                            
+                                                            <h5 class="fs-subtitle text-center" style="display: inline;">Los campos marcados con <p class="text-center" style="color: red; display: inline;">*</p> son obligatorios</h5>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                      
+                                                    <!-- Comentario debajo del type text -->
+                                                    <div class="input-group">
+                                                        <input id="cliente" readonly style="display: none;" value="'.$cl.'">
+                                                        <input type="text" class="form-control required"
+                                                            placeholder=" " readonly
+                                                            value="'.$res_cl[0]["Primer_nombre"].'">
+                                                        <span class="md-line"></span>
+                                                        <label for="">Cliente seleccionado</label>
+                                                    </div>
+
+                                                    <div class="input-group">
+                                                        <select class="form-control" id="instalador">
+                                                            <option selected value="">Seleccionar Instalador</option>
+                                                            '.$options_instaladores.'
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control required"
+                                                            placeholder=" "
+                                                            id="fecha">
+                                                        <span class="md-line"></span>
+                                                        <label for="">Fecha</label>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="time" class="form-control required"
+                                                            placeholder=" "
+                                                            id="hora">
+                                                        <span class="md-line"></span>
+                                                        <label for="">Hora</label>
+                                                    </div>
+                                                    
+                                                    <div class="input-group">
+                                                        <select class="form-control required" id="tipo_instalacion">
+                                                            <option selected value="">
+                                                                Seleccione un tipo de instalación
+                                                            </option>
+                                                            <option value="Panel Solar">
+                                                                Panel Solar
+                                                            </option>
+                                                            <option value="Filtros de Agua">
+                                                                Filtros de Agua
+                                                            </option>
+                                                        <select>
+                                                    </div>
+                                                    <!--inicio subir archivos-->
+                                                    <!--final subir archivos-->
+                                                    <div class="row m-t-25 text-left">
+                                                        <div class="col-md-12">
+                                                            <div class="checkbox-fade fade-in-primary">
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="row m-t-15">
+                                                            <div class="col-md-12">
+                                                                <button onclick="register_cita()"
+                                                                    class="btn btn-primary btn-md btn-block waves-effect text-center">
+                                                                    Registrar Cita
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                        </div>
+                                                    </div>
+                                                    ';
+                                                    }
+                                                ?>
                                                 <!-- final formulario de registro de analista-->
                                                 <!--popup de regsitro-->
                                                 <!-- contenido -->
