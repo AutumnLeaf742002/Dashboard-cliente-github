@@ -1,5 +1,3 @@
-poner el nombre de la pagina de citas en el menu lateral ya que la puse como php y no como html
-Revisar cada formulario de la pagina y a los campos que aparescan con un borde en azul, quitarle el atributo required del input
 
 
 alex:
