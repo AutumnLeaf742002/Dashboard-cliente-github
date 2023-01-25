@@ -7,7 +7,7 @@
     include_once "commands.php";
 
     $oCon = connect();
-    $sql = "SELECT * FROM managers";
+    $sql = "SELECT managers.*, offices.Name_office as office FROM managers JOIN offices ON offices.Id = managers.Id_office";
     $res = select($oCon, $sql);
 
     foreach($res as $item)
@@ -16,7 +16,7 @@
         {
             echo' 
             <option value="'.$item["Id"].'">
-                '.$item["Name"].'
+                '.$item["Name"].' ('.$item["office"].')
             </option>
             ';
         }

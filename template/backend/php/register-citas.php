@@ -30,7 +30,7 @@
         {
             $confirmacion = true;
 
-            $res_confirmacion = select($oCon, "SELECT * FROM citas WHERE Id_instalador = $instalador");
+            $res_confirmacion = select($oCon, "SELECT * FROM citas WHERE Id_instalador = $instalador AND Estado_cita = 4");
 
             if(is_array($res_confirmacion) == true)
             {
@@ -71,7 +71,7 @@
             }
             else
             {
-                echo "Cada cita con el mismo Instalador debe tener minimo una diferencia de 3 horas si son el mismo dia";
+                echo "El Instalador estará ocupado con otra cita en esa hora";
             }
         }
         else

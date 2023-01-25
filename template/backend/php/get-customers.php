@@ -44,30 +44,30 @@
                 }
 
                 echo'
-                    <tr class="hover" style="cursor: pointer;" onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
-                        <td>
+                    <tr class="hover" style="cursor: pointer;">
+                        <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                             <img src="Avatars/avatar-'.$item["Avatar"].'.svg" class="d-inline-block img-circle " alt="tbl">
                         </td>
-                        <td class="pro-name">
+                        <td class="pro-name" onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                             '.$item["Primer_nombre"].'
                         </td>
-                        <td>
+                        <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                             '.$item["N_seguro_social"].'
                         </td>
-                        <td>
+                        <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                             '.$item["office"].'
                         </td>
-                        <td>
+                        <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                             '.$item["Estado"].'
                         </td>
-                        <td>
+                        <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                             '.$item["Vencimiento"].'
                         </td>
-                        <td>
+                        <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                             '.$item["Direccion"].'
                         </td>
                         <td>
-                            <button onclick="" id="boton-eliminar-perfil" class="btn-same btn btn-danger">agendar cita</button>
+                            <button onclick="agendar_cita('.$item["Id"].')" class="btn-same btn btn-danger">agendar cita</button>
                         </td>
                     </tr>';
             }

@@ -2,6 +2,8 @@
 
     $r = false;
     session_start();
+    $id_logued = $_SESSION["id"];
+    $rol_logued = $_SESSION["rol"];
 
     if($_SESSION["rol"] == "1" || $_SESSION["rol"] == "2")
     {
@@ -31,9 +33,7 @@
         $reclutador = $_POST["reclutador"];
         $reclutador = trim($reclutador);
         $reclutador = ucfirst($reclutador);
-        $oficina = $_POST["oficina"];
-        $oficina = trim($oficina);
-        $manager = $_POST["manager"];
+        $manager = $_POST["manager"]??0;
         $manager = trim($manager);
         $usuario = $_POST["usuario"];
         $usuario = trim($usuario);
@@ -41,6 +41,14 @@
         $clave = trim($clave);
         $clave = encrypt($clave);
         $foto = $_FILES["foto"];
+
+        if($rol_logued == "2")
+        {
+            $manager = $id_logued;
+        }
+
+        $res_office = select($oCon, "SELECT Id_office FROM managers WHERE Id = $manager");
+        $oficina = $res_office[0]["Id_office"];
 
         $n_foto = create_serie_n(70);
 

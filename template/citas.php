@@ -17,6 +17,38 @@
     {
         $create = true;
         $cl = $_GET["cl"]??0;
+
+        if($rol_logued != "1")
+        {
+            $stay = false;
+
+            if($rol_logued == "3")
+            {
+                $res_clientes_analista = select($oCon, "SELECT Id FROM clientes WHERE Nombre_representante = $id_logued");
+            }
+            if($rol_logued == "2")
+            {
+                $res_clientes_analista = select($oCon, "SELECT clientes.* FROM clientes INNER JOIN analyst ON clientes.Nombre_representante = analyst.Id INNER JOIN managers ON analyst.Id_supervisor = managers.Id WHERE managers.Id = $id_logued");
+            }
+
+            foreach($res_clientes_analista as $item)
+            {
+                if($cl == $item["Id"])
+                {
+                    $stay = true;
+                }
+            }
+
+            if($stay == false)
+            {
+                header("location: login.html");
+            }
+        }
+        else
+        {
+            $res_clientes_analista = select($oCon, "SELECT Id FROM clientes WHERE Nombre_representante = $id_logued");
+        }
+
     }
 
     $res_cl = select($oCon, "SELECT Primer_nombre, Id_office FROM clientes WHERE Id = $cl");
@@ -32,46 +64,13 @@
         $options_instaladores .= '<option value="'.$item["Id"].'">'.$item["Nombre"].'</option>';
     }
 
-//
-
-    // if($rol_logued == "1")
-    // {
-    //     define("sql_cita", "SELECT");
-    // }
-    // else if($rol_logued == "2")
-    // {
-    //     define("sql_cita", "");
-    // }
-    // else if($rol_logued == "3")
-    // {
-    //     define("sql_cita", "");
-    // }
-
-    if($rol_logued == "3")
-    {
-        $stay = false;
-        $res_clientes_analista = select($oCon, "SELECT Id FROM clientes WHERE Nombre_representante = $id_logued");
-
-        foreach($res_clientes_analista as $item)
-        {
-            if($cl == $item["Id"])
-            {
-                $stay = true;
-            }
-        }
-
-        if($stay == false)
-        {
-            header("location: login.html");
-        }
-    }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+    <script src="backend/js/session.js"></script>
     <!-- <script src="coming-soon.js"></script> -->
     <title>Citas</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
@@ -836,9 +835,7 @@
                                                                 <div class="card-header">
                                                                     <h5>Registrar cita</h5>
                                                                     <div class="card-header-right">
-                                                                        <i class="icofont icofont-rounded-down"></i>
-                                                                        <i class="icofont icofont-refresh"></i>
-        
+                                                                        <i class="icofont icofont-rounded-down"></i>        
                                                                     </div>
                                                                 </div>
                                                                 <div class="card-block">
@@ -871,7 +868,7 @@
                                             <span>Visualizacion de las citas agendadas</span>
                                             <div class="card-header-right">
                                                 <i class="icofont icofont-rounded-down"></i>
-                                                <i class="icofont icofont-refresh"></i>
+                                                <i class="icofont icofont-refresh" onclick="get_citas()"></i>
                                                 <i class="icofont icofont-close-circled"></i>
                                             </div>
                                         </div>

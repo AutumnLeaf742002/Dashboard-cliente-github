@@ -52,7 +52,6 @@ function register_cita()
 
 function get_citas()
 {
-
     let request = new XMLHttpRequest()
     request.open('POST', 'backend/php/get-citas.php', true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')

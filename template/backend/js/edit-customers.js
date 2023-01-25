@@ -73,6 +73,7 @@ $(document).ready()
                                 {
                                     aparecer_n_3(`Error desconocido: ${res}`)
                                     cerrar()
+                                    console.log(res)
                                 }
                             }
                         }
