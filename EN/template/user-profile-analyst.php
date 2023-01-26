@@ -55,7 +55,7 @@
 <head>
     <script src="backend/js/session.js"></script>
     <script src="backend/js/restrictor-analist.js"></script>
-    <title>Perfil de analista</title>
+    <title>Analyst Profile</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -128,8 +128,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas realizar esta acción?</h2>
-                    <p style="display: block;">Si haces click en aceptar los cambios no podran ser revertidos.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to perform this action?</h2>
+                    <p style="display: block;">If you click accept the changes cannot be reversed.</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
@@ -137,7 +137,7 @@
                     <div class="icon">!</div>
                     <p>You need to write something!</p>
                     </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
                     <div class="sa-confirm-button-container">
                     <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
                     <div></div>
@@ -197,7 +197,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                        <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                    <i class="flag-icon flag-icon-gb m-r-5"></i> English
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -639,8 +639,8 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de Analista</h4>
-                                                        <span>Toda la informacion del analista se encuentra en este perfil</span>
+                                                        <h4>Analyst Profile</h4>
+                                                        <span>All the analyst information is in this profile</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -675,7 +675,7 @@
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
                                                                             <h2><?php echo $res[0]["Name"]; ?></h2>
-                                                                            <span class="text-white">Analista</span>
+                                                                            <span class="text-white">Analyst</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -701,12 +701,12 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <h5 class="card-header-text">Informacion del Analista</h5>
+                                                                <h5 class="card-header-text">Analyst Information</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     <button onclick="show()" id="delete" class="btn btn-danger r_manager">
-                                                                        Eliminar
+                                                                    Remove
                                                                     </button>
-                                                                    <a href="user-profile-analyst-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
+                                                                    <a href="user-profile-analyst-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Edit</a>
                                                                 </div>
                                                             </button>
                                                             </div>
@@ -721,7 +721,7 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Manager asignado</th>
+                                                                                                        <th scope="row">assigned manager</th>
                                                                                                         <td style="display: flex; align-items:center;">
                                                                                                             <?php echo $name_s; ?>
                                                                                                             <a class="r_manager" href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_s; ?>" style="display: flex; align-items:center;" title="Ver perfil del Manager">
@@ -733,15 +733,15 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Nombre</th>
+                                                                                                        <th scope="row">Name</th>
                                                                                                         <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo</th>
+                                                                                                        <th scope="row">Mail</th>
                                                                                                         <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Telefono Celular</th>
+                                                                                                        <th scope="row">Cell phone</th>
                                                                                                         <td><?php echo $res[0]["Cell"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -758,23 +758,23 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Incentivo</th>
+                                                                                                    <th scope="row">Incentive</th>
                                                                                                     <td><?php echo $res[0]["Comision"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Fecha de inicio</th>
+                                                                                                    <th scope="row">Start date</th>
                                                                                                     <td><?php echo $res[0]["Start_date"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Reclutador</th>
+                                                                                                    <th scope="row">recruiter</th>
                                                                                                     <td><?php echo $res[0]["Recruiter"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Oficina</th>
+                                                                                                    <th scope="row">Office</th>
                                                                                                     <td><?php echo $ofi; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
                                                                                                
@@ -834,13 +834,13 @@
                                                                         <div class="page-body">
                                                                             <div class="card product-add-modal">
                                                                                 <div class="card-header">
-                                                                                    <h5>Clientes Asignados</h5>
+                                                                                    <h5>Assigned Clients</h5>
                                                                                 </div>
                                                                                 <!--buscador-->
                                                                              
                                                                                 <div id="buscador" class="">
                                                                                     <div id="container-buscador" class="">
-                                                                                        <input id="buscador-cliente" type="text" class="form-control" placeholder="Buscar...">
+                                                                                        <input id="buscador-cliente" type="text" class="form-control" placeholder="Search...">
                                                                                     </div>
                                                                                 </div>
                                                                                 <!--buscador-->
@@ -848,15 +848,15 @@
                                                                                     <div class="table-content crm-table">
                                                                                         <div class="project-table" id="contenedor-tabla-clientes">
                                                                                             <table id="crm-contact" class="table table-striped table-responsive nowrap">
-                                                                                                <a href="#final">ir al final</a>
+                                                                                                <a href="#final">go to the end</a>
                                                                                                 <thead>
                                                                                                     <tr>
                                                                                                         <th>
                                                                                                         </th>
-                                                                                                        <th>Nombre</th>
-                                                                                                        <th>Numero de seguro social</th>
-                                                                                                        <th>Licencia de conducir </th>
-                                                                                                        <th>Estado</th>
+                                                                                                        <th>Name</th>
+                                                                                                        <th>Social Security number</th>
+                                                                                                        <th>driver's license</th>
+                                                                                                        <th>Status</th>
                                                                                                         <th>vencimiento</th>
                                                                                                         <th>Direccion</th>
                                                                                                     </tr>
