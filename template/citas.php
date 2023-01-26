@@ -793,7 +793,7 @@
                                             <path
                                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                         </svg></span>
-                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Crear Citas</span>
+                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Citas</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             <li class="r_analist r_manager" id="">
@@ -1084,7 +1084,6 @@
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                      
                                                     <!-- Comentario debajo del type text -->
                                                     <div class="input-group">
                                                         <input id="cliente" readonly style="display: none;" value="'.$cl.'">
