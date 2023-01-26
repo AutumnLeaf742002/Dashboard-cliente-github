@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="no-js">
+
+	<head>
+		<meta charset="utf-8">
+        <title>Muy Pronto </title>
+        <meta name="description" content="Comming soon page - flat able">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mash Able">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="stylesheet" href="css/style-minimal-flat.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+
+    <body>
+
+    	<!-- Loading overlay -->
+		<div id="loading" class="dark-back">
+			<div class="loading-bar"></div>
+			<span class="loading-text opacity-0">Estas emocioado?</span>
+		</div>
+
+		<!-- Canvas for particles animation -->
+		<div id="particles-js"></div>
+
+    	
+    	<!-- END - Informations bar on top of the screen -->
+
+        <!-- Slider Wrapper -->
+        <div id="slider" class="sl-slider-wrapper">
+
+			<div class="sl-slider">
+			
+				<!-- SLIDE 1 / Home -->
+				<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+					
+					<div class="sl-slide-inner">
+
+						<div class="content-slide">
+
+							<div class="container">
+
+								<img src="img/pasteur.svg" alt="" class="brand-logo text-intro opacity-0" />
+							
+								<h1 class="text-intro opacity-0">Esta pagina aun no esta lista.</h1>
+							
+								<p class="text-intro opacity-0">Estas emocionado	!!!<strong> Pero aun no esta listo! </strong> .
+                                <br> Regresa atras para seguir probando las funciones habilitadas.
+								</p>
+
+								<a href="../clientes.html" data-dialog="somedialog" class="action-btn trigger text-intro opacity-0">Volver atras</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END - SLIDE 1 / Home -->$
+
+			</div>
+			<!-- END - sl-slider -->
+
+			
+
+		</div>
+		<!-- END - Slider Wrapper -->
+
+        <!-- Newsletter Popup -->
+		<div id="somedialog" class="dialog">
+
+			<div class="dialog__overlay"></div>
+					
+			<!-- dialog__content -->
+			<div class="dialog__content">
+
+		
+				<!-- END - dialog-inner -->
+
+				<!-- Cross for closing the Newsletter Popup -->
+				<button class="close-newsletter" data-dialog-close><i class="icon ion-android-close"></i></button>
+
+			</div>
+			<!-- END - dialog__content -->
+						
+		</div>
+		<!-- END - Newsletter Popup -->
+
+		<!-- //////////////////////\\\\\\\\\\\\\\\\\\\\\\ -->
+	    <!-- ********** List of jQuery Plugins ********** -->
+	    <!-- \\\\\\\\\\\\\\\\\\\\\\////////////////////// -->
+		
+		<!-- * Libraries jQuery, Easing and Bootstrap - Be careful to not remove them * -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.easings.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<!-- SlitSlider plugin -->
+		<script src="js/jquery.ba-cond.min.js"></script>
+		<script src="js/jquery.slitslider.js"></script>
+
+		<!-- Newsletter plugin -->
+		<script src="js/notifyMe.js"></script>
+
+		<!-- Popup Newsletter Form -->
+		<script src="js/classie.js"></script>
+		<script src="js/dialogFx.js"></script>
+
+		<!-- Particles effect plugin on the right -->
+		<script src="js/particles.js"></script>
+
+		<!-- Custom Scrollbar plugin -->
+		<script src="js/jquery.mCustomScrollbar.js"></script>
+
+		<!-- Countdown plugin -->
+		<script src="js/jquery.countdown.js"></script>
+
+		<script>
+		$("#countdown")
+			// Year/Month/Day Hour:Minute:Second
+			.countdown("2018/10/24 15:30:30", function(event) {
+				$(this).html(
+					event.strftime('%D Days %Hh %Mm %Ss')
+				);
+		});
+		</script>
+
+		<!-- Main application scripts -->
+		<script src="js/main-flat.js"></script>
+
+	</body>
+
+</html>

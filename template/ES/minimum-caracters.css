@@ -1,0 +1,14 @@
+.form-control:invalid{
+
+    border: 1px solid red !important;
+}
+
+/* Media querys para los avatars */
+
+@media screen and (max-width: 450px){
+    
+    #a-1, #a-2, #a-3, #a-4, #a-5, #a-6, #a-7, #a-8{
+
+        width: 23%;
+    }
+}
