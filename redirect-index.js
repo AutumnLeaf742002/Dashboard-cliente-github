@@ -1,1 +1,1 @@
-window.location.href = "http://localhost/dashboard-cliente-github/template/login.html"
+window.location.href = "http://localhost/dashboard-cliente-github/template/ES/login.html"
