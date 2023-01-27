@@ -962,6 +962,39 @@
                                                                                                     </p>
                                                                                                 </td>
                                                                                             </tr>
+                                                                                            <tr">
+                                                                                                <th scope="row">Fecha de mantenimiento</th>
+                                                                                                <td>
+                                                                                                    <?php
+
+                                                                                                        $fecha_actual = strtotime(date("Y-m-d"));
+                                                                                                        $fecha_bd = strtotime($res_cl[0]["Fecha_mantenimiento"]);
+                                                                                                        $diferencia_en_segundos = $fecha_bd - $fecha_actual;
+                                                                                                        $diferencia_en_dias = $diferencia_en_segundos / 86400;
+
+                                                                                                        if($diferencia_en_dias > 5)
+                                                                                                        {
+                                                                                                            echo '<p style="background-color: #2ecc71; color: white; font-weight: bold; padding: 3px 5px; border-radius: 7px; text-align: center; font-size: 14px; display: flex; justify-content: center; max-width: 170px">
+                                                                                                                    '.$res_cl[0]["Fecha_mantenimiento"].'
+                                                                                                                </p>';
+                                                                                                        }
+                                                                                                        else if($diferencia_en_dias <= 5 && $diferencia_en_dias > 0)
+                                                                                                        {
+                                                                                                            echo '<p style="background-color: #f1c40f; color: white; font-weight: bold; padding: 3px 5px; border-radius: 7px; text-align: center; font-size: 14px; display: flex; justify-content: center; max-width: 170px">
+                                                                                                                    '.$res_cl[0]["Fecha_mantenimiento"].'
+                                                                                                                </p>';
+                                                                                                        }
+                                                                                                        else if($diferencia_en_dias <= 0)
+                                                                                                        {
+                                                                                                            echo '<p style="background-color: #e74c3c; color: white; font-weight: bold; padding: 3px 5px; border-radius: 7px; text-align: center; font-size: 14px; display: flex; justify-content: center; max-width: 170px">
+                                                                                                                    '.$res_cl[0]["Fecha_mantenimiento"].'
+                                                                                                                </p>';
+                                                                                                        }
+
+                                                                                                    
+                                                                                                    ?>
+                                                                                                </td>
+                                                                                            </tr>
                                                                                     </tbody>
                                                                                 </table>
                                                                                 </div>

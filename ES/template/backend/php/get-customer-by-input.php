@@ -16,11 +16,11 @@
 
         if($rol == "3")
         {
-            $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%' AND Nombre_representante = $id_logued";
+            $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%' AND Nombre_representante = $id_logued";
         }
         else if($rol == "1")
         {
-            $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%'";
+            $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%'";
         }
         else if($rol == "2")
         {
@@ -34,11 +34,11 @@
 
             if($rol == "3")
             {
-                $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' AND Nombre_representante = $id_logued";
+                $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' AND Nombre_representante = $id_logued";
             }
             else if($rol == "1")
             {
-                $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' ";
+                $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' ";
             }
             else if($rol == "2")
             {
@@ -52,11 +52,11 @@
 
                 if($rol == "3")
                 {
-                    $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' AND Nombre_representante = $id_logued";
+                    $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' AND Nombre_representante = $id_logued";
                 }
                 else if($rol == "1")
                 {
-                    $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' ";
+                    $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' ";
                 }
                 else if($rol == "2")
                 {
@@ -70,11 +70,11 @@
 
                     if($rol == "3")
                     {
-                        $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' AND Nombre_representante = $id_logued";
+                        $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' AND Nombre_representante = $id_logued";
                     }
                     else if($rol == "1")
                     {
-                        $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' ";
+                        $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' ";
                     }
                     else if($rol == "2")
                     {
@@ -88,11 +88,11 @@
 
                         if($rol == "3")
                         {
-                            $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' AND Nombre_representante = $id_logued";
+                            $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' AND Nombre_representante = $id_logued";
                         }
                         else if($rol == "1")
                         {
-                            $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' ";
+                            $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' ";
                         }
                         else if($rol == "2")
                         {
@@ -106,11 +106,11 @@
 
                             if($rol == "3")
                             {
-                                $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' AND Nombre_representante = $id_logued";
+                                $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' AND Nombre_representante = $id_logued";
                             }
                             else if($rol == "1")
                             {
-                                $sql = "SELECT Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' ";
+                                $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' ";
                             }
                             else if($rol == "2")
                             {
@@ -129,6 +129,24 @@
         {
             foreach($res as $item)
             {
+                $fecha_actual = strtotime(date("Y-m-d"));
+                $fecha_bd = strtotime($item["Fecha_mantenimiento"]);
+                $diferencia_en_segundos = $fecha_bd - $fecha_actual;
+                $diferencia_en_dias = $diferencia_en_segundos / 86400;
+                $color = "";
+
+                if($item["Fecha_mantenimiento"] != "")
+                {
+                    if($diferencia_en_dias <= 5 && $diferencia_en_dias > 0) 
+                    { 
+                        $color = "1.99px solid #f1c40f";
+                    }
+                    else if($diferencia_en_dias <= 0) 
+                    {
+                        $color = "1.99px solid #e74c3c";
+                    }
+                }
+
                 $n_serie = $item["N_serie_cliente"];
                 $res_n_serie = select($oCon, "SELECT Id FROM co_aplicantes WHERE C_N_serie_cliente = '$n_serie'");
                 $estatus = $item["Estatus"];
@@ -145,7 +163,7 @@
                 if($estatus == 2 || $estatus == 15)
                 {
                     echo'
-                        <tr class="hover" style="cursor: pointer;">
+                        <tr class="hover" style="cursor: pointer; border: '.$color.';">
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 <img src="Avatars/avatar-'.$item["Avatar"].'.svg" class="d-inline-block img-circle " alt="tbl">
                             </td>
@@ -174,7 +192,7 @@
                 else
                 {
                     echo'
-                        <tr class="hover" style="cursor: pointer;">
+                        <tr class="hover" style="cursor: pointer; border: '.$color.';">
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 <img src="Avatars/avatar-'.$item["Avatar"].'.svg" class="d-inline-block img-circle " alt="tbl">
                             </td>
