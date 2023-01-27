@@ -6,4 +6,3 @@ Poner un texto en la pagina de clientes y el perfil de los clientes para indicar
     El rojo es que el mantenimiento es ese dia o el dia se paso
 
 Alex:
-Hacer de alguna manera que cuando un mantenimiento se esta acercando, aparezca en rojo o algun color
