@@ -833,14 +833,12 @@
                                                             <!-- inicio div de registro de analista -->
                                                             <div class="card">
                                                                 <div class="card-header">
-                                                                    <h5>Registrar cita</h5>
-                                                                    <div class="card-header-right">
-                                                                        <i class="icofont icofont-rounded-down"></i>        
-                                                                    </div>
+                                                                    <h5>register appointment</h5>
+                                                                    
                                                                 </div>
                                                                 <div class="card-block">
                                                                     <p>
-                                                                        Click al boton para Agendar nueva cita
+                                                                    Click the button to Schedule a new appointment
                                                                     </p>
                                                                     <p class="text-center">
                                                                         <button type="button" class="btn btn-primary auth-btn"
@@ -866,11 +864,7 @@
                                         <div class="card-header">
                                             <h5>SCHEDULED APPOINTMENTS</h5>
                                             <span>Viewing scheduled appointments</span>
-                                            <div class="card-header-right">
-                                                <i class="icofont icofont-rounded-down"></i>
-                                                <i class="icofont icofont-refresh" onclick="get_citas()"></i>
-                                                <i class="icofont icofont-close-circled"></i>
-                                            </div>
+                                            
                                         </div>
                                         <div class="card-block table-border-style">
                                             <div class="table-responsive">
@@ -1142,7 +1136,7 @@
                                                             <div class="col-md-12">
                                                                 <button onclick="register_cita()"
                                                                     class="btn btn-primary btn-md btn-block waves-effect text-center">
-                                                                    Registrar Cita
+                                                                    SCHEDULE APPOINTMENT
                                                                 </button>
                                                             </div>
                                                         </div>
