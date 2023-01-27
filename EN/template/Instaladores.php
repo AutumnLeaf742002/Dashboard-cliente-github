@@ -15,7 +15,7 @@
 <head>
     <script src="backend/js/session.js"></script>
 
-    <title>Instaladores</title>
+    <title>INSTALLERS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -775,7 +775,7 @@
                                                             <!-- inicio div de registro de analista -->
                                                             <div class="card">
                                                                 <div class="card-header">
-                                                                    <h5>Registrar Instaladores</h5>
+                                                                    <h5>REGISTER INSTALLERS</h5>
                                                                     <div class="card-header-right">
                                                                         <i class="icofont icofont-rounded-down"></i>
                                                                         <i class="icofont icofont-refresh"></i>
@@ -784,7 +784,7 @@
                                                                 </div>
                                                                 <div class="card-block">
                                                                     <p>
-                                                                        Click al boton para registrar un nuevo Instalador.
+                                                                    Click the button to register a new Installer.
                                                                     </p>
                                                                     <p class="text-center">
                                                                         <button type="button"
@@ -799,7 +799,7 @@
                                                             <!-- Simple card start -->
                                                             <div class="card simple-cards">
                                                                 <div class="card-header">
-                                                                    <h5>Instaladores</h5>
+                                                                    <h5>INSTALLERS</h5>
                                                                     <div class="card-header-right">
                                                                         <i class="icofont icofont-rounded-down"></i>
                                                                         <i class="icofont icofont-refresh"
