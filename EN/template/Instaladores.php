@@ -324,13 +324,8 @@
                                     </a>
                                     <ul class="show-notification profile-notification">
                                         <li>
-                                            <a href="user-profile.html">
+                                            <a href="profile-admin.php">
                                                 <i class="ti-user"></i> Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="email-inbox.html">
-                                                <i class="ti-email"></i> My Messages
                                             </a>
                                         </li>
                                         <li>
@@ -776,11 +771,6 @@
                                                             <div class="card">
                                                                 <div class="card-header">
                                                                     <h5>REGISTER INSTALLERS</h5>
-                                                                    <div class="card-header-right">
-                                                                        <i class="icofont icofont-rounded-down"></i>
-                                                                        <i class="icofont icofont-refresh"></i>
-
-                                                                    </div>
                                                                 </div>
                                                                 <div class="card-block">
                                                                     <p>
@@ -790,7 +780,7 @@
                                                                         <button type="button"
                                                                             class="btn btn-primary auth-btn"
                                                                             data-toggle="modal"
-                                                                            data-target="#register">Registrar</button>
+                                                                            data-target="#register">Register</button>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -800,11 +790,6 @@
                                                             <div class="card simple-cards">
                                                                 <div class="card-header">
                                                                     <h5>INSTALLERS</h5>
-                                                                    <div class="card-header-right">
-                                                                        <i class="icofont icofont-rounded-down"></i>
-                                                                        <i class="icofont icofont-refresh"
-                                                                            onclick="refresh()"></i>
-                                                                    </div>
                                                                 </div>
 
                                                                 <div class="card-block">
