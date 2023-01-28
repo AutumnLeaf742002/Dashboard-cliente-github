@@ -1,11 +1,30 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    include_once "./backend/php/connection.php";
+    include_once "./backend/php/commands.php";
+    $oCon = connect();
+    session_start();
+    $id_logued = $_SESSION["id"];
+    $rol_logued = $_SESSION["rol"];
+
+    if($rol_logued == "2")
+    {
+        define("sql", "SELECT managers.*, offices.Name_office as office FROM managers JOIN offices ON offices.Id = managers.Id_office WHERE managers.Id = $id_logued");
+        $res = select($oCon, sql);
+    }
+    else
+    {
+        header("location: login.html");
+    }
+
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <script src="backend/js/session.js"></script>
-    <script src="backend/js/restrictor-analist.js"></script>
-    <script src="backend/js/restrictor-manager.js"></script>
-    <title>perfil de manager</title>
+    <title>Perfil</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -147,7 +166,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                    <i class="flag-icon flag-icon-gb m-r-5"></i> English
+                                        <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -219,13 +238,8 @@
                                     </a>
                                     <ul class="show-notification profile-notification">
                                         <li>
-                                            <a href="user-profile.html">
+                                            <a href="profile-admin.php">
                                                 <i class="ti-user"></i> Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="email-inbox.html">
-                                                <i class="ti-email"></i> My Messages
                                             </a>
                                         </li>
                                         <li>
@@ -508,7 +522,7 @@
                                 </a>
                         <ul class="pcoded-submenu">
                         </li>
-                        <li class="">
+                        <li class="r_manager r_analist" class="">
                             <a href="administradores.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
@@ -520,7 +534,7 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="r_manager r_analist" class="">
                             <a href="managers.html">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
@@ -565,7 +579,7 @@
                             <span class="pcoded-mtext" data-i18n="nav.dash.default">Citas</span>
                             <span class="pcoded-mcaret"></span>
                         </a>  
-                        <li id="">
+                        <li class="r_manager r_analist" id="">
                         <a href="Instaladores.php">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
                                     <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
@@ -589,8 +603,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de Manager</h4>
-                                                        <span>Toda la informacion del Manager se encuentra en este perfil</span>
+                                                        <h4>Perfil</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -658,7 +671,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <h5 class="card-header-text">Informacion del Manager</h5>
+                                                                <h5 class="card-header-text">Información</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     </div>
                                                             </div>
@@ -672,10 +685,6 @@
                                                                                         <div class="table-responsive">
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Nombre</th>
-                                                                                                        <td><?php echo $res[0]["Name"]; ?></td>
-                                                                                                    </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Correo</th>
                                                                                                         <td><?php echo $res[0]["Mail"]; ?></td>
@@ -699,7 +708,7 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <th scope="row">Oficina</th>
-                                                                                                    <td><?php echo $ofi; ?></td>
+                                                                                                    <td><?php echo $res[0]["office"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Usuario</th>
@@ -760,44 +769,7 @@
                                                                     <div class="col-sm-12">
                                                                         <!-- Page-body start -->
                                                                         <div class="page-body">
-                                                                            <div class="card product-add-modal">
-                                                                                <div class="card-header">
-                                                                                    <h5>Analistas Asignados</h5>
-                                                                                </div>
-                                                                                <!--buscador-->
-                                                                             
-                                                                                <div id="buscador" class="">
-                                                                                    <div id="container-buscador" class="">
-                                                                                        <input id="buscador-cliente" type="text" class="form-control" placeholder="Buscar...">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <!--buscador-->
-                                                                                <div class="card-block">
-                                                                                    <div class="table-content crm-table">
-                                                                                        <div class="project-table" id="contenedor-tabla-clientes">
-                                                                                            <table id="crm-contact" class="table table-striped table-responsive nowrap">
-                                                                                                <a href="#final">ir al final</a>
-                                                                                                <thead>
-                                                                                                    <tr>
-                                                                                                        <th>
-                                                                                                        </th>
-                                                                                                        <th>Nombre</th>
-                                                                                                        <th>Correo</th>
-                                                                                                        <th>Celular</th>
-                                                                                                        <th>Usuario</th>
-                                                                                                    </tr>
-                                                                                                </thead>
-                                                                                                <tbody id="contenedor-clientes">
-                                                                                                    
-                                                                                                  
-                                                                                                </tbody>
-                                                                                                <tfoot>
-                                                                                                </tfoot>
-                                                                                            </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                                                                            
                                                                             <!-- Container-fluid ends -->
                                                                         </div>
                                                                         <!-- Page-body end -->
@@ -913,12 +885,9 @@
     <script src="assets/js/jquery.mousewheel.min.js"></script>
     <!-- <script src="backend/js/get-customer-analist.js"></script> -->
     <script src="backend/js/get-analist-for-profile-manager.js"></script>
-    <script src="backend/js/delete-manager.js"></script>
     <script src="backend/js/get-profile.js"></script>
+    <script src="./backend/js/remove-elements.js"></script>
 
-    <script>
-        get_id(<?php echo $id; ?>)
-    </script>
 
 </body>
 

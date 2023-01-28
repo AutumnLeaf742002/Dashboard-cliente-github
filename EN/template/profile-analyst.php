@@ -1,10 +1,30 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    include_once "./backend/php/connection.php";
+    include_once "./backend/php/commands.php";
+    $oCon = connect();
+    session_start();
+    $id_logued = $_SESSION["id"];
+    $rol_logued = $_SESSION["rol"];
+
+    if($rol_logued == "3")
+    {
+        define("sql", "SELECT analyst.*, offices.Name_office as office, managers.Name as manager FROM analyst JOIN offices ON offices.Id = analyst.Id_office JOIN managers ON managers.Id = analyst.Id_supervisor WHERE analyst.Id = $id_logued");
+        $res = select($oCon, sql);
+    }
+    else
+    {
+        header("location: login.html");
+    }
+
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <script src="backend/js/session.js"></script>
-    <script src="backend/js/restrictor-analist.js"></script>
-    <title>Perfil de analista</title>
+    <title>Perfil</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -146,7 +166,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                    <i class="flag-icon flag-icon-gb m-r-5"></i> English
+                                        <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -218,13 +238,8 @@
                                     </a>
                                     <ul class="show-notification profile-notification">
                                         <li>
-                                            <a href="user-profile.html">
+                                            <a href="profile-admin.php">
                                                 <i class="ti-user"></i> Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="email-inbox.html">
-                                                <i class="ti-email"></i> My Messages
                                             </a>
                                         </li>
                                         <li>
@@ -494,7 +509,7 @@
                                 <span class="pcoded-micon"><i class="ti-home"></i></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                             </a>
-                            <li class="pcoded-hasmenu">
+                            <li class="r_manager r_analist" class="pcoded-hasmenu">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
                                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
@@ -564,7 +579,7 @@
                             <span class="pcoded-mtext" data-i18n="nav.dash.default">Citas</span>
                             <span class="pcoded-mcaret"></span>
                         </a>  
-                        <li id="">
+                        <li class="r_manager r_analist" id="">
                         <a href="Instaladores.php">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
                                     <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
@@ -588,8 +603,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de Analista</h4>
-                                                        <span>Toda la informacion del analista se encuentra en este perfil</span>
+                                                        <h4>Perfil</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -650,7 +664,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <h5 class="card-header-text">Informacion del Analista</h5>
+                                                                <h5 class="card-header-text">Información</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     </div>
                                                             
@@ -668,18 +682,8 @@
                                                                                                     <tr>
                                                                                                         <th scope="row">Manager asignado</th>
                                                                                                         <td style="display: flex; align-items:center;">
-                                                                                                            <?php echo $name_s; ?>
-                                                                                                            <a href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_s; ?>" style="display: flex; align-items:center;" title="Ver perfil del Analista">
-                                                                                                                <svg style="cursor: pointer; margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                                                                                                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                                                                                                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-                                                                                                                </svg>
-                                                                                                            </a>
+                                                                                                            <?php echo $res[0]["manager"]; ?>
                                                                                                         </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Nombre</th>
-                                                                                                        <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <th scope="row">Correo</th>
@@ -716,7 +720,7 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Oficina</th>
-                                                                                                    <td><?php echo $ofi; ?></td>
+                                                                                                    <td><?php echo $res[0]["office"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <th scope="row">Usuario</th>
@@ -777,135 +781,7 @@
                                                                     <div class="col-sm-12">
                                                                         <!-- Page-body start -->
                                                                         <div class="page-body">
-                                                                            <div class="card product-add-modal">
-                                                                                <div class="card-header">
-                                                                                    <h5>Clientes Asignados</h5>
-                                                                                </div>
-                                                                                <!--buscador-->
-                                                                             
-                                                                                <div id="buscador" class="">
-                                                                                    <div id="container-buscador" class="">
-                                                                                        <input id="buscador-cliente" type="text" class="form-control" placeholder="Buscar...">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <!--buscador-->
-                                                                                <div class="card-block">
-                                                                                    <div class="table-content crm-table">
-                                                                                        <div class="project-table" id="contenedor-tabla-clientes">
-                                                                                            <table id="crm-contact" class="table table-striped table-responsive nowrap">
-                                                                                                <a href="#final">ir al final</a>
-                                                                                                <thead>
-                                                                                                    <tr>
-                                                                                                        <th>
-                                                                                                        </th>
-                                                                                                        <th>Nombre</th>
-                                                                                                        <th>Numero de seguro social</th>
-                                                                                                        <th>Licencia de conducir </th>
-                                                                                                        <th>Estado</th>
-                                                                                                        <th>vencimiento</th>
-                                                                                                        <th>Direccion</th>
-                                                                                                    </tr>
-                                                                                                </thead>
-                                                                                                <tbody id="contenedor-clientes">
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-1.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Sortino
-                                                                                                        </td>
-                                                                                                        <td>Sortino@domain.com</td>
-                                                                                                        <td>Accountant</td>
-                                                                                                        <td>New York</td>
-                                                                                                        <td>45</td>
-                                                                                                        <td>+447662552550</td>
-                                                                                                        <td>12/12/2016</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-2.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-                                                                                                                                                                                                                                                                             ">
-                                                                                                            Larry
-                                                                                                        </td>
-                                                                                                        <td>Larry@domain.com</td>
-                                                                                                        <td>Web Designer</td>
-                                                                                                        <td>Singapore</td>
-                                                                                                        <td>25</td>
-                                                                                                        <td>+442566156222</td>
-                                                                                                        <td>6/10/2016</td>
-                                                                                                    
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-3.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Jacob
-                                                                                                        </td>
-                                                                                                        <td>Jacob@domain.com</td>
-                                                                                                        <td>Web Developer</td>
-                                                                                                        <td>London</td>
-                                                                                                        <td>45</td>
-                                                                                                        <td>+419996156222</td>
-                                                                                                        <td>11/09/2014</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-5.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Mark
-                                                                                                        </td>
-                                                                                                        <td>Mark@domain.com</td>
-                                                                                                        <td>Chief Financial Officer (CFO)</td>
-                                                                                                        <td>Abu Dhabi</td>
-                                                                                                        <td>33</td>
-                                                                                                        <td>+124455645889</td>
-                                                                                                        <td>01/05/2013</td>
-                                                                                                       
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-4.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Steve
-                                                                                                        </td>
-                                                                                                        <td>Steve@domain.com</td>
-                                                                                                        <td>Customer Support</td>
-                                                                                                        <td>New York</td>
-                                                                                                        <td>48</td>
-                                                                                                        <td>+111322574563</td>
-                                                                                                        <td>02/1/2012</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td>
-                                                                                                            <img src="assets/images/avatar-1.png" class="d-inline-block img-circle " alt="tbl">
-                                                                                                        </td>
-                                                                                                        <td class="pro-name">
-                                                                                                            Larry the Bird
-                                                                                                        </td>
-                                                                                                        <td>Larry@domain.com</td>
-                                                                                                        <td>Team Leader</td>
-                                                                                                        <td>San Francisco</td>
-                                                                                                        <td>22</td>
-                                                                                                        <td>+146772555563</td>
-                                                                                                        <td>19/12/2015</td>
-                                                                                                        
-                                                                                                    </tr>
-                                                                                                  
-                                                                                                </tbody>
-                                                                                                <tfoot>
-                                                                                                </tfoot>
-                                                                                            </table>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                                                                            
                                                                             <!-- Container-fluid ends -->
                                                                         </div>
                                                                         <!-- Page-body end -->
@@ -1019,13 +895,8 @@
     <script src="assets/js/demo-12.js"></script>
     <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/jquery.mousewheel.min.js"></script>
-    <script src="backend/js/get-customer-analist.js"></script>
-    <script src="backend/js/delete-analist.js"></script>
     <script src="backend/js/get-profile.js"></script>
-
-    <script>
-        get_id(<?php echo $id; ?>)
-    </script>
+    <script src="./backend/js/remove-elements.js"></script>
 
 </body>
 
