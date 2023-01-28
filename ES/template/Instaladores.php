@@ -324,15 +324,11 @@
                                     </a>
                                     <ul class="show-notification profile-notification">
                                         <li>
-                                            <a href="user-profile.html">
+                                            <a href="profile-admin.php">
                                                 <i class="ti-user"></i> Profile
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="email-inbox.html">
-                                                <i class="ti-email"></i> My Messages
-                                            </a>
-                                        </li>
                                         <li>
                                             <a href="destroy.php?d=true">
                                                 <i class="ti-layout-sidebar-left"></i> Logout
