@@ -1,9 +1,9 @@
-Copiar el html de profile de clientes.html
 Poner texto en la pagina de clientes para indicar que si no aparece botones en algun cliente, se debe a
     que su estatus no permite que se le agende cita
 Poner un texto en la pagina de clientes y el perfil de los clientes para indicar a que se refiere cada color,
     es decir, El amarillo indica que le queda 5 dias o menos para llegar a la fecha de mantenimiento,
     El rojo es que el mantenimiento es ese dia o el dia se paso
+estatus de las citas
 
 Alex:
 banderita idioma
