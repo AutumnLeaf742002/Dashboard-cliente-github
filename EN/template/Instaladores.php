@@ -15,7 +15,7 @@
 <head>
     <script src="backend/js/session.js"></script>
 
-    <title>INSTALLERS</title>
+    <title>Installers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -250,12 +250,12 @@
                                     </a>
                                     <ul class="show-notification">
                                         <li>
-                                            <a href="EN/template/Instaladores.php" data-lng="en">
+                                            <a href="../../EN/template/Instaladores.php" data-lng="en">
                                                 <i class="flag-icon flag-icon-gb m-r-5"></i> English
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="ES/template/Instaladores.php" data-lng="es">
+                                            <a href="../../ES/template/Instaladores.php" data-lng="es">
                                                 <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                             </a>
                                         </li>

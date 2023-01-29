@@ -13,8 +13,18 @@
     $create = false;
     $cl = 0;
 
+    $url_en = "";
+    $url_es = "";
+
     if(!empty($_GET))
     {
+        $url = $_SERVER['REQUEST_URI'];
+        $url = explode("Es", $url);
+        $url_es = "../../ES$url[1]";
+        $url_en = "../../EN$url[1]";
+
+        print_r($url);
+
         $create = true;
         $cl = $_GET["cl"]??0;
 
@@ -312,12 +322,12 @@
                                     </a>
                                     <ul class="show-notification">
                                         <li>
-                                            <a href="../../EN/template/citas.php" data-lng="en">
+                                            <a href="<?php echo $url_en;?>" data-lng="en">
                                                 <i class="flag-icon flag-icon-gb m-r-5"></i> English
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="../../ES/template/citas.php" data-lng="es">
+                                            <a href="<?php echo $url_es;?>" data-lng="es">
                                                 <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                             </a>
                                         </li>
@@ -925,7 +935,7 @@
                                                             </div>
                                                             <h3 class="text-center txt-primary">Registro de nueva cita</h3>
                                                             
-                                                            <h5 class="fs-subtitle text-center" style="display: inline;">Los campos marcados con <p class="text-center" style="color: red; display: inline;">*</p> son obligatorios</h5>
+                                                            <h5 class="fs-subtitle text-center">Los campos marcados con <p class="text-center" style="color: red; display: inline;">*</p> son obligatorios</h5>
                                                         </div>
                                                     </div>
                                                     <hr>
@@ -964,7 +974,7 @@
                                                     <div class="input-group">
                                                         <select class="form-control required" id="tipo_instalacion">
                                                             <option selected value="">
-                                                                Seleccione un tipo de instalación
+                                                                Seleccione un tipo de instalación *
                                                             </option>
                                                             <option value="Panel Solar">
                                                                 Panel Solar

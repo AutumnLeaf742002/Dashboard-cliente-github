@@ -834,7 +834,7 @@
                                                                     <p class="text-center">
                                                                         <button type="button" class="btn btn-primary auth-btn"
                                                                             data-toggle="modal"
-                                                                            data-target="#register">Registrar</button>
+                                                                            data-target="#register">Register</button>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -1063,9 +1063,9 @@
                                                             <div class="text-center">
                                                                 <img src="assets/images/pasteur.png" alt="logo.png">
                                                             </div>
-                                                            <h3 class="text-center txt-primary">Registro de nueva cita</h3>
+                                                            <h3 class="text-center txt-primary">Register a new appointment</h3>
                                                             
-                                                            <h5 class="fs-subtitle text-center" style="display: inline;">Los campos marcados con <p class="text-center" style="color: red; display: inline;">*</p> son obligatorios</h5>
+                                                            <h5 class="fs-subtitle text-center">The fields marked with <p class="text-center" style="color: red; display: inline;">*</p> are mandatory</h5>
                                                         </div>
                                                     </div>
                                                     <hr>
@@ -1076,12 +1076,12 @@
                                                             placeholder=" " readonly
                                                             value="'.$res_cl[0]["Primer_nombre"].'">
                                                         <span class="md-line"></span>
-                                                        <label for="">Cliente seleccionado</label>
+                                                        <label for="">Customer selected</label>
                                                     </div>
 
                                                     <div class="input-group">
                                                         <select class="form-control" id="instalador">
-                                                            <option selected value="">Seleccionar Instalador</option>
+                                                            <option selected value="">Select an Installer</option>
                                                             '.$options_instaladores.'
                                                         </select>
                                                     </div>
@@ -1091,26 +1091,26 @@
                                                             placeholder=" "
                                                             id="fecha">
                                                         <span class="md-line"></span>
-                                                        <label for="">Fecha</label>
+                                                        <label for="">Date</label>
                                                     </div>
                                                     <div class="input-group">
                                                         <input type="time" class="form-control required"
                                                             placeholder=" "
                                                             id="hora">
                                                         <span class="md-line"></span>
-                                                        <label for="">Hora</label>
+                                                        <label for="">Hour</label>
                                                     </div>
                                                     
                                                     <div class="input-group">
                                                         <select class="form-control required" id="tipo_instalacion">
                                                             <option selected value="">
-                                                                Seleccione un tipo de instalación
+                                                                Select an installation type *
                                                             </option>
                                                             <option value="Panel Solar">
-                                                                Panel Solar
+                                                                Solar panel
                                                             </option>
                                                             <option value="Filtros de Agua">
-                                                                Filtros de Agua
+                                                                Water filters
                                                             </option>
                                                         <select>
                                                     </div>

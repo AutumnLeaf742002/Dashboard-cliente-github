@@ -40,11 +40,11 @@
                     <h5>
                         Oficina '.$oficina[0]["Name_office"].'
                     </h5>
-                    <h4 class="text-center my-3">Seller</h4>
+                    <h4 class="text-center my-3">Vendedor</h4>
                 </div>
                 
                 <div class="set-btn" style="display: flex; justify-content: center;">
-                    <button onclick="go_edit_analist('.$item["Id"].')" type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>VIEW PROFILE</button>
+                    <button onclick="go_edit_analist('.$item["Id"].')" type="button" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</button>
                 </div>
             </div>
             </div>';
