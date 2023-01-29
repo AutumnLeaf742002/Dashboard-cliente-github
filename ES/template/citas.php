@@ -307,22 +307,20 @@
                             <ul class="nav-right">
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
-                                    <a href="dashboard-cliente-github/es/template/citas.php" id="dropdown-active-item">
+                                    <a href="../../ES/template/citas.php" id="dropdown-active-item">
                                         <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                     </a>
                                     <ul class="show-notification">
                                         <li>
-                                            <a href="#" data-lng="en">
+                                            <a href="../../EN/template/citas.php" data-lng="en">
                                                 <i class="flag-icon flag-icon-gb m-r-5"></i> English
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" data-lng="es">
+                                            <a href="../../ES/template/citas.php" data-lng="es">
                                                 <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                             </a>
                                         </li>
-
-
                                     </ul>
                                 </li>
                                 </li>
