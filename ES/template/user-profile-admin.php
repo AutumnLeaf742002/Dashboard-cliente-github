@@ -505,7 +505,7 @@
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a>
                 </div>
                     <div class="pcoded-inner-navbar main-menu">
-                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
+                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navegación</div>
                         <ul class="pcoded-item pcoded-left-item">
                             <li>
                             <a id="" href="dashboard-project.html">
