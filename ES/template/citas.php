@@ -13,17 +13,15 @@
     $create = false;
     $cl = 0;
 
-    $url_en = "";
-    $url_es = "";
+    $url_en = "../../EN/template/citas.php";
+    $url_es = "../../ES/template/citas.php";
 
     if(!empty($_GET))
     {
         $url = $_SERVER['REQUEST_URI'];
-        $url = explode("Es", $url);
+        $url = explode("ES", $url);
         $url_es = "../../ES$url[1]";
         $url_en = "../../EN$url[1]";
-
-        print_r($url);
 
         $create = true;
         $cl = $_GET["cl"]??0;
