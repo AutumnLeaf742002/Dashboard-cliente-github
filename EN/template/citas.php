@@ -13,8 +13,16 @@
     $create = false;
     $cl = 0;
 
+    $url_en = "../../EN/template/citas.php";
+    $url_es = "../../ES/template/citas.php";
+
     if(!empty($_GET))
     {
+        $url = $_SERVER['REQUEST_URI'];
+        $url = explode("EN", $url);
+        $url_es = "../../ES$url[1]";
+        $url_en = "../../EN$url[1]";
+
         $create = true;
         $cl = $_GET["cl"]??0;
 
@@ -24,7 +32,7 @@
 
             if($rol_logued == "3")
             {
-                $res_clientes_analista = select($oCon, "SELECT Id FROM clientes WHERE Nombre_representante = $id_logued");
+                $res_clientes_analista = select($oCon, "SELECT * FROM clientes WHERE Nombre_representante = $id_logued");
             }
             if($rol_logued == "2")
             {
@@ -46,13 +54,20 @@
         }
         else
         {
-            $res_clientes_analista = select($oCon, "SELECT Id FROM clientes WHERE Nombre_representante = $id_logued");
+            $res_clientes_analista = select($oCon, "SELECT * FROM clientes WHERE Nombre_representante = $id_logued");
         }
 
     }
 
-    $res_cl = select($oCon, "SELECT Primer_nombre, Id_office FROM clientes WHERE Id = $cl");
+    $res_cl = select($oCon, "SELECT Primer_nombre, Estatus, Id_office FROM clientes WHERE Id = $cl");
     $cl_office = $res_cl[0]["Id_office"];
+
+    $estatus = $res_cl[0]["Estatus"];
+
+    if($estatus == 15 || $estatus == 2)
+    {
+        header("location: clientes.html");
+    }
 
     define("sql_instalador", "SELECT instaladores.*, offices.Name_office FROM instaladores JOIN offices ON offices.Id = instaladores.Id_office WHERE instaladores.Id_office = $cl_office");
     $res_instaladores = select($oCon, sql_instalador);
@@ -305,12 +320,12 @@
                                     </a>
                                     <ul class="show-notification">
                                         <li>
-                                            <a href="../../EN/template/citas.php" data-lng="en">
+                                            <a href="<?php echo $url_en; ?>" data-lng="en">
                                                 <i class="flag-icon flag-icon-gb m-r-5"></i> English
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="../../Es/template/citas.php" data-lng="es">
+                                            <a href="<?php echo $url_es; ?>" data-lng="es">
                                                 <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                             </a>
                                         </li>
