@@ -229,13 +229,13 @@
             </div>
             <img class="logo" src="assets/images/pasteur.png" alt="logo.png">
             
-            <h3 class="fs-subtitle">Registrar un nuevo cliente</h3>
-            <h5  class="fs-subtitle" style="display: inline;">Los campos marcados con <h5 style="color: red; display: inline;">*</h5> son obligatorios</h5>
+            <h3 class="fs-subtitle">Register a new customer</h3>
+            <h5  class="fs-subtitle" style="display: inline;">The fields marked with<h5 style="color: red; display: inline;">*</h5>They are mandatory</h5>
             <br>
             </br>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_cantidad_financiada" type="text" class="cl_invalid form-control required" name="Primer_nombre" placeholder=" ">
-                <label for="">Cantidad financiada</label>
+                <label for="">Amount financed</label>
             </div>
             <div class="input-group">
                 <select id="cl_nombre_representante" type="text" class="form-control form-personal cl_invalid" name="Primer_nombre">
@@ -253,49 +253,49 @@
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="cl_1" type="text" class="cl_invalid form-control required" name="Primer_nombre" placeholder=" ">
-                <label for="">Primer Nombre</label>
+                <label for="">First name</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="cl_2" type="text" class="cl_invalid form-control required" name="Apellido" placeholder=" ">
-                <label for="">Apellido</label>
+                <label for="">Last name</label>
             </div>   
             <div class="input-group">
                 <input minlength="8" maxlength="8" id="cl_3" type="date" class="cl_invalid form-control required" name="Fecha de nacimiento" placeholder=" ">
-                <label for="">Fecha de nacimiento</label>
+                <label for="">Date of birth</label>
             </div> 
             
             <div class="input-group">
                 <input minlength="8" maxlength="30" id="cl_4" type="text" class="form-control required" name="N_seguro_social" placeholder=" ">
-                <label for="">Numero de seguro social</label>
+                <label for="">Social Security number</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="5" maxlength="30" id="cl_5" type="text" class="form-control" name="N_licencia_conducir" placeholder=" ">
-                <label for="">Número licencia conducir</label>
+                <label for="">Driver's license number</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_6" type="text" class="cl_invalid form-control required" name="Estado" placeholder=" ">
-                <label for="">Estado</label>
+                <label for="">Condition</label>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="8" maxlength="8" id="cl_8" style="width: 100%;" type="date" class="cl_invalid form-control required" name="Vencimiento" placeholder=" ">
-                <label for="">Vencimiento</label>
+                <label for="">Expiration</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="300" id="cl_9" type="text" class="cl_invalid form-control required" name="Direccion " placeholder=" ">
-                <label for="">Direccion</label>
+                <label for="">Direction</label>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="1" maxlength="50" id="cl_10" style="width: 100%;" type="text" class="cl_invalid form-control required" name="Cuanto_tiempo" placeholder=" ">
-                <label for="">¿Cuanto tiempo?</label>
+                <label for="">How long?</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_11" type="text" class="cl_invalid form-control required" name="Ciudad" placeholder=" ">
-                <label for="">Ciudad</label>
+                <label for="">City</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_12" type="text" class="cl_invalid form-control required" name="Estado_ciudad" placeholder=" ">
-                <label for="">Estado</label>
+                <label for="">State</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="30" id="cl_13" type="text" class="cl_invalid form-control required" name="Zip" placeholder=" ">
@@ -304,26 +304,26 @@
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="10" maxlength="20"  id="cl_14" type="text" class="form-control" name="Telefono_casa" placeholder=" ">
-                <label for="">Telefono de la casa</label>
+                <label for="">home phone</label>
             </div>
             <div class="input-group">
                 <input minlength="10" maxlength="20" id="cl_15" type="text" class="cl_invalid form-control required" name="Telefono_celular" placeholder=" ">
-                <label for="">Telefono celular</label>
+                <label for="">Cell phone</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="300" id="cl_16" type="text" class="form-control" name="Direccion_anterior" placeholder=" ">
-                <label for="">Direccion anterior (si lleva menos de 3 años)</label>
+                <label for="">Previous address (if it takes less than 3 years)</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="50" id="cl_17" type="text" class="form-control" name="Ciudad_anterior" placeholder=" ">
-                <label for="">Ciudad</label>
+                <label for="">City</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="50" id="cl_18" type="text" class="form-control" name="Estado_anterior" placeholder=" ">
-                <label for="">Estado</label>
+                <label for="">State</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
@@ -332,68 +332,68 @@
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_20" type="text" class="cl_invalid form-control required" name="Correo" placeholder=" ">
-                <label for="">Correo electrónico</label>
+                <label for="">Email</label>
             </div>
-            <button type="button" name="next" class="btn btn-primary next" value="Next">Siguiente</button>
+            <button type="button" name="next" class="btn btn-primary next" value="Next">Next</button>
         </fieldset>
         <fieldset>
             <img class="logo" src="assets/images/auth/logo.png" alt="logo.png">
-            <h2 class="fs-title">Información de empleo e ingresos</h2>
+            <h2 class="fs-title">Employment and income information</h2>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_21" type="text" class="cl_invalid form-control required" name="Nombre_empleo" placeholder=" ">
-                <label for="">Nombre empleo</label>
+                <label for="">Job name</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="300" id="cl_22" type="text" class="cl_invalid form-control required" name="Direccion_empleo" placeholder=" ">
-                <label for="">Direccion</label>
+                <label for="">Direction</label>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="1" maxlength="50" id="cl_23" style="width: 100%;" type="text" class="cl_invalid form-control required" name="Tiempo_empleo" placeholder=" ">
-                <label for="">Años de empleo</label>
+                <label for="">years of employment</label>
             </div>
             <div class="input-group">
                 <input minlength="10" maxlength="20" id="cl_24" type="text" class="cl_invalid form-control required" name="N_telefono_empleo_anterio" placeholder=" ">
-                <label for="">Telefono de empleo</label>
+                <label for="">employment phone</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_25" type="text" class="cl_invalid form-control required" name="Posicion_empleo" placeholder=" ">
-                <label for="">Posición</label>
+                <label for="">Position</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_26" type="text" class="cl_invalid form-control required" name="Ingreso_bruto" placeholder=" ">
-                <label for="">Ingreso en bruto</label>
+                <label for="">Gross income</label>
             </div>
             <div class="input-group">
                 <select id="cl_27" type="text" class="cl_invalid form-control required" name="Tipo_ingreso" placeholder=" ">
-                <label for="">Tipo de ingreso</label>
+                <label for="">Type of income</label>
                     <option selected value="">
-                        seleccionar tipo de ingreso *(Obligatorio)
+                    select type of income *(Required)
                     </option>
                     <option value="Mensual">
-                        Mensual
+                    Monthly
                     </option>   
                     <option value="Anual">
-                        Anual
+                    Annual
                     </option>
                 </select>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
-                <input minlength="1" maxlength="100" id="cl_28" type="text" class="form-control" name="Empleador_anterior" placeholder="Empleador anterior (si tiene menos de 3 años)">
+                <input minlength="1" maxlength="100" id="cl_28" type="text" class="form-control" name="Empleador_anterior" placeholder="Previous employer (if less than 3 years old)">
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="1" maxlength="30" id="cl_29" style="width: 100%;" type="text" class="cl_invalid form-control required" name="fechas de empleo" placeholder=" ">
-                <label for="">Fechas de empleo</label>
+                <label for="">Dates of employment</label>
             </div>
 
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="cl_30" type="text" class="cl_invalid form-control required" name="Ciudad_empleo_anterior" placeholder=" ">
-                <label for="">Ciudad</label>
+                <label for="">City</label>
             </div>
 
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="cl_31" type="text" class="cl_invalid form-control required" name="Estado_empleo_anterior" placeholder=" ">
-                <label for="">Estado</label>
+                <label for="">State</label>
             </div>
 
             <div class="input-group">
@@ -403,11 +403,11 @@
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="10" maxlength="20" id="cl_33" type="text" class="form-control" title=" SI TIENE MENOS DE 3 AÑOS" name=" N_telefono_empleo_anterio" placeholder=" ">
-                <label for="">Número de telefono del empleo anterio</label>
+                <label for="">Telephone number of previous employment</label>
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
-                <a style="color: orange;">La pensión alimenticia o manutención de menores por separado son información opcional y no tienen que declararse si usted no elige a depender de esas rentas en la solicitud del crédito.
-                    - Puede quedar vacio</a>
+                <a style="color: orange;">Separate alimony or child support is optional information and does not have to be reported if you do not elect to rely on that income on your credit application.
+                    - can be empty</a>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
@@ -416,28 +416,28 @@
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="50" id="cl_35" type="text" class="form-control" title="LA PENSIÓN ALIMENTICIA O MANUTENCIÓN DE MENORES POR SEPARADO SON INFORMACIÓNES OPCIONALES." name="Cantidad_fuente_ingreso_extra" placeholder=" ">
-                <label for="">Cantidad ingreso extra</label>
+                <label for="">Extra income amount</label>
             </div>
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Previous</button>
-            <button type="button" name="next" class="btn btn-primary next" value="Next">Siguiente</button>
+            <button type="button" name="next" class="btn btn-primary next" value="Next">Next</button>
         </fieldset>
         <fieldset>
             <img class="logo" src="assets/images/auth/logo.png" alt="logo.png">
-            <h3 class="fs-subtitle">INFORMACIÓN Y REFERENCIAS DE LA HIPOTECA</h3>
+            <h3 class="fs-subtitle">MORTGAGE INFORMATION AND REFERENCES</h3>
             <div class="input-group">
                 <!-- Opcional -->
                 <select id="cl_36" type="text" class="form-control" name="Id_hipoteca_estado" placeholder=" ">
                     <option selected value="6">
-                        Seleccionar estado de la hipoteca
+                    Select Mortgage Status
                     </option>
                     <option value="1">
-                        Pagado
+                    Paid
                     </option>
                     <option value="2">
-                        Hipotecado
+                    Mortgaged
                     </option>
                     <option value="3">
-                        Rentado
+                    Rented
                     </option>
                 </select>
             </div>
@@ -445,36 +445,36 @@
                 <!-- Opcional -->
                 <select id="cl_37" type="text" class="form-control" name="Id_tipo_residencia_hipoteca" placeholder=" ">
                     <option selected value="6">
-                        Seleccionar Tipo de residencia de la hipoteca
+                    Select Mortgage Residence Type
                     </option>
                     <option value="1">
-                        Casa
+                    House
                     </option>
                     <option value="2">
-                        Departamento
+                    Department
                     </option>
                     <option value="3">
-                        Condominio
+                    Condominium
                     </option>
                     <option value="4">
-                        Casa Movil
+                    Movil House
                     </option>
                 </select>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="100" id="cl_38" type="text" class="form-control" name="Direccion_hipoteca" placeholder=" ">
-                <label for="">Dirección</label>
+                <label for="">Direction</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="100" id="cl_39" type="text" class="form-control" name="PROPIETARIO_O_HIPOTECA_TITULAR" placeholder=" ">
-                <label for="">Propietario o hipoteca titular</label>
+                <label for="">Owner or holder mortgage</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="30" id="cl_40" type="text" class="form-control" name="Pago_hipoteca" placeholder=" ">
-                <label for="">Pago de la hipoteca</label>
+                <label for="">Mortgage payment</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
@@ -484,113 +484,113 @@
 
 
             <div class="alpaca6" style="margin-bottom: 15px;">
-                <a>REFERENCIAS</a>
+                <a>REFERENCES</a>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="cl_42" type="text" class="cl_invalid form-control required" name=" Referencia_pariente_nombre_1" placeholder=" ">
-                <label for="">(1) Nombre de pariente cercano</label>
+                <label for="">(1) Name of close relative</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="300" id="cl_43" type="text" class="cl_invalid form-control required" name="Referencia_pariente_direccion_1" placeholder=" ">
-                <label for="">(1) Direccion pariente cercano</label>
+                <label for="">(1) Next of kin address</label>
             </div>
             <div class="input-group">
                 <input minlength="10" maxlength="20" id="cl_44" type="text" class="cl_invalid form-control required" name=" Referencia_pariente_telefono_1" placeholder=" ">
-                <label for="">(1) telefono pariente cercano</label>
+                <label for="">(1) next of kin phone number</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_45" type="text" class="cl_invalid form-control required" name="Referencia_pariente_relacion_1" placeholder=" ">
-                <label for="">(1) Relacion del pariente cercano</label>
+                <label for="">(1) Close relative relationship</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="cl_46" type="text" class="form-control" name="Referencia_pariente_nombre_2" placeholder=" ">
-                <label for="">(2) Nombre de pariente cercano</label>
+                <label for="">(2) Name of close relative</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="300" id="cl_47" type="text" class="form-control" name="Referencia_pariente_direccion_2" placeholder=" ">
-                <label for="">(2) Direccion pariente cercano</label>
+                <label for="">(2) Next of kin address</label>
             </div>
             <div class="input-group">
                 <input minlength="10" maxlength="20" id="cl_48" type="text" class="form-control" name="Referencia_pariente_telefono_2" placeholder=" ">
-                <label for="">(2) Telefono pariente cercano</label>
+                <label for="">(2) Telephone number of next of kin</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="cl_49" type="text" class="form-control" name="Referencia_pariente_relacion_2" placeholder=" ">
-                <label for="">(2) Relacion del pariente cercano</label>
+                <label for="">(2) Relationship of close relative</label>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="8" maxlength="8" id="cl_50" style="width: 100%;" type="date" class="cl_invalid form-control required" name="fecha_creacion_registro" placeholder=" ">
-                <label for="">Fecha de creacion del registro</label>
+                <label for="">Record creation date</label>
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
-                <a>¿Solicitud con co-aplicante?</a>
+                <a>Application with co-applicant?</a>
             </div>
             <div class="cl_invalid alpaca1">
                 <select id="cl_51" class="cl_invalid alpaca-control form-control" name="">
-                    <option value="">Seleccionar</option> 
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
+                    <option value="">To select</option> 
+                    <option value="si">Yes</option>
+                    <option value="no">Not</option>
                 </select>
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
             </div>
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Anterior</button>
-            <button type="button" name="next" class="btn btn-primary next" value="Next">Siguiente</button>
+            <button type="button" name="next" class="btn btn-primary next" value="Next">Next</button>
         </fieldset>
         <fieldset>
             <img class="logo" src="assets/images/auth/logo.png" alt="logo.png">
-            <h2 class="fs-title">Información CO-APLICANTE</h2>
+            <h2 class="fs-title">CO-APPLICANT Information</h2>
             <div class="alpaca6" style="margin-bottom: 15px;">
-                <a style="color: orange;">LLenar estos campos solo si aplica</a>
+                <a style="color: orange;">Fill these fields only if applicable</a>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="co_1" type="text" class="co_invalid form-control required" name="Relacion_del_solicitante" placeholder=" ">
-                <label for="">Relacion del solicitante</label>
+                <label for="">Applicant Relationship</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="co_2" type="text" class="co_invalid form-control required" name="Primer_nombre" placeholder=" ">
-                <label for="">Primer nombre</label>
+                <label for="">First name</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="100" id="co_3" type="text" class="co_invalid form-control required" name="Apellido" placeholder=" ">
-                <label for="">Apellido</label>
+                <label for="">Last name</label>
             </div>
             <div class="input-group">
                 <input minlength="8" maxlength="8" id="co_4" type="date" class="co_invalid form-control required" name="Fecha de nacimiento" placeholder=" ">
-                <label for="">Fecha de nacimiento</label>
+                <label for="">Date of birth</label>
             </div> 
             <div class="input-group">
                 <input minlength="8" maxlength="30" id="co_5" type="text" class="co_invalid form-control required" name="N_seguro_social" placeholder=" ">
-                <label for="">Número de seguro social</label>
+                <label for="">Social Security number</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="5" maxlength="30" id="co_6" type="text" class="form-control" name="N_licencia_conducir" placeholder=" ">
-                <label for="">Número de licencia de conducir</label>
+                <label for="">Driver's license number</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="co_7" type="text" class="co_invalid form-control required" name="Estado" placeholder=" ">
-                <label for="">Estado</label>
+                <label for="">Condition</label>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="8" maxlength="8" id="co_9" style="width: 100%;" type="date" class="co_invalid form-control required" name="Vencimiento" placeholder=" ">
-                <label for="">Vencimiento</label>
+                <label for="">Expiration</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="300" id="co_10" type="text" class="co_invalid form-control required" name="Direccion " placeholder=" ">
-                <label for="">Direccion</label>
+                <label for="">Address</label>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="1" maxlength="50" id="co_11" style="width: 100%;" type="text" class="co_invalid form-control required" name="Cuanto_tiempo" placeholder=" ">
-                <label for="">¿Cuanto tiempo?</label>
+                <label for="">How long?</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="co_12" type="text" class="co_invalid form-control required" name="Ciudad" placeholder="  ">
-                <label for="">Ciudad</label>
+                <label for="">City</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="co_13" type="text" class="co_invalid form-control required" name="Estado_ciudad" placeholder=" ">
-                <label for="">Estado</label>
+                <label for="">State</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="30" id="co_14" type="text" class="co_invalid form-control required" name="Zip" placeholder=" ">
@@ -599,26 +599,26 @@
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="10" maxlength="20"  id="co_15" type="text" class="form-control" name="Telefono_casa" placeholder=" ">
-                <label for="">Telefono de la casa</label>
+                <label for="">home phone</label>
             </div>
             <div class="input-group">
                 <input minlength="10" maxlength="20" id="co_16" type="text" class="co_invalid form-control required" name="Telefono_celular" placeholder=" ">
-                <label for="">Telefono celular</label>
+                <label for="">Cell phone</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="300" id="co_17" type="text" class="form-control" name="Direccion_anterior" placeholder=" ">
-                <label for="">Direccion anterior (si lleva menos de 3 años)</label>
+                <label for="">Previous address (if it takes less than 3 years)</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="50" id="co_18" type="text" class="form-control" name="Ciudad_anterior" placeholder=" ">
-                <label for="">Ciudad</label>
+                <label for="">City</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
                 <input minlength="1" maxlength="50" id="co_19" type="text" class="form-control" name="Estado_anterior" placeholder=" ">
-                <label for="">Estado</label>
+                <label for="">state</label>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
@@ -627,43 +627,43 @@
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="co_21" type="text" class="co_invalid form-control required" name="Correo" placeholder=" ">
-                <label for="">Correo electrónico</label>
+                <label for="">Email</label>
             </div>
 
-            <h2 class="fs-title">Información de empleo e ingresos</h2>
+            <h2 class="fs-title">Employment and income information</h2>
 
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="co_22" type="text" class="co_invalid form-control required" name="Nombre_empleo" placeholder=" ">
-                <label for="">Nombre empleo</label>
+                <label for="">Job name</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="300" id="co_23" type="text" class="co_invalid form-control required" name="Direccion_empleo" placeholder=" ">
-                <label for="">Direccion</label>
+                <label for="">Address</label>
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
                 <input minlength="1" maxlength="50" id="co_24" style="width: 100%;" type="text" class="co_invalid form-control required" name="Tiempo_empleo" placeholder=" ">
-                <label for="">Años de empleo</label>
+                <label for="">years of employment</label>
             </div>
             <div class="input-group">
                 <input minlength="10" maxlength="20" id="co_25" type="text" class="co_invalid form-control required" name=" N_telefono_empleo_anterio" placeholder=" ">
-                <label for="">Telefono de empleo</label>
+                <label for="">employment phone</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="co_26" type="text" class="co_invalid form-control required" name="Posicion_empleo" placeholder=" ">
-                <label for="">Posición</label>
+                <label for="">Position</label>
             </div>
             <div class="input-group">
                 <input minlength="1" maxlength="50" id="co_27" type="text" class="co_invalid form-control required" name="Ingreso_bruto" placeholder=" ">
-                <label for="">Ingreso en bruto</label>
+                <label for="">gross income</label>
             </div>
             <div class="input-group">
                 <select id="co_28" type="text" class="co_invalid form-control" name="Tipo_ingreso required" placeholder=" ">
                     
                     <option selected value="default">
-                        seleccionar tipo de ingreso
+                    select type of income
                     </option>
                     <option value="Mensual">
-                        Mensual
+                    Monthly
                     </option>
                     <option value="Anual">
                         Anual
@@ -694,8 +694,8 @@
                 <input minlength="10" maxlength="20" id="co_34" type="text" class="form-control" title=" SI TIENE MENOS DE 3 AÑOS" name=" N_telefono_empleo_anterio" placeholder="Número de telefono del empleo anterio">
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
-                <a style="color: orange;">La pensión alimenticia o manutención de menores por separado son información opcional y no tienen que declararse si usted no elige a depender de esas rentas en la solicitud del crédito.
-                    - Puede quedar vacio</a>
+                <a style="color: orange;">Separate alimony or child support is optional information and does not have to be reported if you do not elect to rely on that income on your credit application.
+                     - can be empty</a>
             </div>
             <div class="input-group">
                 <!-- Opcional -->
@@ -706,7 +706,7 @@
                 <input minlength="1" maxlength="50" id="co_36" type="text" class="form-control" title="LA PENSIÓN ALIMENTICIA O MANUTENCIÓN DE MENORES POR SEPARADO SON INFORMACIÓNES OPCIONALES." name="Cantidad_fuente_ingreso_extra" placeholder="$ Mensual">
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
-                <a>Selecciona un avatar</a>
+                <a>Select an avatar</a>
             </div>
             
             <div class="alpaca6" style="margin-bottom: 15px;">
@@ -730,49 +730,6 @@
             <button id="btn-enviar-customer" type="button" name="next" class="btn btn-success waves-effect" value="submit">Enviar</button>
         </fieldset>
     </form>
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
     <script type="text/javascript" src="../bower_components/jquery/js/jquery.min.js"></script>
