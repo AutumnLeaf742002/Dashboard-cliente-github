@@ -1,8 +1,0 @@
-
-
-alex:
-eliminar elementos html segun cada rol para visualizar
-eliminar el codigo que se encuentra en event-full-calendar mas adelante
-Terminar lo de las citas
-Hacer de alguna manera que cuando un mantenimiento se esta acercando, aparezca en rojo o algun color
-Terminar lo del perfil para el usuario logueado

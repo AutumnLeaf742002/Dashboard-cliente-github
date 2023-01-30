@@ -9,6 +9,11 @@
         include_once "backend/php/connection.php";
         include_once "backend/php/commands.php";
 
+        $url = $_SERVER['REQUEST_URI'];
+        $url = explode("ES", $url);
+        $url_es = "../../ES$url[1]";
+        $url_en = "../../EN$url[1]";
+
         $id_cl = $_GET["id_cl"];
         $id_co = $_GET["id_co"];
         $analista = $_GET["analista"];
@@ -367,12 +372,12 @@
                                     </a>
                                     <ul class="show-notification">
                                         <li>
-                                            <a href="#" data-lng="en">
+                                            <a href="<?php echo $url_en; ?>" data-lng="en">
                                                 <i class="flag-icon flag-icon-gb m-r-5"></i> English
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" data-lng="es">
+                                            <a href="<?php echo $url_es; ?>" data-lng="es">
                                                 <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                             </a>
                                         </li>
