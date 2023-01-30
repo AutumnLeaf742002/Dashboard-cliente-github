@@ -259,7 +259,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>
                             </ul>
                             <!-- search -->
                             <div id="morphsearch" class="morphsearch">
