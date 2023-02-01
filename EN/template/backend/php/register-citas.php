@@ -64,10 +64,24 @@
             {
                 //ejecucion
 
-                define("sql", "INSERT INTO citas (Id_cliente, Id_instalador, Fecha, Hora, Tipo_instalacion, Id_agendador, Rol, Estado_cita) VALUES ($cliente, '$instalador', '$fecha', '$hora', '$tipo_instalacion', $id_logued, $rol_logued, 4)");
-                $res = command($oCon, sql);
+                $fecha_actual = strtotime(date("Y-m-d"));
+                $fecha_bd = strtotime($fecha);
+                $diferencia_en_segundos = $fecha_bd - $fecha_actual;
+                $diferencia_en_dias = $diferencia_en_segundos / 86400;
 
-                echo $res;
+                if($diferencia_en_dias >= -1)
+                {
+                    define("sql", "INSERT INTO citas (Id_cliente, Id_instalador, Fecha, Hora, Tipo_instalacion, Id_agendador, Rol, Estado_cita) VALUES ($cliente, '$instalador', '$fecha', '$hora', '$tipo_instalacion', $id_logued, $rol_logued, 4)");
+                    $res = command($oCon, sql);
+
+                    echo $res;
+                }
+                else
+                {
+                    echo "Solo puedes agendar una cita para hoy o fechas posteriores";
+                }
+
+                
             }
             else
             {

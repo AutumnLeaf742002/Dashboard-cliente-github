@@ -116,7 +116,7 @@
                                 '.$item["Direccion"].'
                             </td>
                             <td>
-                                <button onclick="agendar_cita('.$item["Id"].')" class="btn-same btn btn-danger">schedule appointment</button>
+                                <button onclick="agendar_cita('.$item["Id"].')" class="btn-same btn btn-danger">agendar cita</button>
                             </td>
                         </tr>';
                 }
