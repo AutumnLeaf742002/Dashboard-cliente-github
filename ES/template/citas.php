@@ -369,8 +369,7 @@
                                                 <i class="ti-layout-sidebar-left"></i> Logout
                                             </a>
                                         </li>
-                                    </ul>
-                                               
+                                    </ul> 
                                 </li>
                             </ul>
                             <!-- search -->
@@ -862,26 +861,16 @@
                                                             <th>Estado</th>
                                                             <th>ID Agendador</th>
                                                             <th>Rol</th>
+                                                            <th>Cambio de estado</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="tbody_citas">
-                                                        <tr>
-                                                            <td>ID</td>
-                                                            <td>cliente</td>
-                                                            <td>Instalador</td>
-                                                            <td>Fecha</td>
-                                                            <td>Hora</td>
-                                                            <td>Direccion</td>
-                                                            <td>Estado</td>
-                                                            <td>Agendador</th>
-                                                            <td>Rol</td>
-                                                        </tr>
+                                                        
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
-                                   
 
                                     <!--popup de registro-->
                                     <!-- inicio de formulario de registro de analista -->

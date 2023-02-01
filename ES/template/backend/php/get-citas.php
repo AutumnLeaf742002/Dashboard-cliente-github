@@ -56,6 +56,13 @@
                 <td>'.$item["Estado"].'</td>
                 <td>'.$agendador.'</th>
                 <td>'.$item["Rol"].'</td>
+                <td> <select class="btn btn-primary auth-btn"> 
+                
+                    <option>Cancelado</option>
+                    <option>Concluico</option>
+                    <option>No estaba en casa</option>
+                    <option>Pendiente</option>
+                </select></td>
             </tr>
             ';
         }
