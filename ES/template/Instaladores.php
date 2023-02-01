@@ -268,53 +268,21 @@
 
 
                                 <li class="header-notification">
-                                    <a href="#!">
+                                    <a href="#" id="a-number">
                                         <i class="ti-bell"></i>
-                                        <span class="badge">5</span>
+                                        <span id="set-number" class="badge">1</span>
                                     </a>
-                                    <ul class="show-notification">
+                                    <ul class="show-notification" id="container-noti">
                                         <li>
-                                            <h6>Notifications</h6>
-                                            <label class="label label-danger">Nuevo Mensaje</label>
+                                            <h6>Notificaciones</h6>
                                         </li>
                                         <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Carlos Castillo</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
+                                            <h6>No hay notificaciones en este momento</h6>
                                         </li>
                                     </ul>
                                 </li>
+
+                                <script src="backend/js/get-noti.js"></script>
 
                                 <li class="user-profile header-notification">
                                     <a href="#!" id="info_profile" class="p-0" style="position: relative;">
