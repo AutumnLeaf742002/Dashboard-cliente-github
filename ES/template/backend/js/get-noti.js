@@ -13,8 +13,20 @@ function get_noti()
 
             let array_return = request.responseText.split("--")
 
-            set_number.innerHTML = array_return[1]
-            container_noti.innerHTML = array_return[0]
+            if(array_return[1] != " 0")
+            {
+                set_number.innerHTML = array_return[1]
+                container_noti.innerHTML = array_return[0]
+            }
+            else
+            {
+                const a_number = document.getElementById('a-number')
+                a_number.innerHTML = `
+                <i class="ti-bell"></i>
+                <span style="background-color: #2ecc71 !important;" id="set-number" class="badge">0</span>
+                `
+            }
+
         }
     }
 
