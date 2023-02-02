@@ -142,7 +142,7 @@
     <!-- themify-icons line icon -->
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
-   <!-- notify js Fremwork -->
+<!-- notify js Fremwork -->
     <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.css">
     <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.brighttheme.css">
     <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/css/pnotify.buttons.css">
@@ -180,12 +180,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font" style="vertical-align: inherit;">Aviso!</font>
+                                <font" style="vertical-align: inherit;">Warning!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -211,12 +211,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Hecho!</font>
+                                <font style="vertical-align: inherit;">Done it!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -249,12 +249,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Peligro</font>
+                                <font style="vertical-align: inherit;">Danger</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -289,8 +289,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas guardar los cambios?</h2>
-                    <p style="display: block;">Si haces click en aceptar se guardaran los cambios realizados.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to save the changes?</h2>
+                    <p style="display: block;">If you click OK, the changes made are saved.</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
@@ -298,9 +298,9 @@
                     <div class="icon">!</div>
                     <p>You need to write something!</p>
                     </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
                     <div class="sa-confirm-button-container">
-                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
+                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Accept</button><div class="la-ball-fall">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -357,7 +357,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                        <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                        <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -367,7 +367,7 @@
                                         </li>
                                         <li>
                                             <a href="<?php echo $url_es; ?>" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                             </a>
                                         </li>
                                         
@@ -383,10 +383,10 @@
                                     </a>
                                     <ul class="show-notification" id="container-noti">
                                         <li>
-                                            <h6>Notificaciones</h6>
+                                            <h6>notifications</h6>
                                         </li>
                                         <li>
-                                            <h6>No hay notificaciones en este momento</h6>
+                                            <h6>There are no notifications at this time</h6>
                                         </li>
                                     </ul>
                                 </li>
@@ -401,7 +401,7 @@
                                     <ul class="show-notification profile-notification">
                                         <li>
                                             <a href="profile-admin.php">
-                                                <i class="ti-user"></i> Profile
+                                                <i class="ti-user"></i> profile
                                             </a>
                                         </li>
                                         <li>
@@ -662,7 +662,7 @@
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
 
-                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navegación</div>
+                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
                             <li>
                                <!--Roles-->
@@ -711,7 +711,7 @@
                                   </svg></span>
                                 <span class="" data-i18n="nav.dash.default"><svg class="svg-roles" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                  </svg>Analistas</span>
+                                  </svg>Analysts</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
@@ -723,7 +723,7 @@
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                                   </svg></span>
-                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Clientes</span>
+                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Customers</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
@@ -734,7 +734,7 @@
                                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                               </svg></span>
-                            <span class="pcoded-mtext" data-i18n="nav.dash.default">Citas</span>
+                            <span class="pcoded-mtext" data-i18n="nav.dash.default">appointment</span>
                             <span class="pcoded-mcaret"></span>
                         </a>  
                         <li class="r_manager r_analist" id="">
@@ -742,7 +742,7 @@
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
                                     <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
                                   </svg></span>
-                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Instaladores</span>
+                                <span class="pcoded-mtext" data-i18n="nav.dash.default">Installers</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
@@ -762,7 +762,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Editar Analista</h4>
+                                                        <h4>Edit Analyst</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -796,7 +796,7 @@
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
                                                                             <h2><?php echo $name; ?></h2>
-                                                                            <span class="text-white">Analista</span>
+                                                                            <span class="text-white">Analyst</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -822,7 +822,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion del Analista</h5>
+                                                                <h5 class="card-header-text">Analyst Information</h5>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
@@ -836,7 +836,7 @@
                                                                                                 <tbody>
                                                                                                     <form>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Nombre</th>
+                                                                                                            <th scope="row">Name</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input  maxlength="100" id="name" type="text" class="form-control" name="" value="<?php echo $name; ?>">
@@ -844,7 +844,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Correo</th>
+                                                                                                            <th scope="row">Mail</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="50" id="mail" type="text" class="form-control " name="" value="<?php echo $mail; ?>">
@@ -852,7 +852,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Telefono Celular</th>
+                                                                                                            <th scope="row">Cell phone</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="20" id="cell" type="text" class="form-control " name="" value="<?php echo $cell; ?>">
@@ -868,7 +868,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Incentivo</th>
+                                                                                                            <th scope="row">Incentive</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="100" id="comision" type="text" class="form-control " name="" value="<?php echo $comision; ?>">
@@ -887,7 +887,7 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Fecha de inicio</th>
+                                                                                                    <th scope="row">Start date</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="10" id="start_date" type="date" class="form-control " name="" value="<?php echo $start_date; ?>">
@@ -895,7 +895,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Reclutador</th>
+                                                                                                    <th scope="row">Recruiter</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="100" id="recruiter" type="text" class="form-control " name="" value="<?php echo $recruiter; ?>">
@@ -903,7 +903,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="50" id="user" type="text" class="form-control " name="" value="<?php echo $user; ?>">
@@ -924,10 +924,10 @@
                                                         <div class="col-12 d-flex justify-content-center">
                                                             
                                                             <a href="user-profile-analyst.php?vmekmsi23xmfvwe155=<?php echo $id_a; ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
-                                                                volver
+                                                            Return
                                                             </a>
                                                             <button id="btn-edit" class="btn btn-primary cursor-pointer mx-2">
-                                                                Guardar
+                                                            Keep
                                                             </button>
                                                                 
                                                         </div>
