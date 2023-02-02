@@ -857,7 +857,7 @@
                                                             <th>Instalador</th>
                                                             <th>Fecha</th>
                                                             <th>Hora</th>
-                                                            <th>Direccion</th>
+                                                            <th>Dirección</th>
                                                             <th>Estado</th>
                                                             <th>ID Agendador</th>
                                                             <th>Rol</th>

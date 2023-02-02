@@ -45,6 +45,26 @@
                 $agendador = $res_agendador[0]["Name"];
             }
 
+            $estado = $item["Estado"];
+            $color = "";
+
+            if($estado == "Cancelado")
+            {
+                $color = "#e74c3c";
+            }
+            else if($estado == "Concluido")
+            {
+                $color = "#2ecc71";
+            }
+            else if($estado == "No estaba en casa")
+            {
+                $color = "#f1c40f";
+            }
+            else if($estado == "Pendiente")
+            {
+                $color = "#f1c40f";
+            }
+
             echo'
             <tr>
                 <td>'.$item["Id"].'</td>
@@ -53,9 +73,22 @@
                 <td>'.$item["Fecha"].'</td>
                 <td>'.$item["Hora"].'</td>
                 <td>'.$item["Direccion"].'</td>
-                <td>'.$item["Estado"].'</td>
-                <td>'.$agendador.'</th>
+                <td>
+                    <p style="background-color: '.$color.'; margin: 0px; color: white; font-weight: bold; padding: 3px 5px; border-radius: 7px; text-align: center; font-size: 14px; display: flex; justify-content: center; max-width: 170px">
+                        '.$item["Estado"].'
+                    </p>
+                </td>
+                <td>'.$agendador.'</td>
                 <td>'.$item["Rol"].'</td>
+                <td> 
+                    <select class="btn btn-primary auth-btn" onchange="cambiar_estado(event, '.$item["Id"].')"> 
+                        <option selected value="">Seleccionar</option>
+                        <option value="2">Concluido</option>
+                        <option value="1">Cancelado</option>
+                        <option value="3">No estaba en casa</option>
+                        <option value="4">Pendiente</option>
+                    </select>
+                </td>
             </tr>
             ';
         }

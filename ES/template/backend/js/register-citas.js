@@ -66,4 +66,32 @@ function get_citas()
     request.send(`n=d`)
 }
 
+function cambiar_estado(event, id)
+{
+    const estado = event.target.value
+
+    if(estado != "")
+    {
+        let request = new XMLHttpRequest()
+        request.open('POST', 'backend/php/cambiar-estado-cita.php', true)
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+        request.onreadystatechange = function () {
+
+            if (request.readyState == 4 && request.status == 200) {
+
+                if(request.responseText == "Correct")
+                {
+                    get_citas()
+                }
+                else
+                {
+                    aparecer_n_3(`Error desconocido: ${request.responseText}`)
+                }
+            }
+        }
+
+        request.send(`id=${id}&estado=${estado}`)
+    }
+}
+
 get_citas()

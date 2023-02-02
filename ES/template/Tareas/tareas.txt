@@ -4,6 +4,3 @@ Poner un texto en la pagina de clientes y el perfil de los clientes para indicar
 estatus de las citas
 
 Alex:
-Trabajar notificaciones
-banderita idioma
-cambiar las citas por la mas nueva primero o arriba

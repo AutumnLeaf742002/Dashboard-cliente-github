@@ -882,23 +882,16 @@
                                                             <th>installer</th>
                                                             <th>Date</th>
                                                             <th>Hour</th>
-                                                            <th>Direction</th>
-                                                            <th>Estado</th>
-                                                            <th>ID Agendador</th>
+                                                            <th>Address</th>
+                                                            <th>Status</th>
+                                                            <th>Planner ID</th>
                                                             <th>Rol</th>
+                                                            <th>Change status</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="tbody_citas">
                                                         <tr>
-                                                            <td>ID</td>
-                                                            <td>customer</td>
-                                                            <td>Instalador</td>
-                                                            <td>Date</td>
-                                                            <td>Hour</td>
-                                                            <td>Direction</td>
-                                                            <td>status</td>
-                                                            <td>scheduler</th>
-                                                            <td>Rol</td>
+                                                            
                                                         </tr>
                                                     </tbody>
                                                 </table>
