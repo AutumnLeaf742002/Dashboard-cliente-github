@@ -8,7 +8,7 @@
         include_once "./backend/php/commands.php";
 
         $url = $_SERVER['REQUEST_URI'];
-        $url = explode("EN", $url);
+        $url = explode("ES", $url);
         $url_es = "../../ES$url[1]";
         $url_en = "../../EN$url[1]";
 
@@ -142,7 +142,7 @@
                     <div class="icon">!</div>
                     <p>You need to write something!</p>
                     </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
+                    <button onclick="Close()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
                     <div class="sa-confirm-button-container">
                     <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
                     <div></div>
@@ -202,7 +202,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                    <i class="flag-icon flag-icon-gb m-r-5"></i> English
+                                        <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -212,7 +212,7 @@
                                         </li>
                                         <li>
                                             <a href="<?php echo $url_es; ?>" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                             </a>
                                         </li>
                                         
@@ -223,53 +223,27 @@
 						<!--final multi-lenguaje-->
                                     
                             
-                                <li class="header-notification">
-                                    <a href="#!">
+                        <li class="header-notification">
+                                    <a href="#" id="a-number">
                                         <i class="ti-bell"></i>
-                                        <span class="badge">5</span>
+                                        <span id="set-number" class="badge">1</span>
                                     </a>
-                                    <ul class="show-notification">
+                                    <ul class="show-notification" id="container-noti">
                                         <li>
                                             <h6>Notifications</h6>
-                                            <label class="label label-danger">Nuevo Mensaje</label>
                                         </li>
                                         <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Carlos Castillo</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
+                                            <h6>There are no notifications at this time</h6>
                                         </li>
                                     </ul>
                                 </li>
+
+                                <script src="backend/js/get-noti.js"></script>
                                 
                                 <li class="user-profile header-notification">
                                     <a href="#!" id="info_profile" class="p-0" style="position: relative;">
                                         <img src="assets/images/user-redondo.svg" alt="User-Profile-Image">
-                                        <span>Cargando...</span>
+                                        <span>Charging...</span>
                                         <i class="ti-angle-down"></i>
                                     </a>
                                     <ul class="show-notification profile-notification">
@@ -721,7 +695,7 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">assigned manager</th>
+                                                                                                        <th scope="row">Assigned manager</th>
                                                                                                         <td style="display: flex; align-items:center;">
                                                                                                             <?php echo $name_s; ?>
                                                                                                             <a class="r_manager" href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_s; ?>" style="display: flex; align-items:center;" title="Ver perfil del Manager">
@@ -766,7 +740,7 @@
                                                                                                     <td><?php echo $res[0]["Start_date"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">recruiter</th>
+                                                                                                    <th scope="row">Recruiter</th>
                                                                                                     <td><?php echo $res[0]["Recruiter"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
@@ -777,7 +751,6 @@
                                                                                                     <th scope="row">User</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
-                                                                                               
                                                                                             </tbody>
                                                                                         </table>
                                                                                         </div>
@@ -794,7 +767,6 @@
                                                                     <!-- Main-body start -->
                                                                 <div class="main-body">
                                                                     <div class="page-wrapper">
-
                                                                         
                                                                         <!-- Page header end -->
                                                                         <!-- Page body start -->
@@ -816,8 +788,6 @@
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                     <!-- Main-body start -->
-                        
-                        
                                                             </div>
                                                         </div>
                                                         <!-- personal card end-->
@@ -826,7 +796,6 @@
                                                     <!-- tab pane contact start -->
                                                     <div class="tab-pane" id="contacts" role="tabpanel">
                                                         <div class="row">
-
                                                             <div class="col-lg-12">
                                                                 <div class="row">
                                                                     <div class="col-sm-12">
@@ -837,7 +806,6 @@
                                                                                     <h5>Assigned Clients</h5>
                                                                                 </div>
                                                                                 <!--buscador-->
-                                                                             
                                                                                 <div id="buscador" class="">
                                                                                     <div id="container-buscador" class="">
                                                                                         <input id="buscador-cliente" type="text" class="form-control" placeholder="Search...">
@@ -848,17 +816,17 @@
                                                                                     <div class="table-content crm-table">
                                                                                         <div class="project-table" id="contenedor-tabla-clientes">
                                                                                             <table id="crm-contact" class="table table-striped table-responsive nowrap">
-                                                                                                <a href="#final">go to the end</a>
+                                                                                                <a href="#final">Go to the end</a>
                                                                                                 <thead>
                                                                                                     <tr>
                                                                                                         <th>
                                                                                                         </th>
                                                                                                         <th>Name</th>
                                                                                                         <th>Social Security number</th>
-                                                                                                        <th>driver's license</th>
-                                                                                                        <th>Status</th>
-                                                                                                        <th>vencimiento</th>
-                                                                                                        <th>Direccion</th>
+                                                                                                        <th>Driver's license</th>
+                                                                                                        <th>Condition</th>
+                                                                                                        <th>Expiration</th>
+                                                                                                        <th>Direction</th>
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody id="contenedor-clientes">
@@ -920,7 +888,6 @@
                                                                                                         <td>33</td>
                                                                                                         <td>+124455645889</td>
                                                                                                         <td>01/05/2013</td>
-                                                                                                       
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td>
@@ -952,7 +919,6 @@
                                                                                                         <td>19/12/2015</td>
                                                                                                         
                                                                                                     </tr>
-                                                                                                  
                                                                                                 </tbody>
                                                                                                 <tfoot>
                                                                                                 </tfoot>
@@ -988,50 +954,7 @@
         <p id="ibwisaduiwd" style="display: none;">
             <?php echo $id; ?>
         </p>
-
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
+        
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
     <script type="text/javascript" src="../bower_components/jquery/js/jquery.min.js"></script>
