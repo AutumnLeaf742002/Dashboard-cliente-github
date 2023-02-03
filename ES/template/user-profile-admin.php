@@ -7,7 +7,7 @@
         $id = $_GET["vmekmsi23xmfvwe155"]??0;
 
         $url = $_SERVER['REQUEST_URI'];
-        $url = explode("EN", $url);
+        $url = explode("ES", $url);
         $url_es = "../../ES$url[1]";
         $url_en = "../../EN$url[1]";
 
@@ -33,7 +33,7 @@
     <script src="backend/js/session.js"></script>
     <script src="backend/js/restrictor-analist.js"></script>
     <script src="backend/js/restrictor-manager.js"></script>
-    <title>Perfil de administrador</title>
+    <title>Administrator profile</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -106,8 +106,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas realizar esta acción?</h2>
-                    <p style="display: block;">Si haces click en aceptar los cambios no podran ser revertidos.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to perform this action?</h2>
+                    <p style="display: block;">If you click accept the changes cannot be reversed.</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
@@ -115,9 +115,9 @@
                     <div class="icon">!</div>
                     <p>You need to write something!</p>
                     </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
                     <div class="sa-confirm-button-container">
-                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
+                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Accept</button><div class="la-ball-fall">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -175,7 +175,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                    <i class="flag-icon flag-icon-gb m-r-5"></i> English
+                                        <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -185,7 +185,7 @@
                                         </li>
                                         <li>
                                             <a href="<?php echo $url_es; ?>" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                             </a>
                                         </li>
                                         
@@ -196,48 +196,22 @@
 						<!--final multi-lenguaje-->
                                     
                             
-                                <li class="header-notification">
-                                    <a href="#!">
+                        <li class="header-notification">
+                                    <a href="#" id="a-number">
                                         <i class="ti-bell"></i>
-                                        <span class="badge">5</span>
+                                        <span id="set-number" class="badge">1</span>
                                     </a>
-                                    <ul class="show-notification">
+                                    <ul class="show-notification" id="container-noti">
                                         <li>
                                             <h6>Notifications</h6>
-                                            <label class="label label-danger">Nuevo Mensaje</label>
                                         </li>
                                         <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Carlos Castillo</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
+                                            <h6>There are no notifications at this time</h6>
                                         </li>
                                     </ul>
                                 </li>
+
+                                <script src="backend/js/get-noti.js"></script>
                                 
                                 <li class="user-profile header-notification">
                                     <a href="#!" id="info_profile" class="p-0" style="position: relative;">
@@ -584,7 +558,7 @@
                                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg></span>
-                            <span class="pcoded-mtext" data-i18n="nav.dash.default">Appointment</span>
+                            <span class="pcoded-mtext" data-i18n="nav.dash.default">appointment</span>
                             <span class="pcoded-mcaret"></span>
                         </a>  
                         <li id="">
@@ -611,8 +585,8 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de Administrador</h4>
-                                                        <span>Toda la informacion del Administrador se encuentra en este perfil</span>
+                                                        <h4>Administrator Profile</h4>
+                                                        <span>All the information of the Administrator is in this profile</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -647,7 +621,7 @@
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
                                                                             <h2><?php echo $res[0]["Name"]; ?></h2>
-                                                                            <span class="text-white">Administrador</span>
+                                                                            <span class="text-white">Administrator</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -673,12 +647,12 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header"  style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <h5 class="card-header-text">Informacion del Analista</h5>
+                                                                <h5 class="card-header-text">Analyst Information</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     <button onclick="show()" id="delete" class="btn btn-danger">
-                                                                        Eliminar
+                                                                    Remove
                                                                     </button>
-                                                                <a href="user-profile-admin-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
+                                                                <a href="user-profile-admin-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Edit</a>
                                                             </div>
                                                             </button>
                                                             </div>
@@ -693,15 +667,15 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Nombre</th>
+                                                                                                        <th scope="row">Name</th>
                                                                                                         <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo Electronico</th>
+                                                                                                        <th scope="row">Email</th>
                                                                                                         <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Celular</th>
+                                                                                                        <th scope="row">Cell phone</th>
                                                                                                         <td><?php echo $res[0]["Cell"]; ?></td>
                                                                                                     </tr>
                                                                                                     
@@ -717,11 +691,11 @@
                                                                                             <tbody>
                                                                                                 
                                                                                                 <tr>
-                                                                                                    <th scope="row">Carnet</th>
+                                                                                                    <th scope="row">Cell phone</th>
                                                                                                     <td><?php echo $res[0]["Carnet"]; ?></td>
                                                                                                 </tr>  
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
                                                                                             </tbody>
@@ -783,52 +757,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
     <script type="text/javascript" src="../bower_components/jquery/js/jquery.min.js"></script>

@@ -6,7 +6,7 @@
         include_once "./backend/php/commands.php";
 
         $url = $_SERVER['REQUEST_URI'];
-        $url = explode("EN", $url);
+        $url = explode("ES", $url);
         $url_es = "../../ES$url[1]";
         $url_en = "../../EN$url[1]";
 
@@ -154,12 +154,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font" style="vertical-align: inherit;">Aviso!</font>
+                                <font" style="vertical-align: inherit;">Warning!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -185,12 +185,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Hecho!</font>
+                                <font style="vertical-align: inherit;">Done it!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -223,12 +223,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Peligro</font>
+                                <font style="vertical-align: inherit;">Danger</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -263,8 +263,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas guardar los cambios?</h2>
-                    <p style="display: block;">Si haces click en aceptar se guardaran los cambios realizados.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to save the changes?</h2>
+                    <p style="display: block;">If you click OK, the changes made are saved.</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
@@ -272,7 +272,7 @@
                     <div class="icon">!</div>
                     <p>You need to write something!</p>
                     </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
                     <div class="sa-confirm-button-container">
                     <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
                     <div></div>
@@ -283,10 +283,6 @@
                     </div></div>
     </div>
 <!--final de ventana emergente-->
-
-
-
-
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -331,7 +327,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                    <i class="flag-icon flag-icon-gb m-r-5"></i> English
+                                        <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -341,7 +337,7 @@
                                         </li>
                                         <li>
                                             <a href="<?php echo $url_es; ?>" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                             </a>
                                         </li>
                                         
@@ -350,48 +346,22 @@
                                 </li>
                                 </li>
 						<!--final multi-lenguaje-->
-                                <li class="header-notification">
-                                    <a href="#!">
+                        <li class="header-notification">
+                                    <a href="#" id="a-number">
                                         <i class="ti-bell"></i>
-                                        <span class="badge">5</span>
+                                        <span id="set-number" class="badge">1</span>
                                     </a>
-                                    <ul class="show-notification">
+                                    <ul class="show-notification" id="container-noti">
                                         <li>
-                                            <h6>Notifications</h6>
-                                            <label class="label label-danger">Nuevo Mensaje</label>
+                                            <h6>notifications</h6>
                                         </li>
                                         <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Carlos Castillo</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
+                                            <h6>There are no notifications at this time</h6>
                                         </li>
                                     </ul>
                                 </li>
+
+                                <script src="backend/js/get-noti.js"></script>
                                 <li class="user-profile header-notification">
                                     <a href="#!" id="info_profile" class="p-0" style="position: relative;">
                                         <img src="assets/images/user-redondo.svg" alt="User-Profile-Image">
@@ -410,7 +380,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                    </li>
                             </ul>
                             <!-- search -->
                             <div id="morphsearch" class="morphsearch">
@@ -662,7 +632,7 @@
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
 
-                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navegación</div>
+                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
                             <li>
                                <!--Roles-->
@@ -734,7 +704,7 @@
                                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                               </svg></span>
-                            <span class="pcoded-mtext" data-i18n="nav.dash.default">Appointment</span>
+                            <span class="pcoded-mtext" data-i18n="nav.dash.default">appointment</span>
                             <span class="pcoded-mcaret"></span>
                         </a>  
                         <li id="">
@@ -762,7 +732,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Editar Administrador</h4>
+                                                        <h4>Edit Admin</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -796,7 +766,7 @@
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
                                                                             <h2><?php echo $name; ?></h2>
-                                                                            <span class="text-white">Administrador</span>
+                                                                            <span class="text-white">Administrator</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -822,7 +792,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion del Administrador</h5>
+                                                                <h5 class="card-header-text">Administrator Information</h5>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
@@ -836,7 +806,7 @@
                                                                                                 <tbody>
                                                                                                     <form>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Nombre</th>
+                                                                                                            <th scope="row">Name</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input  maxlength="100" id="name" type="text" class="form-control" name="" value="<?php echo $name; ?>">
@@ -844,7 +814,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Correo</th>
+                                                                                                            <th scope="row">Mail</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="50" id="mail" type="text" class="form-control " name="" value="<?php echo $mail; ?>">
@@ -852,7 +822,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Telefono Celular</th>
+                                                                                                            <th scope="row">Cell phone</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="20" id="cell" type="text" class="form-control " name="" value="<?php echo $cell; ?>">
@@ -879,7 +849,7 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="50" id="user" type="text" class="form-control " name="" value="<?php echo $user; ?>">
@@ -900,10 +870,10 @@
                                                         <div class="col-12 d-flex justify-content-center">
                                                             
                                                             <a href="user-profile-admin.php?vmekmsi23xmfvwe155=<?php echo $id_ad; ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
-                                                                volver
+                                                            Return
                                                             </a>
                                                             <button id="btn-edit" class="btn btn-primary cursor-pointer mx-2">
-                                                                Guardar
+                                                                Save
                                                             </button>
                                                                 
                                                         </div>
