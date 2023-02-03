@@ -4,3 +4,4 @@ Poner un texto en la pagina de clientes y el perfil de los clientes para indicar
 estatus de las citas
 
 Alex:
+Arreglar la tabla de customers
