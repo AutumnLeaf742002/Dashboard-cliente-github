@@ -854,11 +854,12 @@
                                                                                                         <th>
                                                                                                         </th>
                                                                                                         <th>Name</th>
-                                                                                                        <th>Social Security number</th>
-                                                                                                        <th>driver's license</th>
+                                                                                                        <th>Social Security Number</th>
+                                                                                                        <th>Office</th>
+                                                                                                        <th>Address</th>
+                                                                                                        <th>Maintenance</th>
                                                                                                         <th>Status</th>
-                                                                                                        <th>vencimiento</th>
-                                                                                                        <th>Direccion</th>
+                                                                                                        <th>Action</th>
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody id="contenedor-clientes">

@@ -824,16 +824,17 @@
                                                                                             <table id="crm-contact" class="table table-striped table-responsive nowrap">
                                                                                                 <a href="#final">ir al final</a>
                                                                                                 <thead>
-                                                                                                    <tr>
-                                                                                                        <th>
-                                                                                                        </th>
-                                                                                                        <th>Nombre</th>
-                                                                                                        <th>Numero de seguro social</th>
-                                                                                                        <th>Licencia de conducir </th>
-                                                                                                        <th>Estado</th>
-                                                                                                        <th>vencimiento</th>
-                                                                                                        <th>Direccion</th>
-                                                                                                    </tr>
+                                                                                                <tr>
+                                                                                                    <th>
+                                                                                                    </th>
+                                                                                                    <th>Nombre</th>
+                                                                                                    <th>Numero de seguro social</th>
+                                                                                                    <th>Oficina</th>
+                                                                                                    <th>Direccion</th>
+                                                                                                    <th>Mantenimiento</th>
+                                                                                                    <th>Estatus</th>
+                                                                                                    <th>Accion</th>
+                                                                                                </tr>
                                                                                                 </thead>
                                                                                                 <tbody id="contenedor-clientes">
                                                                                                     <tr>

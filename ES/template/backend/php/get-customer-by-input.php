@@ -14,17 +14,18 @@
         $id_logued = $_SESSION["id"];
         $rol = $_SESSION["rol"];
 
+        // Buscar por primer nombre
         if($rol == "3")
         {
-            $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%' AND Nombre_representante = $id_logued";
+            $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE Primer_nombre LIKE '%$search%' AND Nombre_representante = $id_logued";
         }
         else if($rol == "1")
         {
-            $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Primer_nombre LIKE '%$search%'";
+            $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE Primer_nombre LIKE '%$search%'";
         }
         else if($rol == "2")
         {
-            $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND Primer_nombre LIKE '%$search%'";
+            $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN analyst ON analyst.Id = clientes.Nombre_representante INNER JOIN managers ON managers.Id = analyst.Id_supervisor INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE managers.Id = $id_logued AND Primer_nombre LIKE '%$search%'";
         }
 
         $res = select($oCon, $sql);
@@ -32,17 +33,18 @@
         if(count($res) <= 0)
         {
 
+            // Buscar por seguro social
             if($rol == "3")
             {
-                $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' AND Nombre_representante = $id_logued";
+                $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE N_seguro_social LIKE '%$search%' AND Nombre_representante = $id_logued";
             }
             else if($rol == "1")
             {
-                $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE N_seguro_social LIKE '%$search%' ";
+                $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE N_seguro_social LIKE '%$search%'";
             }
             else if($rol == "2")
             {
-                $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND N_seguro_social LIKE '%$search%'";
+                $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN analyst ON analyst.Id = clientes.Nombre_representante INNER JOIN managers ON managers.Id = analyst.Id_supervisor INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE managers.Id = $id_logued AND N_seguro_social LIKE '%$search%'";
             }
 
             $res = select($oCon, $sql);
@@ -50,17 +52,18 @@
             if(count($res) <= 0)
             {
 
+                // Buscar por oficina
                 if($rol == "3")
                 {
-                    $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' AND Nombre_representante = $id_logued";
+                    $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE offices.Name_office LIKE '%$search%' AND Nombre_representante = $id_logued";
                 }
                 else if($rol == "1")
                 {
-                    $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE offices.Name_office LIKE '%$search%' ";
+                    $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE offices.Name_office LIKE '%$search%'";
                 }
                 else if($rol == "2")
                 {
-                    $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND offices.Name_office LIKE '%$search%'";
+                    $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN analyst ON analyst.Id = clientes.Nombre_representante INNER JOIN managers ON managers.Id = analyst.Id_supervisor INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE managers.Id = $id_logued AND offices.Name_office LIKE '%$search%'";
                 }
 
                 $res = select($oCon, $sql);
@@ -68,17 +71,18 @@
                 if(count($res) <= 0)
                 {
 
+                    // Buscar por direccion
                     if($rol == "3")
                     {
-                        $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' AND Nombre_representante = $id_logued";
+                        $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE Direccion LIKE '%$search%' AND Nombre_representante = $id_logued";
                     }
                     else if($rol == "1")
                     {
-                        $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Estado LIKE '%$search%' ";
+                        $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE Direccion LIKE '%$search%'";
                     }
                     else if($rol == "2")
                     {
-                        $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND Estado LIKE '%$search%'";
+                        $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN analyst ON analyst.Id = clientes.Nombre_representante INNER JOIN managers ON managers.Id = analyst.Id_supervisor INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE managers.Id = $id_logued AND Direccion LIKE '%$search%'";
                     }
 
                     $res = select($oCon, $sql);
@@ -86,17 +90,18 @@
                     if(count($res) <= 0)
                     {
 
+                        // Buscar por mantenimiento
                         if($rol == "3")
                         {
-                            $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' AND Nombre_representante = $id_logued";
+                            $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE Fecha_mantenimiento LIKE '%$search%' AND Nombre_representante = $id_logued";
                         }
                         else if($rol == "1")
                         {
-                            $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Vencimiento LIKE '%$search%' ";
+                            $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE Fecha_mantenimiento LIKE '%$search%'";
                         }
                         else if($rol == "2")
                         {
-                            $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND Vencimiento LIKE '%$search%'";
+                            $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN analyst ON analyst.Id = clientes.Nombre_representante INNER JOIN managers ON managers.Id = analyst.Id_supervisor INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE managers.Id = $id_logued AND Fecha_mantenimiento LIKE '%$search%'";
                         }
 
                         $res = select($oCon, $sql);
@@ -104,18 +109,20 @@
                         if(count($res) <= 0)
                         {
 
+                            // Buscar por estatus
                             if($rol == "3")
                             {
-                                $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' AND Nombre_representante = $id_logued";
+                                $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE estatus.Estatus LIKE '%$search%' AND Nombre_representante = $id_logued";
                             }
                             else if($rol == "1")
                             {
-                                $sql = "SELECT Fecha_mantenimiento, Estatus, N_serie_cliente, clientes.Id, Avatar, Primer_nombre, N_seguro_social, offices.Name_office as office, Estado, Vencimiento, Direccion FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id WHERE Direccion LIKE '%$search%' ";
+                                $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE estatus.Estatus LIKE '%$search%'";
                             }
                             else if($rol == "2")
                             {
-                                $sql = "SELECT clientes.*, offices.Name_office as office FROM clientes JOIN analyst ON analyst.Id = clientes.Nombre_representante JOIN managers ON managers.Id = analyst.Id_supervisor JOIN offices ON clientes.Id_office = offices.Id WHERE managers.Id = $id_logued AND Direccion LIKE '%$search%'";
+                                $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN analyst ON analyst.Id = clientes.Nombre_representante INNER JOIN managers ON managers.Id = analyst.Id_supervisor INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE managers.Id = $id_logued AND estatus.Estatus LIKE '%$search%'";
                             }
+
                             $res = select($oCon, $sql);
                         }
                     }
@@ -177,13 +184,15 @@
                                 '.$item["office"].'
                             </td>
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
-                                '.$item["Estado"].'
-                            </td>
-                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
-                                '.$item["Vencimiento"].'
-                            </td>
-                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 '.$item["Direccion"].'
+                            </td>
+                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
+                                '.$item["Fecha_mantenimiento"].'
+                            </td>
+                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
+                                <p style="background-color: '.$item["Color"].'; margin: 0px; color: white; font-weight: bold; padding: 3px 5px; border-radius: 7px; text-align: center; font-size: 14px; display: flex; justify-content: center; max-width: 170px">
+                                    '.$item["Estatus_cl"].'
+                                </p>
                             </td>
                             <td>
                             </td>
@@ -206,13 +215,15 @@
                                 '.$item["office"].'
                             </td>
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
-                                '.$item["Estado"].'
-                            </td>
-                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
-                                '.$item["Vencimiento"].'
-                            </td>
-                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 '.$item["Direccion"].'
+                            </td>
+                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
+                                '.$item["Fecha_mantenimiento"].'
+                            </td>
+                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
+                                <p style="background-color: '.$item["Color"].'; margin: 0px; color: white; font-weight: bold; padding: 3px 5px; border-radius: 7px; text-align: center; font-size: 14px; display: flex; justify-content: center; max-width: 170px">
+                                    '.$item["Estatus_cl"].'
+                                </p>
                             </td>
                             <td>
                                 <button onclick="agendar_cita('.$item["Id"].')" class="btn-same btn btn-danger">agendar cita</button>

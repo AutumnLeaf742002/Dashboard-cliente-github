@@ -45,3 +45,7 @@ buscador_cliente.addEventListener('keyup', () => {
     }
 })
 
+function agendar_cita(id)
+{
+    window.location.href = `citas.php?cl=${id}`
+}
