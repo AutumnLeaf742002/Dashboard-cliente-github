@@ -52,13 +52,13 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <script src="backend/js/session.js"></script>
     <script src="backend/js/restrictor-analist.js"></script>
     <script src="backend/js/restrictor-manager.js"></script>
-    <title>Perfil de manager</title>
+    <title>Manager Profile</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -154,12 +154,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font" style="vertical-align: inherit;">Aviso!</font>
+                                <font" style="vertical-align: inherit;">Warning!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -185,12 +185,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Hecho!</font>
+                                <font style="vertical-align: inherit;">Done!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -223,12 +223,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Peligro</font>
+                                <font style="vertical-align: inherit;">Danger</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -263,8 +263,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas guardar los cambios?</h2>
-                    <p style="display: block;">Si haces click en aceptar se guardaran los cambios realizados.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to save the changes?</h2>
+                    <p style="display: block;">If you click accept, the changes made will be saved.</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
@@ -272,17 +272,17 @@
                     <div class="icon">!</div>
                     <p>You need to write something!</p>
                     </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
                     <div class="sa-confirm-button-container">
-                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
+                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Accept</button><div class="la-ball-fall">
                     <div></div>
                     <div></div>
                     <div></div>
                     </div>
                     </div>
                     </div></div>
-    </div>
-<!--final de ventana emergente-->
+                    </div>
+                <!--final de ventana emergente-->
 
 
 
@@ -331,7 +331,7 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                    <i class="flag-icon flag-icon-gb m-r-5"></i> Englishl
+                                    <i class="flag-icon flag-icon-gb m-r-5"></i> English
                                     </a>
                                     <ul class="show-notification">
                                         <li>
@@ -341,7 +341,7 @@
                                         </li>
                                         <li>
                                             <a href="<?php echo $url_es; ?>" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                             </a>
                                         </li>
                                         
@@ -358,7 +358,7 @@
                                     <ul class="show-notification">
                                         <li>
                                             <h6>Notifications</h6>
-                                            <label class="label label-danger">Nuevo Mensaje</label>
+                                            <label class="label label-danger">New message</label>
                                         </li>
                                         <li>
                                             <div class="media">
@@ -662,7 +662,7 @@
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
 
-                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navegación</div>
+                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
                             
                             <li>
@@ -825,7 +825,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion del Manager</h5>
+                                                                <h5 class="card-header-text">Manager Information</h5>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
@@ -839,7 +839,7 @@
                                                                                                 <tbody>
                                                                                                     <form>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Nombre</th>
+                                                                                                            <th scope="row">Name</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input  maxlength="100" id="name" type="text" class="form-control" name="" value="<?php echo $name; ?>">
@@ -847,7 +847,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Correo</th>
+                                                                                                            <th scope="row">Mail</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="50" id="mail" type="text" class="form-control " name="" value="<?php echo $mail; ?>">
@@ -855,7 +855,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Telefono Celular</th>
+                                                                                                            <th scope="row">Cell phone</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="20" id="cell" type="text" class="form-control " name="" value="<?php echo $cell; ?>">
@@ -882,7 +882,7 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="50" id="user" type="text" class="form-control " name="" value="<?php echo $user; ?>">
@@ -903,10 +903,10 @@
                                                         <div class="col-12 d-flex justify-content-center">
                                                             
                                                             <a href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_m; ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
-                                                                volver
+                                                            Return
                                                             </a>
                                                             <button id="btn-edit" class="btn btn-primary cursor-pointer mx-2">
-                                                                Guardar
+                                                                Save
                                                             </button>
                                                                 
                                                         </div>

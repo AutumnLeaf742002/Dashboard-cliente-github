@@ -12,7 +12,7 @@
                 $url_es = "../../ES$url[1]";
                 $url_en = "../../EN$url[1]";
                 
-                // Capturar el id del cliente seleccionado y el id del 
+                // Capturar el id del cliente seleccionado y el id del  
                 $id_cl = $_GET["id_cl"] ?? 0;
                 $id_co = $_GET["id_co"] ?? 0;
                 
@@ -74,11 +74,11 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <script src="backend/js/session.js"></script>
-    <title>Perfil de cliente</title>
+    <title>Customer profile</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -150,8 +150,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas realizar esta acción?</h2>
-                    <p style="display: block;">Si haces click en aceptar se eliminara este cliente y su co aplicante vinculado.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to perform this action?</h2>
+                    <p style="display: block;">If you click on accept, this client and its linked co-applicant will be eliminated.</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
@@ -170,14 +170,6 @@
                     </div></div>
     </div>
     <!--final de ventana emergente-->
-
-
-
-
-
-
-
-    
     <!-- Notificaciones -->
 
     <!-- Required Fremwork -->
@@ -223,12 +215,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font" style="vertical-align: inherit;">Aviso!</font>
+                                <font" style="vertical-align: inherit;">Warning!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-1" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -254,12 +246,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Hecho!</font>
+                                <font style="vertical-align: inherit;">Done!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-2" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -292,12 +284,12 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Peligro</font>
+                                <font style="vertical-align: inherit;">Danger</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
                             <font style="vertical-align: inherit;">
-                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Mensaje de aviso.</font>
+                                <font id="mensaje-aviso-3" style="vertical-align: inherit;">Warning message.</font>
                             </font>
                         </div>
                         <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
@@ -369,7 +361,7 @@
                                         </li>
                                         <li>
                                             <a href="<?php echo $url_es; ?>" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                             </a>
                                         </li>
                                         
@@ -388,7 +380,7 @@
                                     <ul class="show-notification">
                                         <li>
                                             <h6>Notifications</h6>
-                                            <label class="label label-danger">Nuevo Mensaje</label>
+                                            <label class="label label-danger">New message</label>
                                         </li>
                                         <li>
                                             <div class="media">
@@ -441,7 +433,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>
                             </ul>
                             <!-- search -->
                             <div id="morphsearch" class="morphsearch">
@@ -693,7 +685,7 @@
                 <nav class="pcoded-navbar">
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
-                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navegación</div>
+                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
                             
                             <li>
@@ -775,7 +767,7 @@
                         <a href="Instaladores.php">
                                 <span class="pcoded-micon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
                                     <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
-                                  </svg></span>
+                                </svg></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.default">Installers</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
@@ -794,8 +786,8 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de clientes</h4>
-                                                        <span>Toda la informacion del cliente se encuentra en este perfil</span>
+                                                        <h4>Customer profile</h4>
+                                                        <span>All customer information is in this profile</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -870,11 +862,11 @@
                                                             
                                                         </li>
                                                         <li class="nav-item">
-                                                        <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Informacion Personal</a>
+                                                        <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Personal information</a>
                                                             <div class="slide"></div>
                                                         </li>
                                                         <li class="nav-item">
-                                                        <a class="nav-link" data-toggle="tab" href="#binfo" role="tab">informacion de co aplicante</a>
+                                                        <a class="nav-link" data-toggle="tab" href="#binfo" role="tab">Co-applicant information</a>
                                                             <div class="slide"></div>
                                                         </li>
                                                         <li class="nav-item">
@@ -890,10 +882,10 @@
                                                         $res_analista = select($oCon, 'SELECT Name, Id FROM analyst WHERE Id = '.$res_cl[0]["Nombre_representante"]);
                                                         $analista = $res_analista[0]["Id"]??0;
                                                     ?>
-                                                        <h5 class="text-header-botones card-header-text">Estado del cliente</h5> 
+                                                        <h5 class="text-header-botones card-header-text">Client Status</h5> 
                                                         <div class="container-botones d-flex justify-content-center r_analist">
                                                             <button onclick="go_edit('<?php echo $id_cl;?>', '<?php echo $id_co;?>', '<?php echo $analista;?>')" id="boton-editar-perfil" class="btn-same btn btn-primary">Editar</button>
-                                                            <button onclick="" id="boton-eliminar-perfil" class="btn-same btn btn-danger">Eliminar</button>
+                                                            <button onclick="" id="boton-eliminar-perfil" class="btn-same btn btn-danger">Delete</button>
                                                         </div>
                                                     </div>
                                                     <div class="card-block">
@@ -907,7 +899,7 @@
                                                                                     <table class="table m-0">
                                                                                         <tbody>
                                                                                             <tr>
-                                                                                                <th scope="row">Analista asignado</th>
+                                                                                                <th scope="row">Assigned analyst</th>
                                                                                                 <td style="display: flex; align-items:center;">
                                                                                                     <?php 
                                                                                                     if(count($res_analista) > 0)
@@ -930,7 +922,7 @@
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
-                                                                                                <th scope="row">Oficina</th>
+                                                                                                <th scope="row">Office</th>
                                                                                                 <td>
                                                                                                     <?php
                                                                                                         $id_o = $res_cl[0]["Id_office"];
@@ -941,7 +933,7 @@
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
-                                                                                                <th scope="row">Cantidad Financiada</th>
+                                                                                                <th scope="row">Amount Financed</th>
                                                                                                 <td>
                                                                                                     <?php echo $res_cl[0]["Cantidad_financiada"]; ?>
                                                                                                 </td>
@@ -955,7 +947,7 @@
                                                                                 <table class="table">
                                                                                     <tbody>
                                                                                             <tr">
-                                                                                                <th scope="row">Estatus</th>
+                                                                                                <th scope="row">Status</th>
                                                                                                 <td>
                                                                                                     <p style="background-color: <?php echo $res_cl[0]["color"];?>; color: white; font-weight: bold; padding: 3px 5px; border-radius: 7px; text-align: center; font-size: 14px; display: flex; justify-content: center; max-width: 170px">
                                                                                                         <?php echo $res_cl[0]["estatus"]; ?>
@@ -1011,7 +1003,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion Cliente</h5>
+                                                                <h5 class="card-header-text">Customer Information</h5>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
@@ -1024,61 +1016,61 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Primer Nombre</th>
+                                                                                                        <th scope="row">First name</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Primer_nombre"]; ?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Apellido</th>
+                                                                                                        <th scope="row">Last name</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Apellido"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Fecha de nacimiento</th>
+                                                                                                        <th scope="row">Birthdate</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Fecha_nacimiento"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Numero de seguro social</th>
+                                                                                                        <th scope="row">Social Security number</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["N_seguro_social"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Numero de Licencia de Conducir</th>
+                                                                                                        <th scope="row">Driver's License Number</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["N_licencia_conducir"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Estado</th>
+                                                                                                        <th scope="row">State</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Estado"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Vencimiento</th>
+                                                                                                        <th scope="row">Expiration</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Vencimiento"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Direccion</th>
+                                                                                                        <th scope="row">Address</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Direccion"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">tiempo en esa direccion</th>
+                                                                                                        <th scope="row">Time in that direction</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Cuanto_tiempo"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                    <th scope="row">Ciudad</th>
+                                                                                                    <th scope="row">City</th>
                                                                                                     <td>
                                                                                                             <?php echo $res_cl[0]["Ciudad"];?>
                                                                                                         </td>
@@ -1094,7 +1086,7 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Estado</th>
+                                                                                                    <th scope="row">State</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Estado_ciudad"];?>
                                                                                                     </td>
@@ -1106,43 +1098,43 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Telefono de casa</th>
+                                                                                                    <th scope="row">Home phone</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Telefono_casa"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Telefono Celular</th>
+                                                                                                    <th scope="row">Cell phone</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Telefono_celular"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Direccion Anterior</th>
+                                                                                                    <th scope="row">Previous direction</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Direccion_anterior"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Ciudad Anterior</th>
+                                                                                                    <th scope="row">Previous City</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Ciudad_anterior"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Estado Anterior</th>
+                                                                                                    <th scope="row">Previous State</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Estado_anterior"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Zip Anterior</th>
+                                                                                                    <th scope="row">Zip Previous</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Zip_anterior"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                        <th scope="row">Correo</th>
+                                                                                                        <th scope="row">Mail</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Correo"];?>
                                                                                                         </td>
@@ -1192,7 +1184,7 @@
                                                         <!-- personal card start -->
                                                         <div id="informacion-de-empleo" class="card">
                                                             <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion de empleo</h5>
+                                                                <h5 class="card-header-text">Employment information</h5>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
@@ -1206,49 +1198,49 @@
                                                                                                 <!--Inicio informacion de empleo-->
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Nombre empleo</th>
+                                                                                                        <th scope="row">Job Name</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Nombre_empleo"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Direccion empleo</th>
+                                                                                                        <th scope="row">employment address</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Direccion_empleo"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Tiempo empleo</th>
+                                                                                                        <th scope="row">Employment time</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Tiempo_empleo"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Telefono de empleo</th>
+                                                                                                        <th scope="row">Employment phone</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Telefono_empleo"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Posicion empleo</th>
+                                                                                                        <th scope="row">Employment position</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Posicion_empleo"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Ingreso bruto</th>
+                                                                                                        <th scope="row">Gross income</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Ingreso_bruto"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                    <th scope="row">Tipo ingreso</th>
+                                                                                                    <th scope="row">Type of incomeo</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Tipo_ingreso"];?>
                                                                                                     </td>
                                                                                                 <tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Empleador anterior</th>
+                                                                                                    <th scope="row">previous employer</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Empleador_anterior"];?>
                                                                                                     </td>
@@ -1264,43 +1256,43 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                        <th scope="row">Fecha de empleo anterior</th>
+                                                                                                        <th scope="row">Previous employment date</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Fecha_empleo_anterior"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                    <th scope="row">Ciudad empleo anterior</th>
+                                                                                                    <th scope="row">City previous employment</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Ciudad_empleo_anterior"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Estado empleo anterior</th>
+                                                                                                    <th scope="row">Previous employment status</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Estado_empleo_anterior"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Zip Empleo Anterior</th>
+                                                                                                    <th scope="row">Zip Previous Employment</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Zip_empleo_anterior"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                        <th scope="row">Número de telefono del empleo anterio</th>
+                                                                                                        <th scope="row">Telephone number of previous employment</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["N_telefono_empleo_anterior"];?>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                    <th scope="row">Fuente de ingreso extra</th>
+                                                                                                    <th scope="row">Extra income source</th>
                                                                                                     <td>
                                                                                                         <?php echo $res_cl[0]["Fuente_ingreso_extra"];?>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Cantidad de fuentes de ingreso extra</th>
+                                                                                                        <th scope="row">Number of sources of extra income</th>
                                                                                                         <td>
                                                                                                             <?php echo $res_cl[0]["Cantidad_fuente_ingreso_extra"];?>
                                                                                                         </td>
@@ -1331,7 +1323,7 @@
                                                             <!-- personal card start -->
                                                             <div class="card">
                                                                 <div class="card-header">
-                                                                    <h5 class="card-header-text">INFORMACIÓN Y REFERENCIAS DE LA HIPOTECA</h5>
+                                                                    <h5 class="card-header-text">MORTGAGE INFORMATION AND REFERENCES</h5>
                                                                 </div>
                                                                 <div class="card-block">
                                                                     <div class="view-info">
@@ -1344,7 +1336,7 @@
                                                                                                 <table class="table m-0">
                                                                                                     <tbody>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Estado de la hipoteca</th>
+                                                                                                            <th scope="row">Mortgage Status</th>
                                                                                                             <td>
                                                                                                                 <?php
                                                                                                                     $id_estado_hipoteca = select($oCon, 'SELECT Estado FROM estado_hipoteca WHERE Id = '.$res_cl[0]["Id_hipoteca_estado"].' ');
@@ -1361,7 +1353,7 @@
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Tipo de residencia de la hipoteca</th>
+                                                                                                            <th scope="row">Mortgage Residence Type</th>
                                                                                                             <td>
                                                                                                                 <?php
                                                                                                                         $id_tipo_residencia = select($oCon, 'SELECT Tipo FROM tipo_residencia_hipoteca WHERE Id = '.$res_cl[0]["Id_tipo_residencia_hipoteca"].' ');
@@ -1378,37 +1370,37 @@
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Direccion de la hipoteca</th>
+                                                                                                            <th scope="row">Mortgage Address</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Direccion_hipoteca"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Propietario o hipoteca titular</th>
+                                                                                                            <th scope="row">Owner or holder mortgage</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Propietario_hipoteca_titular"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Pago de la hipoteca</th>
+                                                                                                            <th scope="row">mortgage payment</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Pago_hipoteca"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Número de telefono de hipoteca</th>
+                                                                                                            <th scope="row">Mortgage phone number</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["N_telefono_hipoteca"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente nombre 1</th>
+                                                                                                            <th scope="row">Reference relative name 1</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Referencia_pariente_nombre_1"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente direccion 1</th>
+                                                                                                            <th scope="row">Reference relative address 1</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Referencia_pariente_direccion_1"];?>
                                                                                                             </td>
@@ -1424,43 +1416,43 @@
                                                                                             <table class="table">
                                                                                                 <tbody>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente telefono 1</th>
+                                                                                                            <th scope="row">Reference relative phone 1</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Referencia_pariente_telefono_1"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente relacion 1</th>
+                                                                                                            <th scope="row">Reference relative relationship 1</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Referencia_pariente_relacion_1"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente nombre 2</th>
+                                                                                                            <th scope="row">Reference relative name 2</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Referencia_pariente_nombre_2"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente direccion 2</th>
+                                                                                                            <th scope="row">Reference relative address 2</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Referencia_pariente_direccion_2"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente telefono 2</th>
+                                                                                                            <th scope="row">Reference relative address 2</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Referencia_pariente_telefono_2"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Referencia pariente relacion 2</th>
+                                                                                                            <th scope="row">Reference relative relationship 2</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Referencia_pariente_relacion_2"];?>
                                                                                                             </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">fecha de creacion de este registro</th>
+                                                                                                            <th scope="row">Date of creation of this record</th>
                                                                                                             <td>
                                                                                                                 <?php echo $res_cl[0]["Fecha_creacion_registro"];?>
                                                                                                             </td>
@@ -1530,7 +1522,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h5 class="card-header-text">Informacion de co-aplicante</h5>
+                                                                <h5 class="card-header-text">Co-applicant Information</h5>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
@@ -1555,7 +1547,7 @@
 
                                                                                                     ?>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Relacion del solicitante</th>
+                                                                                                        <th scope="row">Applicant Relationship</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1570,7 +1562,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Primer Nombre</th>
+                                                                                                        <th scope="row">First name</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1585,7 +1577,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Apellido</th>
+                                                                                                        <th scope="row">Last name</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1600,7 +1592,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Fecha de nacimiento</th>
+                                                                                                        <th scope="row">Birthdate</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1615,7 +1607,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Numero de seguro social</th>
+                                                                                                        <th scope="row">Social Security number</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1630,7 +1622,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Numero de Licencia de Conducir</th>
+                                                                                                        <th scope="row">Driver's License Number</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1645,7 +1637,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Estado</th>
+                                                                                                        <th scope="row">status</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1660,7 +1652,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Vencimiento</th>
+                                                                                                        <th scope="row">Expiration</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1675,7 +1667,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Direccion</th>
+                                                                                                        <th scope="row">Address</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1690,7 +1682,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Tiempo en la direccion</th>
+                                                                                                        <th scope="row">Time in the direction</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1705,7 +1697,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Ciudad</th>
+                                                                                                        <th scope="row">City</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1720,7 +1712,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Estado</th>
+                                                                                                        <th scope="row">State</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1750,7 +1742,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo electronico</th>
+                                                                                                        <th scope="row">Email</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1765,7 +1757,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                    <th scope="row">Nombre empleo </th>
+                                                                                                    <th scope="row">Job Name </th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1780,7 +1772,7 @@
                                                                                                     </td>
                                                                                                 </tr>   
                                                                                                 <tr>
-                                                                                                    <th scope="row">Direccion Empleo</th>
+                                                                                                    <th scope="row">Employment Address</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1804,7 +1796,7 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Tiempo en el empleo</th>    
+                                                                                                    <th scope="row">Employment Address</th>    
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1819,7 +1811,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Telefono empleo</th>
+                                                                                                    <th scope="row">Employment phone</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1833,7 +1825,7 @@
                                                                                                         ?>
                                                                                                     </td>
                                                                                                 </tr>
-                                                                                                        <th scope="row">Fuente de ingreso extra</th>
+                                                                                                        <th scope="row">extra income source</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1848,7 +1840,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                         <tr>
-                                                                                                        <th scope="row">Zip empleo anterior</th>
+                                                                                                        <th scope="row">Zip previous employment</th>
                                                                                                         <td>
                                                                                                             <?php
                                                                                                                 if($con_co == true)
@@ -1863,7 +1855,7 @@
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                    <th scope="row">Posicion empleo</th>
+                                                                                                    <th scope="row">Employment position</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1878,7 +1870,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Ingreso Bruto</th>
+                                                                                                    <th scope="row">Gross income</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1893,7 +1885,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Tipo de ingreso</th>
+                                                                                                    <th scope="row">Type of income</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1908,7 +1900,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Empleador Anterior</th>
+                                                                                                    <th scope="row">Previous Employer</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1923,7 +1915,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Fecha Empleo Anterior</th>
+                                                                                                    <th scope="row">Previous Employment Date</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1938,7 +1930,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Ciudad empleo anterior</th>
+                                                                                                    <th scope="row">City previous employment</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1952,7 +1944,7 @@
                                                                                                         ?>
                                                                                                     </td>
                                                                                                 </tr>
-                                                                                                <th scope="row">Estado empleo anterior</th>
+                                                                                                <th scope="row">State employment status</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1966,7 +1958,7 @@
                                                                                                         ?>
                                                                                                     </td>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Zip Anterior</th>
+                                                                                                    <th scope="row">Zip Previous</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1981,7 +1973,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Telefono Empleo anterior </th>
+                                                                                                    <th scope="row">Phone Previous Employment</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -1995,7 +1987,7 @@
                                                                                                         ?>
                                                                                                     </td>
                                                                                                 </tr>
-                                                                                                    <th scope="row">Otra fuente de ingreso </th>
+                                                                                                    <th scope="row">Other source of income</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -2010,7 +2002,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Ingreso Mensual</th>
+                                                                                                    <th scope="row">Monthly income</th>
                                                                                                     <td>
                                                                                                         <?php
                                                                                                             if($con_co == true)
@@ -2061,7 +2053,7 @@
                                                                 <!-- user contact card left side start -->
                                                                 <div class="card">
                                                                     <div class="card-header contact-user"> 
-                                                                        <h4>Analista Asignado</h4>
+                                                                        <h4>Assigned Analyst</h4>
                                                                     </div>
                                                                     <div class="card-header contact-user">
                                                                         <img class="img-circle" src="assets/images/user-profile/contact-user.jpg" alt="contact-user">
@@ -2112,49 +2104,7 @@
 
 
 
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
+    
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
     <script>

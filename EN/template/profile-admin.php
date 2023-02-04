@@ -31,11 +31,11 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <script src="backend/js/session.js"></script>
-    <title>Perfil</title>
+    <title>Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -101,8 +101,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas realizar esta acción?</h2>
-                    <p style="display: block;">Si haces click en aceptar los cambios no podran ser revertidos.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to perform this action?</h2>
+                    <p style="display: block;">Do you want to perform this action?</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
@@ -110,7 +110,7 @@
                     <div class="icon">!</div>
                     <p>You need to write something!</p>
                     </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
                     <div class="sa-confirm-button-container">
                     <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
                     <div></div>
@@ -178,7 +178,7 @@
                                         </li>
                                         <li>
                                             <a href="../../ES/template/profile-admin.php" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                             </a>
                                         </li>
                                         
@@ -197,7 +197,7 @@
                                     <ul class="show-notification">
                                         <li>
                                             <h6>Notifications</h6>
-                                            <label class="label label-danger">Nuevo Mensaje</label>
+                                            <label class="label label-danger">New message</label>
                                         </li>
                                         <li>
                                             <div class="media">
@@ -209,33 +209,14 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                                 
                                 <li class="user-profile header-notification">
                                     <a href="#!" id="info_profile" class="p-0" style="position: relative;">
                                         <img src="assets/images/user-redondo.svg" alt="User-Profile-Image">
-                                        <span>Cargando...</span>
+                                        <span>Charging...</span>
                                         <i class="ti-angle-down"></i>
                                     </a>
                                     <ul class="show-notification profile-notification">
@@ -503,7 +484,7 @@
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a>
                 </div>
                     <div class="pcoded-inner-navbar main-menu">
-                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navegación</div>
+                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
                             <li>
                             <a id="" href="dashboard-project.html">
@@ -604,7 +585,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil</h4>
+                                                        <h4>Profile</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -639,7 +620,7 @@
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
                                                                             <h2><?php echo $res[0]["Name"]; ?></h2>
-                                                                            <span class="text-white">Administrador</span>
+                                                                            <span class="text-white">Administrator</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -666,7 +647,7 @@
                                                         <div class="card">
                                                             <div class="card-header"  style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <div style="display: flex; gap: 10px;">
-                                                                <h6>Información</h6>
+                                                                <h6>Information</h6>
                                                             </div>
                                                             </div>
                                                             <div class="card-block">
@@ -680,11 +661,11 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo Electronico</th>
+                                                                                                        <th scope="row">Email</th>
                                                                                                         <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Celular</th>
+                                                                                                        <th scope="row">Cell phone</th>
                                                                                                         <td><?php echo $res[0]["Cell"]; ?></td>
                                                                                                     </tr>
                                                                                                     
@@ -704,7 +685,7 @@
                                                                                                     <td><?php echo $res[0]["Carnet"]; ?></td>
                                                                                                 </tr>  
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
                                                                                             </tbody>
@@ -723,8 +704,6 @@
                                                                     <!-- Main-body start -->
                                                                 <div class="main-body">
                                                                     <div class="page-wrapper">
-
-                                                                        
                                                                         <!-- Page header end -->
                                                                         <!-- Page body start -->
                                                                         <div class="page-body">
@@ -745,8 +724,6 @@
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                     <!-- Main-body start -->
-                        
-                        
                                                             </div>
                                                         </div>
                                                         <!-- personal card end-->
@@ -767,51 +744,6 @@
         </div>
     </div>
 
-
-
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
     <script type="text/javascript" src="../bower_components/jquery/js/jquery.min.js"></script>
