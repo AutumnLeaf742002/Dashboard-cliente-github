@@ -20,11 +20,11 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <script src="backend/js/session.js"></script>
-    <title>Perfil</title>
+    <title>Profile</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -603,7 +603,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil</h4>
+                                                        <h4>Profile</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -671,7 +671,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <h5 class="card-header-text">Información</h5>
+                                                                <h5 class="card-header-text">Information</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     </div>
                                                             </div>
@@ -686,11 +686,11 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo</th>
+                                                                                                        <th scope="row">Email</th>
                                                                                                         <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Telefono Celular</th>
+                                                                                                        <th scope="row">Cell Phone</th>
                                                                                                         <td><?php echo $res[0]["Cell"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -707,11 +707,11 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Oficina</th>
+                                                                                                    <th scope="row">Office</th>
                                                                                                     <td><?php echo $res[0]["office"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
                                                                                                

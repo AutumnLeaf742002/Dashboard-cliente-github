@@ -33,7 +33,7 @@
     <script src="backend/js/session.js"></script>
     <script src="backend/js/restrictor-analist.js"></script>
     <script src="backend/js/restrictor-manager.js"></script>
-    <title>Perfil de administrador</title>
+    <title>Administrator profile</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -611,8 +611,8 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de Administrador</h4>
-                                                        <span>Toda la informacion del Administrador se encuentra en este perfil</span>
+                                                        <h4>Administrator Profile</h4>
+                                                        <span>All the information of the Administrator is in this profile</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -647,7 +647,7 @@
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
                                                                             <h2><?php echo $res[0]["Name"]; ?></h2>
-                                                                            <span class="text-white">Administrador</span>
+                                                                            <span class="text-white">Administrator</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -673,12 +673,12 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header"  style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <h5 class="card-header-text">Informacion del Analista</h5>
+                                                                <h5 class="card-header-text">Administrator Information</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     <button onclick="show()" id="delete" class="btn btn-danger">
-                                                                        Eliminar
+                                                                        Delete
                                                                     </button>
-                                                                <a href="user-profile-admin-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
+                                                                <a href="user-profile-admin-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Edit</a>
                                                             </div>
                                                             </button>
                                                             </div>
@@ -693,15 +693,15 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Nombre</th>
+                                                                                                        <th scope="row">Name</th>
                                                                                                         <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo Electronico</th>
+                                                                                                        <th scope="row">Email</th>
                                                                                                         <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Celular</th>
+                                                                                                        <th scope="row">Cell Phone</th>
                                                                                                         <td><?php echo $res[0]["Cell"]; ?></td>
                                                                                                     </tr>
                                                                                                     
@@ -721,7 +721,7 @@
                                                                                                     <td><?php echo $res[0]["Carnet"]; ?></td>
                                                                                                 </tr>  
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
                                                                                             </tbody>

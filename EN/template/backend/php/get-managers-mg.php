@@ -27,13 +27,13 @@
                         '.$item["Mail"].'
                     </h5>
                     <h5 class="text-center w-100">
-                        Oficina '.$oficina[0]["Name_office"].'
+                        Office '.$oficina[0]["Name_office"].'
                     </h5>
                     <h4 class="text-center my-3">Manager</h4>
                 </div>
                 
                 <div class="set-btn" style="display: flex; justify-content: center;">
-                    <a href="user-profile-manager.php?vmekmsi23xmfvwe155='.$item["Id"].'" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</a>
+                    <a href="user-profile-manager.php?vmekmsi23xmfvwe155='.$item["Id"].'" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>View profile</a>
                 </div>
             </div>
             </div>';

@@ -40,7 +40,7 @@
     <script src="backend/js/session.js"></script>
     <script src="backend/js/restrictor-analist.js"></script>
     <script src="backend/js/restrictor-manager.js"></script>
-    <title>perfil de manager</title>
+    <title>Manager profile</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -619,8 +619,8 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de Manager</h4>
-                                                        <span>Toda la informacion del Manager se encuentra en este perfil</span>
+                                                        <h4>Manager Profile</h4>
+                                                        <span>All the information of the Manager is in this profile</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -688,12 +688,12 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <h5 class="card-header-text">Informacion del Manager</h5>
+                                                                <h5 class="card-header-text">Manager Information</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     <button onclick="show()" id="delete" class="btn btn-danger">
-                                                                        Eliminar
+                                                                        Delete
                                                                     </button>
-                                                                    <a href="user-profile-manager-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Editar</a>
+                                                                    <a href="user-profile-manager-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Edit</a>
                                                                 </div>
                                                             </div>
                                                             <div class="card-block">
@@ -707,15 +707,15 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Nombre</th>
+                                                                                                        <th scope="row">Name</th>
                                                                                                         <td><?php echo $res[0]["Name"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Correo</th>
+                                                                                                        <th scope="row">Email</th>
                                                                                                         <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <th scope="row">Telefono Celular</th>
+                                                                                                        <th scope="row">Cell Phone</th>
                                                                                                         <td><?php echo $res[0]["Cell"]; ?></td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -732,11 +732,11 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Oficina</th>
+                                                                                                    <th scope="row">Office</th>
                                                                                                     <td><?php echo $ofi; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Usuario</th>
+                                                                                                    <th scope="row">User</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
                                                                                                
@@ -796,13 +796,13 @@
                                                                         <div class="page-body">
                                                                             <div class="card product-add-modal">
                                                                                 <div class="card-header">
-                                                                                    <h5>Analistas Asignados</h5>
+                                                                                    <h5>Assigned Analysts</h5>
                                                                                 </div>
                                                                                 <!--buscador-->
                                                                              
                                                                                 <div id="buscador" class="">
                                                                                     <div id="container-buscador" class="">
-                                                                                        <input id="buscador-cliente" type="text" class="form-control" placeholder="Buscar...">
+                                                                                        <input id="buscador-cliente" type="text" class="form-control" placeholder="Search...">
                                                                                     </div>
                                                                                 </div>
                                                                                 <!--buscador-->
@@ -810,15 +810,15 @@
                                                                                     <div class="table-content crm-table">
                                                                                         <div class="project-table" id="contenedor-tabla-clientes">
                                                                                             <table id="crm-contact" class="table table-striped table-responsive nowrap">
-                                                                                                <a href="#final">ir al final</a>
+                                                                                                <a href="#final">Go to end</a>
                                                                                                 <thead>
                                                                                                     <tr>
                                                                                                         <th>
                                                                                                         </th>
-                                                                                                        <th>Nombre</th>
-                                                                                                        <th>Correo</th>
-                                                                                                        <th>Celular</th>
-                                                                                                        <th>Usuario</th>
+                                                                                                        <th>Name</th>
+                                                                                                        <th>Email</th>
+                                                                                                        <th>Cell Phone</th>
+                                                                                                        <th>User</th>
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody id="contenedor-clientes">
