@@ -704,7 +704,7 @@
                                                                 <h5 class="card-header-text">Analyst Information</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     <button onclick="show()" id="delete" class="btn btn-danger r_manager">
-                                                                    Remove
+                                                                        Delete
                                                                     </button>
                                                                     <a href="user-profile-analyst-edit.php?wdasjoiwjioasdw=<?php echo $id; ?>" id="boton-editar-perfil"  class="btn btn-primary">Edit</a>
                                                                 </div>
@@ -721,7 +721,7 @@
                                                                                             <table class="table m-0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <th scope="row">assigned manager</th>
+                                                                                                        <th scope="row">Assigned manager</th>
                                                                                                         <td style="display: flex; align-items:center;">
                                                                                                             <?php echo $name_s; ?>
                                                                                                             <a class="r_manager" href="user-profile-manager.php?vmekmsi23xmfvwe155=<?php echo $id_s; ?>" style="display: flex; align-items:center;" title="Ver perfil del Manager">
@@ -766,7 +766,7 @@
                                                                                                     <td><?php echo $res[0]["Start_date"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">recruiter</th>
+                                                                                                    <th scope="row">Recruiter</th>
                                                                                                     <td><?php echo $res[0]["Recruiter"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>
@@ -848,7 +848,7 @@
                                                                                     <div class="table-content crm-table">
                                                                                         <div class="project-table" id="contenedor-tabla-clientes">
                                                                                             <table id="crm-contact" class="table table-striped table-responsive nowrap">
-                                                                                                <a href="#final">go to the end</a>
+                                                                                                <a href="#final">Go to the end</a>
                                                                                                 <thead>
                                                                                                     <tr>
                                                                                                         <th>

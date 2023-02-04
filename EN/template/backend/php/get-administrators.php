@@ -25,11 +25,11 @@
                             '.$item["Mail"].'
                         </h5>
                     </div>
-                    <h4 class="text-center my-3">Administrador</h4>
+                    <h4 class="text-center my-3">Administrator</h4>
                 </div>
                 
                 <div class="set-btn" style="display: flex; justify-content: center;">
-                    <a href="user-profile-admin.php?vmekmsi23xmfvwe155='.$item["Id"].'" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>Ver Perfil</a>
+                    <a href="user-profile-admin.php?vmekmsi23xmfvwe155='.$item["Id"].'" class="btn btn-success btn-outline-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>View profile</a>
                 </div>
             </div>
             </div>';
