@@ -370,10 +370,10 @@
                                             </a>
                                         </li>
                                     </ul>
-                               </li>
-                                    </ul> 
                                 </li>
-                            </ul>
+                                
+                                </li>
+                            
                             <!-- search -->
                             <div id="morphsearch" class="morphsearch">
                                 <form class="morphsearch-form">
