@@ -364,7 +364,7 @@
                                     <ul class="show-notification">
                                         <li>
                                             <a href="<?php echo $url_en; ?>" data-lng="en">
-                                                <i class="flag-icon flag-icon-gb m-r-5"></i> English
+                                                <i class="flag-icon flag-icon-gb m-r-5"></i> Ingles
                                             </a>
                                         </li>
                                         <li>
@@ -406,12 +406,12 @@
                                     <ul class="show-notification profile-notification">
                                         <li>
                                             <a href="profile-admin.php">
-                                                <i class="ti-user"></i> Profile
+                                                <i class="ti-user"></i> Perfil
                                             </a>
                                         </li>
                                         <li>
                                             <a href="destroy.php?d=true">
-                                                <i class="ti-layout-sidebar-left"></i> Logout
+                                                <i class="ti-layout-sidebar-left"></i> Cerrar sesión
                                             </a>
                                         </li>
                                     </ul>
@@ -768,7 +768,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de clientes</h4>
+                                                        <h4>Perfil de cliente</h4>
                                                         <span>Toda la informacion del cliente se encuentra en este perfil</span>
                                                     </div>
                                                 </div>
@@ -844,11 +844,11 @@
                                                             
                                                         </li>
                                                         <li class="nav-item">
-                                                        <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Informacion Personal</a>
+                                                        <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Información Personal</a>
                                                             <div class="slide"></div>
                                                         </li>
                                                         <li class="nav-item">
-                                                        <a class="nav-link" data-toggle="tab" href="#binfo" role="tab">informacion de co aplicante</a>
+                                                        <a class="nav-link" data-toggle="tab" href="#binfo" role="tab">Información de co Aplicante</a>
                                                             <div class="slide"></div>
                                                         </li>
                                                         <li class="nav-item">

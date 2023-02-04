@@ -187,7 +187,7 @@
                                     <ul class="show-notification">
                                         <li>
                                             <a href="<?php echo $url_en; ?>" data-lng="en">
-                                                <i class="flag-icon flag-icon-gb m-r-5"></i> English
+                                                <i class="flag-icon flag-icon-gb m-r-5"></i> Ingles
                                             </a>
                                         </li>
                                         <li>
@@ -229,16 +229,16 @@
                                     <ul class="show-notification profile-notification">
                                         <li>
                                             <a href="profile-admin.php">
-                                                <i class="ti-user"></i> Profile
+                                                <i class="ti-user"></i> Perfil
                                             </a>
                                         </li>
                                         <li>
                                             <a href="destroy.php?d=true">
-                                                <i class="ti-layout-sidebar-left"></i> Logout
+                                                <i class="ti-layout-sidebar-left"></i> Cerrar sesión
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>
                             </ul>
                             <!-- search -->
                             <div id="morphsearch" class="morphsearch">

@@ -829,7 +829,7 @@
                                                                                                 <tbody>
                                                                                                     <form>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Nombre</th>
+                                                                                                            <th scope="row">Name</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input  maxlength="100" id="name" type="text" class="form-control" name="" value="<?php echo $name; ?>">

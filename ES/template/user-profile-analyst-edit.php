@@ -357,17 +357,17 @@
                                 <!--inicio multi-lenguaje-->
                                 <li class="header-notification lng-dropdown">
                                     <a href="#" id="dropdown-active-item">
-                                        <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
+                                        <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                     </a>
                                     <ul class="show-notification">
                                         <li>
                                             <a href="<?php echo $url_en; ?>" data-lng="en">
-                                                <i class="flag-icon flag-icon-gb m-r-5"></i> English
+                                                <i class="flag-icon flag-icon-gb m-r-5"></i> Ingles
                                             </a>
                                         </li>
                                         <li>
                                             <a href="<?php echo $url_es; ?>" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
                                             </a>
                                         </li>
                                         
@@ -401,12 +401,12 @@
                                     <ul class="show-notification profile-notification">
                                         <li>
                                             <a href="profile-admin.php">
-                                                <i class="ti-user"></i> profile
+                                                <i class="ti-user"></i> Perfil
                                             </a>
                                         </li>
                                         <li>
                                             <a href="destroy.php?d=true">
-                                                <i class="ti-layout-sidebar-left"></i> Logout
+                                                <i class="ti-layout-sidebar-left"></i> Cerrar sesión
                                             </a>
                                         </li>
                                     </ul>
@@ -762,7 +762,7 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Edit Analyst</h4>
+                                                        <h4>Editar analista</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -796,7 +796,7 @@
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
                                                                             <h2><?php echo $name; ?></h2>
-                                                                            <span class="text-white">Analyst</span>
+                                                                            <span class="text-white">Analista</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -822,7 +822,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h5 class="card-header-text">Analyst Information</h5>
+                                                                <h5 class="card-header-text">Información del analista</h5>
                                                             </div>
                                                             <div class="card-block">
                                                                 <div class="view-info">
@@ -836,7 +836,7 @@
                                                                                                 <tbody>
                                                                                                     <form>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Name</th>
+                                                                                                            <th scope="row">Nombre</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input  maxlength="100" id="name" type="text" class="form-control" name="" value="<?php echo $name; ?>">
@@ -844,7 +844,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Mail</th>
+                                                                                                            <th scope="row">Correo</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="50" id="mail" type="text" class="form-control " name="" value="<?php echo $mail; ?>">
@@ -852,7 +852,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Cell phone</th>
+                                                                                                            <th scope="row">Teléfono móvil</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="20" id="cell" type="text" class="form-control " name="" value="<?php echo $cell; ?>">
@@ -860,7 +860,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Carnet</th>
+                                                                                                            <th scope="row">Cuaderno</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="20" id="carnet" type="text" class="form-control " name="" value="<?php echo $carnet; ?>">
@@ -868,7 +868,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Incentive</th>
+                                                                                                            <th scope="row">Incentivo</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="100" id="comision" type="text" class="form-control " name="" value="<?php echo $comision; ?>">
@@ -887,7 +887,7 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Start date</th>
+                                                                                                    <th scope="row">Fecha de inicio</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="10" id="start_date" type="date" class="form-control " name="" value="<?php echo $start_date; ?>">
@@ -895,7 +895,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Recruiter</th>
+                                                                                                    <th scope="row">Reclutador</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="100" id="recruiter" type="text" class="form-control " name="" value="<?php echo $recruiter; ?>">
@@ -903,7 +903,7 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <th scope="row">User</th>
+                                                                                                    <th scope="row">Usuario</th>
                                                                                                     <td>
                                                                                                         <div class="input-group">
                                                                                                             <input maxlength="50" id="user" type="text" class="form-control " name="" value="<?php echo $user; ?>">
@@ -924,10 +924,10 @@
                                                         <div class="col-12 d-flex justify-content-center">
                                                             
                                                             <a href="user-profile-analyst.php?vmekmsi23xmfvwe155=<?php echo $id_a; ?>" class="btn btn-secondary mx-2" style="cursor: pointer;">
-                                                            Return
+                                                            Volver
                                                             </a>
                                                             <button id="btn-edit" class="btn btn-primary cursor-pointer mx-2">
-                                                            Keep
+                                                            Guardar
                                                             </button>
                                                                 
                                                         </div>
