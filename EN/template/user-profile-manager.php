@@ -34,7 +34,7 @@
 
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <script src="backend/js/session.js"></script>
@@ -113,8 +113,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Deseas realizar esta acción?</h2>
-                    <p style="display: block;">Si haces click en aceptar los cambios no podran ser revertidos.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to perform this action?</h2>
+                    <p style="display: block;">If you click accept the changes cannot be reversed.</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
@@ -122,9 +122,9 @@
                     <div class="icon">!</div>
                     <p>You need to write something!</p>
                     </div><div class="sa-button-container">
-                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancelar</button>
+                    <button onclick="cerrar()" class="cancel" tabindex="2" style="display: inline-block; box-shadow: none;">Cancel</button>
                     <div class="sa-confirm-button-container">
-                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Aceptar</button><div class="la-ball-fall">
+                    <button id="btn_confirm_cl" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">Accept</button><div class="la-ball-fall">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -192,7 +192,7 @@
                                         </li>
                                         <li>
                                             <a href="<?php echo $url_es; ?>" data-lng="es">
-                                                <i class="flag-icon flag-icon-es m-r-5"></i> Español
+                                                <i class="flag-icon flag-icon-es m-r-5"></i> Spanish
                                             </a>
                                         </li>
                                         
@@ -211,7 +211,7 @@
                                     <ul class="show-notification">
                                         <li>
                                             <h6>Notifications</h6>
-                                            <label class="label label-danger">Nuevo Mensaje</label>
+                                            <label class="label label-danger">New message</label>
                                         </li>
                                         <li>
                                             <div class="media">
@@ -517,7 +517,7 @@
                     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                     <div class="pcoded-inner-navbar main-menu">
 
-                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navegación</div>
+                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
                         <ul class="pcoded-item pcoded-left-item">
                             
                             <li>
@@ -609,7 +609,6 @@
             </nav> 
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
-
                             <!-- Main body start -->
                             <div class="main-body user-profile">
                                 <div class="page-wrapper">
@@ -739,7 +738,6 @@
                                                                                                     <th scope="row">User</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
                                                                                                 </tr>
-                                                                                               
                                                                                             </tbody>
                                                                                         </table>
                                                                                         </div>
