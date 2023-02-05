@@ -401,8 +401,8 @@
                 <label for="">Zip</label>
             </div>
             <div class="input-group">
-                <!-- Opcional -->
-                <input minlength="10" maxlength="20" id="cl_33" type="text" class="form-control" title=" SI TIENE MENOS DE 3 AÑOS" name=" N_telefono_empleo_anterio" placeholder=" ">
+                
+                <input minlength="10" maxlength="20" id="cl_33" type="text" class="form-control required" title=" SI TIENE MENOS DE 3 AÑOS" name=" N_telefono_empleo_anterio" placeholder=" ">
                 <label for="">Número de telefono del empleo anterio</label>
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
