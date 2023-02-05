@@ -75,6 +75,10 @@
 
                     $ruta = 'img-analist/'.$n_foto.'-'.$foto["name"];
                     move_uploaded_file($foto["tmp_name"], $ruta);
+
+                    $origen = $ruta;
+                    $destino = "../../../../ES/template/backend/php/img-analist/".basename($origen);
+                    copy($origen, $destino);
                 }
                 else
                 {
