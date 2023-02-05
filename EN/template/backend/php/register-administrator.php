@@ -41,29 +41,29 @@
 
                 if($res == "Correct")
                 {
-                    echo "Registro completado exitosamente";
+                    echo "Registration completed successfully";
                 }
                 else
                 {
                     if(str_contains($res, "for key 'User'"))
                     {
-                        echo "Este usuario ya existe";
+                        echo "This user already exists";
                     }
                     else if(str_contains($res, "for key 'Cell'"))
                     {
-                        echo "Este celular ya existe";
+                        echo "This cell phone already exists";
                     }
                     else if(str_contains($res, "for key 'Carnet'"))
                     {
-                        echo "Este carnet ya existe";
+                        echo "This card already exists";
                     }
                     else if(str_contains($res, "for key 'Mail'"))
                     {
-                        echo "Este correo ya existe";
+                        echo "This email already exists";
                     }
                     else
                     {
-                        echo "Error desconocido $res";
+                        echo "Unknown error $res";
                     }
                 }
             }

@@ -460,7 +460,7 @@ btn_enviar_customer.addEventListener('click', () => {
 
                                         if (request.responseText == "status:Correct - status:Correct" || request.responseText == "status:Correct - status:none") {
                                             // Funcion para hacer aparecer la ventana de notificacion
-                                            aparecer_n_2('Cliente y co-aplicantes registrados con exito')
+                                            aparecer_n_2('Customer and co-applicants successfully registered')
 
                                             // Redireccion para ver los clientes
                                             setTimeout(function () {
@@ -481,12 +481,12 @@ btn_enviar_customer.addEventListener('click', () => {
                             }
                             else {
                                 // Funcion para hacer aparecer la ventana de notificacion
-                                aparecer_n_1('Hay uno o mas campos en la informacion para el Co-aplicante que se pasan del limite de caracteres permitidos')
+                                aparecer_n_1('There are one or more fields in the information for the Co-applicant that exceed the limit of allowed characters')
                             }
                         }
                         else {
                             // Funcion para hacer aparecer la ventana de notificacion
-                            aparecer_n_1('Debe rellenar todos los campos obligatorios para Co-aplicante')
+                            aparecer_n_1('You must fill in all required fields for Co-applicant')
 
                             let form_control_all = document.querySelectorAll('.co_invalid')
 
@@ -501,7 +501,7 @@ btn_enviar_customer.addEventListener('click', () => {
                     }
                     else
                     {
-                    aparecer_n_1("El correo del co-aplicante no es válido")
+                    aparecer_n_1("Co-applicant email is invalid")
                     }
                 }
                 else if (cl_51.value == 'no') {
@@ -515,7 +515,7 @@ btn_enviar_customer.addEventListener('click', () => {
 
                             if (request.responseText == "status:Correct - status:Correct" || request.responseText == "status:Correct - status:none") {
                                 // Funcion para hacer aparecer la ventana de notificacion
-                                aparecer_n_2('Cliente registrado con exito')
+                                aparecer_n_2('Successful registered customer')
 
                                 // Redireccion para ver los clientes
                                 setTimeout(function () {
@@ -537,12 +537,12 @@ btn_enviar_customer.addEventListener('click', () => {
             }
             else {
                 // Funcion para hacer aparecer la ventana de notificacion
-                aparecer_n_1('Hay uno o mas campos que se pasan del limite de caracteres permitidos en la informacion del Co-aplicante')
+                aparecer_n_1('There are one or more fields that exceed the limit of characters allowed in the Co-applicant information.')
             }
 
         }
         else {
-            aparecer_n_1('Debe rellenar todos los campos obligatorios')
+            aparecer_n_1('You must fill in all required fields')
             let form_control_all = document.querySelectorAll('.cl_invalid')
 
             form_control_all.forEach(function (item) {
@@ -560,7 +560,7 @@ btn_enviar_customer.addEventListener('click', () => {
     }
     else
     {
-        aparecer_n_1('Correo invalido')
+        aparecer_n_1('Invalid mail')
         cl_20.style.border = "1px solid red"
     }
 

@@ -36,34 +36,34 @@ btn_confirm_cl.addEventListener('click', function(){
                     let res = request.responseText
                     if(res == "Correct")
                     {
-                        aparecer_n_2("Cambios guardados")
+                        aparecer_n_2("Saved changes")
                         cerrar()
 
                         setTimeout(re, 3000)
                     }
                     else if(res.includes("for key 'Mail'"))
                     {
-                        aparecer_n_3("Este Correo ya existe")
+                        aparecer_n_3("This Mail already exists")
                         cerrar()
                     }
                     else if(res.includes("for key 'Cell'"))
                     {
-                        aparecer_n_3("Este Celular ya existe")
+                        aparecer_n_3("This Cell Phone already exists")
                         cerrar()
                     }
                     else if(res.includes("for key 'Carnet'"))
                     {
-                        aparecer_n_3("Este Carnet ya existe")
+                        aparecer_n_3("This card already exists")
                         cerrar()
                     }
                     else if(res.includes("for key 'User'"))
                     {
-                        aparecer_n_3("Este Usuario ya existe")
+                        aparecer_n_3("This User already exists")
                         cerrar()
                     }
                     else if(res == "mf")
                     {
-                        aparecer_n_3("Correo invalido")
+                        aparecer_n_3("Invalid mail")
                         cerrar()
                     }
                     else
@@ -79,7 +79,7 @@ btn_confirm_cl.addEventListener('click', function(){
     }
     else
     {
-        aparecer_n_1("Debe todos rellenar los campos obligatorios")
+        aparecer_n_1("You must all fill in the required fields")
         cerrar()
     }
 })

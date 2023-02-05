@@ -41,7 +41,7 @@ $(document).ready()
                                 let res = request.responseText
                                 if(res == "Correct")
                                 {
-                                    aparecer_n_2("Cambios guardados")
+                                    aparecer_n_2("Saved changes")
                                     cerrar()
 
                                     setTimeout(function(){
@@ -51,27 +51,27 @@ $(document).ready()
                                 }
                                 else if(res.includes("for key 'N_seguro_social'") == true)
                                 {
-                                    aparecer_n_3("El Seguro Social ya se esta utilizando en un cliente")
+                                    aparecer_n_3("Social Security is already being used on a client")
                                     cerrar()
                                 }
                                 else if(res.includes("for key 'N_licencia_conducir'") == true)
                                 {
-                                    aparecer_n_3("La Licencia de Conducir ya se esta utilizando en un cliente")
+                                    aparecer_n_3("The Driver's License is already being used on a client")
                                     cerrar()
                                 }
                                 else if(res.includes("for key 'Telefono_celular'") == true)
                                 {
-                                    aparecer_n_3("El Numero de Celular ya se esta utilizando en un cliente")
+                                    aparecer_n_3("The Cell Phone Number is already being used in a client")
                                     cerrar()
                                 }
                                 else if(res.includes("for key 'Correo'") == true)
                                 {
-                                    aparecer_n_3("El Correo ya se esta utilizando en un cliente")
+                                    aparecer_n_3("The Mail is already being used in a client")
                                     cerrar()
                                 }
                                 else
                                 {
-                                    aparecer_n_3(`Error desconocido: ${res}`)
+                                    aparecer_n_3(`Unknown error: ${res}`)
                                     cerrar()
                                     console.log(res)
                                 }
@@ -85,7 +85,7 @@ $(document).ready()
         }
         else
         {
-            aparecer_n_1("Correo invalido")
+            aparecer_n_1("Invalid mail")
         }
     }
 } 
