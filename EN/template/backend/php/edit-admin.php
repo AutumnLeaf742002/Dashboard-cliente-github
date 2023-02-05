@@ -37,9 +37,13 @@
                 define("sql", "CALL sp_edit_administrator(".$id_ad.", '".$name."', '".$mail."', '".$cell."', '".$carnet."', '".$user."');");
             }
 
-            $res = command($oCon, sql);
+            if($id_ad != 1)
+            {
+                $res = command($oCon, sql);
 
-            echo $res;
+                echo $res;
+            }
+
         }
         else
         {
