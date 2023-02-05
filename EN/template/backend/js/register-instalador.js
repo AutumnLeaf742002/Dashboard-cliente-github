@@ -19,14 +19,14 @@ function register_instalador()
             {
                 if(request.responseText == "Correct")
                 {
-                    aparecer_n_2("Registrado con exito")
+                    aparecer_n_2("Successfully registered")
                     name_dom.value = ""
                     cell_dom.value = ""
                     office_dom.value = ""
                 }
                 else if(request.responseText.includes("for key 'Cell'"))
                 {
-                    aparecer_n_3("Este Celular ya existe")
+                    aparecer_n_3("This Cell Phone already exists")
                 }
                 else
                 {
@@ -35,7 +35,7 @@ function register_instalador()
             }
             else
             {
-                aparecer_n_1("Debe rellenar todos los campos")
+                aparecer_n_1("You must fill in all fields")
             }
         }
     }

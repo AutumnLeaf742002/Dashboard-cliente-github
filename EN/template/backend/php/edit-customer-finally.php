@@ -23,7 +23,7 @@
         }
         else
         {
-            echo "Algo ha salido mal, recargue la pagina y vuelva a intentar";
+            echo "Something has gone wrong, reload the page and try again";
         }
     }
     else

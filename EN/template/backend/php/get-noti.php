@@ -28,7 +28,7 @@
 
         echo "
             <li>
-                <h6>Notificaciones</h6>
+                <h6>Notifications</h6>
             </li>
         ";
 
@@ -70,7 +70,7 @@
                                 <img class="d-flex align-self-center" src="Avatars/avatar-'.$item["Avatar"].'.svg" alt="Generic placeholder image">
                                 <div class="media-body">
                                     <h5 class="notification-user">'.$item["Primer_nombre"].'</h5>
-                                    <p class="notification-msg">Mantenimiento a realizar proximo a 5 dias o menos.</p>
+                                    <p class="notification-msg">Maintenance to be performed next to 5 days or less.</p>
                                 </div>
                             </div>
                         </li>
@@ -86,7 +86,7 @@
                                 <img class="d-flex align-self-center" src="Avatars/avatar-'.$item["Avatar"].'.svg" alt="Generic placeholder image">
                                 <div class="media-body">
                                     <h5 class="notification-user">'.$item["Primer_nombre"].'</h5>
-                                    <p class="notification-msg">Mantenimiento atrasado.</p>
+                                    <p class="notification-msg">Delayed maintenance.</p>
                                 </div>
                             </div>
                         </li>

@@ -39,7 +39,7 @@ function register_manager()
             request.onreadystatechange = function () {
     
                 if (request.readyState == 4 && request.status == 200) {
-                    if(request.responseText == "Registro completado exitosamente")
+                    if(request.responseText == "Registration completed successfully")
                     {
                         get_managers()
                         aparecer_n_2(request.responseText)
@@ -64,12 +64,12 @@ function register_manager()
         {
             const DOM_correo = document.getElementById("correo")
             DOM_correo.style.border = "1px solid red"
-            aparecer_n_1("Correo invalido: Asegurate que el correo sea valido o no tenga mayúsculas ni espacios de mas")
+            aparecer_n_1("Invalid mail: Make sure the email is valid or does not have capital letters or spaces of more")
         } 
     }
     else
     {
-        aparecer_n_1("Debe rellenar los campos obligarios")
+        aparecer_n_1("You must fill in the required fields")
         all_input.forEach(function(item){
 
             if(item.value.length < 1)

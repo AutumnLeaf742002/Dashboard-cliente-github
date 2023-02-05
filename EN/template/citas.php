@@ -179,7 +179,7 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font" style="vertical-align: inherit;">Aviso!</font>
+                                <font" style="vertical-align: inherit;">Warning!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
@@ -210,7 +210,7 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Hecho!</font>
+                                <font style="vertical-align: inherit;">Done!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
@@ -248,7 +248,7 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Peligro</font>
+                                <font style="vertical-align: inherit;">Danger!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
@@ -701,7 +701,7 @@
                                                     d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
                                                 <path
                                                     d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
-                                            </svg>administrators</span>
+                                            </svg>Administrators</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
@@ -736,7 +736,7 @@
                                                 fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                                 <path
                                                     d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
-                                            </svg>analysts</span>
+                                            </svg>Analysts</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
@@ -766,7 +766,7 @@
                                             <path
                                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                         </svg></span>
-                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">appointment</span>
+                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Appointment</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             <li class="r_analist r_manager" id="">

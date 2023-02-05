@@ -227,18 +227,18 @@
                                 }
                                 else if(count($confirmacion_correo) > 0)
                                 {
-                                    $res = "Ya existe este correo registrado en un cliente";
+                                    $res = "This email already exists registered with a client";
                                 }
 
                             }
                             else if(count($confirmacion_telefono_celular) > 0)
                             {
-                                $res = "Ya existe este numero de celular registrado en un cliente";
+                                $res = "This cell phone number already exists registered with a client";
                             }
                         }
                         else if(count($confirmacion_licencia_conducir) > 0)
                         {
-                            $res = "Ya existe este numero de licencia de conducir registrado en un cliente";
+                            $res = "This registered driver's license number already exists on a customer";
                         }
                     }
                     else
@@ -258,19 +258,19 @@
                             }
                             else if(count($confirmacion_correo) > 0)
                             {
-                                $res = "Ya existe este correo registrado en un cliente";
+                                $res = "This email already exists registered with a client";
                             }
 
                         }
                         else if(count($confirmacion_telefono_celular) > 0)
                         {
-                            $res = "Ya existe este numero de celular registrado en un cliente";
+                            $res = "This cell phone number already exists registered with a client";
                         }
                     }
                 }
                 else if(count($confirmacion_seguro_social) > 0)
                 {
-                    $res = "Ya existe este seguro social registrado en un cliente";
+                    $res = "This social security already exists registered with a client";
                 }
             }
 
@@ -307,18 +307,18 @@
                                 }
                                 else if(count($confirmacion_correo) > 0)
                                 {
-                                    $res = "Ya existe este correo registrado en un cliente";
+                                    $res = "This email already exists registered with a client";
                                 }
 
                             }
                             else if(count($confirmacion_telefono_celular) > 0)
                             {
-                                $res = "Ya existe este numero de celular registrado en un cliente";
+                                $res = "This cell phone number already exists registered with a client";
                             }
                         }
                         else if(count($confirmacion_licencia_conducir) > 0)
                         {
-                            $res = "Ya existe este numero de licencia de conducir registrado en un cliente";
+                            $res = "This registered driver's license number already exists on a customer";
                         }
                     }
                     else
@@ -337,19 +337,19 @@
                             }
                             else if(count($confirmacion_correo) > 0)
                             {
-                                $res = "Ya existe este correo registrado en un cliente";
+                                $res = "This email already exists registered with a client";
                             }
 
                         }
                         else if(count($confirmacion_telefono_celular) > 0)
                         {
-                            $res = "Ya existe este numero de celular registrado en un cliente";
+                            $res = "This cell phone number already exists registered with a client";
                         }
                     }
                 }
                 else if(count($confirmacion_seguro_social) > 0)
                 {
-                    $res = "Ya existe este seguro social registrado en un cliente";
+                    $res = "This social security already exists registered with a client";
                 }
 
                 // Si el usuario quiere agregar un co-aplicante, aqui se tomaran los datos de los campos del co-aplicante
@@ -473,23 +473,23 @@
                                     }
                                     else
                                     {
-                                        echo "Error desconocido, intente otra ves";
+                                        echo "Unknown error, try another time";
                                     }
                                 }
                                 else if(count($co_confirmacion_correo) > 0)
                                 {
-                                    $res_co = "Ya existe este correo registrado en un co-aplicante";
+                                    $res_co = "This email already exists registered in a co-applicant";
                                 }
 
                             }
                             else if(count($co_confirmacion_telefono_celular) > 0)
                             {
-                                $res_co = "Ya existe este numero de celular registrado en un co-aplicante";
+                                $res_co = "This cell phone number already exists registered in a co-applicant";
                             }
                         }
                         else if(count($co_confirmacion_licencia_conducir) > 0)
                         {
-                            $res_co = "Ya existe este numero de licencia de conducir registrado en un co-aplicante";
+                            $res_co = "This registered driver's license number already exists in a co-applicant";
                         }
                     }
                     else
@@ -512,24 +512,24 @@
                                 }
                                 else
                                 {
-                                    echo "Error desconocido, intente otra ves";
+                                    echo "Unknown error, try another time";
                                 }
                             }
                             else if(count($co_confirmacion_correo) > 0)
                             {
-                                $res_co = "Ya existe este correo registrado en un co-aplicante";
+                                $res_co = "This email already exists registered in a co-applicant";
                             }
 
                         }
                         else if(count($co_confirmacion_telefono_celular) > 0)
                         {
-                            $res_co = "Ya existe este numero de celular registrado en un co-aplicante";
+                            $res_co = "This cell phone number already exists registered in a co-applicant";
                         }
                     }
                 }
                 else if(count($co_confirmacion_seguro_social) > 0)
                 {
-                    $res_co = "Ya existe este seguro social registrado en un co-aplicante";
+                    $res_co = "This social security already exists registered in a co-applicant";
                 }
 
             }
@@ -538,7 +538,7 @@
         }
         else
         {
-            echo "Algo ha salido mal, recargue la pagina y vuelva a intentar";
+            echo "Something has gone wrong, reload the page and try again";
         }
 
     }

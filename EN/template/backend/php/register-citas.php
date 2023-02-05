@@ -78,19 +78,17 @@
                 }
                 else
                 {
-                    echo "Solo puedes agendar una cita para hoy o fechas posteriores";
+                    echo "You can only schedule an appointment for today or later dates";
                 }
-
-                
             }
             else
             {
-                echo "El Instalador estará ocupado con otra cita en esa hora";
+                echo "The Installer will be busy with another appointment at that time";
             }
         }
         else
         {
-            echo "La oficina del Cliente y el Instalador debe ser la misma";
+            echo "The Customer's office and the Installer must be the same";
         }
 
 

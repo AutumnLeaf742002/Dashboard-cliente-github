@@ -26,7 +26,7 @@ function register_cita()
 
                     if(request.responseText == "Correct")
                     {
-                        aparecer_n_2("Cita registrada con exito")
+                        aparecer_n_2("Successful recorded appointment")
                         get_citas()
                         
                         instalador_dom.value = ""
@@ -46,7 +46,7 @@ function register_cita()
     }
     else
     {
-        aparecer_n_1("Debe llenar todos los campos obligatorios")
+        aparecer_n_1("You must fill in all required fields")
     }
 }
 
@@ -85,7 +85,7 @@ function cambiar_estado(event, id)
                 }
                 else
                 {
-                    aparecer_n_3(`Error desconocido: ${request.responseText}`)
+                    aparecer_n_3(`Unknown error: ${request.responseText}`)
                 }
             }
         }

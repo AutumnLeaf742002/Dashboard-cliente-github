@@ -53,8 +53,8 @@ $(document).ready()
                 contentType: false,
                 processData: false,
                 success: function (datos) {
-                    if (datos == "Registro completado exitosamente") {
-                        aparecer_n_2("Registro completado exitosamente")
+                    if (datos == "Registration completed successfully") {
+                        aparecer_n_2("Registration completed successfully")
 
                         const list_input = document.querySelectorAll('.form-control')
                         get_analist()
@@ -72,7 +72,7 @@ $(document).ready()
         }
         else
         {
-            aparecer_n_1("Correo invalido: Asegurate que el correo sea valido o no tenga mayúsculas ni espacios de mas")
+            aparecer_n_1("Invalid mail: Make sure the email is valid or does not have capital letters or spaces of more")
         }
     }
 } 

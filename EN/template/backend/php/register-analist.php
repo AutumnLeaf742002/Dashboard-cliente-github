@@ -71,7 +71,7 @@
 
                 if($res == "Correct")
                 {
-                    echo "Registro completado exitosamente";
+                    echo "Registration completed successfully";
 
                     $ruta = 'img-analist/'.$n_foto.'-'.$foto["name"];
                     move_uploaded_file($foto["tmp_name"], $ruta);
@@ -80,34 +80,34 @@
                 {
                     if(str_contains($res, "for key 'User'"))
                     {
-                        echo "Este usuario ya existe";
+                        echo "This user already exists";
                     }
                     else if(str_contains($res, "for key 'Cell'"))
                     {
-                        echo "Este celular ya existe";
+                        echo "This cell phone already exists";
                     }
                     else if(str_contains($res, "for key 'Carnet'"))
                     {
-                        echo "Este carnet ya existe";
+                        echo "This card already exists";
                     }
                     else if(str_contains($res, "for key 'Mail_2'"))
                     {
-                        echo "Este correo ya existe";
+                        echo "This email already exists";
                     }
                     else if(str_contains($res, "for key 'Foto'"))
                     {
-                        echo "A ocurrido un error con la foto, por favor seleccionela otra ves";
+                        echo "An error occurred with the photo, please select it again";
                     }
                     else
                     {
-                        echo "Error desconocido $res";
+                        echo "Unknown error $res";
                     }
                 }
             }
         }
         else
         {
-            echo "El archivo seleccionado no es una imagen, asegurate que la imagen sea de extension jepg, jpg o png";
+            echo "The selected file is not an image, make sure that the image is of extension jepg, jpg or png";
         }
     }
     else

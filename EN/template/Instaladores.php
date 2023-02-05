@@ -99,7 +99,7 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font" style="vertical-align: inherit;">Aviso!
+                                <font" style="vertical-align: inherit;">Warning!
                             </font>
                             </font>
                         </h4>
@@ -135,7 +135,7 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Hecho!</font>
+                                <font style="vertical-align: inherit;">Done!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
@@ -175,7 +175,7 @@
                         </button>
                         <h4 class="ui-pnotify-title">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Peligro</font>
+                                <font style="vertical-align: inherit;">Danger!</font>
                             </font>
                         </h4>
                         <div class="ui-pnotify-text" aria-role="alert">
