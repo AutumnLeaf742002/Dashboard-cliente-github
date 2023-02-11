@@ -78,9 +78,6 @@
                                 '.$item["office"].'
                             </td>
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
-                                '.$item["Direccion"].'
-                            </td>
-                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 '.$item["Fecha_mantenimiento"].'
                             </td>
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
@@ -107,9 +104,6 @@
                             </td>
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 '.$item["office"].'
-                            </td>
-                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
-                                '.$item["Direccion"].'
                             </td>
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 '.$item["Fecha_mantenimiento"].'

@@ -289,8 +289,8 @@
                     
                     <div class="sa-placeholder"></div>
                     <div class="sa-fix"></div>
-                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Do you want to save the changes?</h2>
-                    <p style="display: block;">If you click OK, the changes made are saved.</p>
+                    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>¿Quieres guardar los cambios?</h2>
+                    <p style="display: block;">Si hace clic en Aceptar, los cambios realizados se guardan.</p>
                     <fieldset>
                     <input type="text" tabindex="3" placeholder="">
                     <div class="sa-input-error"></div>
