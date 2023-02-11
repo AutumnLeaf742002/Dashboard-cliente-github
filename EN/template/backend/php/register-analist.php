@@ -78,7 +78,7 @@
 
                     $origen = $ruta;
                     $destino = "../../../../ES/template/backend/php/img-analist/".basename($origen);
-                    copy($origen, $destino);
+                    copy($origen,$destino);
                 }
                 else
                 {

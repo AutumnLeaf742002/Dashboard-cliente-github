@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     
         include_once "backend/php/connection.php";
         include_once "backend/php/commands.php";

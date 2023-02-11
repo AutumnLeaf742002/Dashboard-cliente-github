@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    
     if(!empty($_POST) && $_SESSION["rol"] == "1")
     {
         include_once "connection.php";

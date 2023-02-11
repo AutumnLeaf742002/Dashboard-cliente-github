@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
         // inicializar el usuario seleccionado si hay un get en esta pagina
 

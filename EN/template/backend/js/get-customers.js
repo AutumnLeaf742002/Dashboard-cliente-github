@@ -10,7 +10,7 @@ function get_customers()
         {
             if(request.responseText == "none")
             {
-                contenedor_tabla_clientes.innerHTML = '<h3 style="text-align: center;">No hay clientes para mostrar</h3>'
+                contenedor_tabla_clientes.innerHTML = '<h3 style="text-align: center;">No clients to show</h3>'
             }
             contenedor_clientes.innerHTML = request.responseText
         }
