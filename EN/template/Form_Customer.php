@@ -411,7 +411,7 @@
             </div>
             <div class="input-group">
                 <!-- Opcional -->
-                <input minlength="1" maxlength="100" id="cl_34" type="text" class="form-control" title="LA PENSIÓN ALIMENTICIA O MANUTENCIÓN DE MENORES POR SEPARADO SON INFORMACIÓNES OPCIONALES." name="Fuente_ingreso_extra" placeholder="Otras fuentes de ingreso" >
+                <input minlength="1" maxlength="100" id="cl_34" type="text" class="form-control" title="LA PENSIÓN ALIMENTICIA O MANUTENCIÓN DE MENORES POR SEPARADO SON INFORMACIÓNES OPCIONALES." name="Fuente_ingreso_extra" placeholder="Other sources of income" >
             </div>
             <div class="input-group">
                 <!-- Opcional -->
@@ -672,18 +672,18 @@
             </div>
             <div class="input-group">
                 <!-- Opcional -->
-                <input minlength="1" maxlength="100" id="co_29" type="text" class="form-control" name="Empleador_anterior" placeholder="Empleador anterior (si tiene menos de 3 años)">
+                <input minlength="1" maxlength="100" id="co_29" type="text" class="form-control" name="Empleador_anterior" placeholder="Previous employer (if less than 3 years old)">
             </div>
             <div style="display: flex; flex-direction:column;" class="input-group">
-                <input minlength="1" maxlength="30" id="co_30" style="width: 100%;" type="text" class="co_invalid form-control required" name="fechas de empleo" placeholder="Fechas de empleo">
+                <input minlength="1" maxlength="30" id="co_30" style="width: 100%;" type="text" class="co_invalid form-control required" name="fechas de empleo" placeholder="Dates of employment">
             </div>
             <!-- Opcional -->
             <div class="input-group">
-                <input minlength="1" maxlength="100" id="co_31" type="text" class="co_invalid form-control required" name="Ciudad_empleo_anterior" placeholder="Ciudad">
+                <input minlength="1" maxlength="100" id="co_31" type="text" class="co_invalid form-control required" name="Ciudad_empleo_anterior" placeholder="Previous city">
             </div>
             <!-- Opcional -->
             <div class="input-group">
-                <input minlength="1" maxlength="100" id="co_32" type="text" class="co_invalid form-control required" name="Estado_empleo_anterior" placeholder="Estado">
+                <input minlength="1" maxlength="100" id="co_32" type="text" class="co_invalid form-control required" name="Estado_empleo_anterior" placeholder="Previous state">
             </div>
             <!-- Opcional -->
             <div class="input-group">
@@ -691,7 +691,7 @@
             </div>
             <div class="input-group">
                 <!-- Opcional -->
-                <input minlength="10" maxlength="20" id="co_34" type="text" class="form-control" title=" SI TIENE MENOS DE 3 AÑOS" name=" N_telefono_empleo_anterio" placeholder="Número de telefono del empleo anterio">
+                <input minlength="10" maxlength="20" id="co_34" type="text" class="form-control" title=" SI TIENE MENOS DE 3 AÑOS" name=" N_telefono_empleo_anterio" placeholder="Telephone number of previous employment">
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
                 <a style="color: orange;">Separate alimony or child support is optional information and does not have to be reported if you do not elect to rely on that income on your credit application.
@@ -699,11 +699,11 @@
             </div>
             <div class="input-group">
                 <!-- Opcional -->
-                <input minlength="1" maxlength="100" id="co_35" type="text" class="form-control" title="LA PENSIÓN ALIMENTICIA O MANUTENCIÓN DE MENORES POR SEPARADO SON INFORMACIÓNES OPCIONALES." name="Fuente_ingreso_extra" placeholder="Otras fuentes de ingreso" >
+                <input minlength="1" maxlength="100" id="co_35" type="text" class="form-control" title="ALIMONY OR SEPARATE CHILD SUPPORT ARE OPTIONAL INFORMATION." name="Fuente_ingreso_extra" placeholder="Other sources of income" >
             </div>
             <div class="input-group">
                 <!-- Opcional -->
-                <input minlength="1" maxlength="50" id="co_36" type="text" class="form-control" title="LA PENSIÓN ALIMENTICIA O MANUTENCIÓN DE MENORES POR SEPARADO SON INFORMACIÓNES OPCIONALES." name="Cantidad_fuente_ingreso_extra" placeholder="$ Mensual">
+                <input minlength="1" maxlength="50" id="co_36" type="text" class="form-control" title="ALIMONY OR SEPARATE CHILD SUPPORT ARE OPTIONAL INFORMATION." name="Cantidad_fuente_ingreso_extra" placeholder="Amount Source of Extra Income">
             </div>
             <div class="alpaca6" style="margin-bottom: 15px;">
                 <a>Select an avatar</a>
@@ -727,7 +727,7 @@
             </div>
 
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Previous</button>
-            <button id="btn-enviar-customer" type="button" name="next" class="btn btn-success waves-effect" value="submit">Enviar</button>
+            <button id="btn-enviar-customer" type="button" name="next" class="btn btn-success waves-effect" value="submit">Send</button>
         </fieldset>
     </form>
     <!-- Warning Section Ends -->
