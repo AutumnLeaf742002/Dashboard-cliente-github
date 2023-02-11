@@ -64,6 +64,10 @@
             {
                 $color = "#f1c40f";
             }
+            else if($estado == "Instalacion pendiente")
+            {
+                $color = "#f1c40f";
+            }
 
             echo'
             <tr>
@@ -87,6 +91,7 @@
                         <option value="1">Cancelado</option>
                         <option value="3">No estaba en casa</option>
                         <option value="4">Pendiente</option>
+                        <option value="5">Instalacion pendiente</option>
                     </select>
                 </td>
             </tr>
