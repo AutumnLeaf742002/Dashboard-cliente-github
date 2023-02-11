@@ -23,6 +23,8 @@ function register_instalador()
                     name_dom.value = ""
                     cell_dom.value = ""
                     office_dom.value = ""
+
+                    get_instaladores()
                 }
                 else if(request.responseText.includes("for key 'Cell'"))
                 {

@@ -732,7 +732,7 @@
                                                                                         <table class="table">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th scope="row">Incentive</th>
+                                                                                                    <th scope="row">Table</th>
                                                                                                     <td><?php echo $res[0]["Comision"]; ?></td>
                                                                                                 </tr>
                                                                                                 <tr>

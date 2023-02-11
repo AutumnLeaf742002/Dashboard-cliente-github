@@ -2,8 +2,6 @@ const userDOM = document.getElementById("user")
 const passDOM = document.getElementById("pass")
 const rolDOM = document.getElementById("rol")
 
-
-
 function set_session()
 {   
     const user = userDOM.value

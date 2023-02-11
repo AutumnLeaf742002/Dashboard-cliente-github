@@ -46,7 +46,7 @@
                             $total_a = (intval($array_hora_a[0])*60)+intval($array_hora_a[1]);
                             $diferencia = $total_a - $total_b;
 
-                            if($diferencia >= 180 || $diferencia <= -180)
+                            if($diferencia >= 240 || $diferencia <= -240)
                             {
                                 $confirmacion = true;
                             }

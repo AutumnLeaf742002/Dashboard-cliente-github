@@ -118,7 +118,7 @@
         else
         {
             // si no hay nada en la tabla, devuelve none
-            echo '<h6>Este Analista no posee clientes</h6>';
+            echo '<h6>This Analyst has no clients</h6>';
         }
     }
     else

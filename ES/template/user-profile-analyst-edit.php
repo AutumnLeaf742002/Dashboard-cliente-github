@@ -868,7 +868,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Incentivo</th>
+                                                                                                            <th scope="row">Tabla</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="100" id="comision" type="text" class="form-control " name="" value="<?php echo $comision; ?>">
