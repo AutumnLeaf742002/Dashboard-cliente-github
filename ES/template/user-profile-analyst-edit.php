@@ -860,7 +860,7 @@
                                                                                                         </td>
                                                                                                         </tr>
                                                                                                         <tr>
-                                                                                                            <th scope="row">Cuaderno</th>
+                                                                                                            <th scope="row">Carnet</th>
                                                                                                             <td>
                                                                                                                 <div class="input-group">
                                                                                                                 <input maxlength="20" id="carnet" type="text" class="form-control " name="" value="<?php echo $carnet; ?>">
