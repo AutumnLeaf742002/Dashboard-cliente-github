@@ -71,22 +71,6 @@
                 if(count($res) <= 0)
                 {
 
-                    // Buscar por direccion
-                    if($rol == "3")
-                    {
-                        $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE Direccion LIKE '%$search%' AND Nombre_representante = $id_logued";
-                    }
-                    else if($rol == "1")
-                    {
-                        $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE Direccion LIKE '%$search%'";
-                    }
-                    else if($rol == "2")
-                    {
-                        $sql = "SELECT clientes.*, offices.Name_office as office, estatus.Estatus as Estatus_cl, estatus.Color as Color FROM clientes INNER JOIN analyst ON analyst.Id = clientes.Nombre_representante INNER JOIN managers ON managers.Id = analyst.Id_supervisor INNER JOIN offices ON clientes.Id_office = offices.Id INNER JOIN estatus ON estatus.Id = clientes.Estatus WHERE managers.Id = $id_logued AND Direccion LIKE '%$search%'";
-                    }
-
-                    $res = select($oCon, $sql);
-
                     if(count($res) <= 0)
                     {
 
@@ -213,9 +197,6 @@
                             </td>
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 '.$item["office"].'
-                            </td>
-                            <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
-                                '.$item["Direccion"].'
                             </td>
                             <td onclick="perfil_cliente('.$item["Id"].', '.$id_co.')">
                                 '.$item["Fecha_mantenimiento"].'
