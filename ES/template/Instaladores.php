@@ -701,7 +701,7 @@
                                             <path
                                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                         </svg></span>
-                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Citas</span>
+                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Servicios de instalación</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             <li id="instaladores">
@@ -738,11 +738,6 @@
                                                             <div class="card">
                                                                 <div class="card-header">
                                                                     <h5>Registrar Instaladores</h5>
-                                                                    <div class="card-header-right">
-                                                                        <i class="icofont icofont-rounded-down"></i>
-                                                                        <i class="icofont icofont-refresh"></i>
-
-                                                                    </div>
                                                                 </div>
                                                                 <div class="card-block">
                                                                     <p>
@@ -762,11 +757,6 @@
                                                             <div class="card simple-cards">
                                                                 <div class="card-header">
                                                                     <h5>Instaladores</h5>
-                                                                    <div class="card-header-right">
-                                                                        <i class="icofont icofont-rounded-down"></i>
-                                                                        <i class="icofont icofont-refresh"
-                                                                            onclick="refresh()"></i>
-                                                                    </div>
                                                                 </div>
 
                                                                 <div class="card-block">

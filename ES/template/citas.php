@@ -841,13 +841,8 @@
                                     <!-- Table header styling table start -->
                                     <div class="card">
                                         <div class="card-header">
-                                            <h5>Citas Agendadas</h5>
-                                            <span>Visualizacion de las citas agendadas</span>
-                                            <div class="card-header-right">
-                                                <i class="icofont icofont-rounded-down"></i>
-                                                <i class="icofont icofont-refresh" onclick="get_citas()"></i>
-                                                <i class="icofont icofont-close-circled"></i>
-                                            </div>
+                                            <h5>Instalaciones Agendadas</h5>
+                                            <span>Visualizacion de las Instalaciones agendadas</span>
                                         </div>
                                         <div class="card-block table-border-style">
                                             <div class="table-responsive">
@@ -890,7 +885,7 @@
                                                             <div class="text-center">
                                                                 <img src="assets/images/pasteur.png" alt="logo.png">
                                                             </div>
-                                                            <h3 class="text-center txt-primary">Registro de nueva cita</h3>
+                                                            <h3 class="text-center txt-primary">Registro de nueva instalacion</h3>
                                                             
                                                             <h5 class="fs-subtitle text-center">Los campos marcados con <p class="text-center" style="color: red; display: inline;">*</p> son obligatorios</h5>
                                                         </div>
