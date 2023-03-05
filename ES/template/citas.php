@@ -770,7 +770,7 @@
                                             <path
                                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                         </svg></span>
-                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Citas</span>
+                                    <span class="pcoded-mtext" data-i18n="nav.dash.default">Servicios de instalación</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             <li class="r_analist r_manager" id="">
@@ -810,19 +810,17 @@
                                                             <!-- inicio div de registro de analista -->
                                                             <div class="card">
                                                                 <div class="card-header">
-                                                                    <h5>Registrar cita</h5>
-                                                                    <div class="card-header-right">
-                                                                        <i class="icofont icofont-rounded-down"></i>        
-                                                                    </div>
+                                                                    <h5>Agendar Servicio</h5>
+                                                                    
                                                                 </div>
                                                                 <div class="card-block">
                                                                     <p>
-                                                                        Click al boton para Agendar nueva cita
+                                                                        Click al boton para Agendar nuevo servicio
                                                                     </p>
                                                                     <p class="text-center">
                                                                         <button type="button" class="btn btn-primary auth-btn"
                                                                             data-toggle="modal"
-                                                                            data-target="#register">Registrar</button>
+                                                                            data-target="#register">Agendar Servicio</button>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -893,6 +891,22 @@
                                                     <hr>
                                                     <!-- Comentario debajo del type text -->
                                                     <div class="input-group">
+                                                        <select class="form-control required" id="tipo_instalacion">
+                                                            <option selected value="">
+                                                                Tipo de servicio 
+                                                            </option>
+                                                            <option value="Instalación de planta completa ">
+                                                                Instalación de planta completa 
+                                                            </option>
+                                                            <option value="Instalación de RO ">
+                                                                Instalación de RO 
+                                                            </option>
+                                                            <option value="Mantenimiento ">
+                                                                Mantenimiento
+                                                            </option>
+                                                        <select>
+                                                    </div>
+                                                    <div class="input-group">
                                                         <input id="cliente" readonly style="display: none;" value="'.$cl.'">
                                                         <input type="text" class="form-control required"
                                                             placeholder=" " readonly
@@ -922,17 +936,19 @@
                                                         <span class="md-line"></span>
                                                         <label for="">Hora</label>
                                                     </div>
-                                                    
                                                     <div class="input-group">
                                                         <select class="form-control required" id="tipo_instalacion">
                                                             <option selected value="">
-                                                                Seleccione un tipo de instalación *
+                                                                Prioridad 
                                                             </option>
-                                                            <option value="Panel Solar">
-                                                                Panel Solar
+                                                            <option value="Alta ">
+                                                                Alta 
                                                             </option>
-                                                            <option value="Filtros de Agua">
-                                                                Filtros de Agua
+                                                            <option value="Media">
+                                                                Media 
+                                                            </option>
+                                                            <option value="Baja ">
+                                                                Baja
                                                             </option>
                                                         <select>
                                                     </div>
@@ -944,14 +960,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="col-md-12">
                                                         <div class="row m-t-15">
                                                             <div class="col-md-12">
                                                                 <button onclick="register_cita()"
                                                                     class="btn btn-primary btn-md btn-block waves-effect text-center">
-                                                                    Registrar Cita
+                                                                    Agendar servicio
                                                                 </button>
                                                             </div>
+                                                            
                                                         </div>
                                                         <div class="row">
                                                         </div>
