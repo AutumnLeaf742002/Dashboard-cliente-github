@@ -35,7 +35,7 @@
     <script src="backend/js/session.js"></script>
     <script src="backend/js/restrictor-analist.js"></script>
     <script src="backend/js/restrictor-manager.js"></script>
-    <title>Perfil de administrador</title>
+    <title>Perfil de Instalador</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -585,8 +585,8 @@
                                             <div class="col-sm-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>Perfil de administrador</h4>
-                                                        <span>Toda la información del Administrador está en este perfil</span>
+                                                        <h4>Perfil de Instalador</h4>
+                                                        <span>Toda la información del Instalador está en este perfil</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -621,7 +621,7 @@
                                                                     <div class="col-lg-12">
                                                                         <div class="user-title">
                                                                             <h2><?php echo $res[0]["Name"]; ?></h2>
-                                                                            <span class="text-white">Administrador</span>
+                                                                            <span class="text-white">Instalador</span>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -647,7 +647,7 @@
                                                         <!-- personal card start -->
                                                         <div class="card">
                                                             <div class="card-header"  style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <h5 class="card-header-text">Información del Administrador</h5>
+                                                                <h5 class="card-header-text">Información del Instalador</h5>
                                                                 <div style="display: flex; gap: 10px;">
                                                                     <button onclick="show()" id="delete" class="btn btn-danger">
                                                                     Eliminar
@@ -674,10 +674,7 @@
                                                                                                         <th scope="row">Correo electrónico</th>
                                                                                                         <td><?php echo $res[0]["Mail"]; ?></td>
                                                                                                     </tr>
-                                                                                                    <tr>
-                                                                                                        <th scope="row">Teléfono móvil</th>
-                                                                                                        <td><?php echo $res[0]["Cell"]; ?></td>
-                                                                                                    </tr>
+                                                                                                    
                                                                                                     
                                                                                                     
                                                                                                 </tbody>
@@ -691,9 +688,9 @@
                                                                                             <tbody>
                                                                                                 
                                                                                                 <tr>
-                                                                                                    <th scope="row">Carnet</th>
-                                                                                                    <td><?php echo $res[0]["Carnet"]; ?></td>
-                                                                                                </tr>  
+                                                                                                    <th scope="row">Teléfono móvil</th>
+                                                                                                    <td><?php echo $res[0]["Cell"]; ?></td>
+                                                                                                </tr> 
                                                                                                 <tr>
                                                                                                     <th scope="row">Usuario</th>
                                                                                                     <td><?php echo $res[0]["User"]; ?></td>
